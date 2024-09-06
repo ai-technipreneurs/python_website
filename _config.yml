@@ -18,9 +18,9 @@ execute:
     - '10*'
 
 # Include slides
-sphinx:
-  config:
-    html_extra_path: ['html','pdf']
+#sphinx:
+ # config:
+  #  html_extra_path: ['html','pdf']
 
 # Define the name of the latex output file for PDF builds
 #latex:
@@ -33,8 +33,8 @@ sphinx:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ml-course/master  # Online location of your book
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/ai-technipreneurs/python_website  # Online location of the book
+  branch: ghp-master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
