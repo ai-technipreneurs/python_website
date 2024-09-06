@@ -50,17 +50,7 @@ If you notice any issue, or have suggestions or requests, please go the
 ```
 
 ## Labs
-Download the lab notebooks and solve the questions locally, or launch them in Google Colab or Binder. Please review the relevant tutorials *before* starting the labs. Solutions will appear towards the end of each lab session.
-
-|   | Notebooks          |     Tutorial     |    Solutions   |
-|:--|:-------------------|------------------|----------------|
-| 1 | [Linear Models for regression](https://ml-course.github.io/master/labs/Lab%201a%20-%20Linear%20Models%20for%20Regression) <br> [Linear Models for classification](https://ml-course.github.io/master/labs/Lab%201b%20-%20Linear%20Models%20for%20Classification) | [Tutorial](https://ml-course.github.io/master/labs/Lab%201%20-%20Tutorial) | [Lab 1a](https://ml-course.github.io/master/labs/Lab%201a%20-%20Linear%20Models%20for%20Regression%20Solution) <br> [Lab 1b](https://ml-course.github.io/master/labs/Lab%201b%20-%20Linear%20Models%20for%20Classification%20Solution) (Release date: 7 Feb, 12:00)
-| 2 | [Kernelization](https://ml-course.github.io/master/labs/Lab%202a%20-%20Kernelization) <br> [Model Selection](https://ml-course.github.io/master/labs/Lab%202b%20-%20Model%20Selection) | [Tutorial](https://ml-course.github.io/master/labs/Lab%202%20-%20Tutorial) | [Lab 2a](https://ml-course.github.io/master/labs/Lab%202a%20-%20Kernelization%20Solution) <br> [Lab 2b](https://ml-course.github.io/master/labs/Lab%202b%20-%20Model%20Selection%20Solution) (Release date: 21 Feb, 12:00)
-| 3 | [Ensembles](https://ml-course.github.io/master/labs/Lab%203%20-%20Ensembles) | / | [Lab 3](https://ml-course.github.io/master/labs/Lab%203%20-%20Ensembles%20Solution) (Release date: 28 Feb, 12:00)
-| 4 | [Data engineering](https://ml-course.github.io/master/labs/Lab%204%20-%20Pipelines) |  [Tutorial](https://ml-course.github.io/master/labs/Lab%204%20-%20Tutorial) | [Lab 4](https://ml-course.github.io/master/labs/Lab%204%20-%20Pipelines%20Solution) (Release date: 6 Mar, 12:00)
-| 5 | [Bayesian learning](https://ml-course.github.io/master/labs/Lab%205%20-%20Bayesian%20learning) | / | [Lab 5](https://ml-course.github.io/master/labs/Lab%205%20-%20Bayesian%20learning%20Solution) (Release date: 13 Mar, 12:00)
-| 6 | [Neural Networks](https://ml-course.github.io/master/labs/Lab%206%20-%20Neural%20Networks) |  [Tutorial](https://ml-course.github.io/master/labs/Lab%206%20-%20Tutorial) | [Lab 6](https://ml-course.github.io/master/labs/Lab%206%20-%20Neural%20Networks%20Solution) (Release date: 20 Mar, 12:00)
-| 7 | [Neural Nets for Images](https://ml-course.github.io/master/labs/Lab%207a%20-%20Convolutional%20Neural%20Networks) <br> [Neural Nets for Text](https://ml-course.github.io/master/labs/Lab%207b%20-%20Neural%20Networks%20for%20text) |  [Tutorial](https://ml-course.github.io/master/labs/Lab%207%20-%20Tutorial) | [Lab 7a](https://ml-course.github.io/master/labs/Lab%207a%20-%20Convolutional%20Neural%20Networks%20Solution) <br> [Lab 7b](https://ml-course.github.io/master/labs/Lab%207b%20-%20Neural%20Networks%20for%20text%20Solution) (Release date: 27 Mar, 12:00)
+Download the lab notebooks and solve the questions locally, or launch them in Google Colab 
 
 
 
