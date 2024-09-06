@@ -1,5 +1,5 @@
 
-# Welcome 
+# Welcome to class PY101.
 
 ****
 
