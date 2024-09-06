@@ -40,13 +40,13 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 
 
 ```{admonition} Get your hands dirty
-Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://ml-course.github.io/master). To run the notebooks locally, see the [prerequisites](https://ml-course.github.io/master/labs/Lab%200%20-%20Prerequisites.html).
+Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://github.com/ai-technipreneurs/python_website). To run the notebooks locally, see the [prerequisites](https://ai-technipreneurs.github.io/python_website/labs/Lab%2APrerequisites.html).
 ```
 
 ```{admonition} Have some feedback?
 :class: tip
 If you notice any issue, or have suggestions or requests, please go the
-<i class="fab fa-github"></i> [issue tracker](https://github.com/ml-course/master/issues/) or directly click on the  <i class="fab fa-github"></i> icon on top of the page and then 'open issue`. We also welcome pull requests :).
+<i class="fab fa-github"></i> [issue tracker](https://github.com/ai-technipreneurs/python_website/issues) or directly click on the  <i class="fab fa-github"></i> icon on top of the page and then 'open issue`. We also welcome pull requests :).
 ```
 
 ## Labs
