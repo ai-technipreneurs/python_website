@@ -22,5 +22,7 @@ parts:
 - caption: Practicals
   chapters:
   - file: labs/Lecture10
-- chapters:
+  
+- caption: Local development set up
+  chapters:
   - file: labs/Lab*Prerequisites  
