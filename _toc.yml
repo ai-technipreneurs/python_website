@@ -1,0 +1,26 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+
+- caption: Lectures
+  chapters:
+  - file: notebooks/Lecture0
+  - file: notebooks/Lecture1
+  - file: notebooks/Lecture2
+  - file: notebooks/Lecture3
+  - file: notebooks/Lecture4
+  - file: notebooks/Lecture5
+- caption: Labs
+  chapters:
+  - file: notebooks/Lecture00
+- caption: Tutorials
+  chapters:
+  - file: notebooks/Lecture000
+- caption: Practicals
+  chapters:
+  - file: labs/Lecture10
+- chapters:
+  - file: labs/Lab*Prerequisites  
