@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lecture 2: Strings &amp; Files &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Lecture2';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lecture 3: Iterable Objects or Containers" href="Lecture3.html" />
+    <link rel="prev" title="Lecture 1: Variables and assignments" href="Lecture1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <script>document.write(`<img src="../_static/banner.jpeg" class="logo__image only-dark" alt="Python Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to this python programming class
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture0.html">Lecture 0: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture1.html">Lecture 1: Variables and assignments</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 2: Strings &amp; Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture3.html">Lecture 3: Iterable Objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture4.html">Lecture 4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Lecture000.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lecture10.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ml-course/master/blob/master/notebooks/Lecture2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ml-course/master" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ml-course/master/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Lecture2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/Lecture2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 2: Strings & Files</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective"><left> <b> <span style="color:brown;"> Objective: </span> </b></left></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">0. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">1. Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-string-variable">1.0. Definition of a string variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-strings-and-slicing">1.1. Indexing strings and slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-a-string">1.2.  Length of a string**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-of-strings-concatenation">1.3. Addition of strings (<strong>Concatenation</strong>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">1.4.  Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">1.5. Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">2. File I/O</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-file-operations">Basic File Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-strings-files">
+<h1>Lecture 2: Strings &amp; Files<a class="headerlink" href="#lecture-2-strings-files" title="Link to this heading">#</a></h1>
+<section id="objective">
+<h2><left> <b> <span style="color:brown;"> Objective: </span> </b></left><a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>This lecture aims to present <code class="docutils literal notranslate"><span class="pre">strings</span></code>, reviewing some of the most commonly encountered operations, particularly in text processing tasks. We will also examine the string class in greater detail, including how to use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to open, read, and write to <code class="docutils literal notranslate"><span class="pre">files</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="introduction">
+<h2>0. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Strings in Python are not merely standalone objects; rather, they are sequences of characters that represent text data. Similar to numerical data types, which consist of sequences of digits, strings consist of sequences of characters. These sequences are fundamental in Python programming, as they are often used to construct and manipulate more complex data structures like lists, tuples, and dictionaries.</p>
+<p>Python treats strings as immutable sequences, meaning that once a string is created, its contents cannot be changed. However, various operations can be performed on strings to generate new strings or extract specific information. These operations include concatenation, slicing, formatting, and various methods for searching and transforming the text. Understanding how to effectively manipulate strings is crucial, as strings are one of the most commonly used data types in Python, especially in tasks involving data processing, file handling, and user input.</p>
+<p>Moreover, strings serve as the foundation for more advanced objects and data structures. For instance, strings can be used to represent elements within lists or tuples, and they play a critical role in tasks ranging from basic text processing to complex data analysis. As we delve deeper into Python, we will explore the extensive functionality provided by string operations and how they integrate with other Python data types.</p>
+<p>In addition to handling strings, Python provides robust support for working with files, which is essential for tasks like reading input data, storing output, or simply managing data over the course of a program’s execution. Python uses the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function to handle files, allowing you to open, read, write, and close them efficiently.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">open()</span></code> function is versatile, enabling you to open a file in various modes, such as reading (‘r’), writing (‘w’), appending (‘a’), or even reading and writing in binary mode (‘rb’, ‘wb’). Once a file is opened, you can perform operations like reading the entire file content into a string, reading it line by line, or writing data back into the file. After completing these operations, it is important to close the file using the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method to free up system resources and ensure data integrity.</p>
+<p>Understanding how to work with files in Python is critical, especially when dealing with real-world data that often needs to be read from or written to external files. This capability, combined with string manipulation techniques, forms the backbone of many Python programs, enabling efficient data processing, storage, and retrieval.</p>
+</section>
+<section id="strings">
+<h2>1. Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
+<section id="definition-of-a-string-variable">
+<h3>1.0. Definition of a string variable<a class="headerlink" href="#definition-of-a-string-variable" title="Link to this heading">#</a></h3>
+<p>A string variable is defined in the traditional manner by direct assignment using the equality symbol (as discussed in the section on variable creation). The only distinction between string variables and numerical variables is that the values of string variables must be enclosed in quotation marks during assignment. The three examples below illustrate this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch1</span> <span class="o">=</span> <span class="s1">&#39;Will you be at the meeting tonight?&#39;</span>
+<span class="n">ch2</span> <span class="o">=</span> <span class="s1">&#39;&quot;Yes,&quot; he replies.&#39;</span>
+<span class="n">ch3</span> <span class="o">=</span> <span class="s2">&quot;Alright, I would appreciate it.&quot;</span>
+<span class="n">ch4</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;This sentence is a long string containing all types of quotes: &quot; &#39; « » as well as many special characters.&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Will you be at the meeting tonight?
+================================================
+	
+&quot;Yes,&quot; he replies.
+================================================
+	
+Alright, I would appreciate it.
+================================================
+	
+This sentence is a long string containing all types of quotes: &quot; &#39; « » as well as many special characters.
+</pre></div>
+</div>
+</div>
+</div>
+<p>These four examples demonstrate different uses of quotation marks when defining a string variable.</p>
+<ul class="simple">
+<li><p>In the first example (<code class="docutils literal notranslate"><span class="pre">ch1</span></code>), single quotes are used because there is no issue with the string specified. Double quotes could also be used.</p></li>
+<li><p>In the second example (<code class="docutils literal notranslate"><span class="pre">ch2</span></code>), single quotes are used because the specified string already contains double quotes as values.</p></li>
+<li><p>In the third example (<code class="docutils literal notranslate"><span class="pre">ch3</span></code>), double quotes are used because the text contains apostrophes, which are actually single quotes.</p></li>
+<li><p>In the fourth example (<code class="docutils literal notranslate"><span class="pre">ch4</span></code>), triple quotes are used because the text contains not only single quotes, apostrophes, and double quotes but also spans multiple lines. In this case, triple quotes are necessary.</p></li>
+</ul>
+</section>
+<section id="indexing-strings-and-slicing">
+<h3>1.1. Indexing strings and slicing<a class="headerlink" href="#indexing-strings-and-slicing" title="Link to this heading">#</a></h3>
+<p>A string is a sequence of ordered and indexed values. This means you can access each element in the sequence by specifying its index, similar to lists. Portions of a string can also be extracted using slices, with the general notation <code class="docutils literal notranslate"><span class="pre">[start=0]:[stop=len][:step=1]</span></code>. Indexing in Python starts at 0: the 1st element of a list is at index 0, the 2nd is at index 1, and so on. Thus, the n elements of a list are indexed from <em>0</em> to <em>n-1</em>. The examples below illustrate this.</p>
+<p><strong>Indexing:</strong></p>
+<p>To access a specific character in a string, you use the index inside square brackets. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[0]</span></code> returns the first character of the string <code class="docutils literal notranslate"><span class="pre">ch</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[2]</span></code> returns the third character.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[-1]</span></code> returns the last character of the string.</p></li>
+</ul>
+<p><strong>Slicing:</strong></p>
+<p>Slicing allows you to extract a portion of the string. The syntax for slicing is <code class="docutils literal notranslate"><span class="pre">[start:stop:step]</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> is the index of the first character you want to include in the slice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code> is the index of the character just after the last character you want to include.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code> specifies the interval between characters in the slice (optional; default is 1).</p></li>
+</ul>
+<p>Examples of slicing:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[:6]</span></code> returns a substring from the beginning of <code class="docutils literal notranslate"><span class="pre">ch</span></code> up to, but not including, index 6.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[6:]</span></code> returns a substring from index 6 to the end of the string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch[0:10:2]</span></code> returns every second character from index 0 to 10.</p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="s2">&quot;Christelle&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>    <span class="c1"># Returns &#39;C&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>    <span class="c1"># Returns &#39;r&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># Returns &#39;e&#39;, the last character</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span>   <span class="c1"># Returns &#39;Christ&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>   <span class="c1"># Returns &#39;elle&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Returns &#39;Crsel&#39;</span>
+</pre></div>
+</div>
+<p>These operations make it easy to manipulate and extract data from strings, which is crucial for text processing and data manipulation in Python.</p>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span><span class="o">=</span><span class="s2">&quot;Christelle&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># returns &#39;C&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns &#39;r&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># returns &#39;e&#39;, the last element of ch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># returns &#39;Christ&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">6</span> <span class="p">:])</span> <span class="c1"># returns &#39;elle&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns &#39;Crsel&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C
+r
+e
+Christ
+elle
+Crsel
+</pre></div>
+</div>
+</div>
+</div>
+<p>The elements of a string are not defined by words separated by spaces but by the characters that make up the string. In fact, even if the string consists of a sentence with multiple words, indexing is done solely based on the individual characters that form the entire string.</p>
+<p><left> <b> <span style="color:brown;">You can manipulate a string (and generally any sequence) using functions (procedural concept) or methods (object-oriented concept). We will discuss this further below.</span> </b></left></p>
+</section>
+<section id="length-of-a-string">
+<h3>1.2.  Length of a string**<a class="headerlink" href="#length-of-a-string" title="Link to this heading">#</a></h3>
+<p>To determine the length of a string, the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function is used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="s2">&quot;Ceci est une chaîne de plusieurs mots&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span>  <span class="c1"># returns 37; The string &#39;ch&#39; consists of 37 characters, including spaces.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="addition-of-strings-concatenation">
+<h3>1.3. Addition of strings (<strong>Concatenation</strong>)<a class="headerlink" href="#addition-of-strings-concatenation" title="Link to this heading">#</a></h3>
+<p>String addition refers to the process of placing strings together, one after the other, to form a single string. This operation is known as <strong>concatenation</strong>. To perform concatenation, the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol is used between the string variable names. The resulting string is then assigned to a new variable. Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">str1</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">str2</span>  <span class="c1"># Concatenates &#39;Hello&#39; and &#39;World&#39; with a space in between</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Outputs: Hello World</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Un petit pas pour l&#39;homme,&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;un grand pas pour l&#39;humanité&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># Concatenates the two strings with a space in between</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="c1"># Outputs: &#39;Un petit pas pour l&#39;homme, un grand pas pour l&#39;humanité&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Un petit pas pour l&#39;homme, un grand pas pour l&#39;humanité
+</pre></div>
+</div>
+</div>
+</div>
+<p>Be cautious when using the concatenation operator to combine a numeric value with a string to form a single string. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Le prix du stylo est&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;euros&#39;</span>
+</pre></div>
+</div>
+<p>If you want to concatenate <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> to obtain the sentence ‘Le prix du stylo est 5 euros’, you can’t directly do <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">z</span></code> because <code class="docutils literal notranslate"><span class="pre">y</span></code> is a numeric type. You need to first convert <code class="docutils literal notranslate"><span class="pre">y</span></code> to a string using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. Here’s how it should be done:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">z</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Outputs: &#39;Le prix du stylo est 5 euros&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Le prix du stylo est&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;euros&#39;</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">z</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="c1"># returns &#39;Le prix du stylo est5euros&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le prix du stylo est  5 euros
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="methods">
+<h3>1.4.  Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h3>
+<p>Strings come with <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#string-methods">numerous features</a>—referred to as <code class="docutils literal notranslate"><span class="pre">methods</span></code> in Object-Oriented Programming (OOP)—that facilitate their manipulation. The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> function lists all available methods for strings. Among these, the most commonly used are <code class="docutils literal notranslate"><span class="pre">upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code>, <code class="docutils literal notranslate"><span class="pre">find()</span></code>, <code class="docutils literal notranslate"><span class="pre">replace()</span></code>, <code class="docutils literal notranslate"><span class="pre">count()</span></code>, <code class="docutils literal notranslate"><span class="pre">startswith()</span></code>, <code class="docutils literal notranslate"><span class="pre">endswith()</span></code>, and the <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword.</p>
+<p>These methods allow for operations such as converting text to different cases, searching for and replacing substrings, and checking string content for specific patterns. They are crucial for text processing and data manipulation tasks, enabling efficient handling and transformation of string data. Understanding and utilizing these methods effectively can greatly enhance the capability to work with and analyze text-based information in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Python course&quot;</span>
+<span class="n">help</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function replace:
+
+replace(old, new, count=-1, /) method of builtins.str instance
+    Return a copy with all occurrences of substring old replaced by new.
+    
+      count
+        Maximum number of occurrences to replace.
+        -1 (the default value) means replace all occurrences.
+    
+    If the optional argument count is given, only the first count occurrences are
+    replaced.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enfant</span><span class="p">,</span> <span class="n">peluche</span> <span class="o">=</span> <span class="s2">&quot;Calvin&quot;</span><span class="p">,</span> <span class="s1">&#39;Hobbes&#39;</span>  <span class="c1"># Multiple assignment</span>
+
+<span class="n">titre</span> <span class="o">=</span> <span class="n">enfant</span> <span class="o">+</span> <span class="s1">&#39; et &#39;</span> <span class="o">+</span> <span class="n">peluche</span>  <span class="c1"># +: String concatenation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;et&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">))</span>  <span class="c1"># Substring replacement: &#39;Calvin &amp; Hobbes&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &amp; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; et &#39;</span><span class="p">)))</span>  <span class="c1"># Splitting and joining</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hobbes&#39;</span> <span class="ow">in</span> <span class="n">titre</span><span class="p">)</span>  <span class="c1"># in: Inclusion test</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Hobbes&quot;</span><span class="p">))</span>  <span class="c1"># str.find: Substring search</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>  <span class="c1"># &#39;-------Calvin et Hobbes-------&#39;</span>
+
+<span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># Lists all string methods</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calvin et Hobbes
+================================================
+	
+Calvin &amp; Hobbes
+================================================
+	
+Calvin &amp; Hobbes
+================================================
+	
+True
+================================================
+	
+10
+-------Calvin et Hobbes-------
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;capitalize&#39;,
+ &#39;casefold&#39;,
+ &#39;center&#39;,
+ &#39;count&#39;,
+ &#39;encode&#39;,
+ &#39;endswith&#39;,
+ &#39;expandtabs&#39;,
+ &#39;find&#39;,
+ &#39;format&#39;,
+ &#39;format_map&#39;,
+ &#39;index&#39;,
+ &#39;isalnum&#39;,
+ &#39;isalpha&#39;,
+ &#39;isascii&#39;,
+ &#39;isdecimal&#39;,
+ &#39;isdigit&#39;,
+ &#39;isidentifier&#39;,
+ &#39;islower&#39;,
+ &#39;isnumeric&#39;,
+ &#39;isprintable&#39;,
+ &#39;isspace&#39;,
+ &#39;istitle&#39;,
+ &#39;isupper&#39;,
+ &#39;join&#39;,
+ &#39;ljust&#39;,
+ &#39;lower&#39;,
+ &#39;lstrip&#39;,
+ &#39;maketrans&#39;,
+ &#39;partition&#39;,
+ &#39;removeprefix&#39;,
+ &#39;removesuffix&#39;,
+ &#39;replace&#39;,
+ &#39;rfind&#39;,
+ &#39;rindex&#39;,
+ &#39;rjust&#39;,
+ &#39;rpartition&#39;,
+ &#39;rsplit&#39;,
+ &#39;rstrip&#39;,
+ &#39;split&#39;,
+ &#39;splitlines&#39;,
+ &#39;startswith&#39;,
+ &#39;strip&#39;,
+ &#39;swapcase&#39;,
+ &#39;title&#39;,
+ &#39;translate&#39;,
+ &#39;upper&#39;,
+ &#39;zfill&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatting">
+<h3>1.5. Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h3>
+<p>It is often necessary to retrieve the value of a variable and incorporate it into a string to form a new, usable string for other purposes. For instance, consider a variable <code class="docutils literal notranslate"><span class="pre">prix</span></code> defined as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prix</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>We want to display a message like <code class="docutils literal notranslate"><span class="pre">&quot;The</span> <span class="pre">price</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">pen</span> <span class="pre">is</span> <span class="pre">2</span> <span class="pre">euros&quot;</span></code>.</p>
+<p>The goal of formatting is to embed the value of a variable within a string. There are three primary methods to achieve this:</p>
+<ul class="simple">
+<li><p>Using the concatenation operator <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Using the formatting operator <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">str.format()</span></code> method</p></li>
+</ul>
+<p>We will illustrate just one example using the <code class="docutils literal notranslate"><span class="pre">str.format()</span></code> method. The formatting system allows for precise control over the conversion of variables into strings. It primarily relies on the <code class="docutils literal notranslate"><span class="pre">str.format()</span></code> method, which enables detailed specification of how variables should be inserted and formatted within a string. For more information, you can refer to the <a class="reference external" href="https://docs.python.org/2/library/string.html#formatstrings">formatting documentation</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{nom}</span><span class="s2"> a </span><span class="si">{age}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s1">&#39;Calvin&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># &#39;Calvin a 6 ans&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Calvin&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Shortcut &#39;Calvin a 6 ans&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926535897931</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{x:f}</span><span class="s2"> </span><span class="si">{x:.2f}</span><span class="s2"> </span><span class="si">{y:f}</span><span class="s2"> </span><span class="si">{y:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">pi</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="p">))</span> <span class="c1"># &#39;3.141593 3.14 3141592653.589793 3.14159e+09&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calvin a 6 ans
+================================================
+	
+Calvin a 6 ans
+================================================
+	
+3.141593 3.14 3141592653.589793 3.14159e+09
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p><strong>Named Fields</strong>: In the first example, <code class="docutils literal notranslate"><span class="pre">&quot;{nom}</span> <span class="pre">a</span> <span class="pre">{age}</span> <span class="pre">ans&quot;.format(nom='Calvin',</span> <span class="pre">age=6)</span></code> uses named fields in the format string. The placeholders <code class="docutils literal notranslate"><span class="pre">{nom}</span></code> and <code class="docutils literal notranslate"><span class="pre">{age}</span></code> are replaced by the values provided in the <code class="docutils literal notranslate"><span class="pre">format</span></code> method.</p></li>
+<li><p><strong>Positional Fields</strong>: The second example, <code class="docutils literal notranslate"><span class="pre">&quot;{}</span> <span class="pre">a</span> <span class="pre">{}</span> <span class="pre">ans&quot;.format('Calvin',</span> <span class="pre">6)</span></code>, uses positional placeholders <code class="docutils literal notranslate"><span class="pre">{}</span></code>. The values are inserted in the order they appear in the <code class="docutils literal notranslate"><span class="pre">format</span></code> method.</p></li>
+<li><p><strong>Formatting Numbers</strong>: The third example demonstrates formatting numerical values. <code class="docutils literal notranslate"><span class="pre">&quot;{x:f}</span> <span class="pre">{x:.2f}</span> <span class="pre">{y:f}</span> <span class="pre">{y:g}&quot;.format(x=pi,</span> <span class="pre">y=pi*1e9)</span></code> formats the floating-point number <code class="docutils literal notranslate"><span class="pre">pi</span></code> in various ways:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">{x:f}</span></code> displays <code class="docutils literal notranslate"><span class="pre">pi</span></code> with six decimal places.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{x:.2f}</span></code> formats <code class="docutils literal notranslate"><span class="pre">pi</span></code> to two decimal places.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{y:f}</span></code> shows <code class="docutils literal notranslate"><span class="pre">pi*1e9</span></code> with six decimal places.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{y:g}</span></code> formats <code class="docutils literal notranslate"><span class="pre">pi*1e9</span></code> in a more compact form using scientific notation.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calvin and Hobbes</span><span class="se">\n</span><span class="s2">Scientific progress goes &#39;boink&#39;&quot;</span><span class="p">)</span> <span class="c1"># Calvin and Hobbes Scientific progress goes &#39;boink&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calvin and Hobbes
+Scientific progress goes &#39;boink&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> fois </span><span class="si">{1}</span><span class="s2"> font </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># Formatting and display</span>
+<span class="c1"># Output: 3 fois 4 font 12</span>
+<span class="c1"># A small exercise in this section is to display a multiplication table.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 fois 4 font 12
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Explanation:</strong></p>
+<ul class="simple">
+<li><p><strong>Indexed Fields</strong>: In the example <code class="docutils literal notranslate"><span class="pre">&quot;{0}</span> <span class="pre">fois</span> <span class="pre">{1}</span> <span class="pre">font</span> <span class="pre">{2}&quot;.format(3,</span> <span class="pre">4,</span> <span class="pre">3*4)</span></code>, the <code class="docutils literal notranslate"><span class="pre">{0}</span></code>, <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, and <code class="docutils literal notranslate"><span class="pre">{2}</span></code> are positional placeholders. They are replaced by the values <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, and <code class="docutils literal notranslate"><span class="pre">3*4</span></code> (which evaluates to <code class="docutils literal notranslate"><span class="pre">12</span></code>) respectively. This results in the output: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">fois</span> <span class="pre">4</span> <span class="pre">font</span> <span class="pre">12</span></code>.</p></li>
+<li><p><strong>Multiplication Table Exercise</strong>: The comment suggests a small exercise where one can display a multiplication table, which would involve iterating through numbers and formatting them into a table structure using similar formatting techniques.</p></li>
+</ul>
+<p>In concluding this section, we mention the study of regular expressions (regex or <code class="docutils literal notranslate"><span class="pre">re</span></code>), which will not be discussed in this course. As a guide, we can say that regular expressions are extensions of the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function that allow for more complex pattern-matching operations than what the <code class="docutils literal notranslate"><span class="pre">str()</span></code> functions alone can achieve.</p>
+<p><strong>Practical</strong></p>
+<p>Explore the functions:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.upper"><code class="docutils literal notranslate"><span class="pre">upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, and <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find"><code class="docutils literal notranslate"><span class="pre">find()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count"><code class="docutils literal notranslate"><span class="pre">count()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code> and <code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.islower"><code class="docutils literal notranslate"><span class="pre">islower()</span></code> and <code class="docutils literal notranslate"><span class="pre">isupper()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.istitle"><code class="docutils literal notranslate"><span class="pre">istitle()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isalpha"><code class="docutils literal notranslate"><span class="pre">isalpha()</span></code> and <code class="docutils literal notranslate"><span class="pre">isalnum()</span></code></a>
+10.<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isdigit"><code class="docutils literal notranslate"><span class="pre">isdigit()</span></code></a></p></li>
+</ol>
+<p><strong>Note:</strong> It is important to distinguish between a character value and an alphabetical value. An alphabetical value is always a string, whereas a string is not necessarily an alphabetical value. In Python, a character value is always enclosed in quotes (single, double, or triple), while a numeric value is expressed without quotes. There are two main types of data: numeric data and character data. It is worth noting that a numeric value enclosed in quotes is automatically treated as a character value, even if it is not alphabetical. Keeping these details in mind is crucial when handling sequences of values in Python (see the example below):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span> <span class="c1"># x is a numeric variable</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span> <span class="c1"># y is a string formed by digits</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s2">&quot;mon texte&quot;</span> <span class="c1"># z is a string formed by alphabetical values</span>
+<span class="n">k</span> <span class="o">=</span> <span class="s2">&quot;Ce stylo coûte 5 euros&quot;</span> <span class="c1"># k is a string formed by alphanumeric values</span>
+</pre></div>
+</div>
+<p>For more details on string processing, refer to <a class="reference external" href="http://www.tutorialspoint.com/python/python_strings.htm">this page</a>.</p>
+</section>
+</section>
+<section id="file-i-o">
+<h2>2. File I/O<a class="headerlink" href="#file-i-o" title="Link to this heading">#</a></h2>
+<p>File I/O (Input/Output) in Python involves reading from and writing to files. Python provides several built-in functions and methods to handle files. The primary function for file manipulation is <code class="docutils literal notranslate"><span class="pre">open()</span></code>, which allows you to open a file and returns a file object. This file object provides methods for reading and writing data. Here’s a detailed overview with various examples:</p>
+<section id="basic-file-operations">
+<h3>Basic File Operations<a class="headerlink" href="#basic-file-operations" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Opening and Closing a File</strong></p>
+<ul class="simple">
+<li><p>To open a file, use the <code class="docutils literal notranslate"><span class="pre">open()</span></code> function. The basic syntax is <code class="docutils literal notranslate"><span class="pre">open(filename,</span> <span class="pre">mode)</span></code>, where <code class="docutils literal notranslate"><span class="pre">filename</span></code> is the name of the file and <code class="docutils literal notranslate"><span class="pre">mode</span></code> is the mode of operation (<code class="docutils literal notranslate"><span class="pre">'r'</span></code> for read, <code class="docutils literal notranslate"><span class="pre">'w'</span></code> for write, <code class="docutils literal notranslate"><span class="pre">'a'</span></code> for append, etc.).</p></li>
+<li><p>To close a file, use the <code class="docutils literal notranslate"><span class="pre">close()</span></code> method of the file object.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening a file in read mode</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># Perform operations on the file</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Reading from a File</strong></p>
+<ul class="simple">
+<li><p><strong>Read the entire file</strong>: <code class="docutils literal notranslate"><span class="pre">read()</span></code> method reads the entire content of the file.</p></li>
+<li><p><strong>Read line by line</strong>: <code class="docutils literal notranslate"><span class="pre">readline()</span></code> method reads a single line from the file, and <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> method reads all lines into a list.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read entire file</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Read line by line</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">line</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Read all lines into a list</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Writing to a File</strong></p>
+<ul class="simple">
+<li><p><strong>Write a string</strong>: <code class="docutils literal notranslate"><span class="pre">write()</span></code> method writes a string to the file.</p></li>
+<li><p><strong>Write multiple lines</strong>: <code class="docutils literal notranslate"><span class="pre">writelines()</span></code> method writes a list of strings to the file.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a string to a file</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Write multiple lines to a file</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First line</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Second line</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Third line</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Appending to a File</strong></p>
+<ul class="simple">
+<li><p>To append data to an existing file, open the file in append mode (<code class="docutils literal notranslate"><span class="pre">'a'</span></code>).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is an appended line.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Using <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">with</span></code> statement is used for resource management. It ensures that the file is properly closed after its suite finishes, even if an exception is raised.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading a file using with statement</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+
+<span class="c1"># Writing to a file using with statement</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a new content.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>File Modes</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'r'</span></code>: Read (default mode, opens the file for reading)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'w'</span></code>: Write (creates a new file or truncates an existing file)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'a'</span></code>: Append (opens the file for appending)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'b'</span></code>: Binary (reads or writes in binary mode, e.g., <code class="docutils literal notranslate"><span class="pre">'rb'</span></code> or <code class="docutils literal notranslate"><span class="pre">'wb'</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'t'</span></code>: Text (default mode, opens the file in text mode, e.g., <code class="docutils literal notranslate"><span class="pre">'rt'</span></code> or <code class="docutils literal notranslate"><span class="pre">'wt'</span></code>)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binary mode example</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="c1"># Process binary data</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>File Positioning</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">seek(offset,</span> <span class="pre">whence)</span></code>: Moves the file pointer to a specific position.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tell()</span></code>: Returns the current file pointer position.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Move to the 10th byte</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">tell</span><span class="p">())</span>  <span class="c1"># Print the current file pointer position</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># Read 20 bytes from the current position</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Working with File Paths</strong></p>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> modules to handle file paths.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Get current working directory</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+
+<span class="c1"># Join paths</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;folder&#39;</span><span class="p">,</span> <span class="s1">&#39;example.txt&#39;</span><span class="p">)</span>
+
+<span class="c1"># Using pathlib</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;folder&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;example.txt&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Handling File Exceptions</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks to handle file-related exceptions.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File not found.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;An IOError occurred.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>These examples cover a wide range of file operations in Python. Whether you are reading from, writing to, or managing files, Python’s file I/O capabilities provide a flexible and powerful way to handle file data.</p>
+<p>The help information for open is below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function open in module io:
+
+open(file, mode=&#39;r&#39;, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+    Open file and return a stream.  Raise OSError upon failure.
+    
+    file is either a text or byte string giving the name (and the path
+    if the file isn&#39;t in the current working directory) of the file to
+    be opened or an integer file descriptor of the file to be
+    wrapped. (If a file descriptor is given, it is closed when the
+    returned I/O object is closed, unless closefd is set to False.)
+    
+    mode is an optional string that specifies the mode in which the file
+    is opened. It defaults to &#39;r&#39; which means open for reading in text
+    mode.  Other common values are &#39;w&#39; for writing (truncating the file if
+    it already exists), &#39;x&#39; for creating and writing to a new file, and
+    &#39;a&#39; for appending (which on some Unix systems, means that all writes
+    append to the end of the file regardless of the current seek position).
+    In text mode, if encoding is not specified the encoding used is platform
+    dependent: locale.getencoding() is called to get the current locale encoding.
+    (For reading and writing raw bytes use binary mode and leave encoding
+    unspecified.) The available modes are:
+    
+    ========= ===============================================================
+    Character Meaning
+    --------- ---------------------------------------------------------------
+    &#39;r&#39;       open for reading (default)
+    &#39;w&#39;       open for writing, truncating the file first
+    &#39;x&#39;       create a new file and open it for writing
+    &#39;a&#39;       open for writing, appending to the end of the file if it exists
+    &#39;b&#39;       binary mode
+    &#39;t&#39;       text mode (default)
+    &#39;+&#39;       open a disk file for updating (reading and writing)
+    ========= ===============================================================
+    
+    The default mode is &#39;rt&#39; (open for reading text). For binary random
+    access, the mode &#39;w+b&#39; opens and truncates the file to 0 bytes, while
+    &#39;r+b&#39; opens the file without truncation. The &#39;x&#39; mode implies &#39;w&#39; and
+    raises an `FileExistsError` if the file already exists.
+    
+    Python distinguishes between files opened in binary and text modes,
+    even when the underlying operating system doesn&#39;t. Files opened in
+    binary mode (appending &#39;b&#39; to the mode argument) return contents as
+    bytes objects without any decoding. In text mode (the default, or when
+    &#39;t&#39; is appended to the mode argument), the contents of the file are
+    returned as strings, the bytes having been first decoded using a
+    platform-dependent encoding or using the specified encoding if given.
+    
+    buffering is an optional integer used to set the buffering policy.
+    Pass 0 to switch buffering off (only allowed in binary mode), 1 to select
+    line buffering (only usable in text mode), and an integer &gt; 1 to indicate
+    the size of a fixed-size chunk buffer.  When no buffering argument is
+    given, the default buffering policy works as follows:
+    
+    * Binary files are buffered in fixed-size chunks; the size of the buffer
+      is chosen using a heuristic trying to determine the underlying device&#39;s
+      &quot;block size&quot; and falling back on `io.DEFAULT_BUFFER_SIZE`.
+      On many systems, the buffer will typically be 4096 or 8192 bytes long.
+    
+    * &quot;Interactive&quot; text files (files for which isatty() returns True)
+      use line buffering.  Other text files use the policy described above
+      for binary files.
+    
+    encoding is the name of the encoding used to decode or encode the
+    file. This should only be used in text mode. The default encoding is
+    platform dependent, but any encoding supported by Python can be
+    passed.  See the codecs module for the list of supported encodings.
+    
+    errors is an optional string that specifies how encoding errors are to
+    be handled---this argument should not be used in binary mode. Pass
+    &#39;strict&#39; to raise a ValueError exception if there is an encoding error
+    (the default of None has the same effect), or pass &#39;ignore&#39; to ignore
+    errors. (Note that ignoring encoding errors can lead to data loss.)
+    See the documentation for codecs.register or run &#39;help(codecs.Codec)&#39;
+    for a list of the permitted encoding error strings.
+    
+    newline controls how universal newlines works (it only applies to text
+    mode). It can be None, &#39;&#39;, &#39;\n&#39;, &#39;\r&#39;, and &#39;\r\n&#39;.  It works as
+    follows:
+    
+    * On input, if newline is None, universal newlines mode is
+      enabled. Lines in the input can end in &#39;\n&#39;, &#39;\r&#39;, or &#39;\r\n&#39;, and
+      these are translated into &#39;\n&#39; before being returned to the
+      caller. If it is &#39;&#39;, universal newline mode is enabled, but line
+      endings are returned to the caller untranslated. If it has any of
+      the other legal values, input lines are only terminated by the given
+      string, and the line ending is returned to the caller untranslated.
+    
+    * On output, if newline is None, any &#39;\n&#39; characters written are
+      translated to the system default line separator, os.linesep. If
+      newline is &#39;&#39; or &#39;\n&#39;, no translation takes place. If newline is any
+      of the other legal values, any &#39;\n&#39; characters written are translated
+      to the given string.
+    
+    If closefd is False, the underlying file descriptor will be kept open
+    when the file is closed. This does not work when a file name is given
+    and must be True in that case.
+    
+    A custom opener can be used by passing a callable as *opener*. The
+    underlying file descriptor for the file object is then obtained by
+    calling *opener* with (*file*, *flags*). *opener* must return an open
+    file descriptor (passing os.open as *opener* results in functionality
+    similar to passing None).
+    
+    open() returns a file object whose type depends on the mode, and
+    through which the standard file operations such as reading and writing
+    are performed. When open() is used to open a file in a text mode (&#39;w&#39;,
+    &#39;r&#39;, &#39;wt&#39;, &#39;rt&#39;, etc.), it returns a TextIOWrapper. When used to open
+    a file in a binary mode, the returned class varies: in read binary
+    mode, it returns a BufferedReader; in write binary and append binary
+    modes, it returns a BufferedWriter, and in read/write mode, it returns
+    a BufferedRandom.
+    
+    It is also possible to use a string or bytearray as a file for both
+    reading and writing. For strings StringIO can be used like a file
+    opened in a text mode, and for bytes a BytesIO can be used like a file
+    opened in a binary mode.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code below, I’ve opened a file
+that contains one line:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cat testfile.txt
+abcde
+fghij
+aims class
+senagal 2024
+this is really cool
+</pre></div>
+</div>
+<p>Now let’s open this file in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abc
+</pre></div>
+</div>
+</div>
+</div>
+<p>We read the first three characters, where each character is a byte long.
+We can see that the file handle points to the 4th byte (index number 3)
+in the file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;d&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the old handle</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># can&#39;t read anymore because the file is closed.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># can&#39;t read anymore because the file is closed.</span>
+
+<span class="ne">ValueError</span>: I/O operation on closed file.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The file we are using is a long series of characters, but two of the characters are new line characters. If we looked at the file in sequence, it would look like “abcdenfghijn”. Separating a file into lines is popular enough that there are two ways to read whole lines in a file. The first is to use the <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Always close the file when you are done with it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abcde\n&#39;, &#39;fghij\n&#39;, &#39;aims class\n&#39;, &#39;senagal 2024\n&#39;, &#39;this is really cool\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A very important point about the readline method is that it <em>keeps</em> the
+newline character at the end of each line. You can use the strip()
+method to get rid of the string.</p>
+<p>File handles are also iterable, which means we can use them in for loops
+or list extensions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abcde&#39;, &#39;fghij&#39;, &#39;aims class&#39;, &#39;senagal 2024&#39;, &#39;this is really cool&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abcde&#39;, &#39;fghij&#39;, &#39;aims class&#39;, &#39;senagal 2024&#39;, &#39;this is really cool&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are equivalent operations. It’s often best to handle a file one line at a time, particularly when the file is so large it might not fit in memory.</p>
+<p>The other half of the story is writing output to files. We’ll talk about two techniques: writing to the shell and writing to files directly.</p>
+<p>If your program only creates one stream of output, it’s often a good idea to write to the shell using the print function. There are several advantages to this strategy, including the fact that it allows the user to select where they want to store the output without worrying about any command line flags. You can use <code class="docutils literal notranslate"><span class="pre">\&gt;</span></code> to direct the output of your program to a file or use <code class="docutils literal notranslate"><span class="pre">|</span></code> to pipe it to another program.</p>
+<p>Sometimes, you need to direct your output directly to a file handle. For instance, if your program produces two output streams, you may want to assign two open file handles. Opening a file for reading simply requires changing the second option from <code class="docutils literal notranslate"><span class="pre">r</span></code> to <code class="docutils literal notranslate"><span class="pre">w</span></code> or <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p><em>Caution!</em> Opening a file with the ‘w’ option means start writing <em>at the beginning</em>, which may overwrite old material. If you want to append to the file without losing what is already there, open it with ‘a’.</p>
+<p>Writing to a file uses the <code class="docutils literal notranslate"><span class="pre">write()</span></code> command, which accepts a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;outfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is the first line!&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another way to write to a file is to use <code class="docutils literal notranslate"><span class="pre">writelines()</span></code>, which accepts a
+list of strings and writes them in order. <em>Caution!</em> <code class="docutils literal notranslate"><span class="pre">writelines</span></code> does not
+append newlines. If you really want to write a newline at the end of
+each string in the list, add it yourself.</p>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="0">
+<li><p><a class="reference internal" href="#python.aims.ac.za"><span class="xref myst">Programming with Python</span></a>; <a class="reference external" href="https://python.aims.ac.za/pages/comm_str_print.html">Section 6</a></p></li>
+<li><p><a class="reference internal" href="#python.aims.ac.za"><span class="xref myst">Programming with Python</span></a>; <a class="reference external" href="https://python.aims.ac.za/pages/indices.html">Section 7</a></p></li>
+<li><p><a class="reference internal" href="#python.aims.ac.za"><span class="xref myst">Programming with Python</span></a>; <a class="reference external" href="https://python.aims.ac.za/pages/user_input.html">Section 8</a></p></li>
+<li><p><a class="reference internal" href="#python.aims.ac.za"><span class="xref myst">Programming with Python</span></a>; <a class="reference external" href="https://python.aims.ac.za/pages/file_io.html">Section 26</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 1: Variables and assignments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 3: Iterable Objects or Containers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective"><left> <b> <span style="color:brown;"> Objective: </span> </b></left></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">0. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">1. Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-a-string-variable">1.0. Definition of a string variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-strings-and-slicing">1.1. Indexing strings and slicing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-a-string">1.2.  Length of a string**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-of-strings-concatenation">1.3. Addition of strings (<strong>Concatenation</strong>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">1.4.  Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">1.5. Formatting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">2. File I/O</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-file-operations">Basic File Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
