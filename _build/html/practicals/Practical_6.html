@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Practical_5: Functions, Modules and Packages &#8212; Python Programming</title>
+    <title>Practical_6: Numpy &#8212; Python Programming</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Practicals/Practical_5';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'practicals/Practical_6';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Practical_6: Numpy" href="Practical_6.html" />
-    <link rel="prev" title="Practical_4: Flow control" href="Practical_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -188,26 +188,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture4.html">Lecture 4: Flow control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light Practicals</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Practical_1.html">Practical_1: Variables and Assignments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practical_2.html">Practical_2: String and files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practical_4.html">Practical_4: Flow control</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical_5: Functions, Modules and Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practical_6.html">Practical_6: Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practical_7.html">Practical_7: Matplotlib</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture000.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version control hands-on</span></p>
-<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
 
 
@@ -233,6 +224,10 @@
 
 
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
 </ul>
 
     </div>
@@ -287,7 +282,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/Practicals/Practical_5.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/practicals/Practical_6.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +330,7 @@
       
       
       
-      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2FPracticals/Practical_5.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fpracticals/Practical_6.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,7 +360,7 @@
       
       
       
-      <li><a href="../_sources/Practicals/Practical_5.ipynb" target="_blank"
+      <li><a href="../_sources/practicals/Practical_6.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -449,7 +444,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Practical_5: Functions, Modules and Packages</h1>
+    <h1>Practical_6: Numpy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -530,12 +525,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practical-5-functions-modules-and-packages">
-<h1>Practical_5: Functions, Modules and Packages<a class="headerlink" href="#practical-5-functions-modules-and-packages" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="practical-6-numpy">
+<h1>Practical_6: Numpy<a class="headerlink" href="#practical-6-numpy" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="exercise-1">
 <h2>Exercise 1:<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">add_numbers(a,</span> <span class="pre">b)</span></code> that takes two numbers and returns their sum.</p>
+<p>Create a NumPy array of integers from 1 to 10.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1</span>
 </pre></div>
 </div>
@@ -543,7 +538,7 @@ document.write(`
 </section>
 <section id="exercise-2">
 <h2>Exercise 2:<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
-<p>Create a function <code class="docutils literal notranslate"><span class="pre">greet(name)</span></code> that takes a name and prints “Hello, <name>!”.</p>
+<p>Create a 3x3 NumPy array filled with zeros.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2</span>
 </pre></div>
 </div>
@@ -551,7 +546,7 @@ document.write(`
 </section>
 <section id="exercise-3">
 <h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_even(n)</span></code> that checks whether a number is even.</p>
+<p>Create a NumPy array of 10 evenly spaced numbers between 0 and 5.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 3</span>
 </pre></div>
 </div>
@@ -559,7 +554,7 @@ document.write(`
 </section>
 <section id="exercise-4">
 <h2>Exercise 4:<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">max_of_three(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code> that returns the largest of three numbers.</p>
+<p>Create a 5x5 identity matrix using NumPy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 4</span>
 </pre></div>
 </div>
@@ -567,7 +562,7 @@ document.write(`
 </section>
 <section id="exercise-5">
 <h2>Exercise 5:<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h2>
-<p>Create a Python module <code class="docutils literal notranslate"><span class="pre">math_utils.py</span></code> and define a function <code class="docutils literal notranslate"><span class="pre">square(x)</span></code> that returns the square of a number.</p>
+<p>Create a 4x4 matrix with random values between 0 and 1.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 5</span>
 </pre></div>
 </div>
@@ -575,7 +570,7 @@ document.write(`
 </section>
 <section id="exercise-6">
 <h2>Exercise 6:<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">factorial(n)</span></code> that returns the factorial of a number using recursion.</p>
+<p>Find the shape of a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 6</span>
 </pre></div>
 </div>
@@ -583,7 +578,7 @@ document.write(`
 </section>
 <section id="exercise-7">
 <h2>Exercise 7:<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">is_prime(n)</span></code> that checks if a number is prime.</p>
+<p>Reshape a 1D NumPy array of 16 elements into a 4x4 matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 7</span>
 </pre></div>
 </div>
@@ -591,7 +586,7 @@ document.write(`
 </section>
 <section id="exercise-8">
 <h2>Exercise 8:<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">sum_of_list(lst)</span></code> that takes a list of numbers and returns the sum of all the elements.</p>
+<p>Find the data type of the elements in a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 8</span>
 </pre></div>
 </div>
@@ -599,7 +594,7 @@ document.write(`
 </section>
 <section id="exercise-9">
 <h2>Exercise 9:<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> that returns the <code class="docutils literal notranslate"><span class="pre">n</span></code>th Fibonacci number using recursion.</p>
+<p>Create a NumPy array of integers from 1 to 100 and find all even numbers in the array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 9</span>
 </pre></div>
 </div>
@@ -607,7 +602,7 @@ document.write(`
 </section>
 <section id="exercise-10">
 <h2>Exercise 10:<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h2>
-<p>Create a function <code class="docutils literal notranslate"><span class="pre">reverse_string(s)</span></code> that takes a string and returns the reverse of the string.</p>
+<p>Generate a 6x6 matrix of random integers between 10 and 50.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 10</span>
 </pre></div>
 </div>
@@ -615,7 +610,7 @@ document.write(`
 </section>
 <section id="exercise-11">
 <h2>Exercise 11:<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">count_vowels(s)</span></code> that counts the number of vowels in a string.</p>
+<p>Slice a 2D NumPy array to extract a submatrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 11</span>
 </pre></div>
 </div>
@@ -623,7 +618,7 @@ document.write(`
 </section>
 <section id="exercise-12">
 <h2>Exercise 12:<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">is_palindrome(s)</span></code> that checks whether a string is a palindrome.</p>
+<p>Calculate the sum of all elements in a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 12</span>
 </pre></div>
 </div>
@@ -631,7 +626,7 @@ document.write(`
 </section>
 <section id="exercise-13">
 <h2>Exercise 13:<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">fahrenheit_to_celsius(f)</span></code> that converts Fahrenheit to Celsius.</p>
+<p>Calculate the mean, median, and standard deviation of a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 13</span>
 </pre></div>
 </div>
@@ -639,7 +634,7 @@ document.write(`
 </section>
 <section id="exercise-14">
 <h2>Exercise 14:<a class="headerlink" href="#exercise-14" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_leap_year(year)</span></code> that checks if a year is a leap year.</p>
+<p>Find the maximum and minimum values in a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 14</span>
 </pre></div>
 </div>
@@ -647,7 +642,7 @@ document.write(`
 </section>
 <section id="exercise-15">
 <h2>Exercise 15:<a class="headerlink" href="#exercise-15" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">find_max_in_list(lst)</span></code> that returns the maximum value from a list.</p>
+<p>Create a NumPy array of 20 random integers and find the index of the maximum value.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 15</span>
 </pre></div>
 </div>
@@ -655,7 +650,7 @@ document.write(`
 </section>
 <section id="exercise-16">
 <h2>Exercise 16:<a class="headerlink" href="#exercise-16" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">remove_duplicates(lst)</span></code> that removes duplicates from a list.</p>
+<p>Create a NumPy array and reverse its elements.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 16</span>
 </pre></div>
 </div>
@@ -663,7 +658,7 @@ document.write(`
 </section>
 <section id="exercise-17">
 <h2>Exercise 17:<a class="headerlink" href="#exercise-17" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_of_squares(n)</span></code> that returns the sum of squares of the first <code class="docutils literal notranslate"><span class="pre">n</span></code> natural numbers.</p>
+<p>Create a 3x3 matrix and multiply it element-wise by another 3x3 matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 17</span>
 </pre></div>
 </div>
@@ -671,7 +666,7 @@ document.write(`
 </section>
 <section id="exercise-18">
 <h2>Exercise 18:<a class="headerlink" href="#exercise-18" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">check_password_strength(password)</span></code> that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the password meets the length and complexity requirements.</p>
+<p>Create a diagonal matrix from a given 1D array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 18</span>
 </pre></div>
 </div>
@@ -679,7 +674,7 @@ document.write(`
 </section>
 <section id="exercise-19">
 <h2>Exercise 19:<a class="headerlink" href="#exercise-19" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">merge_lists(list1,</span> <span class="pre">list2)</span></code> that merges two lists into one.</p>
+<p>Perform matrix multiplication on two 2D NumPy arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 19</span>
 </pre></div>
 </div>
@@ -687,7 +682,7 @@ document.write(`
 </section>
 <section id="exercise-20">
 <h2>Exercise 20:<a class="headerlink" href="#exercise-20" title="Link to this heading">#</a></h2>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">find_factors(n)</span></code> that returns a list of all factors of a number <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p>Flatten a 2D NumPy array into a 1D array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 20</span>
 </pre></div>
 </div>
@@ -695,7 +690,7 @@ document.write(`
 </section>
 <section id="exercise-21">
 <h2>Exercise 21:<a class="headerlink" href="#exercise-21" title="Link to this heading">#</a></h2>
-<p>Write a Python module <code class="docutils literal notranslate"><span class="pre">string_utils.py</span></code> that defines a function <code class="docutils literal notranslate"><span class="pre">capitalize_first_letter(s)</span></code> which capitalizes the first letter of each word in a string.</p>
+<p>Stack two NumPy arrays vertically.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 21</span>
 </pre></div>
 </div>
@@ -703,7 +698,7 @@ document.write(`
 </section>
 <section id="exercise-22">
 <h2>Exercise 22:<a class="headerlink" href="#exercise-22" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_even_numbers(lst)</span></code> that returns the sum of all even numbers in a list.</p>
+<p>Stack two NumPy arrays horizontally.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 22</span>
 </pre></div>
 </div>
@@ -711,7 +706,7 @@ document.write(`
 </section>
 <section id="exercise-23">
 <h2>Exercise 23:<a class="headerlink" href="#exercise-23" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">generate_random_number()</span></code> that returns a random number between 1 and 100.</p>
+<p>Split a NumPy array into multiple sub-arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 23</span>
 </pre></div>
 </div>
@@ -719,7 +714,7 @@ document.write(`
 </section>
 <section id="exercise-24">
 <h2>Exercise 24:<a class="headerlink" href="#exercise-24" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">get_even_numbers(lst)</span></code> that returns a list of all even numbers from a given list.</p>
+<p>Generate a random NumPy array and round each element to two decimal places.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 24</span>
 </pre></div>
 </div>
@@ -727,7 +722,7 @@ document.write(`
 </section>
 <section id="exercise-25">
 <h2>Exercise 25:<a class="headerlink" href="#exercise-25" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">count_occurrences(lst,</span> <span class="pre">item)</span></code> that counts how many times an item appears in a list.</p>
+<p>Find the unique elements of a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 25</span>
 </pre></div>
 </div>
@@ -735,7 +730,7 @@ document.write(`
 </section>
 <section id="exercise-26">
 <h2>Exercise 26:<a class="headerlink" href="#exercise-26" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">gcd(a,</span> <span class="pre">b)</span></code> that calculates the greatest common divisor of two numbers using recursion.</p>
+<p>Replace all elements in a NumPy array that are less than a specific value with that value.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 26</span>
 </pre></div>
 </div>
@@ -743,7 +738,7 @@ document.write(`
 </section>
 <section id="exercise-27">
 <h2>Exercise 27:<a class="headerlink" href="#exercise-27" title="Link to this heading">#</a></h2>
-<p>Create a Python module <code class="docutils literal notranslate"><span class="pre">date_utils.py</span></code> and define a function <code class="docutils literal notranslate"><span class="pre">days_in_month(month,</span> <span class="pre">year)</span></code> that returns the number of days in a given month.</p>
+<p>Find the cumulative sum of the elements in a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 27</span>
 </pre></div>
 </div>
@@ -751,7 +746,7 @@ document.write(`
 </section>
 <section id="exercise-28">
 <h2>Exercise 28:<a class="headerlink" href="#exercise-28" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">convert_to_binary(n)</span></code> that converts an integer to its binary equivalent.</p>
+<p>Create a NumPy array and find the number of non-zero elements in it.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 28</span>
 </pre></div>
 </div>
@@ -759,7 +754,7 @@ document.write(`
 </section>
 <section id="exercise-29">
 <h2>Exercise 29:<a class="headerlink" href="#exercise-29" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">multiply_elements(lst,</span> <span class="pre">factor)</span></code> that multiplies each element of a list by a given factor.</p>
+<p>Create a NumPy array of random integers and sort it in ascending order.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 29</span>
 </pre></div>
 </div>
@@ -767,7 +762,7 @@ document.write(`
 </section>
 <section id="exercise-30">
 <h2>Exercise 30:<a class="headerlink" href="#exercise-30" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">replace_spaces(s)</span></code> that replaces spaces in a string with underscores.</p>
+<p>Find the row-wise and column-wise sum of a 3x3 matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 30</span>
 </pre></div>
 </div>
@@ -775,7 +770,7 @@ document.write(`
 </section>
 <section id="exercise-31">
 <h2>Exercise 31:<a class="headerlink" href="#exercise-31" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_substring(s1,</span> <span class="pre">s2)</span></code> that checks whether <code class="docutils literal notranslate"><span class="pre">s1</span></code> is a substring of <code class="docutils literal notranslate"><span class="pre">s2</span></code>.</p>
+<p>Generate a 2D NumPy array with random values and normalize it (scale the values between 0 and 1).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 31</span>
 </pre></div>
 </div>
@@ -783,7 +778,7 @@ document.write(`
 </section>
 <section id="exercise-32">
 <h2>Exercise 32:<a class="headerlink" href="#exercise-32" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_of_digits(n)</span></code> that returns the sum of the digits of a given number.</p>
+<p>Create two NumPy arrays and find the dot product.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 32</span>
 </pre></div>
 </div>
@@ -791,7 +786,7 @@ document.write(`
 </section>
 <section id="exercise-33">
 <h2>Exercise 33:<a class="headerlink" href="#exercise-33" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">caesar_cipher(s,</span> <span class="pre">shift)</span></code> that implements the Caesar cipher encryption.</p>
+<p>Find the trace of a square NumPy matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 33</span>
 </pre></div>
 </div>
@@ -799,7 +794,7 @@ document.write(`
 </section>
 <section id="exercise-34">
 <h2>Exercise 34:<a class="headerlink" href="#exercise-34" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">find_min_in_list(lst)</span></code> that returns the minimum value from a list.</p>
+<p>Create a 2D array and swap two rows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 34</span>
 </pre></div>
 </div>
@@ -807,7 +802,7 @@ document.write(`
 </section>
 <section id="exercise-35">
 <h2>Exercise 35:<a class="headerlink" href="#exercise-35" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">double_each_element(lst)</span></code> that doubles each element in a list.</p>
+<p>Create a 1D NumPy array and convert it into a column vector.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 35</span>
 </pre></div>
 </div>
@@ -815,7 +810,7 @@ document.write(`
 </section>
 <section id="exercise-36">
 <h2>Exercise 36:<a class="headerlink" href="#exercise-36" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">mean(lst)</span></code> that returns the average of a list of numbers.</p>
+<p>Find the determinant of a 3x3 matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 36</span>
 </pre></div>
 </div>
@@ -823,7 +818,7 @@ document.write(`
 </section>
 <section id="exercise-37">
 <h2>Exercise 37:<a class="headerlink" href="#exercise-37" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">remove_vowels(s)</span></code> that removes all vowels from a string.</p>
+<p>Find the eigenvalues and eigenvectors of a 2x2 matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 37</span>
 </pre></div>
 </div>
@@ -831,7 +826,7 @@ document.write(`
 </section>
 <section id="exercise-38">
 <h2>Exercise 38:<a class="headerlink" href="#exercise-38" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_multiple_of(n,</span> <span class="pre">divisor)</span></code> that checks whether a number is a multiple of another number.</p>
+<p>Solve a system of linear equations using NumPy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 38</span>
 </pre></div>
 </div>
@@ -839,7 +834,7 @@ document.write(`
 </section>
 <section id="exercise-39">
 <h2>Exercise 39:<a class="headerlink" href="#exercise-39" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">concat_strings(lst)</span></code> that concatenates all strings in a list into a single string.</p>
+<p>Add Gaussian noise to a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 39</span>
 </pre></div>
 </div>
@@ -847,7 +842,7 @@ document.write(`
 </section>
 <section id="exercise-40">
 <h2>Exercise 40:<a class="headerlink" href="#exercise-40" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">get_unique_elements(lst)</span></code> that returns a list of unique elements from a given list.</p>
+<p>Create a 4x4 matrix and extract the diagonal elements.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 40</span>
 </pre></div>
 </div>
@@ -855,7 +850,7 @@ document.write(`
 </section>
 <section id="exercise-41">
 <h2>Exercise 41:<a class="headerlink" href="#exercise-41" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">read_file(filename)</span></code> that reads the contents of a file and prints each line.</p>
+<p>Generate a NumPy array of 100 random values and clip the values to a range between 10 and 50.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 41</span>
 </pre></div>
 </div>
@@ -863,7 +858,7 @@ document.write(`
 </section>
 <section id="exercise-42">
 <h2>Exercise 42:<a class="headerlink" href="#exercise-42" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">save_to_file(filename,</span> <span class="pre">data)</span></code> that writes data to a file.</p>
+<p>Create a 2D NumPy array and replace all negative values with zero.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 42</span>
 </pre></div>
 </div>
@@ -871,7 +866,7 @@ document.write(`
 </section>
 <section id="exercise-43">
 <h2>Exercise 43:<a class="headerlink" href="#exercise-43" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">find_longest_word(lst)</span></code> that finds the longest word in a list of words.</p>
+<p>Find the inner and outer products of two NumPy arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 43</span>
 </pre></div>
 </div>
@@ -879,7 +874,7 @@ document.write(`
 </section>
 <section id="exercise-44">
 <h2>Exercise 44:<a class="headerlink" href="#exercise-44" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">replace_vowels(s)</span></code> that replaces all vowels in a string with asterisks (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
+<p>Calculate the pairwise distances between points in a NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 44</span>
 </pre></div>
 </div>
@@ -887,7 +882,7 @@ document.write(`
 </section>
 <section id="exercise-45">
 <h2>Exercise 45:<a class="headerlink" href="#exercise-45" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">nth_fibonacci(n)</span></code> that returns the <code class="docutils literal notranslate"><span class="pre">n</span></code>th Fibonacci number without recursion.</p>
+<p>Create a structured NumPy array with fields for <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>, and <code class="docutils literal notranslate"><span class="pre">height</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 45</span>
 </pre></div>
 </div>
@@ -895,7 +890,7 @@ document.write(`
 </section>
 <section id="exercise-46">
 <h2>Exercise 46:<a class="headerlink" href="#exercise-46" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">read_numbers_from_file(filename)</span></code> that reads a file containing numbers and returns them as a list.</p>
+<p>Create a 5x5 matrix of random integers and count the occurrences of each unique value.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 46</span>
 </pre></div>
 </div>
@@ -903,7 +898,7 @@ document.write(`
 </section>
 <section id="exercise-47">
 <h2>Exercise 47:<a class="headerlink" href="#exercise-47" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">capitalize_first_last(s)</span></code> that capitalizes the first and last letter of each word in a string.</p>
+<p>Generate a random 3x3 NumPy array and subtract the mean of each row from the corresponding row.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 47</span>
 </pre></div>
 </div>
@@ -911,7 +906,7 @@ document.write(`
 </section>
 <section id="exercise-48">
 <h2>Exercise 48:<a class="headerlink" href="#exercise-48" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_matrix(matrix)</span></code> that returns the sum of all elements in a 2D matrix.</p>
+<p>Create a NumPy array of random integers and check if any of the values are greater than 50.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 48</span>
 </pre></div>
 </div>
@@ -919,7 +914,7 @@ document.write(`
 </section>
 <section id="exercise-49">
 <h2>Exercise 49:<a class="headerlink" href="#exercise-49" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">has_duplicates(lst)</span></code> that returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if a list contains duplicate elements, otherwise returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Calculate the moving average of a 1D NumPy array.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 49</span>
 </pre></div>
 </div>
@@ -927,7 +922,7 @@ document.write(`
 </section>
 <section id="exercise-50">
 <h2>Exercise 50:<a class="headerlink" href="#exercise-50" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_odd_numbers(lst)</span></code> that returns the sum of all odd numbers in a list.</p>
+<p>Find the Pearson correlation coefficient between two NumPy arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 50</span>
 </pre></div>
 </div>
@@ -935,7 +930,7 @@ document.write(`
 </section>
 <section id="exercise-51">
 <h2>Exercise 51:<a class="headerlink" href="#exercise-51" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">merge_dictionaries(dict1,</span> <span class="pre">dict2)</span></code> that merges two dictionaries.</p>
+<p>Convert a NumPy array of radians to degrees.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 51</span>
 </pre></div>
 </div>
@@ -943,7 +938,7 @@ document.write(`
 </section>
 <section id="exercise-52">
 <h2>Exercise 52:<a class="headerlink" href="#exercise-52" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">find_second_largest(lst)</span></code> that returns the second-largest number in a list.</p>
+<p>Create a random NumPy array and compute its variance and standard deviation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 52</span>
 </pre></div>
 </div>
@@ -951,7 +946,7 @@ document.write(`
 </section>
 <section id="exercise-53">
 <h2>Exercise 53:<a class="headerlink" href="#exercise-53" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">read_csv_file(filename)</span></code> that reads a CSV file and prints each row.</p>
+<p>Create a 2D NumPy array and find the indices of the maximum values along each axis.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 53</span>
 </pre></div>
 </div>
@@ -959,7 +954,7 @@ document.write(`
 </section>
 <section id="exercise-54">
 <h2>Exercise 54:<a class="headerlink" href="#exercise-54" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">count_consonants(s)</span></code> that counts the number of consonants in a string.</p>
+<p>Compute the inverse of a 2x2 NumPy matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 54</span>
 </pre></div>
 </div>
@@ -967,7 +962,7 @@ document.write(`
 </section>
 <section id="exercise-55">
 <h2>Exercise 55:<a class="headerlink" href="#exercise-55" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">celsius_to_fahrenheit(c)</span></code> that converts Celsius to Fahrenheit.</p>
+<p>Create a NumPy array of 10 random values and standardize it (mean 0, variance 1).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 55</span>
 </pre></div>
 </div>
@@ -975,7 +970,7 @@ document.write(`
 </section>
 <section id="exercise-56">
 <h2>Exercise 56:<a class="headerlink" href="#exercise-56" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_perfect_square(n)</span></code> that checks if a number is a perfect square.</p>
+<p>Perform element-wise addition and subtraction on two NumPy arrays.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 56</span>
 </pre></div>
 </div>
@@ -983,7 +978,7 @@ document.write(`
 </section>
 <section id="exercise-57">
 <h2>Exercise 57:<a class="headerlink" href="#exercise-57" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">is_anagram(s1,</span> <span class="pre">s2)</span></code> that checks if two strings are anagrams of each other.</p>
+<p>Create a NumPy array of random values and find the maximum element’s index.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 57</span>
 </pre></div>
 </div>
@@ -991,7 +986,7 @@ document.write(`
 </section>
 <section id="exercise-58">
 <h2>Exercise 58:<a class="headerlink" href="#exercise-58" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_of_cubes(n)</span></code> that returns the sum of cubes of the first <code class="docutils literal notranslate"><span class="pre">n</span></code> natural numbers.</p>
+<p>Create a 3x3 NumPy array and rotate it by 90 degrees.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 58</span>
 </pre></div>
 </div>
@@ -999,7 +994,7 @@ document.write(`
 </section>
 <section id="exercise-59">
 <h2>Exercise 59:<a class="headerlink" href="#exercise-59" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">remove_punctuation(s)</span></code> that removes all punctuation from a string.</p>
+<p>Compute the Frobenius norm of a matrix.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 59</span>
 </pre></div>
 </div>
@@ -1007,10 +1002,11 @@ document.write(`
 </section>
 <section id="exercise-60">
 <h2>Exercise 60:<a class="headerlink" href="#exercise-60" title="Link to this heading">#</a></h2>
-<p>Write a Python function <code class="docutils literal notranslate"><span class="pre">sum_even_digits(n)</span></code> that returns the sum of the even digits of a number.</p>
+<p>Create a 3D NumPy array and slice out a subarray.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 60</span>
 </pre></div>
 </div>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -1027,7 +1023,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Practicals"
+            path: "./practicals"
         },
         predefinedOutput: true
     }
@@ -1044,24 +1040,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Practical_4.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Practical_4: Flow control</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Practical_6.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Practical_6: Numpy</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

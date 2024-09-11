@@ -12,10 +12,7 @@ parts:
   - file: notebooks/Lecture2
   - file: notebooks/Lecture3
   - file: notebooks/Lecture4
-  - file: notebooks/Lecture5
-- caption: Labs
-  chapters:
-  - file: notebooks/Lecture00
+  - file: notebooks/Lecture5   
 - caption: Light Practicals
   chapters:
   - file: Practicals/Practical_1
@@ -28,16 +25,17 @@ parts:
 - caption: Tutorials
   chapters:
   - file: notebooks/Lecture000
-
+- caption: Labs
+  chapters:
+  - file: labs/lab_0
+  - file: VC/version_control_local
+  - file: VC/version_control_remote 
   
 - caption: Local development set up
   chapters:
   - file: labs/Lab*Prerequisites 
   
-- caption: Version control hands-on
-  chapters:
-  - file: VC/version_control_local
-  - file: VC/version_control_remote  
+  
    
   
   
