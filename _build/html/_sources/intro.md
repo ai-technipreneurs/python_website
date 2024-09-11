@@ -45,13 +45,13 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
 |   | Notebooks          |  A bit more   |
 |:--|:-------------------| ------------|
-| 1. | [Variables & assignments](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_1.ipynb)           | [Practical_1_more]() |
-| 2. | [Strings & Files](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_2.ipynb)             |  [Practical_2_more]() |
-| 3. | [Iterable objects or Containers](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3.ipynb)       | [Practical_3_more]() |
-| 4. | [Flow control](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4.ipynb)   |  [Practical_4_more]() |
-| 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5.ipynb) | [Practical_5_more]() |
-| 6. | [Numpy](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6.ipynb) | [Practical_6_more]() |
-| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7.ipynb) | [Practical_7_more]() |
+| 1. | [Variables & assignments](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_1.ipynb)           | [Practical_1_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_1_more.ipynb) |
+| 2. | [Strings & Files](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_2.ipynb)             |  [Practical_2_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_2_more.ipynb) |
+| 3. | [Iterable objects or Containers](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3.ipynb)       | [Practical_3_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3_more.ipynb) |
+| 4. | [Flow control](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4.ipynb)   |  [Practical_4_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4_more.ipynb) |
+| 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5.ipynb) | [Practical_5_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5_more.ipynb) |
+| 6. | [Numpy](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6.ipynb) | [Practical_6_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6_more.ipynb) |
+| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7.ipynb) | [Practical_7_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7_more.ipynb) |
 
 
 
