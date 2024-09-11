@@ -32,4 +32,13 @@ parts:
   
 - caption: Local development set up
   chapters:
-  - file: labs/Lab*Prerequisites  
+  - file: labs/Lab*Prerequisites 
+  
+- caption: Version control hands-on
+  chapters:
+  - file: VC/version_control_local
+  - file: VC/version_control_remote  
+   
+  
+  
+  
