@@ -16,12 +16,19 @@ parts:
 - caption: Labs
   chapters:
   - file: notebooks/Lecture00
+- caption: Light Practicals
+  chapters:
+  - file: Practicals/Practical_1
+  - file: Practicals/Practical_2  
+  - file: Practicals/Practical_3
+  - file: Practicals/Practical_4
+  - file: Practicals/Practical_5
+  - file: Practicals/Practical_6
+  - file: Practicals/Practical_7
 - caption: Tutorials
   chapters:
   - file: notebooks/Lecture000
-- caption: Practicals
-  chapters:
-  - file: labs/Lecture10
+
   
 - caption: Local development set up
   chapters:
