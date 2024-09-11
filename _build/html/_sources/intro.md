@@ -35,7 +35,7 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 | 4. | [Flow control](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/04_Lecture04.ipynb)   | [lecture4.pdf](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/pdfs/Lecture4.pdf)  | [lecture4.html](http://htmlpreview.github.io/?https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/htmls/Lecture4.html) |[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-technipreneurs/python_course_colab_notebooks/blob/main/04_Lecture04.ipynb) |
 | 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |[lecture5.pdf](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/pdfs/Lecture5.pdf) | [lecture5.html](http://htmlpreview.github.io/?https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/htmls/Lecture5.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |
 | 6. | [Numpy](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |[lecture5.pdf](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/pdfs/Lecture5.pdf) | [lecture5.html](http://htmlpreview.github.io/?https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/htmls/Lecture5.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |
-| 5. | [Matplotlib](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |[lecture5.pdf](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/pdfs/Lecture5.pdf) | [lecture5.html](http://htmlpreview.github.io/?https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/htmls/Lecture5.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |
+| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |[lecture5.pdf](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/pdfs/Lecture5.pdf) | [lecture5.html](http://htmlpreview.github.io/?https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/htmls/Lecture5.html) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) |
 
 
 
@@ -43,15 +43,15 @@ Upon opening the notebooks, you can <i class="fas fa-rocket"></i> launch them in
 
 ## Light practicals
 Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
-|   | Notebooks          |
-|:--|:-------------------|
-| 1. | [Variables & assignments](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/01_Lecture01.ipynb)           | 
-| 2. | [Strings & Files](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/02_Lecture02.ipynb)             | 
-| 3. | [Iterable objects or Containers](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/03_Lecture03.ipynb)       | 
-| 4. | [Flow control](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/04_Lecture04.ipynb)   | 
-| 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) 
-| 6. | [Numpy](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) 
-| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_course_colab_notebooks/blob/main/05_Lecture05.ipynb) 
+|   | Notebooks          |  A bit more   |
+|:--|:-------------------| ------------|
+| 1. | [Variables & assignments](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_1.ipynb)           | [Practical_1_more]() |
+| 2. | [Strings & Files](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_2.ipynb)             |  [Practical_2_more]() |
+| 3. | [Iterable objects or Containers](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3.ipynb)       | [Practical_3_more]() |
+| 4. | [Flow control](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4.ipynb)   |  [Practical_4_more]() |
+| 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5.ipynb) | [Practical_5_more]() |
+| 6. | [Numpy](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6.ipynb) | [Practical_6_more]() |
+| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7.ipynb) | [Practical_7_more]() |
 
 
 
