@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>*Tip: receiving input from the user * &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Practicals/Practical_1_more';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <script>document.write(`<img src="../_static/banner.jpeg" class="logo__image only-dark" alt="Python Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture0.html">Lecture 0: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture1.html">Lecture 1: Variables and assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture2.html">Lecture 2: Strings &amp; Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture3.html">Lecture 3: Iterable Objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture4.html">Lecture 4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light Practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture000.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version control hands-on</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/Practicals/Practical_1_more.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2FPracticals/Practical_1_more.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Practicals/Practical_1_more.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>*Tip: receiving input from the user *</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><strong>Exercise 00:</strong></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Declare a variable <code class="docutils literal notranslate"><span class="pre">firstname</span></code> and assign it a value.</p></li>
+<li><p>Declare a <code class="docutils literal notranslate"><span class="pre">lastname</span></code> variable and assign a value to it.</p></li>
+<li><p>Declare a <code class="docutils literal notranslate"><span class="pre">full_name</span></code> variable and assign it a value.</p></li>
+<li><p>Declare a <code class="docutils literal notranslate"><span class="pre">country</span></code> variable and assign it a value.</p></li>
+<li><p>Declare a variable <code class="docutils literal notranslate"><span class="pre">city</span></code> and assign it a value.</p></li>
+<li><p>Declare a <code class="docutils literal notranslate"><span class="pre">age</span></code> variable and assign it a value.</p></li>
+<li><p>Declare a variable <code class="docutils literal notranslate"><span class="pre">year</span></code> and assign it a value.</p></li>
+<li><p>Declare a variable <code class="docutils literal notranslate"><span class="pre">is_marrie</span></code> and assign it a value.</p></li>
+<li><p>Declare a variable <code class="docutils literal notranslate"><span class="pre">is_true</span></code> and assign it a value.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>For each of the above variable, display the value it contains using the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+</div></blockquote>
+<p><strong>Exercise 01:</strong></p>
+<blockquote>
+<div><p>Check the data type of all your variables using the built-in function <code class="docutils literal notranslate"><span class="pre">type()</span></code>.**</p>
+</div></blockquote>
+<p><strong>Exercise 02:</strong></p>
+<blockquote>
+<div><p>Calculate the value of <span class="math notranslate nohighlight">\(y\)</span> (<span class="math notranslate nohighlight">\(y = x^2 + 6x + 9\)</span>). Try using different values of <span class="math notranslate nohighlight">\(x\)</span> and determine at what value of <span class="math notranslate nohighlight">\(x\)</span> will <span class="math notranslate nohighlight">\(y\)</span> be equal to 0.**</p>
+</div></blockquote>
+<p><strong>Exercise 03:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 1. Declare your age as an integer variable
+ 2. Declare your height as a float variable
+ 3. Declare a variable that stores the base and height of a triangle. Calculate the area of this triangle (area = 0.5 x b x h).
+</pre></div>
+</div>
+<section id="tip-receiving-input-from-the-user">
+<h1>*Tip: receiving input from the user *<a class="headerlink" href="#tip-receiving-input-from-the-user" title="Link to this heading">#</a></h1>
+<p><strong>To receive an input from the user, we use <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</strong>.</p>
+<p><strong>Example</strong>
+Receive two numbers as input from the user and calculate their power:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a base: &quot;</span><span class="p">)</span>
+<span class="n">exponent</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an exponent: &quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="o">**</span> <span class="nb">float</span><span class="p">(</span><span class="n">exponent</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span> <span class="s2">&quot;</span><span class="si">{base}</span><span class="s2"> to the power of </span><span class="si">{exponent}</span><span class="s2"> = </span><span class="si">{result}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercise 04:</strong></p>
+<blockquote>
+<div><p><strong>Write a small code that asks the user to enter the side <span class="math notranslate nohighlight">\(a\)</span>, the side <span class="math notranslate nohighlight">\(b\)</span> and the side <span class="math notranslate nohighlight">\(c\)</span> of a triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).</strong></p>
+</div></blockquote>
+<p><strong>Exercise 05:</strong></p>
+<blockquote>
+<div><p><strong>Obtain the length and width of a rectangle using the prompt. Calculate its <code class="docutils literal notranslate"><span class="pre">area</span></code>and its <code class="docutils literal notranslate"><span class="pre">perimeter</span></code>.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 06:</strong></p>
+<blockquote>
+<div><p><strong>Obtenez le rayon d’un cercle en utilisant l’invite. Calculez l’aire (aire = pi x r x r) et la circonférence (c = 2 x pi x r) où pi = 3,14.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 07:</strong></p>
+<blockquote>
+<div><p><strong>Calculez la pente, l’ordonnée à l’origine en x et l’ordonnée à l’origine en <span class="math notranslate nohighlight">\(y\)</span> de <span class="math notranslate nohighlight">\(y = 2x -2\)</span>.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 08:</strong></p>
+<blockquote>
+<div><p><strong>Rédigez un script qui demande à l’utilisateur d’entrer les heures et le taux horaire. Calculez la rémunération de la personne ?</strong></p>
+</div></blockquote>
+<p><strong>Exercice 09:</strong></p>
+<blockquote>
+<div><p><strong>Écrivez un script qui demande à l’utilisateur d’entrer le nombre d’années. Calculez le nombre de secondes qu’une personne peut vivre. Supposons qu’une personne puisse vivre cent ans.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 10:</strong></p>
+<blockquote>
+<div><p><strong>Écrivez un script Python qui affiche le tableau suivant</strong></p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 1 1 1 1
+
+2 1 2 4 8
+
+3 1 3 9 27
+
+4 1 4 16 64
+
+5 1 5 25 125
+</pre></div>
+</div>
+<p><strong>Exercise 11:</strong></p>
+<blockquote>
+<div><p><strong>Assign the variables <code class="docutils literal notranslate"><span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">distance</span></code> with the values <span class="math notranslate nohighlight">\(6.892\)</span> and <span class="math notranslate nohighlight">\(19.7\)</span>. Calculate and display the value of the speed. Improve the display by imposing a digit after the decimal point.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 12:</strong></p>
+<blockquote>
+<div><p><strong>Écrire un programme qui, à partir de la saisie d’un rayon et d’une hauteur, calcule levolume d’un cône droit.</strong></p>
+</div></blockquote>
+<p><strong>Exercise 13:</strong></p>
+<blockquote>
+<div><p><strong>The user gives a positive integer and the program announces how many times in a row this integer is divisible by 2.</strong></p>
+</div></blockquote>
+<p><strong>Exercise 14:</strong></p>
+<blockquote>
+<div><p>**The user gives an integer between 2 and 12, the program gives the number of ways to do this by rolling two dice.</p>
+</div></blockquote>
+<p><strong>Exercice 15:</strong></p>
+<blockquote>
+<div><p><strong>Utilisez la fonction d’entrée intégrée <code class="docutils literal notranslate"><span class="pre">input()</span></code> pour obtenir le <code class="docutils literal notranslate"><span class="pre">_prénom_</span></code>, le <code class="docutils literal notranslate"><span class="pre">_nom_</span></code>, le <code class="docutils literal notranslate"><span class="pre">_pays_d_origine</span></code> et l’<code class="docutils literal notranslate"><span class="pre">_age_</span></code> d’un utilisateur et stockez la valeur dans les noms des variables correspondantes.</strong></p>
+</div></blockquote>
+<p><strong>Exercice 16:</strong></p>
+<p><strong>Déclarer <span class="math notranslate nohighlight">\(5\)</span> comme <code class="docutils literal notranslate"><span class="pre">num_one</span></code> et <span class="math notranslate nohighlight">\(4\)</span> comme <code class="docutils literal notranslate"><span class="pre">num_two</span></code></strong></p>
+<ol class="arabic simple">
+<li><p>Additionner <code class="docutils literal notranslate"><span class="pre">num_one</span></code> et <code class="docutils literal notranslate"><span class="pre">num_two</span></code> et affecter la valeur à une variable <code class="docutils literal notranslate"><span class="pre">totale</span></code>.</p></li>
+<li><p>Soustraire <code class="docutils literal notranslate"><span class="pre">num_two</span></code> de <code class="docutils literal notranslate"><span class="pre">num_one</span></code> et affecter la valeur à une variable <code class="docutils literal notranslate"><span class="pre">diff</span></code>.</p></li>
+<li><p>Multipliez le <code class="docutils literal notranslate"><span class="pre">num_one</span></code> et le <code class="docutils literal notranslate"><span class="pre">num_two</span></code> et attribuez la valeur à une variable <code class="docutils literal notranslate"><span class="pre">produit</span></code>.</p></li>
+<li><p>Divisez le <code class="docutils literal notranslate"><span class="pre">num_one</span></code> par le <code class="docutils literal notranslate"><span class="pre">num_two</span></code> et attribuez la valeur à une variable <code class="docutils literal notranslate"><span class="pre">division</span></code>.</p></li>
+<li><p>Calculez <code class="docutils literal notranslate"><span class="pre">num_one</span></code> à la puissance de <code class="docutils literal notranslate"><span class="pre">num_two</span></code> et attribuez la valeur à une variable <code class="docutils literal notranslate"><span class="pre">exp</span></code>.</p></li>
+</ol>
+<center> <b> <span style="color:orange;"> 🎉 FÉLICITATIONS! / CONGRATULATIONS! 🎉 </span> </b></center></section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Practicals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
