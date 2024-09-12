@@ -1,0 +1,1124 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Version Control with Git: remote &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VC/version_control_remote';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prerequisites" href="../labs/Lab%2APrerequisites.html" />
+    <link rel="prev" title="Version Control with Git: local" href="version_control_local.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <script>document.write(`<img src="../_static/banner.jpeg" class="logo__image only-dark" alt="Python Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture0.html">Lecture 0: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture1.html">Lecture 1: Variables and assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture2.html">Lecture 2: Strings &amp; Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture3.html">Lecture 3: Iterable Objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture4.html">Lecture 4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture6.html">Lecture 6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture7.html">Lecture 7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture000.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="version_control_local.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/VC/version_control_remote.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2FVC/version_control_remote.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/VC/version_control_remote.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Version Control with Git: remote</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-an-exercise-in-github-and-testing">Collaboration : An exercise in GitHub and Testing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-issue-a-pull-request-and-review-it">Exercise : Issue a Pull Request and Review it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap Roles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-conflicts">git merge : Conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a Conflict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving Conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a Conflict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-github-tour">A GitHub Tour</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-information">Extra Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-home-to-work">Moving from Home to Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitolite">gitolite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-version-control-skills">Test your version control skills!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-nudge">A little nudge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-you-share-your-code-with-the-world">Why should you share your code with the world?</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="version-control-with-git-remote">
+<h1>Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code><a class="headerlink" href="#version-control-with-git-remote" title="Link to this heading">#</a></h1>
+<p><strong>Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
+Narayanan, and Matt Gidden</strong></p>
+</section>
+<section id="github-com">
+<h1><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Link to this heading">#</a></h1>
+<p>GitHub is a site where many people store their open (and closed) source
+code repositories. It provides tools for browsing, collaborating on and
+documenting code. Your home institution may have a repository hosting
+system of it’s own. To find out, ask your system administrator.  GitHub,
+much like other forge hosting services (<a class="reference external" href="https://launchpad.net">launchpad</a>,
+<a class="reference external" href="https://bitbucket.org">bitbucket</a>,<a class="reference external" href="http://code.google.com">googlecode</a>,
+<a class="reference external" href="http://sourceforge.net">sourceforge</a>
+etc.) provides :</p>
+<ul class="simple">
+<li><p>landing page support</p></li>
+<li><p>wiki support</p></li>
+<li><p>network graphs and time histories of commits</p></li>
+<li><p>code browser with syntax highlighting</p></li>
+<li><p>issue (ticket) tracking</p></li>
+<li><p>user downloads</p></li>
+<li><p>varying permissions for various groups of users</p></li>
+<li><p>commit triggered mailing lists</p></li>
+<li><p>other service hooks (twitter, etc.)</p></li>
+</ul>
+<p><strong>NOTE</strong> Public repos have public licenses <strong>by default</strong>. If you don’t
+want to share (in the most liberal sense) your stuff with the world, pay
+girths money for private repos, or host your own.</p>
+</section>
+<section id="github-password">
+<h1>GitHub password<a class="headerlink" href="#github-password" title="Link to this heading">#</a></h1>
+<p>Setting up GitHub requires a GitHub user name and password.  Please take a
+moment to <a class="reference external" href="https://github.com/signup/free">create a free GitHub account</a> (if you
+want to start paying, you can add that to your account some other day).</p>
+</section>
+<section id="git-remote-steps-for-forking-a-repository">
+<h1>git remote : Steps for Forking a Repository<a class="headerlink" href="#git-remote-steps-for-forking-a-repository" title="Link to this heading">#</a></h1>
+<p>A key step to interacting with an online repository that you have forked
+is adding the original as a remote repository. By adding the remote
+repository, you inform git of a new option for fetching updates and
+pushing commits.</p>
+<p>The <strong>git remote</strong> command allows you to add, name, rename, list, and
+delete repositories such as the original one <strong>upstream</strong> from your
+fork, others that may be <strong>parallel</strong> to your fork, and so on.</p>
+<p>We’ll be continuing our testing exercises using GitHub as the online repository,
+so you’ll need to start off by getting a copy of that repository to work on!</p>
+<hr class="docutils" />
+<section id="exercise-fork-our-github-repository">
+<h2>Exercise : Fork Our GitHub Repository<a class="headerlink" href="#exercise-fork-our-github-repository" title="Link to this heading">#</a></h2>
+<p>Step 1 : Go to our
+<a class="reference external" href="https://github.com/ai-technipreneurs/simplestats">repository</a>
+from your browser, and click on the <a class="reference external" href="https://github.com/ai-technipreneurs/simplestats/fork"><code class="docutils literal notranslate"><span class="pre">Fork</span> <span class="pre">button</span></code></a>. Choose to fork it to your user name rather than any organizations.</p>
+<p>Step 2 : Clone it. From your terminal :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOU/simplestats.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>simplestats
+</pre></div>
+</div>
+<p>Step 3 :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/UW-Madison-ACI/simplestats.git
+$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats/<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats/<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<p>All repositories that are clones begin with a remote called origin.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="git-fetch-fetching-the-contents-of-a-remote">
+<h1>git fetch : Fetching the contents of a remote<a class="headerlink" href="#git-fetch-fetching-the-contents-of-a-remote" title="Link to this heading">#</a></h1>
+<p>Now that you have alerted your repository to the presence of others, it
+is able to pull in updates from those repositories. In this case, if you
+want your master branch to track updates in the original simplestats
+repository, you simply <strong>git fetch</strong> that repository into the master
+branch of your current repository.</p>
+<p>The fetch command alone merely pulls down information recent changes
+from the original master (upstream) repository. By itself, the fetch
+command does not change your local working copy. To update your local
+working copy to include recent changes in the original (upstream)
+repository, it is necessary to also merge.</p>
+</section>
+<section id="git-merge-merging-the-contents-of-a-remote">
+<h1>git merge : Merging the contents of a remote<a class="headerlink" href="#git-merge-merging-the-contents-of-a-remote" title="Link to this heading">#</a></h1>
+<p>To incorporate upstream changes from the original master repository (in
+this case UW-Madison-ACI/simplestats) into your local working copy, you
+must both fetch and merge. The process of merging may result in
+conflicts, so pay attention. This is where version control is both at
+its most powerful and its most complicated.</p>
+<hr class="docutils" />
+<section id="exercise-fetch-and-merge-the-contents-of-our-github-repository">
+<h2>Exercise : Fetch and Merge the Contents of Our GitHub Repository<a class="headerlink" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository" title="Link to this heading">#</a></h2>
+<p>This exercise is meant to represent the general work flow you should use to
+update your fork. Let’s say that you come in and sit down in the morning, you’ve
+gotten your coffee (or tea) and you’re ready to get started. However, someone
+from your research group has added something to the project you’re working on,
+and you need to add it into your work to keep up to date. I’ll add a comment,
+then let’s get started!</p>
+<p>Step 1 : Fetch the recent remote repository history</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+</pre></div>
+</div>
+<p>Step 2 : Merge the master branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>upstream/master
+</pre></div>
+</div>
+<p>Step 3 : Check out what happened by browsing the directory.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="git-pull-pull-fetch-merge">
+<h1>git pull : Pull = Fetch + Merge<a class="headerlink" href="#git-pull-pull-fetch-merge" title="Link to this heading">#</a></h1>
+<p>The command <strong>git pull</strong> is the same as executing <strong>git fetch</strong> followed
+by <strong>git merge</strong>. Though it is not recommend for cases in which there
+are many branches to consider, the pull command is shorter and simpler
+than fetching and merging as it automates the branch matching.
+Specifically, to perform the same task as we did in the previous
+exercise, the pull command would be :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>upstream
+Already<span class="w"> </span>up-to-date.
+</pre></div>
+</div>
+<p>When there have been remote changes, the pull will apply those changes
+to your local branch, unless there are conflicts with your local
+changes.</p>
+</section>
+<section id="git-push-sending-your-commits-to-remote-repositories">
+<h1>git push : Sending Your Commits to Remote Repositories<a class="headerlink" href="#git-push-sending-your-commits-to-remote-repositories" title="Link to this heading">#</a></h1>
+<p>The <strong>git push</strong> command pushes commits in a local working copy to a
+remote repository. The syntax is git push [remote] [local branch].
+Before pushing, a developer should always pull (or fetch + merge), so
+that there is an opportunity to resolve conflicts before pushing to the
+remote.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="collaboration-an-exercise-in-github-and-testing">
+<h1>Collaboration : An exercise in GitHub and Testing<a class="headerlink" href="#collaboration-an-exercise-in-github-and-testing" title="Link to this heading">#</a></h1>
+<p>The remainder of this section will outline an exercise to get your feet wet in
+using some of GitHub’s features. We’ll be continuing our work on testing as an
+example.</p>
+<p>For the rest of this section, I’ll assume that there are two collaborators,
+Alpha and Beta. I’ll assume that they have super-easy GitHub names, and that
+their repositories are at <a class="reference external" href="http://github.com/alpha">github.com/alpha</a> and <a class="reference external" href="http://github.com/beta">github.com/beta</a>.</p>
+<hr class="docutils" />
+<section id="exercise-get-set-up">
+<h2>Exercise : Get set up<a class="headerlink" href="#exercise-get-set-up" title="Link to this heading">#</a></h2>
+<p>Step 1 : Group up in pairs</p>
+<p>Step 2 : Add your collaborator as a remote and check to make sure you’re
+connected, e.g., Beta would type the following</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>alpha<span class="w"> </span>https://github.com/alpha/simplestats.git
+$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+alpha<span class="w">           </span>https://github.com/alpha/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+alpha<span class="w">           </span>https://github.com/alpha/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>alpha
+</pre></div>
+</div>
+<p>and Alpha would type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>beta<span class="w"> </span>https://github.com/beta/simplestats.git
+$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+beta<span class="w">            </span>https://github.com/beta/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+beta<span class="w">            </span>https://github.com/beta/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>beta
+</pre></div>
+</div>
+<p>Let’s say that Beta is interested in adding a feature to the code that Beta and
+Alpha are working on. Previously, we worked on a mean function, so let’s add a
+median function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">median</span><span class="p">(</span><span class="n">numlist</span><span class="p">):</span>
+    <span class="n">numlist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numlist</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">length</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">mean</span><span class="p">([</span><span class="n">numlist</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">numlist</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+    <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span> <span class="n">numlist</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="pull-requests-sending-your-collaborators-an-update">
+<h2>Pull Requests : Sending Your Collaborators an Update<a class="headerlink" href="#pull-requests-sending-your-collaborators-an-update" title="Link to this heading">#</a></h2>
+<p>From GitHub’s <a class="reference external" href="https://help.github.com/articles/using-pull-requests">website</a>, a
+pull request</p>
+<blockquote>
+<div><p>lets you tell others about changes you’ve pushed to a GitHub repository. Once
+a pull request is sent, interested parties can review the set of changes,
+discuss potential modifications, and even push follow-up commits if necessary.</p>
+</div></blockquote>
+<hr class="docutils" />
+<section id="exercise-issue-a-pull-request-and-review-it">
+<h3>Exercise : Issue a Pull Request and Review it<a class="headerlink" href="#exercise-issue-a-pull-request-and-review-it" title="Link to this heading">#</a></h3>
+<p>For Beta:</p>
+<p>Step 1 : Start a new feature branch, named median (you could do this in single
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">median</span></code> command)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>median
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>median
+</pre></div>
+</div>
+<p>Step 2 : Modify the <a class="reference external" href="http://stats.py">stats.py</a> module to add the median function (and maybe a test
+if you’re feeling up to it!)</p>
+<p>Step 3 : Update your remote</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>stats.py
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;I added a median function!&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>median
+</pre></div>
+</div>
+<p>Step 4 : Issue a Pull Request</p>
+<ul class="simple">
+<li><p>Go to your remote’s page (<a class="reference external" href="http://github.com/beta/simplestats">github.com/beta/simplestats</a>)</p></li>
+<li><p>Click Pull Requests (on the right menu) -&gt; New Pull Request -&gt; Edit</p></li>
+<li><p>choose the base fork as <strong>alpha/simplestats</strong>, the base as <strong>master</strong>, the
+head fork as <strong>beta/simplestats</strong>, and the compare as <strong>median</strong></p></li>
+<li><p>write a descriptive message and send it off!</p></li>
+</ul>
+<p>For Alpha:</p>
+<p>Step 1 : Review the pull request</p>
+<ul class="simple">
+<li><p>Is the code clear? Does it need comments? Is it correct? Does something
+need clarifying? Feel free to provide in-line comments. Beta can always
+update their version of commits during a pull request!</p></li>
+</ul>
+<p>Step 2 : Merge the pull request using the merge button</p>
+<p>Step 3 : Update your local repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>origin
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</pre></div>
+</div>
+<p>For Beta:</p>
+<p>Step 5 : Update your local repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>alpha
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>alpha/master
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="exercise-swap-roles">
+<h3>Exercise : Swap Roles<a class="headerlink" href="#exercise-swap-roles" title="Link to this heading">#</a></h3>
+<p>Ok, so we’ve successfully issued a pull request and merged the updated code
+base. Let’s swap the roles of pull requester and reviewer. This time, Alpha will
+add some tests to the median function.</p>
+<p>For Alpha:</p>
+<p>Step 1 : Start a new feature branch, named median-tests (you could do this in
+single <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">median-tests</span></code> command)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>median-tests
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>median-tests
+</pre></div>
+</div>
+<p>Step 2 : Modify the test_stats.py module to add tests for the median
+function.</p>
+<p>Now continue the exercise as was done previously with roles swapped.</p>
+<p>Step 3 : Update your remote</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>test_stats.py
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;I added tests to the median function!&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>median-tests
+</pre></div>
+</div>
+<p>Step 4 : Issue a Pull Request</p>
+<ul class="simple">
+<li><p>Go to your remote’s page (<a class="reference external" href="http://github.com/beta/simplestats">github.com/beta/simplestats</a>)</p></li>
+<li><p>Click Pull Requests (on the right menu) -&gt; New Pull Request -&gt; Edit</p></li>
+<li><p>choose the base fork as <strong>beta/simplestats</strong>, the base as <strong>master</strong>, the
+head fork as <strong>alpha/simplestats</strong>, and the compare as <strong>median-tests</strong></p></li>
+<li><p>write a descriptive message and send it off!</p></li>
+</ul>
+<p>For Beta:</p>
+<p>Step 1 : Review the pull request</p>
+<ul class="simple">
+<li><p>Is the code clear? Does it need comments? Is it correct? Does something
+need clarifying? Feel free to provide in-line comments. Alpha can always
+update their version of commits during a pull request!</p></li>
+</ul>
+<p>Step 2 : Merge the pull request using the merge button</p>
+<p>Step 3 : Update your local repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>origin
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</pre></div>
+</div>
+<p>For Alpha:</p>
+<p>Step 5 : Update your local repository</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>beta
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>beta/master
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="git-merge-conflicts">
+<h2>git merge : Conflicts<a class="headerlink" href="#git-merge-conflicts" title="Link to this heading">#</a></h2>
+<p>This is the trickiest part of version control, so let’s take it very carefully.</p>
+<p>Remember that there are actually three remotes that have a relationship in this
+example: upstream, alpha, and beta. To put this in more realistic terms, imagine
+that the upstream branch is managed by your boss or another manager and the alpha
+and beta branches are students working on a project. All of you have a copy of
+<a class="reference external" href="http://stats.py">stats.py</a>, but Alpha and Beta have made changes to that file in sync with each
+other. What happens if the boss (upstream) also makes changes on the same lines? A
+dreaded conflict…</p>
+<p>Now, I’ll assume the roll of the boss. Let’s say that I know there’s a series of
+functions we want to add to our simplestats module. Instead of waiting around
+for my grad students to finish their work, I’ve chosen to add some basic
+function signatures, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">median</span><span class="p">(</span><span class="n">numlist</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>I’ll add this to <a class="reference external" href="http://stats.py">stats.py</a> and push it to the upstream repository. Sadly,
+this addition overlaps with your recent median addition. It is standard in using
+version control for the person or group who is working on the <em>feature</em> to
+remain up-to-date with the upstream branch. With git, this is easy to do (and is
+one of its strengths vs. centralized version control systems like SVN).</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<section id="exercise-experience-a-conflict">
+<h3>Exercise : Experience a Conflict<a class="headerlink" href="#exercise-experience-a-conflict" title="Link to this heading">#</a></h3>
+<p>Step 1 : Experience the Conflict</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>upstream/master
+Auto-merging<span class="w"> </span>stats.py
+CONFLICT<span class="w"> </span><span class="o">(</span>content<span class="o">)</span>:<span class="w"> </span>Merge<span class="w"> </span>conflict<span class="w"> </span><span class="k">in</span><span class="w"> </span>stats.py
+Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class="p">;</span><span class="w"> </span>fix<span class="w"> </span>conflicts<span class="w"> </span>and<span class="w"> </span><span class="k">then</span><span class="w"> </span>commit<span class="w"> </span>the<span class="w"> </span>result.
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resolving-conflicts">
+<h2>Resolving Conflicts<a class="headerlink" href="#resolving-conflicts" title="Link to this heading">#</a></h2>
+<p>Now what?</p>
+<p>Git has paused the merge. You can see this with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On branch master</span>
+<span class="c1"># Unmerged paths:</span>
+<span class="c1">#   (use &quot;git add/rm &lt;file&gt;...&quot; as appropriate to mark resolution)</span>
+<span class="c1">#</span>
+<span class="c1">#       unmerged:      stats.py</span>
+<span class="c1">#</span>
+no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>If you open your <a class="reference external" href="http://stats.py">stats.py</a> file, you’ll notice that git has added some strange
+characters to it. Specifically, you’ll see something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span><span class="p">:</span><span class="n">stats</span><span class="o">.</span><span class="n">py</span>
+<span class="o">**</span> <span class="n">your</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">code</span> <span class="o">**</span>
+<span class="o">=======</span>
+<span class="o">**</span> <span class="n">upstream</span><span class="s1">&#39;s version of the code **</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">upstream</span><span class="p">:</span><span class="n">stats</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Now, your job is to determine how the code <em>should</em> look. For this example, that
+means you should replace the boss’s <code class="docutils literal notranslate"><span class="pre">median</span></code> function with yours, and keep the
+boss’s <code class="docutils literal notranslate"><span class="pre">median</span></code> placeholder below it.</p>
+<hr class="docutils" />
+<section id="exercise-resolve-a-conflict">
+<h3>Exercise : Resolve a Conflict<a class="headerlink" href="#exercise-resolve-a-conflict" title="Link to this heading">#</a></h3>
+<p>Step 1 : Resolve the conflict by editing your <a class="reference external" href="http://stats.py">stats.py</a> file. It should
+look run as expected and should look exactly like your version, but with the
+PI’s changes included.</p>
+<p>Step 2 : Add the updated version and commit</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>stats.py
+$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;merged from upstream&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="a-github-tour">
+<h2>A GitHub Tour<a class="headerlink" href="#a-github-tour" title="Link to this heading">#</a></h2>
+<p>Let’s take a look at Issues and Milestones, both of which are great project
+planning tools.</p>
+</section>
+<section id="extra-credit">
+<h2>Extra Credit<a class="headerlink" href="#extra-credit" title="Link to this heading">#</a></h2>
+<p>Repeat the median function exercise with a mode function. You might find the
+<a class="reference external" href="http://docs.python.org/2/library/collections.html#collections.defaultdict">defaultdict</a>
+container useful – it provides default values for key-value pairs! Here’s an
+example of its use.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">number_frequencies</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">number_found</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">number_frequencies</span><span class="p">[</span><span class="n">number_found</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">number_frequencies</span><span class="p">[</span><span class="n">number_found</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>You might also ask how to get the maximum value in a python dictionary. Here’s
+one way.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">max_counts</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">number_frequencies</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">number_frequencies</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">max_counts</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>It works great, right? Maybe we should add a test for bimodal distributions…</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extra-information">
+<h1>Extra Information<a class="headerlink" href="#extra-information" title="Link to this heading">#</a></h1>
+<section id="moving-from-home-to-work">
+<h2>Moving from Home to Work<a class="headerlink" href="#moving-from-home-to-work" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">mobility.ipynb</span></code> notebook is a tutorial about how to get yourself set up for
+keeping your work at home and the office in sync.</p>
+</section>
+<section id="gitolite">
+<h2>gitolite<a class="headerlink" href="#gitolite" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/sitaramc/gitolite">Gitolite</a> is a way for you to host
+your own multi-user git repositories. I’m not going to go into details
+here, but all you need is a machine with some drive space and network
+access. You can install <a class="reference external" href="https://help.ubuntu.com/community/Installation/MinimalCD">minimal
+ubuntu</a>, then
+sudo apt-get install gitolite will pull in everything you need. At that
+point, your collaborators will only need to send you their public ssh keys
+for you to configure pull and push access to the repos.</p>
+</section>
+<section id="test-your-version-control-skills">
+<h2>Test your version control skills!<a class="headerlink" href="#test-your-version-control-skills" title="Link to this heading">#</a></h2>
+<p>Feel up to testing all of your skills? Check out
+<a class="reference external" href="http://pcottle.github.com/learnGitBranching/">this</a> excellent website. We
+haven’t taught you all the things you’ll need to progress through the entire
+exercise, but feel free to take a look and try it out!</p>
+</section>
+<section id="a-little-nudge">
+<h2>A little nudge<a class="headerlink" href="#a-little-nudge" title="Link to this heading">#</a></h2>
+<p>Feel free to read
+<a class="reference external" href="http://blogs.biomedcentral.com/bmcblog/2013/02/28/version-control-for-scientific-research/">this</a>
+blog post, which talks about the usefulness of version control in scientific
+work. Furthermore, how many people use Google Drive to get work done, especially
+in a collaborative mode? It turns out that the Drive app <a class="reference external" href="http://support.google.com/drive/bin/answer.py?hl=en&amp;amp;answer=190843">includes version
+control</a> as
+one of its features, albeit in a limited mode (you can’t really control how
+often it commits, nor can you give messages to your commits). Here’s an
+<a class="reference external" href="https://docs.google.com/document/d/115sweom_AnEdTvDjipsSK6Ml1HMnIKuQwz2ys52A2Bo/edit?usp=sharing">example</a>.</p>
+</section>
+<section id="why-should-you-share-your-code-with-the-world">
+<h2>Why should you share your code with the world?<a class="headerlink" href="#why-should-you-share-your-code-with-the-world" title="Link to this heading">#</a></h2>
+<p>Take the time to do a little <a class="reference external" href="http://www.siam.org/news/news.php?id=2064&amp;amp;goback=.gde_112393_member_232769759">background
+reading</a>.
+There are arguments for and against sharing your code. Why would you,
+personally, choose to do so or not?</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VC"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="version_control_local.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../labs/Lab%2APrerequisites.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Prerequisites</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-an-exercise-in-github-and-testing">Collaboration : An exercise in GitHub and Testing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-issue-a-pull-request-and-review-it">Exercise : Issue a Pull Request and Review it</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap Roles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-conflicts">git merge : Conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a Conflict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving Conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a Conflict</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-github-tour">A GitHub Tour</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-information">Extra Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-home-to-work">Moving from Home to Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitolite">gitolite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-version-control-skills">Test your version control skills!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-nudge">A little nudge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-you-share-your-code-with-the-world">Why should you share your code with the world?</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

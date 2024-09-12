@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Practical_1: Variables and Assignments &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'practicals/Practical_1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <script>document.write(`<img src="../_static/banner.jpeg" class="logo__image only-dark" alt="Python Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture0.html">Lecture 0: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture1.html">Lecture 1: Variables and assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture2.html">Lecture 2: Strings &amp; Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture3.html">Lecture 3: Iterable Objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture4.html">Lecture 4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture6.html">Lecture 6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture7.html">Lecture 7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture000.html"><center> <b> <span style="color:blue;"> Lecture 0: Introduction to Python </span> </b></center></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/practicals/Practical_1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fpracticals/Practical_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/practicals/Practical_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Practical_1: Variables and Assignments</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-19">Exercise 19:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-20">Exercise 20:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-21">Exercise 21:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-22">Exercise 22:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-23">Exercise 23:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-24">Exercise 24:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-25">Exercise 25:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-26">Exercise 26:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-27">Exercise 27:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-28">Exercise 28:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-29">Exercise 29:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-30">Exercise 30:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-31">Exercise 31:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-32">Exercise 32:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-33">Exercise 33:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-34">Exercise 34:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-35">Exercise 35:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-36">Exercise 36:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-37">Exercise 37:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-38">Exercise 38:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-39">Exercise 39:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-40">Exercise 40:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-41">Exercise 41:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-42">Exercise 42:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-43">Exercise 43:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-44">Exercise 44:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-45">Exercise 45:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-46">Exercise 46:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-47">Exercise 47:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-48">Exercise 48:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-49">Exercise 49:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-50">Exercise 50:</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practical-1-variables-and-assignments">
+<h1>Practical_1: Variables and Assignments<a class="headerlink" href="#practical-1-variables-and-assignments" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="exercise-1">
+<h2>Exercise 1:<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
+<p>Declare a variable <code class="docutils literal notranslate"><span class="pre">x</span></code> and assign it the value <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-2">
+<h2>Exercise 2:<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
+<p>Assign the value <code class="docutils literal notranslate"><span class="pre">True</span></code> to a variable called <code class="docutils literal notranslate"><span class="pre">is_valid</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-3">
+<h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
+<p>Create a string variable <code class="docutils literal notranslate"><span class="pre">name</span></code> with the value “Python Programming”.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 3</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-4">
+<h2>Exercise 4:<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h2>
+<p>Assign the result of <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">+</span> <span class="pre">3</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">sum_result</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 4</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-5">
+<h2>Exercise 5:<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h2>
+<p>Assign multiple variables in one line: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">15</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 5</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-6">
+<h2>Exercise 6:<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h2>
+<p>Assign the value of one variable <code class="docutils literal notranslate"><span class="pre">x</span></code> to another variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 6</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-7">
+<h2>Exercise 7:<a class="headerlink" href="#exercise-7" title="Link to this heading">#</a></h2>
+<p>Assign a floating-point number <code class="docutils literal notranslate"><span class="pre">9.8</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">gravity</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 7</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-8">
+<h2>Exercise 8:<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">country</span></code> and assign it the string value of your favorite country.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 8</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-9">
+<h2>Exercise 9:<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h2>
+<p>Change the value of variable <code class="docutils literal notranslate"><span class="pre">age</span></code> from <code class="docutils literal notranslate"><span class="pre">25</span></code> to <code class="docutils literal notranslate"><span class="pre">26</span></code> in two separate steps.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 9</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-10">
+<h2>Exercise 10:<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h2>
+<p>Use one variable to store the result of subtracting two numbers <code class="docutils literal notranslate"><span class="pre">20</span> <span class="pre">-</span> <span class="pre">7</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 10</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-11">
+<h2>Exercise 11:<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h2>
+<p>Assign an integer value and a floating-point value to two different variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 11</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-12">
+<h2>Exercise 12:<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h2>
+<p>Assign a boolean value <code class="docutils literal notranslate"><span class="pre">False</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">is_completed</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 12</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-13">
+<h2>Exercise 13:<a class="headerlink" href="#exercise-13" title="Link to this heading">#</a></h2>
+<p>Swap the values of two variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 13</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-14">
+<h2>Exercise 14:<a class="headerlink" href="#exercise-14" title="Link to this heading">#</a></h2>
+<p>Assign a complex number <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4j</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">complex_num</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 14</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-15">
+<h2>Exercise 15:<a class="headerlink" href="#exercise-15" title="Link to this heading">#</a></h2>
+<p>Reassign a variable from an integer to a string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 15</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-16">
+<h2>Exercise 16:<a class="headerlink" href="#exercise-16" title="Link to this heading">#</a></h2>
+<p>Create two variables <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">last_name</span></code>, and assign them your first and last names.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 16</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-17">
+<h2>Exercise 17:<a class="headerlink" href="#exercise-17" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">temperature</span></code> and assign it the value of <code class="docutils literal notranslate"><span class="pre">35.5</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 17</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-18">
+<h2>Exercise 18:<a class="headerlink" href="#exercise-18" title="Link to this heading">#</a></h2>
+<p>Assign the result of the multiplication of two numbers <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">*</span> <span class="pre">6</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">product</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 18</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-19">
+<h2>Exercise 19:<a class="headerlink" href="#exercise-19" title="Link to this heading">#</a></h2>
+<p>Assign a sentence of your choice to a variable <code class="docutils literal notranslate"><span class="pre">sentence</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 19</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-20">
+<h2>Exercise 20:<a class="headerlink" href="#exercise-20" title="Link to this heading">#</a></h2>
+<p>Use an assignment to convert a string <code class="docutils literal notranslate"><span class="pre">'50'</span></code> into an integer variable <code class="docutils literal notranslate"><span class="pre">int_value</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 20</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-21">
+<h2>Exercise 21:<a class="headerlink" href="#exercise-21" title="Link to this heading">#</a></h2>
+<p>Assign the result of dividing <code class="docutils literal notranslate"><span class="pre">144</span></code> by <code class="docutils literal notranslate"><span class="pre">12</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">quotient</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 21</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-22">
+<h2>Exercise 22:<a class="headerlink" href="#exercise-22" title="Link to this heading">#</a></h2>
+<p>Assign the remainder of <code class="docutils literal notranslate"><span class="pre">47</span> <span class="pre">divided</span> <span class="pre">by</span> <span class="pre">5</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">remainder</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 22</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-23">
+<h2>Exercise 23:<a class="headerlink" href="#exercise-23" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">is_student</span></code> and assign it the value <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 23</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-24">
+<h2>Exercise 24:<a class="headerlink" href="#exercise-24" title="Link to this heading">#</a></h2>
+<p>Use a variable to store the result of a modulo operation: <code class="docutils literal notranslate"><span class="pre">45</span> <span class="pre">%</span> <span class="pre">4</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 24</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-25">
+<h2>Exercise 25:<a class="headerlink" href="#exercise-25" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">pi</span></code> and assign it the value <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 25</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-26">
+<h2>Exercise 26:<a class="headerlink" href="#exercise-26" title="Link to this heading">#</a></h2>
+<p>Create two variables <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code>, assign them values, and calculate the area of a rectangle.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 26</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-27">
+<h2>Exercise 27:<a class="headerlink" href="#exercise-27" title="Link to this heading">#</a></h2>
+<p>Assign a negative number to a variable <code class="docutils literal notranslate"><span class="pre">negative_value</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 27</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-28">
+<h2>Exercise 28:<a class="headerlink" href="#exercise-28" title="Link to this heading">#</a></h2>
+<p>Assign a string containing a special character (e.g., “Hello, World!”) to a variable <code class="docutils literal notranslate"><span class="pre">greeting</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 28</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-29">
+<h2>Exercise 29:<a class="headerlink" href="#exercise-29" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">population</span></code> and assign it a large integer value (in billions).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 29</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-30">
+<h2>Exercise 30:<a class="headerlink" href="#exercise-30" title="Link to this heading">#</a></h2>
+<p>Use a variable to store the result of raising <code class="docutils literal notranslate"><span class="pre">2</span></code> to the power of <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 30</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-31">
+<h2>Exercise 31:<a class="headerlink" href="#exercise-31" title="Link to this heading">#</a></h2>
+<p>Assign a list of your favorite fruits to a variable <code class="docutils literal notranslate"><span class="pre">fruits</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 31</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-32">
+<h2>Exercise 32:<a class="headerlink" href="#exercise-32" title="Link to this heading">#</a></h2>
+<p>Assign a tuple of three numbers to a variable <code class="docutils literal notranslate"><span class="pre">coordinates</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 32</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-33">
+<h2>Exercise 33:<a class="headerlink" href="#exercise-33" title="Link to this heading">#</a></h2>
+<p>Assign a dictionary with keys <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">person</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 33</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-34">
+<h2>Exercise 34:<a class="headerlink" href="#exercise-34" title="Link to this heading">#</a></h2>
+<p>Use variables to store the sum of two floating-point numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 34</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-35">
+<h2>Exercise 35:<a class="headerlink" href="#exercise-35" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">is_sunny</span></code> and assign it the result of a comparison <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">&gt;</span> <span class="pre">5</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 35</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-36">
+<h2>Exercise 36:<a class="headerlink" href="#exercise-36" title="Link to this heading">#</a></h2>
+<p>Assign a string and an integer to two different variables, then print both on one line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 36</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-37">
+<h2>Exercise 37:<a class="headerlink" href="#exercise-37" title="Link to this heading">#</a></h2>
+<p>Reassign a variable that originally held a number to a boolean value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 37</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-38">
+<h2>Exercise 38:<a class="headerlink" href="#exercise-38" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">is_weekend</span></code> and assign it the result of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 38</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-39">
+<h2>Exercise 39:<a class="headerlink" href="#exercise-39" title="Link to this heading">#</a></h2>
+<p>Assign a multi-line string to a variable <code class="docutils literal notranslate"><span class="pre">description</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 39</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-40">
+<h2>Exercise 40:<a class="headerlink" href="#exercise-40" title="Link to this heading">#</a></h2>
+<p>Use variables to store the result of the absolute value of <code class="docutils literal notranslate"><span class="pre">-25</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 40</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-41">
+<h2>Exercise 41:<a class="headerlink" href="#exercise-41" title="Link to this heading">#</a></h2>
+<p>Assign the result of a floor division <code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">//</span> <span class="pre">6</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">floor_div_result</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 41</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-42">
+<h2>Exercise 42:<a class="headerlink" href="#exercise-42" title="Link to this heading">#</a></h2>
+<p>Assign the result of adding a floating-point number to an integer to a variable <code class="docutils literal notranslate"><span class="pre">mixed_sum</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 42</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-43">
+<h2>Exercise 43:<a class="headerlink" href="#exercise-43" title="Link to this heading">#</a></h2>
+<p>Use variables to store a combination of string concatenation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 43</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-44">
+<h2>Exercise 44:<a class="headerlink" href="#exercise-44" title="Link to this heading">#</a></h2>
+<p>Assign an empty list to a variable <code class="docutils literal notranslate"><span class="pre">empty_list</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 44</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-45">
+<h2>Exercise 45:<a class="headerlink" href="#exercise-45" title="Link to this heading">#</a></h2>
+<p>Assign a boolean value based on the comparison of two variables <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">15</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 45</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-46">
+<h2>Exercise 46:<a class="headerlink" href="#exercise-46" title="Link to this heading">#</a></h2>
+<p>Assign a long sentence to a variable and count its characters using <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 46</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-47">
+<h2>Exercise 47:<a class="headerlink" href="#exercise-47" title="Link to this heading">#</a></h2>
+<p>Assign a fractional result <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">3</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">division_result</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 47</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-48">
+<h2>Exercise 48:<a class="headerlink" href="#exercise-48" title="Link to this heading">#</a></h2>
+<p>Create a variable <code class="docutils literal notranslate"><span class="pre">speed</span></code> and assign it the value of 100 kilometers per hour.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 48</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-49">
+<h2>Exercise 49:<a class="headerlink" href="#exercise-49" title="Link to this heading">#</a></h2>
+<p>Assign a multi-variable equation like <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">3x</span> <span class="pre">+</span> <span class="pre">5</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">4</span></code> to a variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 49</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="exercise-50">
+<h2>Exercise 50:<a class="headerlink" href="#exercise-50" title="Link to this heading">#</a></h2>
+<p>Use variables to calculate and store the average of three numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 50</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./practicals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3">Exercise 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4">Exercise 4:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5">Exercise 5:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6">Exercise 6:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7">Exercise 7:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-8">Exercise 8:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-9">Exercise 9:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-10">Exercise 10:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-11">Exercise 11:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-12">Exercise 12:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-13">Exercise 13:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-14">Exercise 14:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-15">Exercise 15:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-16">Exercise 16:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-17">Exercise 17:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-18">Exercise 18:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-19">Exercise 19:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-20">Exercise 20:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-21">Exercise 21:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-22">Exercise 22:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-23">Exercise 23:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-24">Exercise 24:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-25">Exercise 25:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-26">Exercise 26:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-27">Exercise 27:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-28">Exercise 28:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-29">Exercise 29:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-30">Exercise 30:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-31">Exercise 31:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-32">Exercise 32:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-33">Exercise 33:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-34">Exercise 34:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-35">Exercise 35:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-36">Exercise 36:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-37">Exercise 37:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-38">Exercise 38:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-39">Exercise 39:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-40">Exercise 40:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-41">Exercise 41:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-42">Exercise 42:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-43">Exercise 43:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-44">Exercise 44:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-45">Exercise 45:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-46">Exercise 46:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-47">Exercise 47:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-48">Exercise 48:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-49">Exercise 49:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-50">Exercise 50:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
