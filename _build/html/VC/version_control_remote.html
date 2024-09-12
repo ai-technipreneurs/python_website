@@ -231,7 +231,6 @@
 
 
 
-
 <li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual presentations topics:</a></li>
 
 </ul>
@@ -487,27 +486,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-issue-a-pull-request-and-review-it">Exercise : Issue a Pull Request and Review it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap roles</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-conflicts">git merge : Conflicts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a Conflict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a conflict</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving Conflicts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a Conflict</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a conflict</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-github-tour">A GitHub Tour</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-information">Extra Information</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-home-to-work">Moving from Home to Work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitolite">gitolite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-version-control-skills">Test your version control skills!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-nudge">A little nudge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-you-share-your-code-with-the-world">Why should you share your code with the world?</a></li>
 </ul>
 </li>
 </ul>
@@ -526,6 +515,9 @@ document.write(`
 <h1>Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code><a class="headerlink" href="#practical-2-version-control-with-git-remote" title="Link to this heading">#</a></h1>
 <p><strong>Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
 Narayanan, and Matt Gidden</strong></p>
+<p><left> <b> <span style="color:red;">
+This notebook is focused on version control with remote repositories. You are expected to follow along line by line and step by step. Execute each code cell and adhere to the instructions to learn how to manage version control in a remote context. Experiment with commands, interact with remote repositories, and observe the effects of your actions. Engaging thoroughly with each section will deepen your understanding of remote version control practices.
+</span> </b></left></p>
 </section>
 <section id="github-com">
 <h1><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Link to this heading">#</a></h1>
@@ -677,8 +669,8 @@ connected, e.g., Beta would type the following</p>
 $<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
 origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
-upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
-upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 alpha<span class="w">           </span>https://github.com/alpha/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
 alpha<span class="w">           </span>https://github.com/alpha/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 $<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>alpha
@@ -689,16 +681,14 @@ $<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span
 $<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
 origin<span class="w">  </span>https://github.com/YOU/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
-upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
-upstream<span class="w">        </span>https://github.com/UW-Madison-ACI/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
+upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simplestats<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 beta<span class="w">            </span>https://github.com/beta/simplestats.git<span class="w"> </span><span class="o">(</span>fetch<span class="o">)</span>
 beta<span class="w">            </span>https://github.com/beta/simplestats.git<span class="w"> </span><span class="o">(</span>push<span class="o">)</span>
 $<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>beta
 </pre></div>
 </div>
-<p>Let’s say that Beta is interested in adding a feature to the code that Beta and
-Alpha are working on. Previously, we worked on a mean function, so let’s add a
-median function.</p>
+<p>Let’s say that Beta is interested in adding a feature to the code that Beta and Alpha are working on. Previously, we worked on a mean function, so let’s add a median function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">median</span><span class="p">(</span><span class="n">numlist</span><span class="p">):</span>
     <span class="n">numlist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numlist</span><span class="p">)</span>
@@ -769,7 +759,7 @@ $<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span
 </section>
 <hr class="docutils" />
 <section id="exercise-swap-roles">
-<h3>Exercise : Swap Roles<a class="headerlink" href="#exercise-swap-roles" title="Link to this heading">#</a></h3>
+<h3>Exercise : Swap roles<a class="headerlink" href="#exercise-swap-roles" title="Link to this heading">#</a></h3>
 <p>Ok, so we’ve successfully issued a pull request and merged the updated code
 base. Let’s swap the roles of pull requester and reviewer. This time, Alpha will
 add some tests to the median function.</p>
@@ -847,7 +837,7 @@ one of its strengths vs. centralized version control systems like SVN).</p>
 <hr class="docutils" />
 <hr class="docutils" />
 <section id="exercise-experience-a-conflict">
-<h3>Exercise : Experience a Conflict<a class="headerlink" href="#exercise-experience-a-conflict" title="Link to this heading">#</a></h3>
+<h3>Exercise : Experience a conflict<a class="headerlink" href="#exercise-experience-a-conflict" title="Link to this heading">#</a></h3>
 <p>Step 1 : Experience the Conflict</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
 $<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>upstream/master
@@ -860,7 +850,7 @@ Automatic<span class="w"> </span>merge<span class="w"> </span>failed<span class=
 </section>
 <hr class="docutils" />
 <section id="resolving-conflicts">
-<h2>Resolving Conflicts<a class="headerlink" href="#resolving-conflicts" title="Link to this heading">#</a></h2>
+<h2>Resolving conflicts<a class="headerlink" href="#resolving-conflicts" title="Link to this heading">#</a></h2>
 <p>Now what?</p>
 <p>Git has paused the merge. You can see this with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On branch master</span>
@@ -886,91 +876,16 @@ means you should replace the boss’s <code class="docutils literal notranslate"
 boss’s <code class="docutils literal notranslate"><span class="pre">median</span></code> placeholder below it.</p>
 <hr class="docutils" />
 <section id="exercise-resolve-a-conflict">
-<h3>Exercise : Resolve a Conflict<a class="headerlink" href="#exercise-resolve-a-conflict" title="Link to this heading">#</a></h3>
-<p>Step 1 : Resolve the conflict by editing your <a class="reference external" href="http://stats.py">stats.py</a> file. It should
-look run as expected and should look exactly like your version, but with the
-PI’s changes included.</p>
+<h3>Exercise : Resolve a conflict<a class="headerlink" href="#exercise-resolve-a-conflict" title="Link to this heading">#</a></h3>
+<p>Step 1 : Resolve the conflict by editing your <code class="docutils literal notranslate"><span class="pre">stats.py</span></code> file. It should look run as expected and should look exactly like your version, but with the PI’s changes included.</p>
 <p>Step 2 : Add the updated version and commit</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>stats.py
 $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;merged from upstream&quot;</span>
 $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
 </pre></div>
 </div>
-</section>
-</section>
 <hr class="docutils" />
-<section id="a-github-tour">
-<h2>A GitHub Tour<a class="headerlink" href="#a-github-tour" title="Link to this heading">#</a></h2>
-<p>Let’s take a look at Issues and Milestones, both of which are great project
-planning tools.</p>
 </section>
-<section id="extra-credit">
-<h2>Extra Credit<a class="headerlink" href="#extra-credit" title="Link to this heading">#</a></h2>
-<p>Repeat the median function exercise with a mode function. You might find the
-<a class="reference external" href="http://docs.python.org/2/library/collections.html#collections.defaultdict">defaultdict</a>
-container useful – it provides default values for key-value pairs! Here’s an
-example of its use.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">number_frequencies</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">number_found</span> <span class="o">=</span> <span class="mi">42</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">number_frequencies</span><span class="p">[</span><span class="n">number_found</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">number_frequencies</span><span class="p">[</span><span class="n">number_found</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="mi">1</span>
-</pre></div>
-</div>
-<p>You might also ask how to get the maximum value in a python dictionary. Here’s
-one way.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">max_counts</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">number_frequencies</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="n">number_frequencies</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">max_counts</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="mi">42</span>
-</pre></div>
-</div>
-<p>It works great, right? Maybe we should add a test for bimodal distributions…</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="extra-information">
-<h1>Extra Information<a class="headerlink" href="#extra-information" title="Link to this heading">#</a></h1>
-<section id="moving-from-home-to-work">
-<h2>Moving from Home to Work<a class="headerlink" href="#moving-from-home-to-work" title="Link to this heading">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">mobility.ipynb</span></code> notebook is a tutorial about how to get yourself set up for
-keeping your work at home and the office in sync.</p>
-</section>
-<section id="gitolite">
-<h2>gitolite<a class="headerlink" href="#gitolite" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/sitaramc/gitolite">Gitolite</a> is a way for you to host
-your own multi-user git repositories. I’m not going to go into details
-here, but all you need is a machine with some drive space and network
-access. You can install <a class="reference external" href="https://help.ubuntu.com/community/Installation/MinimalCD">minimal
-ubuntu</a>, then
-sudo apt-get install gitolite will pull in everything you need. At that
-point, your collaborators will only need to send you their public ssh keys
-for you to configure pull and push access to the repos.</p>
-</section>
-<section id="test-your-version-control-skills">
-<h2>Test your version control skills!<a class="headerlink" href="#test-your-version-control-skills" title="Link to this heading">#</a></h2>
-<p>Feel up to testing all of your skills? Check out
-<a class="reference external" href="http://pcottle.github.com/learnGitBranching/">this</a> excellent website. We
-haven’t taught you all the things you’ll need to progress through the entire
-exercise, but feel free to take a look and try it out!</p>
-</section>
-<section id="a-little-nudge">
-<h2>A little nudge<a class="headerlink" href="#a-little-nudge" title="Link to this heading">#</a></h2>
-<p>Feel free to read
-<a class="reference external" href="http://blogs.biomedcentral.com/bmcblog/2013/02/28/version-control-for-scientific-research/">this</a>
-blog post, which talks about the usefulness of version control in scientific
-work. Furthermore, how many people use Google Drive to get work done, especially
-in a collaborative mode? It turns out that the Drive app <a class="reference external" href="http://support.google.com/drive/bin/answer.py?hl=en&amp;amp;answer=190843">includes version
-control</a> as
-one of its features, albeit in a limited mode (you can’t really control how
-often it commits, nor can you give messages to your commits). Here’s an
-<a class="reference external" href="https://docs.google.com/document/d/115sweom_AnEdTvDjipsSK6Ml1HMnIKuQwz2ys52A2Bo/edit?usp=sharing">example</a>.</p>
-</section>
-<section id="why-should-you-share-your-code-with-the-world">
-<h2>Why should you share your code with the world?<a class="headerlink" href="#why-should-you-share-your-code-with-the-world" title="Link to this heading">#</a></h2>
-<p>Take the time to do a little <a class="reference external" href="http://www.siam.org/news/news.php?id=2064&amp;amp;goback=.gde_112393_member_232769759">background
-reading</a>.
-There are arguments for and against sharing your code. Why would you,
-personally, choose to do so or not?</p>
 </section>
 </section>
 
@@ -1056,27 +971,17 @@ personally, choose to do so or not?</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-issue-a-pull-request-and-review-it">Exercise : Issue a Pull Request and Review it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap Roles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-swap-roles">Exercise : Swap roles</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-conflicts">git merge : Conflicts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a Conflict</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-experience-a-conflict">Exercise : Experience a conflict</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving Conflicts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a Conflict</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-conflicts">Resolving conflicts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-resolve-a-conflict">Exercise : Resolve a conflict</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-github-tour">A GitHub Tour</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-credit">Extra Credit</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-information">Extra Information</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-from-home-to-work">Moving from Home to Work</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitolite">gitolite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-version-control-skills">Test your version control skills!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-little-nudge">A little nudge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-should-you-share-your-code-with-the-world">Why should you share your code with the world?</a></li>
 </ul>
 </li>
 </ul>
