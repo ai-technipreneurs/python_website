@@ -12,7 +12,9 @@ parts:
   - file: notebooks/Lecture2
   - file: notebooks/Lecture3
   - file: notebooks/Lecture4
-  - file: notebooks/Lecture5   
+  - file: notebooks/Lecture5
+  - file: notebooks/Lecture6
+  - file: notebooks/Lecture7   
 - caption: Light Practicals
   chapters:
   - file: Practicals/Practical_1
