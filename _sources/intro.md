@@ -80,6 +80,12 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 
 
 
+## Note à l'attention des étudiants francophones
+
+Pour les étudiants francophones, les sites web suivants pourraient se révéler particulièrement utiles : [In2Py](https://gabayae.github.io/bases_de_programmation_python/) et [Atelier-3P](https://ai-technipreneurs.github.io/site-officiel-atelier-3-P/).
+
+
+
 ## Useful resources
 
 
