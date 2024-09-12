@@ -50,8 +50,8 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 | 3. | [Iterable objects or Containers](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3.ipynb)       | [Practical_3_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_3_more.ipynb) |
 | 4. | [Flow control](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4.ipynb)   |  [Practical_4_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_4_more.ipynb) |
 | 5. | [Functions, Modules & Packages](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5.ipynb) | [Practical_5_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_5_more.ipynb) |
-| 6. | [Numpy](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6.ipynb) | [Practical_6_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6_more.ipynb) |
-| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7.ipynb) | [Practical_7_more](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7_more.ipynb) |
+| 6. | [Numpy](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_6.ipynb) | [Individual projects](https://ai-technipreneurs.github.io/python_website/VC/presentations.html) |
+| 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/Practicals/Practical_7.ipynb) | [Individual projects](https://ai-technipreneurs.github.io/python_website/VC/presentations.html) |
 
 
 
@@ -67,11 +67,21 @@ If you notice any issue, or have suggestions or requests, please go the
 ```
 
 ## Labs
-Download the lab notebooks and solve the questions locally, or launch them in Google Colab 
+Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
+
+
+Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
+| Lab  | Notebooks          | 
+|:--|:-------------------|
+| 0. | [Taking control of a jupyter notebook](https://ai-technipreneurs.github.io/python_website/labs/lab_0.html)           |
+| 1. | [Version Control with Git: `local`](https://ai-technipreneurs.github.io/python_website/VC/version_control_local.html)           |
+| 2. | [Version Control with Git: `remote`](https://ai-technipreneurs.github.io/python_website/VC/version_control_remote.html)           |
+
 
 
 
 ## Useful resources
+
 
 * [Dive into Python](http://www.diveintopython.net/toc/index.html)
 

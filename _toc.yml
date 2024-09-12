@@ -15,25 +15,21 @@ parts:
   - file: notebooks/Lecture5
   - file: notebooks/Lecture6
   - file: notebooks/Lecture7   
-- caption: Light Practicals
+- caption: Light practicals 
   chapters:
-  - file: Practicals/Practical_1
-  - file: Practicals/Practical_2  
-  - file: Practicals/Practical_3
-  - file: Practicals/Practical_4
-  - file: Practicals/Practical_5
-  - file: Practicals/Practical_6
-  - file: Practicals/Practical_7
-- caption: Tutorials
-  chapters:
-  - file: notebooks/Lecture000
-- caption: Labs & Indivdual presentations
+  - file: practicals/Practical_1
+  - file: practicals/Practical_2  
+  - file: practicals/Practical_3
+  - file: practicals/Practical_4
+  - file: practicals/Practical_5
+  - file: practicals/Practical_6
+  - file: practicals/Practical_7
+- caption: Labs & Indivdual projects
   chapters:
   - file: labs/lab_0
   - file: VC/version_control_local
   - file: VC/version_control_remote 
   - file: VC/presentations 
-  
 - caption: Local development set up
   chapters:
   - file: labs/Lab*Prerequisites 
