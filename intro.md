@@ -54,6 +54,22 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 | 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/practicals/Practical_7.ipynb) | [Individual projects](https://ai-technipreneurs.github.io/python_website/VC/presentations.html) |
 
 
+## Labs
+
+Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
+| Lab  | Notebooks          | 
+|:--|:-------------------|
+| 0. | [Taking control of a jupyter notebook](https://ai-technipreneurs.github.io/python_website/labs/lab_0.html)           |
+| 1. | [Version Control with Git: `local`](https://ai-technipreneurs.github.io/python_website/VC/version_control_local.html)           |
+| 2. | [Version Control with Git: `remote`](https://ai-technipreneurs.github.io/python_website/VC/version_control_remote.html)           |
+
+
+
+## Note à l'attention des étudiants francophones
+
+Pour les étudiants francophones, les sites web suivants pourraient se révéler particulièrement utiles : [In2Py](https://gabayae.github.io/bases_de_programmation_python/) et [Atelier-3P](https://ai-technipreneurs.github.io/site-officiel-atelier-3-P/).
+
+
 
 
 ```{admonition} Get your hands dirty
@@ -65,24 +81,6 @@ Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo
 If you notice any issue, or have suggestions or requests, please go the
 <i class="fab fa-github"></i> [issue tracker](https://github.com/ai-technipreneurs/python_website/issues) or directly click on the  <i class="fab fa-github"></i> icon on top of the page and then 'open issue`. We also welcome pull requests :).
 ```
-
-## Labs
-Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
-
-
-Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
-| Lab  | Notebooks          | 
-|:--|:-------------------|
-| 0. | [Taking control of a jupyter notebook](https://ai-technipreneurs.github.io/python_website/labs/lab_0.html)           |
-| 1. | [Version Control with Git: `local`](https://ai-technipreneurs.github.io/python_website/VC/version_control_local.html)           |
-| 2. | [Version Control with Git: `remote`](https://ai-technipreneurs.github.io/python_website/VC/version_control_remote.html)           |
-
-
-
-
-## Note à l'attention des étudiants francophones
-
-Pour les étudiants francophones, les sites web suivants pourraient se révéler particulièrement utiles : [In2Py](https://gabayae.github.io/bases_de_programmation_python/) et [Atelier-3P](https://ai-technipreneurs.github.io/site-officiel-atelier-3-P/).
 
 
 
