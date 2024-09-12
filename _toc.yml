@@ -30,6 +30,9 @@ parts:
   - file: VC/version_control_local
   - file: VC/version_control_remote 
   - file: VC/presentations 
+- caption: Going deeper and further
+  chapters:
+  - file: VC/advanced-python-projects
 - caption: Local development set up
   chapters:
   - file: labs/Lab*Prerequisites 
