@@ -56,11 +56,6 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 
 
 
-
-
-
-
-
 ```{admonition} Get your hands dirty
 Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://github.com/ai-technipreneurs/python_website). To run the notebooks locally, see the [prerequisites](https://ai-technipreneurs.github.io/python_website/labs/Lab%2APrerequisites.html).
 ```

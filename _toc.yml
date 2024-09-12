@@ -27,11 +27,12 @@ parts:
 - caption: Tutorials
   chapters:
   - file: notebooks/Lecture000
-- caption: Labs
+- caption: Labs & Indivdual presentations
   chapters:
   - file: labs/lab_0
   - file: VC/version_control_local
   - file: VC/version_control_remote 
+  - file: VC/presentations 
   
 - caption: Local development set up
   chapters:
