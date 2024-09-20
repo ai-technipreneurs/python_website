@@ -59,9 +59,9 @@ The aim of programming challenges is to enhance problem-solving skills, reinforc
 
 | Challenge Number | Challenge notebooks                   | Difficulty level | Due date           |
 |------------------|-----------------------------------------|------------------|--------------------|
-| 1                | [challenge_1]()| Beginner         | September 29, 2024 at 8pm  |
-| 2                | [challenge_2]() | Intermediate         | October 5, 2024 at 8pm  |
-| 3                | [challenge_3]() | Advanced   | October 10, 2024 at 8pm  |
+| 1                | [challenge_1](https://ai-technipreneurs.github.io/python_website/challenges/PyPro_challenge-1.html)| Beginner         | September 29, 2024 at 8pm  |
+| 2                | [challenge_2](https://ai-technipreneurs.github.io/python_website/challenges/PyPro_challenge-2.html) | Intermediate   | October 5, 2024 at 8pm  |
+| 3                | [challenge_3](https://ai-technipreneurs.github.io/python_website/challenges/PyPro_challenge-3.html) | Advanced   | October 10, 2024 at 8pm  |
 
 
 
