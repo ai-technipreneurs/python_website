@@ -54,6 +54,23 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 | 7. | [Matplotlib](https://github.com/ai-technipreneurs/python_website/blob/main/practicals/Practical_7.ipynb) | [Individual projects](https://ai-technipreneurs.github.io/python_website/VC/presentations.html) |
 
 
+## Challenges
+The aim of programming challenges is to enhance problem-solving skills, reinforce concepts, and improve coding proficiency by applying theoretical knowledge in practical scenarios. They encourage students to think critically, develop persistence, and learn new techniques and approaches. Challenges also promote creativity, resilience, and the ability to break down complex problems into manageable parts. Moreover, they provide excellent preparation for technical interviews and competitions, build confidence through a sense of accomplishment, and foster community building and networking among peers. By engaging in these challenges, students are exposed to a diverse set of problems that simulate real-world scenarios, making them better equipped to tackle unfamiliar issues. For this Python class, you will be participating in three programming challenges, which will help them solidify your understanding of the language, enhance their problem-solving capabilities, and prepare you for more advanced coding tasks.
+
+| Challenge Number | Challenge notebooks                   | Difficulty level | Due date           |
+|------------------|-----------------------------------------|------------------|--------------------|
+| 1                | [challenge_1]()| Beginner         | September 29, 2024 at 8pm  |
+| 2                | [challenge_2]() | Intermediate         | October 5, 2024 at 8pm  |
+| 3                | [challenge_3]() | Advanced   | October 10, 2024 at 8pm  |
+
+
+
+
+
+
+
+
+
 ## Labs
 
 Download the lab notebooks and solve the questions locally, or launch them in Google Colab.

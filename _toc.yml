@@ -23,8 +23,13 @@ parts:
   - file: practicals/Practical_4
   - file: practicals/Practical_5
   - file: practicals/Practical_6
-  - file: practicals/Practical_7
-- caption: Labs & Indivdual projects
+  - file: practicals/Practical_7 
+- caption: Challenges 
+  chapters:
+  - file: challenges/PyPro_challenge-1
+  - file: challenges/PyPro_challenge-2
+  - file: challenges/PyPro_challenge-3  
+- caption: Labs & indivdual projects
   chapters:
   - file: labs/lab_0
   - file: VC/version_control_local

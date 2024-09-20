@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PyPro: Challenge 3 &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'challenges/PyPro_challenge-3';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Practial 0: Taking control of a jupyter notebook" href="../labs/lab_0.html" />
+    <link rel="prev" title="PyPro: Challenge 2" href="PyPro_challenge-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <script>document.write(`<img src="../_static/banner.jpeg" class="logo__image only-dark" alt="Python Programming - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture0.html">Lecture 0: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture1.html">Lecture 1: Variables and assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture2.html">Lecture 2: Strings &amp; Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture3.html">Lecture 3: Iterable Objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture4.html">Lecture 4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture5.html">Lecture 5: Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture6.html">Lecture 6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/Lecture7.html">Lecture 7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs &amp; indivdual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper and further</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/master/challenges/PyPro_challenge-3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fchallenges/PyPro_challenge-3.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/challenges/PyPro_challenge-3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PyPro: Challenge 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PyPro: Challenge 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-challenge-is-due-on-saturday-october-10th-2024-at-8pm">This challenge is due on Saturday, October 10th, 2024, at 8pm.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pypro-challenges">PyPro Challenges</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pypro-challenge-3">
+<h1>PyPro: Challenge 3<a class="headerlink" href="#pypro-challenge-3" title="Link to this heading">#</a></h1>
+<section id="this-challenge-is-due-on-saturday-october-10th-2024-at-8pm">
+<h2>This challenge is due on Saturday, October 10th, 2024, at 8pm.<a class="headerlink" href="#this-challenge-is-due-on-saturday-october-10th-2024-at-8pm" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">These</span> <span class="pre">exercises</span> <span class="pre">offer</span> <span class="pre">a</span> <span class="pre">diverse</span> <span class="pre">array</span> <span class="pre">of</span> <span class="pre">tasks</span> <span class="pre">that</span> <span class="pre">assess</span> <span class="pre">your</span> <span class="pre">comprehension</span> <span class="pre">of</span> <span class="pre">fundamental</span> <span class="pre">Python</span> <span class="pre">concepts</span> <span class="pre">such</span> <span class="pre">as</span> <span class="pre">loops,</span> <span class="pre">data</span> <span class="pre">types,</span> <span class="pre">string</span> <span class="pre">manipulations,</span> <span class="pre">list</span> <span class="pre">comprehensions,</span> <span class="pre">and</span> <span class="pre">higher-order</span> <span class="pre">functions.</span></code></p>
+<p>Here is the given text in proper markdown format with numbered questions:</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pypro-challenges">
+<h1>PyPro Challenges<a class="headerlink" href="#pypro-challenges" title="Link to this heading">#</a></h1>
+<ol class="arabic">
+<li><p><strong>Perfect Numbers Calculation</strong><br />
+By definition, a natural number is called a perfect number if its value is equal to the sum of its divisors. For example, 6 and 28 are perfect numbers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">14</span> <span class="o">=</span> <span class="mi">28</span>
+</pre></div>
+</div>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">calc_perfect_numbers(max_exclusive)</span></code> that calculates all perfect numbers up to a maximum value, such as 10,000.</p>
+</li>
+<li><p><strong>Prime Numbers Calculation</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">calc_primes_up_to(max_value)</span></code> to compute all prime numbers up to a given value. A prime number is a natural number greater than 1 that is only divisible by 1 and itself. The Sieve of Eratosthenes is a useful algorithm for this task.<br />
+Test your algorithm with the following values:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>[2, 3, 5, 7, 11, 13]</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>[2, 3, 5, 7, 11, 13, 17, 19, 23]</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Twin, Cousin, and Sexy Prime Numbers</strong><br />
+Compute all pairs of prime numbers with a distance of 2 (twin), 4 (cousin), and 6 (sexy) up to an upper bound <code class="docutils literal notranslate"><span class="pre">n</span></code>.<br />
+For example, for <code class="docutils literal notranslate"><span class="pre">limit=50</span></code>, the expected results are:</p>
+<ul class="simple">
+<li><p><strong>Twins</strong>: <code class="docutils literal notranslate"><span class="pre">{3:</span> <span class="pre">5,</span> <span class="pre">5:</span> <span class="pre">7,</span> <span class="pre">11:</span> <span class="pre">13,</span> <span class="pre">17:</span> <span class="pre">19,</span> <span class="pre">29:</span> <span class="pre">31,</span> <span class="pre">41:</span> <span class="pre">43}</span></code></p></li>
+<li><p><strong>Cousins</strong>: <code class="docutils literal notranslate"><span class="pre">{3:</span> <span class="pre">7,</span> <span class="pre">7:</span> <span class="pre">11,</span> <span class="pre">13:</span> <span class="pre">17,</span> <span class="pre">19:</span> <span class="pre">23,</span> <span class="pre">37:</span> <span class="pre">41,</span> <span class="pre">43:</span> <span class="pre">47}</span></code></p></li>
+<li><p><strong>Sexy</strong>: <code class="docutils literal notranslate"><span class="pre">{5:</span> <span class="pre">11,</span> <span class="pre">7:</span> <span class="pre">13,</span> <span class="pre">11:</span> <span class="pre">17,</span> <span class="pre">13:</span> <span class="pre">19,</span> <span class="pre">17:</span> <span class="pre">23,</span> <span class="pre">23:</span> <span class="pre">29,</span> <span class="pre">31:</span> <span class="pre">37,</span> <span class="pre">37:</span> <span class="pre">43,</span> <span class="pre">41:</span> <span class="pre">47,</span> <span class="pre">47:</span> <span class="pre">53}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Sum of Digits (Recursive)</strong><br />
+Write a recursive function <code class="docutils literal notranslate"><span class="pre">calc_sum_of_digits(value)</span></code> that calculates the sum of the digits of a given number.<br />
+Examples:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Number of Digits</p></th>
+<th class="head"><p>Cross Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1234</p></td>
+<td><p>4</p></td>
+<td><p>1 + 2 + 3 + 4 = 10</p></td>
+</tr>
+<tr class="row-odd"><td><p>1234567</p></td>
+<td><p>7</p></td>
+<td><p>1 + 2 + 3 + … 7 = 28</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Convert to Binary (Recursive)</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">to_binary(n)</span></code> that recursively converts the given positive integer into its binary string representation (without using <code class="docutils literal notranslate"><span class="pre">int(x,</span> <span class="pre">base)</span></code>).<br />
+Examples:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>“101”</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>“111”</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>“10110”</p></td>
+</tr>
+<tr class="row-odd"><td><p>42</p></td>
+<td><p>“101010”</p></td>
+</tr>
+<tr class="row-even"><td><p>256</p></td>
+<td><p>“100000000”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Letter Permutations</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">calc_permutations(text)</span></code> that calculates all possible permutations of the characters in the given string. Handle duplicate letters but avoid using Python’s <code class="docutils literal notranslate"><span class="pre">itertools.permutations()</span></code>.<br />
+Examples:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“a”</p></td>
+<td><p>“a”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“aa”</p></td>
+<td><p>“aa”</p></td>
+</tr>
+<tr class="row-even"><td><p>“aB”</p></td>
+<td><p>“aB”, “Ba”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“aBC”</p></td>
+<td><p>“aBC”, “BaC”, “aCB”, “CaB”, “CBa”, “BCa”</p></td>
+</tr>
+<tr class="row-even"><td><p>“aaC”</p></td>
+<td><p>“aaC”, “aCa”, “Caa”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Join Strings with Delimiter</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">join(values,</span> <span class="pre">delimiter)</span></code> that joins a list of strings with the given delimiter and returns it as a single string. Implement this without using Python’s built-in <code class="docutils literal notranslate"><span class="pre">join()</span></code> function.<br />
+Example:</p>
+<ul class="simple">
+<li><p>Input: <code class="docutils literal notranslate"><span class="pre">[&quot;hello&quot;,</span> <span class="pre">&quot;world&quot;,</span> <span class="pre">&quot;message&quot;]</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">+++</span> <span class="pre">&quot;</span></code></p></li>
+<li><p>Result: <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">+++</span> <span class="pre">world</span> <span class="pre">+++</span> <span class="pre">message&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Pascal’s Triangle</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">pascal(n)</span></code> that computes Pascal’s triangle as nested lists. Each line is generated from the previous one, with sums of adjacent numbers and a 1 at the beginning and end.<br />
+Example for <code class="docutils literal notranslate"><span class="pre">n=5</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Contains All Values</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">contains_all(values,</span> <span class="pre">search_values)</span></code> that checks if all search values are present in the given list. Do not use Python’s <code class="docutils literal notranslate"><span class="pre">all()</span></code> function.<br />
+Examples:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Search Values</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">2]</span></code></p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">11]</span></code></p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>Optimized Insertion Sort</strong><br />
+Rewrite the insertion sort algorithm to perform the sorting in one pass by finding the correct insertion point and swapping elements. Write an optimized version of <code class="docutils literal notranslate"><span class="pre">insertion_sort(values)</span></code>.<br />
+Example:</p>
+<ul class="simple">
+<li><p>Input: <code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">1,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">4,</span> <span class="pre">3]</span></code></p></li>
+<li><p>Result: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></code></p></li>
+</ul>
+</li>
+</ol>
+<p>Here are the problems with the corresponding Wikipedia links for reference:</p>
+<hr class="docutils" />
+<ol class="arabic" start="11">
+<li><p><strong>Sudoku Solver</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">solve_sudoku(board)</span></code> that solves a given 9x9 Sudoku puzzle using backtracking. The puzzle is represented as a 2D list with ‘0’ indicating empty cells. The function should modify the board in-place and return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the puzzle is solved, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.<br />
+<a class="reference external" href="https://en.wikipedia.org/wiki/Sudoku">Sudoku - Wikipedia</a><br />
+Example Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">board</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Example Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">board</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>N-Queens Problem</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">solve_n_queens(n)</span></code> to find all possible solutions for the n-queens problem. The function should return all distinct solutions as a list of lists, where each list represents the position of queens on the board. The board should be represented as a list of strings, where ‘Q’ and ‘.’ indicate a queen and an empty space, respectively.<br />
+<a class="reference external" href="https://en.wikipedia.org/wiki/Eight_queens_puzzle">N-Queens - Wikipedia</a><br />
+Example Input:<br />
+<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">4</span></code><br />
+Example Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;.Q..&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;...Q&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Q...&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;..Q.&quot;</span><span class="p">],</span>
+
+    <span class="p">[</span><span class="s2">&quot;..Q.&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;Q...&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;...Q&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;.Q..&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Knapsack Problem (Dynamic Programming)</strong><br />
+Implement a function <code class="docutils literal notranslate"><span class="pre">knapsack(weights,</span> <span class="pre">values,</span> <span class="pre">capacity)</span></code> that solves the 0/1 Knapsack problem using dynamic programming. Given a list of weights and corresponding values of <code class="docutils literal notranslate"><span class="pre">n</span></code> items, determine the maximum value that can be obtained by selecting items with a total weight not exceeding a given capacity.<br />
+<a class="reference external" href="https://en.wikipedia.org/wiki/Knapsack_problem">Knapsack Problem - Wikipedia</a><br />
+Example Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">capacity</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Example Output:<br />
+<code class="docutils literal notranslate"><span class="pre">7</span></code> (items with weights 2 and 3 are selected, values are 3 and 4)</p>
+</li>
+<li><p><strong>Travelling Salesman Problem (TSP)</strong><br />
+Write a function <code class="docutils literal notranslate"><span class="pre">tsp(graph)</span></code> to solve the Travelling Salesman Problem (TSP) using dynamic programming with bit masking. Given a graph represented as an adjacency matrix, find the shortest possible route that visits each city exactly once and returns to the origin city.<br />
+<a class="reference external" href="https://en.wikipedia.org/wiki/Travelling_salesman_problem">Travelling Salesman Problem - Wikipedia</a><br />
+Example Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Example Output:<br />
+<code class="docutils literal notranslate"><span class="pre">80</span></code> (minimum cost path: 0 → 1 → 3 → 2 → 0)</p>
+</li>
+<li><p><strong>Word Break Problem (Dynamic Programming)</strong><br />
+Given a string <code class="docutils literal notranslate"><span class="pre">s</span></code> and a dictionary of words <code class="docutils literal notranslate"><span class="pre">dict</span></code>, write a function <code class="docutils literal notranslate"><span class="pre">word_break(s,</span> <span class="pre">dict)</span></code> to determine if <code class="docutils literal notranslate"><span class="pre">s</span></code> can be segmented into a space-separated sequence of one or more dictionary words. Return all such possible sentences.<br />
+<a class="reference external" href="https://en.wikipedia.org/wiki/Word_break_problem">Word Break Problem - Wikipedia</a><br />
+Example Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;catsanddog&quot;</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;cats&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="s2">&quot;sand&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;cats and dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat sand dog&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example Input:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;pineapplepenapple&quot;</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pen&quot;</span><span class="p">,</span> <span class="s2">&quot;applepen&quot;</span><span class="p">,</span> <span class="s2">&quot;pine&quot;</span><span class="p">,</span> <span class="s2">&quot;pineapple&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Example Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;pine apple pen apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pineapple pen apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pine applepen apple&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./challenges"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="PyPro_challenge-2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PyPro: Challenge 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../labs/lab_0.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practial 0: Taking control of a jupyter notebook</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PyPro: Challenge 3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-challenge-is-due-on-saturday-october-10th-2024-at-8pm">This challenge is due on Saturday, October 10th, 2024, at 8pm.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pypro-challenges">PyPro Challenges</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
