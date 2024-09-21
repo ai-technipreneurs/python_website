@@ -119,12 +119,15 @@ If you notice any issue, or have suggestions or requests, please go the
 ### Credit & Aknowledgement
 
 
+```{admonition} Aknowledgement - Technical Support
+This jupyter book was done with the support of the technical team of [ai.technipreneurs](https://www.linkedin.com/in/techni-preneurs-cotonou-5522b5215/); [Awadi Katanga](https://www.linkedin.com/in/abalo-katanga/) and [Domini Leko](https://www.linkedin.com/in/domini-jocema-leko-moutouo-644b5799/). Fell free to also [connect with me on LinkedIn](https://www.linkedin.com/in/gabayae/).
+```
+
+
 ```{admonition} Credit - Book Template
 This jupyter book was designed using [this template](https://ml-course.github.io/master/intro.html) and the credit goes to [Joaquin Vanschoren](https://github.com/joaquinvanschoren).
 ```
 
-```{admonition} Aknowledgement - Technical Support
-This jupyter book was done with the support of the technical team of [ai.technipreneurs](https://www.linkedin.com/in/techni-preneurs-cotonou-5522b5215/); [Awadi Katanga](https://www.linkedin.com/in/abalo-katanga/) and [Domini Leko](https://www.linkedin.com/in/domini-jocema-leko-moutouo-644b5799/). Fell free to also [connect with me on LinkedIn](https://www.linkedin.com/in/gabayae/).
-```
+
 
 
