@@ -68,9 +68,6 @@ The aim of programming challenges is to enhance problem-solving skills, reinforc
 
 
 
-
-
-
 ## Labs
 
 Download the lab notebooks and solve the questions locally, or launch them in Google Colab.
@@ -90,7 +87,7 @@ D'incroyables ressources peuvent également être trouvées à:
  - [Programmation python](https://www.eyrolles.com/Informatique/Livre/programmation-python-9782212124835/)
 
 
-
+`========================================================================================================`
 
 ```{admonition} Get your hands dirty
 Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://github.com/ai-technipreneurs/python_website). To run the notebooks locally, see the [prerequisites](https://ai-technipreneurs.github.io/python_website/labs/Lab%2APrerequisites.html).
