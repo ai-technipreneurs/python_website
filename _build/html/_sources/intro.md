@@ -79,6 +79,8 @@ Download the lab notebooks and solve the questions locally, or launch them in Go
 
 
 
+`=============================================================================================`
+
 ## Note à l'attention des étudiants francophones
 
 Pour les étudiants francophones, les sites web suivants pourraient se révéler particulièrement utiles : [In2Py](https://gabayae.github.io/bases_de_programmation_python/) avec [des cahiers-virtuels](https://github.com/gabayae/bases_de_programmation_python-cahiers-virtuels-de-cours), [Atelier-3P](https://ai-technipreneurs.github.io/site-officiel-atelier-3-P/), et [le tutoriel Python](https://docs.python.org/fr/3/tutorial/). 
@@ -87,7 +89,7 @@ D'incroyables ressources peuvent également être trouvées à:
  - [Programmation python](https://www.eyrolles.com/Informatique/Livre/programmation-python-9782212124835/)
 
 
-`========================================================================================================`
+`=============================================================================================`
 
 ```{admonition} Get your hands dirty
 Retrieve all materials by cloning the <i class="fab fa-github"></i> [GitHub repo](https://github.com/ai-technipreneurs/python_website). To run the notebooks locally, see the [prerequisites](https://ai-technipreneurs.github.io/python_website/labs/Lab%2APrerequisites.html).
