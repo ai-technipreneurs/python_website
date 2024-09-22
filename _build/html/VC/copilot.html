@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Individual presentations topics: &#8212; Python Programming</title>
+    <title>Integrating Git with GitHub Copilot &#8212; Python Programming</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'VC/presentations';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VC/copilot';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Advanced Python Proficiency Projects with Real-Life Problems" href="advanced-python-projects.html" />
-    <link rel="prev" title="Practical 2: Version Control with Git: remote" href="version_control_remote.html" />
+    <link rel="prev" title="Integrating Git with GitHub Codespaces" href="codespaces.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,7 +207,7 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs &amp; indivdual projects</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
 
 
@@ -238,7 +237,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Individual presentations topics:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual presentations topics:</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper and further</span></p>
@@ -247,11 +246,11 @@
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development set up</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../labs/Lab%2APrerequisites.html">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codespaces.html">Integrating Git with GitHub Codespaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="copilot.html">Integrating Git with GitHub Copilot</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrating Git with GitHub Copilot</a></li>
 </ul>
 
     </div>
@@ -323,7 +322,7 @@
       
       
       
-      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2FVC/presentations.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2FVC/copilot.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +352,7 @@
       
       
       
-      <li><a href="../_sources/VC/presentations.md" target="_blank"
+      <li><a href="../_sources/VC/copilot.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,7 +436,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Individual presentations topics:</h1>
+    <h1>Integrating Git with GitHub Copilot</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -447,13 +446,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Individual presentations topics:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-of-presentation-topics-is-given-below-and-you-are-required-to-choose-at-least-one-to-present"><left> <b> <span style="color:brown;"> A list of presentation topics is given below, and you are required to choose at least one to present: </span> </b></left></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-github-copilot">What is GitHub Copilot?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-github-copilot-with-git">Benefits of Using GitHub Copilot with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-github-copilot">Setting Up GitHub Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">1. <strong>Prerequisites</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-github-copilot-in-vs-code">2. <strong>Installing GitHub Copilot in VS Code</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-github-copilot-with-git">Using GitHub Copilot with Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-code-with-copilot">1. <strong>Generating Code with Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-code-generated-by-copilot">2. <strong>Committing Code Generated by Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-with-copilot">3. <strong>Collaborating with Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-merge-conflicts">4. <strong>Resolving Merge Conflicts</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-github-copilot">Customizing GitHub Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-copilot-suggestions">1. <strong>Controlling Copilot Suggestions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-copilot-settings">2. <strong>Configuring Copilot Settings</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-using-github-copilot-with-git">Best Practices for Using GitHub Copilot with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -464,50 +478,148 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="individual-presentations-topics">
-<h1>Individual presentations topics:<a class="headerlink" href="#individual-presentations-topics" title="Link to this heading">#</a></h1>
-<section id="a-list-of-presentation-topics-is-given-below-and-you-are-required-to-choose-at-least-one-to-present">
-<h2><left> <b> <span style="color:brown;"> A list of presentation topics is given below, and you are required to choose at least one to present: </span> </b></left><a class="headerlink" href="#a-list-of-presentation-topics-is-given-below-and-you-are-required-to-choose-at-least-one-to-present" title="Link to this heading">#</a></h2>
-<p>Listed in decreasing order of priority, from the most important to the least important:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Priorities</p></th>
-<th class="head"><p>Topics</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0</p></td>
-<td><p><ol><li><a href="https://docs.python.org/3/library/re.html">Study of regular expressions</a></li><li><a href="https://realpython.com/python-file-handling/">File management modules and methods in Python</a></li><li><a href="https://realpython.com/python-exceptions/">Error and exception handling</a></li><li><a href="https://realpython.com/primer-on-python-decorators/">Advanced Python decorators</a></li><li><a href="https://www.datacamp.com/community/tutorials/python-metaclasses">Python metaclasses</a></li><li><a href="https://realpython.com/python-gil/">Python’s Global Interpreter Lock (GIL)</a></li><li><a href="https://realpython.com/python-memory-management/">Memory management and garbage collection in Python</a></li><li><a href="https://cython.org/">Writing efficient Python code with <code>Cython</code></a></li></ol></p></td>
-</tr>
-<tr class="row-odd"><td><p>1</p></td>
-<td><p><ol><li><a href="https://realpython.com/python-testing/">Testing in Python</a></li><li><a href="https://git-scm.com/book/en/v2">Version control with <code>Git</code></a></li><li><a href="https://realpython.com/python-testing/">Writing unit tests with <code>unittest</code> and <code>pytest</code></a></li><li><a href="https://realpython.com/python-test-driven-development/">Test-driven development in Python</a></li><li><a href="https://travis-ci.org/">Continuous integration with <code>Travis CI</code> and <code>GitHub Actions</code></a></li><li><a href="https://realpython.com/profile-guided-optimization-python/">Profiling and performance optimization in Python</a></li><li><a href="https://docs.python.org/3/library/asyncio.html">Concurrency with <code>asyncio</code> in Python</a></li><li><a href="https://docs.python.org/3/library/multiprocessing.html">Parallel processing with <code>multiprocessing</code> module</a></li><li><a href="https://realpython.com/python-concurrency/">Writing thread-safe programs in Python</a></li></ol></p></td>
-</tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p><ol><li><a href="https://numpy.org/doc/stable/user/quickstart.html">Introduction to <code>NumPy</code></a></li><li><a href="https://matplotlib.org/stable/users/getting_started.html">Introduction to <code>Matplotlib</code></a></li><li><a href="https://numpy.org/doc/stable/user/quickstart.html#vectorized-operations">Vectorized operations in <code>NumPy</code></a></li><li><a href="https://numpy.org/doc/stable/reference/casting.html">Broadcasting in <code>NumPy</code></a></li><li><a href="https://matplotlib.org/stable/gallery/index.html">Advanced plotting with <code>Matplotlib</code> (3D plots, subplots)</a></li><li><a href="https://plotly.com/python/">Interactive visualizations with <code>Plotly</code></a></li><li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html">Handling missing data with <code>Pandas</code></a></li><li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html">Time series analysis with <code>Pandas</code></a></li><li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/preprocessing.html">Data cleaning and preprocessing with <code>Pandas</code></a></li></ol></p></td>
-</tr>
-<tr class="row-odd"><td><p>3</p></td>
-<td><p><ol><li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html">Introduction to <code>Pandas</code></a></li><li><a href="https://seaborn.pydata.org/introduction.html">Introduction to <code>Seaborn</code></a></li><li><a href="https://scikit-learn.org/stable/user_guide.html">Introduction to <code>Scikit-Learn</code></a></li><li><a href="https://scikit-learn.org/stable/modules/decomposition.html#pca">Dimensionality reduction techniques (<code>PCA</code>, <code>t-SNE</code>)</a></li><li><a href="https://scikit-learn.org/stable/modules/compose.html">Implementing machine learning pipelines in <code>Scikit-Learn</code></a></li><li><a href="https://scikit-learn.org/stable/modules/grid_search.html">Hyperparameter tuning with <code>GridSearchCV</code> and <code>RandomizedSearchCV</code></a></li><li><a href="https://scikit-learn.org/stable/modules/linear_model.html">Building and evaluating regression models</a></li><li><a href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.classification">Building and evaluating classification models</a></li><li><a href="https://scikit-learn.org/stable/modules/tree.html">Decision trees and random forests in <code>Scikit-Learn</code></a></li></ol></p></td>
-</tr>
-<tr class="row-even"><td><p>4</p></td>
-<td><p><ol><li><a href="https://docs.scipy.org/doc/scipy/reference/">Introduction to <code>SciPy</code></a></li><li><a href="https://sympy.org/en/index.html">Introduction to <code>Sympy</code></a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/optimize.html">Numerical optimization in <code>SciPy</code></a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/integrate.html">Solving differential equations with <code>SciPy</code></a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/signal.html">Signal processing with <code>SciPy</code></a></li><li><a href="https://docs.sympy.org/latest/index.html">Symbolic mathematics with <code>Sympy</code></a></li><li><a href="https://docs.sympy.org/latest/tutorials/advanced.html">Advanced symbolic manipulation with <code>Sympy</code></a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/fft.html">Fast Fourier Transform (FFT) with <code>SciPy</code></a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/sparse.html">Sparse matrices and linear algebra in <code>SciPy</code></a></li></ol></p></td>
-</tr>
-<tr class="row-odd"><td><p>5</p></td>
-<td><p><ol><li><a href="https://realpython.com/python-oop/">Object-oriented programming in Python</a></li><li><a href="https://realpython.com/python-functional-programming/">Functional programming in Python</a></li><li><a href="https://realpython.com/list-comprehension-python/">Advanced list comprehensions and generator expressions</a></li><li><a href="https://realpython.com/introduction-to-python-generators/">Iterator and generator patterns</a></li><li><a href="https://realpython.com/python-with-statement/">Context managers and the <code>with</code> statement</a></li><li><a href="https://docs.python.org/3/library/abc.html">Abstract Base Classes (ABCs) in Python</a></li><li><a href="https://docs.python.org/3/extending/extending.html">Writing Python extensions in <code>C</code></a></li><li><a href="https://realpython.com/implementing-a-stack-in-python/">Implementing data structures in Python (<code>stacks</code>, <code>queues</code>, <code>graphs</code>)</a></li><li><a href="https://towardsdatascience.com/dynamic-programming-in-python-5c9d8056a68b">Dynamic programming algorithms in Python</a></li><li><a href="https://realpython.com/sorting-algorithms-python/">Sorting and searching algorithms in Python</a></li></ol></p></td>
-</tr>
-<tr class="row-even"><td><p>6</p></td>
-<td><p><ol><li><a href="https://docs.python.org/3/library/urllib.html">The <code>URLLIB</code> module</a></li><li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">The <code>BeautifulSoup</code> module</a></li><li><a href="https://www.nltk.org/">The <code>NLTK</code> module</a></li><li><a href="https://www.djangoproject.com/start/">Web application development with <code>Django</code></a></li><li><a href="https://scrapy.org/">Web scraping with <code>Scrapy</code></a></li><li><a href="https://flask.palletsprojects.com/en/2.3.x/">RESTful APIs with <code>Flask</code></a></li><li><a href="https://docs.graphene-python.org/en/latest/">Building GraphQL APIs with <code>Graphene</code></a></li><li><a href="https://fastapi.tiangolo.com/">Introduction to <code>FastAPI</code> for web development</a></li><li><a href="https://docs.aiohttp.org/en/stable/">Asynchronous web applications with <code>aiohttp</code></a></li><li><a href="https://www.docker.com/resources/what-container">Deploying Python web applications with <code>Docker</code></a></li></ol></p></td>
-</tr>
-<tr class="row-odd"><td><p>7</p></td>
-<td><p><ol><li><a href="https://altair-viz.github.io/">Data visualization with <code>Altair</code></a></li><li><a href="https://geopandas.org/en/stable/">Advanced geospatial analysis with <code>Geopandas</code></a></li><li><a href="https://pillow.readthedocs.io/en/stable/">Image processing with <code>Pillow</code></a></li><li><a href="https://spacy.io/">Natural Language Processing (NLP) with <code>spaCy</code></a></li><li><a href="https://www.tensorflow.org/learn">Machine learning with <code>TensorFlow</code> and <code>Keras</code></a></li><li><a href="https://pytorch.org/tutorials/">Deep learning with <code>PyTorch</code></a></li><li><a href="https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html">Recurrent Neural Networks (RNNs) in Python</a></li><li><a href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html">Convolutional Neural Networks (CNNs) in Python</a></li><li><a href="https://gym.openai.com/">Reinforcement learning with <code>OpenAI Gym</code></a></li><li><a href="https://facebook.github.io/prophet/docs/quick_start.html">Time series forecasting with <code>Prophet</code></a></li></ol></p></td>
-</tr>
-</tbody>
-</table>
+  <section class="tex2jax_ignore mathjax_ignore" id="integrating-git-with-github-copilot">
+<h1>Integrating Git with GitHub Copilot<a class="headerlink" href="#integrating-git-with-github-copilot" title="Link to this heading">#</a></h1>
+<section id="what-is-github-copilot">
+<h2>What is GitHub Copilot?<a class="headerlink" href="#what-is-github-copilot" title="Link to this heading">#</a></h2>
+<p><strong>GitHub Copilot</strong> is an AI-powered code assistant developed by GitHub in collaboration with OpenAI. It helps developers by providing code suggestions directly in the editor. GitHub Copilot can suggest whole lines or blocks of code based on natural language comments, the context of the code you’re working on, and common coding patterns found in open-source repositories.</p>
+</section>
+<section id="benefits-of-using-github-copilot-with-git">
+<h2>Benefits of Using GitHub Copilot with Git<a class="headerlink" href="#benefits-of-using-github-copilot-with-git" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Accelerated Development</strong>: Copilot can write code snippets, generate boilerplate code, and even create entire functions based on a simple description, reducing the time needed to write repetitive or boilerplate code.</p></li>
+<li><p><strong>Code Quality</strong>: By suggesting standard patterns and idiomatic code, Copilot can help improve the quality and consistency of the codebase.</p></li>
+<li><p><strong>Learning Tool</strong>: For new developers, Copilot serves as a real-time tutor, suggesting code and explaining how it works, helping users learn new APIs, libraries, and best practices.</p></li>
+</ul>
+</section>
+<section id="setting-up-github-copilot">
+<h2>Setting Up GitHub Copilot<a class="headerlink" href="#setting-up-github-copilot" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>1. <strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A GitHub account.</p></li>
+<li><p>A compatible code editor. Currently, GitHub Copilot is available for:</p>
+<ul>
+<li><p>Visual Studio Code (VS Code)</p></li>
+<li><p>Visual Studio</p></li>
+<li><p>JetBrains IDEs (like PyCharm, IntelliJ IDEA)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="installing-github-copilot-in-vs-code">
+<h3>2. <strong>Installing GitHub Copilot in VS Code</strong><a class="headerlink" href="#installing-github-copilot-in-vs-code" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Install the GitHub Copilot Extension</strong>:</p>
+<ul class="simple">
+<li><p>Open VS Code and go to the Extensions view (<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">X</span></code> or <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">X</span></code> on macOS).</p></li>
+<li><p>Search for “GitHub Copilot” and click on <code class="docutils literal notranslate"><span class="pre">Install</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Sign In to GitHub</strong>:</p>
+<ul class="simple">
+<li><p>After installing the extension, you will be prompted to sign in to your GitHub account to enable Copilot.</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Sign</span> <span class="pre">in</span></code> and follow the authentication steps.</p></li>
+</ul>
+</li>
+<li><p><strong>Enable Copilot</strong>:</p>
+<ul class="simple">
+<li><p>Once signed in, GitHub Copilot will be activated. You can now start using it to get code suggestions.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="using-github-copilot-with-git">
+<h2>Using GitHub Copilot with Git<a class="headerlink" href="#using-github-copilot-with-git" title="Link to this heading">#</a></h2>
+<section id="generating-code-with-copilot">
+<h3>1. <strong>Generating Code with Copilot</strong><a class="headerlink" href="#generating-code-with-copilot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Writing Code Snippets</strong>: Start typing in a file, and Copilot will automatically suggest code snippets. You can cycle through suggestions using the <code class="docutils literal notranslate"><span class="pre">Tab</span></code> key or by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">]</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">]</span></code> (macOS).</p></li>
+<li><p><strong>Comments for Code Generation</strong>: You can write a natural language comment, such as <code class="docutils literal notranslate"><span class="pre">//</span> <span class="pre">function</span> <span class="pre">to</span> <span class="pre">reverse</span> <span class="pre">a</span> <span class="pre">string</span></code>, and Copilot will suggest a code implementation for it.</p></li>
+<li><p><strong>Contextual Suggestions</strong>: Copilot learns from the code around it and can suggest contextually appropriate snippets based on your current project.</p></li>
+</ul>
+</section>
+<section id="committing-code-generated-by-copilot">
+<h3>2. <strong>Committing Code Generated by Copilot</strong><a class="headerlink" href="#committing-code-generated-by-copilot" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Review the Code</strong>: Carefully review the code suggestions made by Copilot to ensure they meet your requirements and coding standards.</p></li>
+<li><p><strong>Stage and Commit Changes</strong>:</p>
+<ul>
+<li><p>Use the Source Control view in your code editor or the terminal to stage the changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
 </div>
+</li>
+<li><p>Commit the changes with a meaningful message:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added a function to reverse a string using Copilot&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Push to Repository</strong>:</p>
+<ul>
+<li><p>Push your commits to the remote repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="collaborating-with-copilot">
+<h3>3. <strong>Collaborating with Copilot</strong><a class="headerlink" href="#collaborating-with-copilot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>When working on a shared repository, inform your team about the usage of Copilot. This transparency helps in understanding the origins of certain code patterns and suggestions.</p></li>
+<li><p>Use GitHub’s pull request system to review Copilot-generated code, allowing team members to provide feedback and ensure the code meets project standards.</p></li>
+</ul>
+</section>
+<section id="resolving-merge-conflicts">
+<h3>4. <strong>Resolving Merge Conflicts</strong><a class="headerlink" href="#resolving-merge-conflicts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If you encounter merge conflicts in your Git repository, Copilot can assist by suggesting how to resolve them based on the code context.</p></li>
+<li><p>Always review Copilot’s suggestions carefully, especially in complex conflict scenarios, as it might not fully understand the intent of the changes.</p></li>
+</ul>
 </section>
 </section>
-<section id="optional">
-<h1>Optional:<a class="headerlink" href="#optional" title="Link to this heading">#</a></h1>
-<ol><li><a href="https://jupyterbook.org/content/markdown.html">A tour of <code>Markdown</code> in a Jupyter notebook</a></li><li><a href="https://packaging.python.org/tutorials/packaging-projects/">Creating custom Python libraries and distributing them via <code>PyPI</code></a></li><li><a href="https://docs.celeryproject.org/en/stable/getting-started/first-steps.html">Automating tasks with <code>Celery</code></a></li><li><a href="https://click.palletsprojects.com/en/8.0.x/">Building CLI applications with <code>Click</code></a></li><li><a href="https://jupyter.org/documentation">Using <code>Jupyter</code> notebooks for interactive data exploration</a></li></ol>
+<section id="customizing-github-copilot">
+<h2>Customizing GitHub Copilot<a class="headerlink" href="#customizing-github-copilot" title="Link to this heading">#</a></h2>
+<section id="controlling-copilot-suggestions">
+<h3>1. <strong>Controlling Copilot Suggestions</strong><a class="headerlink" href="#controlling-copilot-suggestions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Accepting Suggestions</strong>: Press <code class="docutils literal notranslate"><span class="pre">Tab</span></code> to accept a suggestion.</p></li>
+<li><p><strong>Cycling through Suggestions</strong>: Use <code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">]</span></code> (Windows/Linux) or <code class="docutils literal notranslate"><span class="pre">Option</span> <span class="pre">+</span> <span class="pre">]</span></code> (macOS) to cycle through different suggestions.</p></li>
+<li><p><strong>Disabling Inline Suggestions</strong>: You can disable Copilot in certain files or languages by clicking on the GitHub Copilot icon in the bottom right corner of VS Code and toggling it off.</p></li>
+</ul>
+</section>
+<section id="configuring-copilot-settings">
+<h3>2. <strong>Configuring Copilot Settings</strong><a class="headerlink" href="#configuring-copilot-settings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Preferences</span> <span class="pre">&gt;</span> <span class="pre">Settings</span></code> in VS Code (or <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">&gt;</span> <span class="pre">Preferences</span> <span class="pre">&gt;</span> <span class="pre">Settings</span></code> on macOS).</p></li>
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">Copilot</span></code> to configure options like:</p>
+<ul>
+<li><p>Enabling/disabling Copilot in specific languages.</p></li>
+<li><p>Controlling suggestion behavior.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="best-practices-for-using-github-copilot-with-git">
+<h2>Best Practices for Using GitHub Copilot with Git<a class="headerlink" href="#best-practices-for-using-github-copilot-with-git" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Review and Test Code</strong>: Always review and test the code suggestions made by Copilot to ensure they work as expected and meet your project’s requirements.</p></li>
+<li><p><strong>Document Changes</strong>: Clearly document code generated by Copilot, especially for complex implementations, to provide context for your team.</p></li>
+<li><p><strong>Stay Up-to-Date</strong>: GitHub Copilot is continuously evolving. Stay updated with the latest features and improvements to make the most out of the tool.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Integrating Git with GitHub Copilot enhances your development workflow by providing smart code suggestions, reducing boilerplate, and improving code quality. Whether you’re working on a personal project or collaborating with a team, Copilot can help accelerate development while maintaining consistency and code standards.</p>
+<p>Happy coding with GitHub Copilot!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -541,22 +653,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="version_control_remote.html"
+       href="codespaces.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></p>
+        <p class="prev-next-title">Integrating Git with GitHub Codespaces</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="advanced-python-projects.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced Python Proficiency Projects with Real-Life Problems</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -574,13 +677,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Individual presentations topics:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-list-of-presentation-topics-is-given-below-and-you-are-required-to-choose-at-least-one-to-present"><left> <b> <span style="color:brown;"> A list of presentation topics is given below, and you are required to choose at least one to present: </span> </b></left></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-github-copilot">What is GitHub Copilot?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits-of-using-github-copilot-with-git">Benefits of Using GitHub Copilot with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-github-copilot">Setting Up GitHub Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">1. <strong>Prerequisites</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-github-copilot-in-vs-code">2. <strong>Installing GitHub Copilot in VS Code</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#optional">Optional:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-github-copilot-with-git">Using GitHub Copilot with Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-code-with-copilot">1. <strong>Generating Code with Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-code-generated-by-copilot">2. <strong>Committing Code Generated by Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collaborating-with-copilot">3. <strong>Collaborating with Copilot</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-merge-conflicts">4. <strong>Resolving Merge Conflicts</strong></a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-github-copilot">Customizing GitHub Copilot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-copilot-suggestions">1. <strong>Controlling Copilot Suggestions</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-copilot-settings">2. <strong>Configuring Copilot Settings</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-using-github-copilot-with-git">Best Practices for Using GitHub Copilot with Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
   </nav></div>
 
 </div></div>

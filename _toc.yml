@@ -41,6 +41,9 @@ parts:
 - caption: Local development set up
   chapters:
   - file: labs/Lab*Prerequisites 
+  - file: VC/git-and-vscode
+  - file: VC/codespaces
+  - file: VC/copilot
   
   
    
