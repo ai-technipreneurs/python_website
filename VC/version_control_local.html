@@ -229,6 +229,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
 
 
@@ -478,7 +479,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
@@ -527,6 +529,9 @@ document.write(`
 <p><left> <b> <span style="color:red;">
 This notebook is focused on version control with a local repository. You are expected to go through it line by line, step by step. Execute each code cell and follow the instructions to understand how to manage version control locally. Experiment with commands, make changes, and observe how they affect your repository. Your hands-on interaction with the examples will enhance your comprehension of local version control practices.
 </span> </b></left></p>
+</section>
+<section id="you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">
+<h1>You might find <a class="reference external" href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">this reference</a> ,   <a class="reference external" href="https://git-scm.com/docs">this command list</a> as well as  this <a class="reference external" href="https://git-scm.com/docs/gittutorial">resource</a> very useful for this practical.<a class="headerlink" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical" title="Link to this heading">#</a></h1>
 <section id="what-is-version-control">
 <h2>What is Version Control ?<a class="headerlink" href="#what-is-version-control" title="Link to this heading">#</a></h2>
 <p>In software development, revision control systems (RCS) are essential tools. They are widely used across all development environments and by developers everywhere.</p>
@@ -610,7 +615,7 @@ keywords by typing <strong>/</strong> followed by the search term. I’m interes
 </pre></div>
 </div>
 <p>Excellent, it gives a list of commands it is able to help with, as well as their descriptions.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>&lt;command&gt;<span class="err">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>command.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>&lt;command&gt;<span class="err">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>command.
 </pre></div>
 </div>
 </section>
@@ -648,8 +653,7 @@ Initialized<span class="w"> </span>empty<span class="w"> </span>Git<span class="
 </div>
 <p>Step 2 : Browse the directory’s hidden files to see what happened here.
 Open directories, browse file contents. Learn what you can in a minute.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-A
-.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-A<span class="w"> </span>.git
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.git
 $<span class="w"> </span>ls<span class="w"> </span>-A
 HEAD<span class="w">        </span>config<span class="w">      </span>description<span class="w"> </span>hooks<span class="w">       </span>info<span class="w">        </span>objects<span class="w">     </span>refs<span class="w">      </span>branches
@@ -659,7 +663,6 @@ HEAD<span class="w">        </span>config<span class="w">      </span>descriptio
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>description
 </pre></div>
 </div>
-<hr class="docutils" />
 <p>You can use <code class="docutils literal notranslate"><span class="pre">!tree</span></code> or <code class="docutils literal notranslate"><span class="pre">tree</span></code> to display the directory structure in a tree-like format</p>
 <hr class="docutils" />
 <p>An interesting command I would like you to test is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, I will describe it later but let’s see what it displays now.</p>
@@ -686,15 +689,14 @@ create one, then we’ll learn the <strong>git add</strong> command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>README.md
 </pre></div>
 </div>
-<p>Step 2: Verify that git has seen the ne file.</p>
+<p>Step 2: Verify that git has seen the file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 <span class="c1"># On branch master</span>
 
 <span class="c1"># No commits yet</span>
 
 <span class="c1"># Untracked files:</span>
-<span class="w">  </span><span class="c1">#(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="w">	</span>README.md
+<span class="c1">#(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed) README.md</span>
 
 <span class="c1"># nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
@@ -704,7 +706,6 @@ in this file.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>README.md
 </pre></div>
 </div>
-<hr class="docutils" />
 </section>
 </section>
 <section id="git-status-checking-the-status-of-your-local-copy">
@@ -750,55 +751,45 @@ More frequent commits increase the granularity of your <strong>undo</strong> but
 <section id="practical-commit-your-changes">
 <h2>Practical : Commit Your Changes<a class="headerlink" href="#practical-commit-your-changes" title="Link to this heading">#</a></h2>
 <p>Step 1 : Commit the file you’ve added to your repository.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git commit -am &quot;This is the first commit. It adds a readme file.&quot;
-[master (root-commit) 664867c] This is the first commit. It adds a readme file.
- 1 file changed, 0 insertions(+), 0 deletions(-)
-  create mode 100644 readme.md
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;This is the first commit. It adds a readme file.&quot;</span>
+<span class="w">  </span><span class="o">[</span>master<span class="w"> </span><span class="o">(</span>root-commit<span class="o">)</span><span class="w"> </span>664867c<span class="o">]</span><span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>commit.<span class="w"> </span>It<span class="w"> </span>adds<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file.
+<span class="w">  </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">0</span><span class="w"> </span>deletions<span class="o">(</span>-<span class="o">)</span>
+<span class="w">  </span>create<span class="w"> </span>mode<span class="w"> </span><span class="m">100644</span><span class="w"> </span>readme.md
 </pre></div>
 </div>
 <p>Step 2 : Admire your work.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
-# On branch master
-nothing to commit, working tree clean
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+<span class="c1"># On branch master</span>
+nothing<span class="w"> </span>to<span class="w"> </span>commit,<span class="w"> </span>working<span class="w"> </span>tree<span class="w"> </span>clean
 </pre></div>
 </div>
-<hr class="docutils" />
 </section>
 </section>
 <section id="git-diff-viewing-the-differences">
 <h1>git diff : Viewing the Differences<a class="headerlink" href="#git-diff-viewing-the-differences" title="Link to this heading">#</a></h1>
 <p>There are many diff tools.</p>
-<p>If you have a favorite you can set your default git diff tool to execute
-that one. Git, however, comes with its own diff system.</p>
-<p>Let’s recall the behavior of the diff command on the command line.
-Choosing two files that are similar, the command :</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ diff file1 file2
+<p>If you have a favorite you can set your default git diff tool to execute that one. Git, however, comes with its own diff system.</p>
+<p>Let’s recall the behavior of the linux <a class="reference external" href="https://www.geeksforgeeks.org/diff-command-linux-examples/"><code class="docutils literal notranslate"><span class="pre">diff</span></code></a> command on the command line. The equivalent command for windows is <a class="reference external" href="https://www.howtogeek.com/206123/how-to-use-fc-file-compare-from-the-windows-command-prompt/">fc</a>. Choosing two files that are similar, the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$!</span>diff<span class="w"> </span>file1<span class="w"> </span>file2
 </pre></div>
 </div>
-<p>will output the lines that differ between the two files. This
-information can be saved as what’s known as a patch, but we won’t go
-deeply into that just now.</p>
-<p>The only difference between the command line diff tool and git’s diff
-tool is that the git tool is aware of all of the revisions in your
-repository, allowing each revision of each file to be treated as a full
-file.</p>
-<p>Thus, git diff will output the changes in your working directory that
-are not yet staged for a commit. To see how this works, make a change in
-your <a class="reference external" href="http://README.md">README.md</a> file, but don’t yet commit it.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff
+<p>will output the lines that differ between the two files. This information can be saved as what’s known as a patch, but we won’t go deeply into that just now.</p>
+<p>The only difference between the command line diff tool and git’s diff tool is that the git tool is aware of all of the revisions in your repository, allowing each revision of each file to be treated as a full file.</p>
+<p>Thus, git diff will output the changes in your working directory that are not yet staged for a commit. To see how this works, make a change in your <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, but don’t yet commit it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff
 </pre></div>
 </div>
-<p>A summarized version of this output can be output with the –stat flag :</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff --stat
+<p>A summarized version of this output can be output with the <code class="docutils literal notranslate"><span class="pre">--stat</span></code> flag :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>--stat
 </pre></div>
 </div>
 <p>To see only the differences in a certain path, try:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff HEAD -- [path]
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD<span class="w"> </span>--<span class="w"> </span><span class="o">[</span>path<span class="o">]</span>
 </pre></div>
 </div>
 <p>To see what IS staged for commit (that is, what will be committed if you
 type git commit without the -a flag), you can try :</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git diff --cached
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>--cached
 </pre></div>
 </div>
 </section>
@@ -806,13 +797,12 @@ type git commit without the -a flag), you can try :</p>
 <h1>git log : Viewing the History<a class="headerlink" href="#git-log-viewing-the-history" title="Link to this heading">#</a></h1>
 <p>A log of the commit messages is kept by the repository and can be
 reviewed with the log command.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log       
-</pre></div>
-</div>
-<p>commit 664867c42a05461702388310155b785a287d0308 (HEAD -&gt; master)
-Author: Techni Preneurs <a class="reference external" href="mailto:ai&#46;technipreneurs&#37;&#52;&#48;gmail&#46;com">ai<span>&#46;</span>technipreneurs<span>&#64;</span>gmail<span>&#46;</span>com</a>
-Date:   Wed Sep 11 20:31:07 2024 +0200</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    This is the first commit. It adds a readme file.    
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w">       </span>
+<span class="w">   </span>commit<span class="w"> </span>664867c42a05461702388310155b785a287d0308<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>master<span class="o">)</span>
+<span class="w">    </span>Author:<span class="w"> </span>Techni<span class="w"> </span>Preneurs<span class="w"> </span>&lt;ai.technipreneurs@gmail.com&gt;
+<span class="w">    </span>Date:<span class="w">   </span>Wed<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">20</span>:31:07<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0200
+
+<span class="w">        </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>commit.<span class="w"> </span>It<span class="w"> </span>adds<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file.<span class="w">    </span>
 </pre></div>
 </div>
 <p>There are some useful flags for this command, such as</p>
@@ -847,7 +837,7 @@ going anywhere.  Add a line to <code class="docutils literal notranslate"><span 
 last night.  Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> to see that the file is changed and
 ready to be added.</p>
 <p>You can now return to previous checked in version with:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -- README.md
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>README.md
 </pre></div>
 </div>
 <p>Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> and take a look at the file.</p>
@@ -855,17 +845,13 @@ ready to be added.</p>
 <section id="git-rm-removing-files">
 <h1>git rm : Removing files<a class="headerlink" href="#git-rm-removing-files" title="Link to this heading">#</a></h1>
 <p>There are a variety of reasons you way want to remove a file from the
-repository after it has been committed.  Create a file called
-<code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code> with the first names of all your immediate family
-members, and add/commit it to the repository.</p>
+repository after it has been committed.  Create a file called <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code> with the first names of all your immediate family members, and add/commit it to the repository.</p>
 <p>You can now remove the file from the repository with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>READYOU.md
 </pre></div>
 </div>
-<p>List the directory to see that you have no file named <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code>.
-Use <code class="docutils literal notranslate"><span class="pre">status</span></code> to determine if you need any additional steps.</p>
-<p>What if you delete a file in the shell without <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>? Try deleting
-<code class="docutils literal notranslate"><span class="pre">README.md</span></code></p>
+<p>List the directory to see that you have no file named <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code>. Use <code class="docutils literal notranslate"><span class="pre">status</span></code> to determine if you need any additional steps.</p>
+<p>What if you delete a file in the shell without <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>? Try deleting <code class="docutils literal notranslate"><span class="pre">README.md</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -879,7 +865,7 @@ file?</p>
 <h1>git revert : the promised “undo” button<a class="headerlink" href="#git-revert-the-promised-undo-button" title="Link to this heading">#</a></h1>
 <p>It is possible that after many commits, you decide that you really want to <strong>rollback</strong> a set of commits and start over.  It is easy to revert your code to a previous version.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> to explore your history and determine which version you are interested in.  Choose a version and note the <em>hash</em> for that version. (Let’s assume <code class="docutils literal notranslate"><span class="pre">abc456</span></code>)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> git revert abc456
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>revert<span class="w"> </span>abc456
 </pre></div>
 </div>
 <p><strong>Importantly,</strong> this will not erase the intervening commits.  This will create a new commit that is changed from the previous commit by a change that will recreate the desired version.  This retains a complete provenance of your software, and be compared to the prohibition in removing pages from a lab notebook.</p>
@@ -983,7 +969,8 @@ file.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
