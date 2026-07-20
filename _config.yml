@@ -4,45 +4,44 @@
 title: Python Programming
 author: Yaé U. Gaba
 logo: notebooks/images/banner.jpeg
-copyright: "2024. CC0 Licensed - Use as you like. Appropriate credit is very welcome"  # Copyright year to be placed in the footer
+copyright: "2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome."
 
+# MyST parser extensions
+parse:
+  myst_enable_extensions:
+    - colon_fence      # allow ::: fences alongside ``` for admonitions
+    - deflist          # definition lists
+    - dollarmath       # inline $...$ math
+    - html_image       # <img> tags
+    - linkify          # auto-link bare URLs
+    - substitution     # {{ var }} substitutions
+    - tasklist         # - [ ] task lists
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Notebook execution — off for now (some lectures need scientific stack)
 execute:
   execute_notebooks: off
   timeout: -1
-  exclude_patterns:
-    - 'S*'
-    - '09*'
-    - '10*'
 
-# Include slides
-#sphinx:
- # config:
-  #  html_extra_path: ['html','pdf']
-
-# Define the name of the latex output file for PDF builds
-#latex:
-#  latex_documents:
-#    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  - references.bib
-
-# Information about where the book exists on the web
+# Repository — used for GitHub buttons and to derive Colab launch URLs
 repository:
-  url: https://github.com/ai-technipreneurs/python_website  # Online location of the book
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/ai-technipreneurs/python_website
+  branch: main
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# HTML theme options
 html:
   use_issues_button: true
   use_repository_button: true
-  favicon: notebooks/images/favicon.png
+  use_edit_page_button: true
+  home_page_in_navbar: true
+  baseurl: https://ai-technipreneurs.github.io/python_website/
   extra_navbar: ""
-  
+
+# Colab launch button — resolves to https://colab.research.google.com/github/<repo>/blob/<branch>/<path>
 launch_buttons:
   colab_url: "https://colab.research.google.com"
+  notebook_interface: jupyterlab
+
+# Sphinx extras
+sphinx:
+  extra_extensions:
+    - sphinx_design    # cards, grids, tabs
