@@ -1,0 +1,1486 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/15-pandas';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="16-decorators.html" />
+    <link rel="prev" title="1.1 Basic Syntax" href="14-comprehensions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/15-pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/15-pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/15-pandas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/15-pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-15-pandas-for-data-analysis"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 15 of 18 — Progress: 83%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">🐼 Lecture 15 — Pandas for Data Analysis</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">60 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #FF9800; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Intermediate</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <strong style="color:#000;">AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong>, AI.Technipreneurs, Bénin<br>&amp; <strong style="color:#000;">African Center for Advanced Studies (ACAS)</strong>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="index.ipynb" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 5px solid #4CAF50;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">
+🎯 Learning Objectives
+</h3>
+<p style="color: #555; font-size: 0.95em; margin-bottom: 10px;">
+By the end of this lecture, you will be able to:
+</p>
+<ul style="list-style-type: none; padding-left: 5px; font-size: 0.95em;">
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Understand the Pandas <code>Series</code> and <code>DataFrame</code> data structures</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Read and write data from CSV, Excel, and other formats</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Select, filter, and transform data with indexing and boolean masks</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Group, aggregate, and merge datasets for analysis</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Perform basic data cleaning: handle missing values, duplicates, and type conversions</li>
+</ul>
+</div><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-15-pandas-for-data-analysis" style="color: #424242; text-decoration: none;">● 🐼 Lecture 15 — Pandas for Data Analysis</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#1-what-is-pandas" style="color: #424242; text-decoration: none;">1. ▸ 🐼 1. What is Pandas?</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#2-series-1d-labeled-array" style="color: #424242; text-decoration: none;">2. ▸ 📊 2. Series — 1D Labeled Array</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#3-dataframe-the-core-of-pandas" style="color: #424242; text-decoration: none;">3. ▸ 📋 3. DataFrame — The Core of Pandas</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#4-reading-writing-data" style="color: #424242; text-decoration: none;">4. ▸ 📁 4. Reading & Writing Data</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#5-selecting-filtering-data" style="color: #424242; text-decoration: none;">5. ▸ 🔍 5. Selecting & Filtering Data</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#6-transforming-data" style="color: #424242; text-decoration: none;">6. ▸ 🔄 6. Transforming Data</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#7-grouping-aggregation" style="color: #424242; text-decoration: none;">7. ▸ 📊 7. Grouping & Aggregation</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#8-handling-missing-data" style="color: #424242; text-decoration: none;">8. ▸ 🛠️ 8. Handling Missing Data</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#9-merging-joining-dataframes" style="color: #424242; text-decoration: none;">9. ▸ 🔗 9. Merging & Joining DataFrames</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#10-putting-it-all-together" style="color: #424242; text-decoration: none;">10. ▸ 🚀 10. Putting It All Together</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#11-practice-exercises" style="color: #424242; text-decoration: none;">11. ▸ 📝 11. Practice Exercises</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">12. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 5px solid #1976D2;
+  border-radius: 0 10px 10px 0;
+  padding: 15px 20px;
+  margin: 10px 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95em;
+">
+🔗 <b>Building on what you know:</b> In <a href="10-numpy-1.ipynb">Lectures 10-11</a> you learned NumPy for numerical arrays. In <a href="12-matplotlib.ipynb"><a href="01-intro-python.ipynb" style="color: #1565C0; text-decoration: none; font-weight: 500;">Lecture 1</a>2</a> you learned to visualize data. <b>Pandas</b> is the missing piece — it adds <i>labels</i>, <i>mixed types</i>, and powerful data manipulation to the scientific Python stack. If NumPy is for numbers, Pandas is for <b>real-world tabular data</b>: CSV files, spreadsheets, databases, and APIs.
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="1-what-is-pandas"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🐼 1. What is Pandas?
+</h3>
+<p style="color: #424242; line-height: 1.6;"><b>Pandas</b> is Python's most widely used library for data manipulation and analysis. Built on top of NumPy, it provides two core data structures: the <code>Series</code> (1D labeled array) and the <code>DataFrame</code> (2D labeled table). Think of a DataFrame as a programmable spreadsheet with the speed of NumPy under the hood.</p>
+</div><p>Pandas is used by data scientists, researchers, financial analysts, and anyone who works with structured data. In this lecture, we’ll work through a practical workflow: loading data, exploring it, cleaning it, transforming it, and answering questions with it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pandas version: </span><span class="si">{</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy version: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="2-series-1d-labeled-array"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+📊 2. Series — 1D Labeled Array
+</h3>
+<p style="color: #424242; line-height: 1.6;">A <code>Series</code> is like a NumPy array with an <b>index</b> — each value has a label. You can think of it as a single column of a spreadsheet.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a Series from a list with custom index</span>
+<span class="n">temperatures</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">[</span><span class="mf">22.5</span><span class="p">,</span> <span class="mf">25.1</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">,</span> <span class="mf">23.4</span><span class="p">,</span> <span class="mf">27.0</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Temperature (°C)&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Type: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean temperature: </span><span class="si">{</span><span class="n">temperatures</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hottest day: </span><span class="si">{</span><span class="n">temperatures</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">temperatures</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">}</span><span class="s2">°C)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating from a dictionary — keys become the index</span>
+<span class="n">populations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span>
+    <span class="s2">&quot;Dakar&quot;</span><span class="p">:</span> <span class="mi">1_146_000</span><span class="p">,</span>
+    <span class="s2">&quot;Abidjan&quot;</span><span class="p">:</span> <span class="mi">4_707_000</span><span class="p">,</span>
+    <span class="s2">&quot;Lagos&quot;</span><span class="p">:</span> <span class="mi">15_400_000</span><span class="p">,</span>
+    <span class="s2">&quot;Nairobi&quot;</span><span class="p">:</span> <span class="mi">4_397_000</span><span class="p">,</span>
+    <span class="s2">&quot;Cape Town&quot;</span><span class="p">:</span> <span class="mi">4_618_000</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populations</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total population: </span><span class="si">{</span><span class="n">populations</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cities with &gt; 4M people:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span> <span class="o">&gt;</span> <span class="mi">4_000_000</span><span class="p">])</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="3-dataframe-the-core-of-pandas"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+📋 3. DataFrame — The Core of Pandas
+</h3>
+<p style="color: #424242; line-height: 1.6;">A <code>DataFrame</code> is a 2D table with labeled rows and columns. It is the <b>central</b> data structure in Pandas and the one you'll use most. Each column is a Series, and all columns share the same index.</p>
+</div><p>Let’s create a DataFrame from scratch and explore it. We’ll use this dataset throughout the lecture:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a DataFrame from a dictionary of lists</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Frank&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
+    <span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Dakar&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;Lagos&quot;</span><span class="p">,</span> <span class="s2">&quot;Nairobi&quot;</span><span class="p">,</span> <span class="s2">&quot;Dakar&quot;</span><span class="p">,</span> <span class="s2">&quot;Lagos&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span> <span class="s2">&quot;CS&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Physics&quot;</span><span class="p">,</span> <span class="s2">&quot;CS&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">88.5</span><span class="p">,</span> <span class="mf">92.0</span><span class="p">,</span> <span class="mf">76.3</span><span class="p">,</span> <span class="mf">95.1</span><span class="p">,</span> <span class="mf">84.7</span><span class="p">,</span> <span class="mf">71.2</span><span class="p">],</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic inspection — always start here with a new dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows, </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> columns)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columns: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Data types:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Summary statistics (numeric columns):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quick look at the data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First 3 rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Last 2 rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Random sample of 2 rows:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="4-reading-writing-data"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+📁 4. Reading & Writing Data
+</h3>
+<p style="color: #424242; line-height: 1.6;">In practice, you rarely create DataFrames by hand. Pandas can read from <b>CSV</b>, <b>Excel</b>, <b>JSON</b>, <b>SQL databases</b>, and more. This is where Pandas truly shines — turning messy real-world files into clean, analyzable tables.</p>
+</div><p>The most common format in science is <strong>CSV</strong> (Comma-Separated Values):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;data.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">)</span>
+
+<span class="c1"># Writing data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;output.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;output.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create a CSV file and read it back</span>
+<span class="n">csv_content</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Name,Age,City,Department,Score</span>
+<span class="s2">Alice,25,Dakar,Physics,88.5</span>
+<span class="s2">Bob,30,Paris,CS,92.0</span>
+<span class="s2">Charlie,35,Lagos,Math,76.3</span>
+<span class="s2">Diana,28,Nairobi,Physics,95.1</span>
+<span class="s2">Eve,22,Dakar,CS,84.7</span>
+<span class="s2">Frank,31,Lagos,Math,71.2&quot;&quot;&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">csv_content</span><span class="p">)</span>
+
+<span class="c1"># Read the CSV into a DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> rows from students.csv&quot;</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="5-selecting-filtering-data"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🔍 5. Selecting & Filtering Data
+</h3>
+<p style="color: #424242; line-height: 1.6;">Selecting subsets of data is the most common Pandas operation. Pandas provides multiple ways to do this, similar to how NumPy uses indexing and slicing (<a href="10-numpy-1.ipynb"><a href="01-intro-python.ipynb" style="color: #1565C0; text-decoration: none; font-weight: 500;">Lecture 1</a>0</a>).</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting columns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Single column (returns Series) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Multiple columns (returns DataFrame) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Score&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting rows with .loc (label-based) and .iloc (position-based)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Row by label (index 0) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Rows 1-3, specific columns ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;Score&quot;</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- First 2 rows by position ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boolean filtering — the most powerful selection method</span>
+<span class="c1"># This works exactly like NumPy boolean masking!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Students who scored above 85 ---&quot;</span><span class="p">)</span>
+<span class="n">high_scorers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">high_scorers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Multiple conditions: use &amp; (and), | (or), ~ (not)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Dakar students who scored above 85 ---&quot;</span><span class="p">)</span>
+<span class="n">dakar_high</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;City&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Dakar&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dakar_high</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="6-transforming-data"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🔄 6. Transforming Data
+</h3>
+<p style="color: #424242; line-height: 1.6;">Once you've selected your data, you often need to transform it: add computed columns, sort, rename, or apply functions. This is where <a href="14-comprehensions.ipynb">comprehensions</a> and <a href="08-recursion-lambda.ipynb">lambda functions</a> become very handy.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding new columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Grade&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="s2">&quot;B&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Passed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">70</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sorting</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Sorted by Score (best first) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Renaming columns</span>
+<span class="n">df_renamed</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Student&quot;</span><span class="p">,</span> <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="s2">&quot;Exam_Score&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New columns: </span><span class="si">{</span><span class="n">df_renamed</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="7-grouping-aggregation"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+📊 7. Grouping & Aggregation
+</h3>
+<p style="color: #424242; line-height: 1.6;">The <code>groupby</code> operation is one of Pandas' most powerful features. It splits data into groups, applies a function to each group, and combines the results. This is the "split-apply-combine" paradigm.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group by city and compute statistics</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Average score by city ---&quot;</span><span class="p">)</span>
+<span class="n">city_scores</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;City&quot;</span><span class="p">)[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">city_scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Full statistics by city ---&quot;</span><span class="p">)</span>
+<span class="n">city_stats</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;City&quot;</span><span class="p">)[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">city_stats</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group by department</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Students per department ---&quot;</span><span class="p">)</span>
+<span class="n">dept_summary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Department&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dept_summary</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="8-handling-missing-data"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🛠️ 8. Handling Missing Data
+</h3>
+<p style="color: #424242; line-height: 1.6;">Real-world data is messy. Sensors fail, surveys go incomplete, records get corrupted. Pandas represents missing values as <code>NaN</code> (Not a Number) and provides tools to detect, remove, or fill them.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DataFrame with missing values</span>
+<span class="n">df_messy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Sensor_A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">22.1</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">22.8</span><span class="p">],</span>
+    <span class="s2">&quot;Sensor_B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">19.2</span><span class="p">,</span> <span class="mf">20.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">],</span>
+    <span class="s2">&quot;Sensor_C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">15.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">16.2</span><span class="p">,</span> <span class="mf">15.8</span><span class="p">],</span>
+<span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;08:00&quot;</span><span class="p">,</span> <span class="s2">&quot;09:00&quot;</span><span class="p">,</span> <span class="s2">&quot;10:00&quot;</span><span class="p">,</span> <span class="s2">&quot;11:00&quot;</span><span class="p">,</span> <span class="s2">&quot;12:00&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw sensor data (NaN = sensor failure):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_messy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Missing values per column:</span><span class="se">\n</span><span class="si">{</span><span class="n">df_messy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total missing: </span><span class="si">{</span><span class="n">df_messy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 1: Drop rows with any missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Drop rows with NaN ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_messy</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Strategy 2: Fill with a constant</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Fill NaN with 0 ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_messy</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Strategy 3: Forward fill (use last known value)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Forward fill (propagate last valid reading) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_messy</span><span class="o">.</span><span class="n">ffill</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Strategy 4: Fill with column mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Fill with column mean ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_messy</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df_messy</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="9-merging-joining-dataframes"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🔗 9. Merging & Joining DataFrames
+</h3>
+<p style="color: #424242; line-height: 1.6;">In real projects, data is often split across multiple tables or files. <code>pd.merge()</code> lets you combine them based on common columns, similar to SQL JOINs.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two separate tables that share a key column</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;student_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;department&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span> <span class="s2">&quot;CS&quot;</span><span class="p">,</span> <span class="s2">&quot;Math&quot;</span><span class="p">,</span> <span class="s2">&quot;Physics&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">grades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;student_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1"># Note: student 5 has no match in students</span>
+    <span class="s2">&quot;exam&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Midterm&quot;</span><span class="p">,</span> <span class="s2">&quot;Midterm&quot;</span><span class="p">,</span> <span class="s2">&quot;Midterm&quot;</span><span class="p">,</span> <span class="s2">&quot;Midterm&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;grade&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">95</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Students:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Grades:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grades</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inner merge: only rows with matching keys in BOTH tables</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Inner merge (intersection) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">grades</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;student_id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Left merge: keep ALL students, even without grades</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Left merge (keep all students) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">grades</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;student_id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Outer merge: keep everything from both tables</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Outer merge (union) ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">grades</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;student_id&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;outer&quot;</span><span class="p">))</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="10-putting-it-all-together"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+🚀 10. Putting It All Together
+</h3>
+<p style="color: #424242; line-height: 1.6;">Let's combine everything you've learned into a mini data analysis project. This is the typical workflow a data scientist follows every day.</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Complete mini-analysis: Student performance report</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1. Quick exploration</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Dataset Overview ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columns: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># 2. Add computed columns</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Grade&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+                      <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;Pass&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">60</span> <span class="k">else</span> <span class="s2">&quot;Fail&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Group analysis</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Average Score by City ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;City&quot;</span><span class="p">)[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Grade Distribution ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Grade&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># 4. Filter for top performers</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">85</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Score&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;=== Top Performers (Score &gt;= 85) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top</span><span class="p">[[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;Score&quot;</span><span class="p">,</span> <span class="s2">&quot;Grade&quot;</span><span class="p">]])</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="11-practice-exercises"></a></p>
+<hr class="docutils" />
+<div style="
+  background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+  border-left: 6px solid #2196F3;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #1565C0; margin-top: 0; font-size: 1.3em;">
+📝 11. Practice Exercises
+</h3>
+</div><p><strong>Exercise 1:</strong> Create a DataFrame of 5 products with columns <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Price</span></code>, <code class="docutils literal notranslate"><span class="pre">Quantity</span></code>. Compute a <code class="docutils literal notranslate"><span class="pre">Total</span></code> column (<code class="docutils literal notranslate"><span class="pre">Price</span> <span class="pre">*</span> <span class="pre">Quantity</span></code>). Find the most expensive product and the total revenue.</p>
+<p><strong>Exercise 2:</strong> Load <code class="docutils literal notranslate"><span class="pre">students.csv</span></code>, add a <code class="docutils literal notranslate"><span class="pre">Pass/Fail</span></code> column (pass if Score &gt;= 75), group by City, and compute the pass rate for each city. Save the result to <code class="docutils literal notranslate"><span class="pre">city_report.csv</span></code>.</p>
+<p><strong>Exercise 3:</strong> Create two DataFrames — <code class="docutils literal notranslate"><span class="pre">orders</span></code> (with columns: <code class="docutils literal notranslate"><span class="pre">order_id</span></code>, <code class="docutils literal notranslate"><span class="pre">customer_id</span></code>, <code class="docutils literal notranslate"><span class="pre">amount</span></code>) and <code class="docutils literal notranslate"><span class="pre">customers</span></code> (with columns: <code class="docutils literal notranslate"><span class="pre">customer_id</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">city</span></code>). Merge them to create a report showing each customer’s total spending.</p>
+<p><strong>Exercise 4:</strong> Create a DataFrame with some <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values representing missing sensor readings over a week. Practice <code class="docutils literal notranslate"><span class="pre">dropna()</span></code>, <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>, <code class="docutils literal notranslate"><span class="pre">ffill()</span></code>, and <code class="docutils literal notranslate"><span class="pre">interpolate()</span></code>. Which strategy makes the most sense for time-series sensor data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">products</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span> <span class="s2">&quot;Monitor&quot;</span><span class="p">,</span> <span class="s2">&quot;Headset&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">999.99</span><span class="p">,</span> <span class="mf">29.99</span><span class="p">,</span> <span class="mf">59.99</span><span class="p">,</span> <span class="mf">349.99</span><span class="p">,</span> <span class="mf">79.99</span><span class="p">],</span>
+    <span class="s2">&quot;Quantity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">products</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="s2">&quot;Price&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">products</span><span class="p">[</span><span class="s2">&quot;Quantity&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">products</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Most expensive: </span><span class="si">{</span><span class="n">products</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">products</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total revenue:  $</span><span class="si">{</span><span class="n">products</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2: Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Create a sample students.csv for demonstration</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Frank&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;City&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Load and process</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;students.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Pass/Fail&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;Pass&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="k">else</span> <span class="s2">&quot;Fail&quot;</span><span class="p">)</span>
+
+<span class="n">city_report</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;City&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">g</span><span class="p">:</span> <span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;Pass/Fail&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Pass&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Pass Rate (%)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">city_report</span><span class="p">)</span>
+<span class="n">city_report</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;city_report.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 3: Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">orders</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;order_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s2">&quot;customer_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">102</span><span class="p">],</span>
+    <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">250.0</span><span class="p">,</span> <span class="mf">130.0</span><span class="p">,</span> <span class="mf">85.0</span><span class="p">,</span> <span class="mf">320.0</span><span class="p">,</span> <span class="mf">210.0</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">customers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;customer_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">103</span><span class="p">],</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">customers</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;customer_id&quot;</span><span class="p">)</span>
+<span class="n">spending</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)[</span><span class="s2">&quot;amount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">spending</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Customer&quot;</span><span class="p">,</span> <span class="s2">&quot;Total Spending&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spending</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 4: Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Create sensor data with some NaN values</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Day&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Temp&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">22.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">23.8</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span>
+    <span class="s2">&quot;Humidity&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">52</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span>
+
+<span class="c1"># dropna: removes rows with any NaN</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">dropna:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+
+<span class="c1"># fillna: replace NaN with a fixed value</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">fillna(0):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c1"># ffill: forward-fill (carry last valid value forward)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ffill:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">ffill</span><span class="p">())</span>
+
+<span class="c1"># interpolate: linear interpolation (best for time-series)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">interpolate:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor</span><span class="o">.</span><span class="n">interpolate</span><span class="p">())</span>
+
+<span class="c1"># For time-series sensor data, interpolate() is usually best</span>
+<span class="c1"># because it estimates missing values based on surrounding trends.</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>Series</code> (1D) and <code>DataFrame</code> (2D) are the two core Pandas data structures.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Read data from CSV, Excel, JSON with <code>pd.read_csv()</code>, <code>pd.read_excel()</code>, etc.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Select data with <code>.loc[]</code> (label-based) and <code>.iloc[]</code> (position-based).</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>.groupby()</code> splits data into groups for aggregation: sum, mean, count, etc.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Handle missing data with <code>.isna()</code>, <code>.fillna()</code>, and <code>.dropna()</code>.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 15 — Pandas for Data Analysis</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 89%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 89% complete (16 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="14-comprehensions.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">💨 Lecture 14: List Comprehensions &amp; Generators</span></a></td><td style="text-align: center; width: 10%;"><a href="index.ipynb" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="16-decorators.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">🎀 Lecture 16: Decorators &amp; Context Managers</span></a></td></tr></table></div>—</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="14-comprehensions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.1 Basic Syntax</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="16-decorators.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

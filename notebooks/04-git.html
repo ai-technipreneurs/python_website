@@ -1,0 +1,1263 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>You might find this reference , this command list as well as this resource very useful for this practical. &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04-git';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/04-git.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="05-containers.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="03-strings-files.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/04-git.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/04-git.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/04-git.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/04-git.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>You might find this reference ,   this command list as well as  this resource very useful for this practical.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-4-version-control-with-git"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 4 of 18 — Progress: 22%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">💻 Lecture 4 — Version Control with Git</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">40 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #4CAF50; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Beginner</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <strong style="color:#000;">AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong>, AI.Technipreneurs, Bénin<br>&amp; <strong style="color:#000;">African Center for Advanced Studies (ACAS)</strong>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="index.ipynb" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 5px solid #4CAF50;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">
+🎯 Learning Objectives
+</h3>
+<p style="color: #555; font-size: 0.95em; margin-bottom: 10px;">
+By the end of this lecture, you will be able to:
+</p>
+<ul style="list-style-type: none; padding-left: 5px; font-size: 0.95em;">
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Understand why version control is essential for scientific work</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Initialize a Git repository and track files</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Stage, commit, and view the history of changes</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Create and merge branches for parallel development</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Resolve merge conflicts and use <code>git diff</code></li>
+</ul>
+</div><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-4-version-control-with-git" style="color: #424242; text-decoration: none;">● 💻 Lecture 4 — Version Control with Git</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#you-might-find-this-reference-https-ndpsoftware-com-git-cheatsheet-html-loc-index-this-command-list-https-git-scm-com-docs-as-well-as-this-resource-https-git-scm-com-docs-gittutorial-very-useful-for-this-practical" style="color: #424242; text-decoration: none;">1. ● You might find [this reference](https://ndpsoftware.com/git-cheatsheet.html#loc=index;) ,   [this command list](https://git-scm.com/docs) as well as  this [resource](https://git-scm.com/docs/gittutorial) very useful for this practical.</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-help-getting-help" style="color: #424242; text-decoration: none;">2. ● git --help : Getting Help</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-config-controls-the-behavior-of-git" style="color: #424242; text-decoration: none;">3. ● git config : Controls the behavior of git</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-init-creating-a-local-repository" style="color: #424242; text-decoration: none;">4. ● git init : Creating a Local Repository</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-add-adding-a-file-to-version-control" style="color: #424242; text-decoration: none;">5. ● git add : Adding a File To Version Control</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-status-checking-the-status-of-your-local-copy" style="color: #424242; text-decoration: none;">6. ● git status : Checking the status of your local copy</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-commit-saving-a-snapshot" style="color: #424242; text-decoration: none;">7. ● git commit : Saving a snapshot</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-diff-viewing-the-differences" style="color: #424242; text-decoration: none;">8. ● git diff : Viewing the Differences</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-log-viewing-the-history" style="color: #424242; text-decoration: none;">9. ● git log : Viewing the History</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-reset-unstaging-a-staged-file" style="color: #424242; text-decoration: none;">10. ● git reset : Unstaging a staged file</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes" style="color: #424242; text-decoration: none;">11. ● git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-rm-removing-files" style="color: #424242; text-decoration: none;">12. ● git rm : Removing files</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#git-revert-the-promised-undo-button" style="color: #424242; text-decoration: none;">13. ● git revert : the promised "undo" button</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#visualize-git-log-tree" style="color: #424242; text-decoration: none;">14. ● Visualize Git Log Tree</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border-left: 5px solid #7E57C2; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #4527A0; margin-top: 0; font-size: 1.1em;">🔗 Building on What You Know</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin: 0;">You've been writing Python code and saving files. But what happens when you make a mistake and want to go back? Or when you're working with a teammate on the same project? <strong>Version control with Git</strong> solves both problems — it's the safety net every programmer needs.</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="you-might-find-this-reference-https-ndpsoftware-com-git-cheatsheet-html-loc-index-this-command-list-https-git-scm-com-docs-as-well-as-this-resource-https-git-scm-com-docs-gittutorial-very-useful-for-this-practical"></a></p>
+<p><left> <b> <span style="color:red;">
+This notebook is focused on version control with a local repository. You are expected to go through it line by line, step by step. Execute each code cell and follow the instructions to understand how to manage version control locally. Experiment with commands, make changes, and observe how they affect your repository. Your hands-on interaction with the examples will enhance your comprehension of local version control practices.
+</span> </b></left></p>
+<section id="you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">
+<h1>You might find <a class="reference external" href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">this reference</a> ,   <a class="reference external" href="https://git-scm.com/docs">this command list</a> as well as  this <a class="reference external" href="https://git-scm.com/docs/gittutorial">resource</a> very useful for this practical.<a class="headerlink" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical" title="Link to this heading">#</a></h1>
+<section id="what-is-version-control">
+<h2>What is Version Control ?<a class="headerlink" href="#what-is-version-control" title="Link to this heading">#</a></h2>
+<p>In software development, revision control systems (RCS) are essential tools. They are widely used across all development environments and by developers everywhere.</p>
+<p>RCS are versatile and not limited to just software projects; they are also invaluable for managing various types of digital content, including manuscripts, figures, data, and notebooks.</p>
+<p>Revision control systems (RCS) serve two primary purposes:</p>
+<ol class="arabic simple">
+<li><p><strong>Track Changes in Source Code:</strong></p>
+<ul class="simple">
+<li><p>Enable tracking and managing changes to the source code.</p></li>
+<li><p>Allow reverting to previous versions if issues arise.</p></li>
+<li><p>Support working on multiple “branches” of the software at the same time.</p></li>
+<li><p>Use tags to identify and manage different versions, such as “release-1.0” or “paper-A-final.”</p></li>
+</ul>
+</li>
+<li><p><strong>Facilitate Collaborative Development:</strong></p>
+<ul class="simple">
+<li><p>Allow multiple contributors to work on the same codebase simultaneously.</p></li>
+<li><p>Enable numerous authors to make and integrate changes.</p></li>
+<li><p>Provide clear communication and visualization of changes to all team members.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="basic-principles-and-terminology-of-revision-control-systems-rcs">
+<h2>Basic Principles and Terminology of Revision Control Systems (RCS)<a class="headerlink" href="#basic-principles-and-terminology-of-revision-control-systems-rcs" title="Link to this heading">#</a></h2>
+<p>In an RCS, source code or digital content is managed within a repository.</p>
+<ul class="simple">
+<li><p><strong>Repository:</strong> Stores not only the latest version of files but also the complete history of all changes made to these files since their initial addition to the repository.</p></li>
+<li><p><strong>Checkout:</strong> Users obtain a local working copy of the files from the repository. Changes are made to these local files, allowing for additions, deletions, and updates.</p></li>
+<li><p><strong>Commit:</strong> After completing a task, changes made to the local files are saved back to the repository.</p></li>
+<li><p><strong>Conflict Resolution:</strong> If changes have been made by others to the same files, conflicts may arise. The system often resolves conflicts automatically, but manual intervention may be necessary to merge conflicting changes.</p></li>
+<li><p><strong>Branches and Forks:</strong> For larger experimental developments, it’s common to create a new branch, fork, or clone of the repository. The primary branch is usually called <code class="docutils literal notranslate"><span class="pre">master</span></code> or <code class="docutils literal notranslate"><span class="pre">trunk</span></code>. Once work on a branch or fork is finished, it can be merged back into the main branch or repository.</p></li>
+<li><p><strong>Distributed RCS:</strong> Systems like Git or Mercurial allow for pulling and pushing changesets between different repositories. For instance, changes can be pushed from a local repository to a central online repository, such as those hosted on platforms like GitHub.</p></li>
+</ul>
+<p>In a few words, <strong>version control</strong> is a way to keep a backup of the changes in your
+files and to store a history of those changes.  The key charateristic of VC is that and it
+allows many people in a collaboration to make changes to the same files
+concurrently. VC is done via a VC system and there are a lot of them. <a class="reference external" href="https://en.wikipedia.org/wiki/Version_control">Wikipedia</a>
+provides both a nice vocabulary list and a fairly complete table of some
+popular version control systems and their equivalent commands.</p>
+</section>
+<section id="popular-revision-control-systems">
+<h2>Popular Revision Control Systems<a class="headerlink" href="#popular-revision-control-systems" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Git (git):</strong> <a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></p></li>
+<li><p><strong>Mercurial (hg):</strong> <a class="reference external" href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p></li>
+</ul>
+<p>In the remainder of this lecture, we will focus on Git. However, Mercurial is equally effective and operates in a very similar manner.</p>
+<p>We’ll be using git. <code class="docutils literal notranslate"><span class="pre">Git</span></code> is an example of a distributed version control system, distinct from centralized versing control systems. I’ll not discuss the distinction, but for now, the table below will
+suffice.</p>
+<p>Version Control System Tool Options</p>
+<ul class="simple">
+<li><p><strong>Distributed</strong></p>
+<ul>
+<li><p>Decentralized CVS (dcvs)</p></li>
+<li><p>mercurial (hg)</p></li>
+<li><p>git (git)</p></li>
+<li><p>bazaar (bzr)</p></li>
+</ul>
+</li>
+<li><p><strong>Centralized</strong></p>
+<ul>
+<li><p>concurrent versions system (cvs)</p></li>
+<li><p>subversion (svn)</p></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-help-getting-help"></a></p>
+</section>
+</section>
+<section id="git-help-getting-help">
+<h1>git –help : Getting Help<a class="headerlink" href="#git-help-getting-help" title="Link to this heading">#</a></h1>
+<p>The first thing you should know about any <strong>tool</strong> is how to get <strong>help</strong>. From the command line type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>man<span class="w"> </span>git
+</pre></div>
+</div>
+<p>If you remember from the <strong>shell class</strong>, <strong>man</strong> tells you more about a command and how to use it. The manual entry for the git version control system will appear before you. You may scroll through it using arrows, or you can search for
+keywords by typing <strong>/</strong> followed by the search term. I’m interested in help, so I type <strong>/help</strong> and then hit enter. It looks like the syntax for getting help with git is <strong>git –help</strong>.</p>
+<p>To exit the manual page, type <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>Let’s see what happens when we type :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>Excellent, it gives a list of commands it is able to help with, as well as their descriptions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>&lt;command&gt;<span class="err">&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>command.
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-config-controls-the-behavior-of-git"></a></p>
+</section>
+<section id="git-config-controls-the-behavior-of-git">
+<h1>git config : Controls the behavior of git<a class="headerlink" href="#git-config-controls-the-behavior-of-git" title="Link to this heading">#</a></h1>
+<p>A few settings are in order. You don’t have to do it now but it is recommanded.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;YOUR NAME&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;YOUR EMAIL&quot;</span>
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-init-creating-a-local-repository"></a></p>
+</section>
+<section id="git-init-creating-a-local-repository">
+<h1>git init : Creating a Local Repository<a class="headerlink" href="#git-init-creating-a-local-repository" title="Link to this heading">#</a></h1>
+<p>To keep track of numerous versions of your work without saving numerous
+copies, you can make a local repository for it on your computer. What git
+does is to save the first version, then for each subsequent version it
+saves only the changes. This is the trick, git only records the difference between
+the new version and the one before it. With this compact information,
+git is able to recreate any version on demand by adding the changes to
+the original in order up to the version of interest.</p>
+<p>To create your own local (on your own machine) repository, you must
+initialize the repository with the infrastructure git needs in order to
+keep a record of things within the repository that you’re concerned
+about. The command to do this is <strong>git init</strong> .</p>
+<hr class="docutils" />
+<section id="practical-create-a-local-repository">
+<h2>Practical : Create a Local Repository<a class="headerlink" href="#practical-create-a-local-repository" title="Link to this heading">#</a></h2>
+<p>Step 1 : Initialize your repository. Navigate to <code class="docutils literal notranslate"><span class="pre">/home</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>simplestats
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>simplestats
+$<span class="w"> </span>git<span class="w"> </span>init
+Initialized<span class="w"> </span>empty<span class="w"> </span>Git<span class="w"> </span>repository<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/me/simplestats/.git/
+</pre></div>
+</div>
+<p>Step 2 : Browse the directory’s hidden files to see what happened here.
+Open directories, browse file contents. Learn what you can in a minute.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-A<span class="w"> </span>.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.git
+$<span class="w"> </span>ls<span class="w"> </span>-A
+HEAD<span class="w">        </span>config<span class="w">      </span>description<span class="w"> </span>hooks<span class="w">       </span>info<span class="w">        </span>objects<span class="w">     </span>refs<span class="w">      </span>branches
+</pre></div>
+</div>
+<p>Step 3 : Use what you’ve learned. You may have noticed the file called description. You can describe your repository by opening the description file and replacing the text with a name for the repository.  We will be creating a module with some simple statistical methods, so mine will be called “Some simple methods for statistical analysis”. You may call yours  anything you like.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>description
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">!tree</span></code> or <code class="docutils literal notranslate"><span class="pre">tree</span></code> to display the directory structure in a tree-like format</p>
+<hr class="docutils" />
+<p>An interesting command I would like you to test is <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, I will describe it later but let’s see what it displays now.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+
+No<span class="w"> </span>commits<span class="w"> </span>yet
+
+nothing<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>create/copy<span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>to<span class="w"> </span>track<span class="o">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-add-adding-a-file-to-version-control"></a></p>
+</section>
+</section>
+<section id="git-add-adding-a-file-to-version-control">
+<h1>git add : Adding a File To Version Control<a class="headerlink" href="#git-add-adding-a-file-to-version-control" title="Link to this heading">#</a></h1>
+<p>For the git repository to know which files within this directory you
+would like to keep track of, you must add them. First, you’ll need to
+create one, then we’ll learn the <strong>git add</strong> command.</p>
+<hr class="docutils" />
+<section id="practical-add-a-file-to-your-local-repository">
+<h2>Practical : Add a File to Your Local Repository<a class="headerlink" href="#practical-add-a-file-to-your-local-repository" title="Link to this heading">#</a></h2>
+<p>Step 1 : Create a file to add to your repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>README.md
+</pre></div>
+</div>
+<p>Step 2: Verify that git has seen the file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+<span class="c1"># On branch master</span>
+
+<span class="c1"># No commits yet</span>
+
+<span class="c1"># Untracked files:</span>
+<span class="c1">#(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed) README.md</span>
+
+<span class="c1"># nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<p>Step 3 : Inform git that you would like to keep track of future changes
+in this file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>README.md
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-status-checking-the-status-of-your-local-copy"></a></p>
+</section>
+</section>
+<section id="git-status-checking-the-status-of-your-local-copy">
+<h1>git status : Checking the status of your local copy<a class="headerlink" href="#git-status-checking-the-status-of-your-local-copy" title="Link to this heading">#</a></h1>
+<p>The files you’ve created on your machine are your local “working” copy.
+The changes your make in this local copy aren’t backed up online
+automatically. Until you commit them, the changes you make are local
+changes. When you change anything, your set of files becomes different
+from the files in the official repository copy. To find out what’s
+different about them in the terminal, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+<span class="c1"># On branch master</span>
+<span class="c1">#</span>
+<span class="c1"># No commits yet</span>
+<span class="c1">#</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#</span>
+<span class="c1">#       new file:   README.md</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+<p>The null result means that you’re up to date with the current version of
+the repository online. This result indicates that the current difference
+between the repository HEAD (which, so far, is empty) and your
+<code class="docutils literal notranslate"><span class="pre">simplestats</span></code> directory is this new <a class="reference external" href="http://README.md">README.md</a> file.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-commit-saving-a-snapshot"></a></p>
+</section>
+<section id="git-commit-saving-a-snapshot">
+<h1>git commit : Saving a snapshot<a class="headerlink" href="#git-commit-saving-a-snapshot" title="Link to this heading">#</a></h1>
+<p>In order to save a snapshot of the current state (revision) of the
+repository, we use the commit command. This command is always associated
+with a message describing the changes since the last commit and
+indicating their purpose. Informative commit messages will serve you
+well someday, so make a habit of never committing changes without at
+least a full sentence description.</p>
+<p><strong>ADVICE: Commit often</strong></p>
+<p>In the same way that it is wise to often save a document that you are
+working on, so too is it wise to save numerous revisions of your code.
+More frequent commits increase the granularity of your <strong>undo</strong> button.</p>
+<p><strong>ADVICE: Good commit messages</strong></p>
+<p>There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.</p>
+<hr class="docutils" />
+<section id="practical-commit-your-changes">
+<h2>Practical : Commit Your Changes<a class="headerlink" href="#practical-commit-your-changes" title="Link to this heading">#</a></h2>
+<p>Step 1 : Commit the file you’ve added to your repository.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;This is the first commit. It adds a readme file.&quot;</span>
+<span class="w">  </span><span class="o">[</span>master<span class="w"> </span><span class="o">(</span>root-commit<span class="o">)</span><span class="w"> </span>664867c<span class="o">]</span><span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>commit.<span class="w"> </span>It<span class="w"> </span>adds<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file.
+<span class="w">  </span><span class="m">1</span><span class="w"> </span>file<span class="w"> </span>changed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>insertions<span class="o">(</span>+<span class="o">)</span>,<span class="w"> </span><span class="m">0</span><span class="w"> </span>deletions<span class="o">(</span>-<span class="o">)</span>
+<span class="w">  </span>create<span class="w"> </span>mode<span class="w"> </span><span class="m">100644</span><span class="w"> </span>readme.md
+</pre></div>
+</div>
+<p>Step 2 : Admire your work.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+<span class="c1"># On branch master</span>
+nothing<span class="w"> </span>to<span class="w"> </span>commit,<span class="w"> </span>working<span class="w"> </span>tree<span class="w"> </span>clean
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-diff-viewing-the-differences"></a></p>
+</section>
+</section>
+<section id="git-diff-viewing-the-differences">
+<h1>git diff : Viewing the Differences<a class="headerlink" href="#git-diff-viewing-the-differences" title="Link to this heading">#</a></h1>
+<p>There are many diff tools.</p>
+<p>If you have a favorite you can set your default git diff tool to execute that one. Git, however, comes with its own diff system.</p>
+<p>Let’s recall the behavior of the linux <a class="reference external" href="https://www.geeksforgeeks.org/diff-command-linux-examples/"><code class="docutils literal notranslate"><span class="pre">diff</span></code></a> command on the command line. The equivalent command for windows is <a class="reference external" href="https://www.howtogeek.com/206123/how-to-use-fc-file-compare-from-the-windows-command-prompt/">fc</a>. Choosing two files that are similar, the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$!</span>diff<span class="w"> </span>file1<span class="w"> </span>file2
+</pre></div>
+</div>
+<p>will output the lines that differ between the two files. This information can be saved as what’s known as a patch, but we won’t go deeply into that just now.</p>
+<p>The only difference between the command line diff tool and git’s diff tool is that the git tool is aware of all of the revisions in your repository, allowing each revision of each file to be treated as a full file.</p>
+<p>Thus, git diff will output the changes in your working directory that are not yet staged for a commit. To see how this works, make a change in your <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, but don’t yet commit it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff
+</pre></div>
+</div>
+<p>A summarized version of this output can be output with the <code class="docutils literal notranslate"><span class="pre">--stat</span></code> flag :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>--stat
+</pre></div>
+</div>
+<p>To see only the differences in a certain path, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD<span class="w"> </span>--<span class="w"> </span><span class="o">[</span>path<span class="o">]</span>
+</pre></div>
+</div>
+<p>To see what IS staged for commit (that is, what will be committed if you
+type git commit without the -a flag), you can try :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>--cached
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-log-viewing-the-history"></a></p>
+</section>
+<section id="git-log-viewing-the-history">
+<h1>git log : Viewing the History<a class="headerlink" href="#git-log-viewing-the-history" title="Link to this heading">#</a></h1>
+<p>A log of the commit messages is kept by the repository and can be
+reviewed with the log command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w">       </span>
+<span class="w">   </span>commit<span class="w"> </span>664867c42a05461702388310155b785a287d0308<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>master<span class="o">)</span>
+<span class="w">    </span>Author:<span class="w"> </span>Techni<span class="w"> </span>Preneurs<span class="w"> </span>&lt;ai.technipreneurs@gmail.com&gt;
+<span class="w">    </span>Date:<span class="w">   </span>Wed<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">20</span>:31:07<span class="w"> </span><span class="m">2024</span><span class="w"> </span>+0200
+
+<span class="w">        </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>commit.<span class="w"> </span>It<span class="w"> </span>adds<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file.<span class="w">    </span>
+</pre></div>
+</div>
+<p>There are some useful flags for this command, such as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-p
+-3
+--stat
+--oneline
+--graph
+--pretty=short/full/fuller/oneline
+--since=X.minutes/hours/days/weeks/months/years or YY-MM-DD-HH:MM
+--until=X.minutes/hours/days/weeks/months/years or YY-MM-DD-HH:MM
+--author=&lt;pattern&gt;
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-reset-unstaging-a-staged-file"></a></p>
+</section>
+<section id="git-reset-unstaging-a-staged-file">
+<h1>git reset : Unstaging a staged file<a class="headerlink" href="#git-reset-unstaging-a-staged-file" title="Link to this heading">#</a></h1>
+<p>There are a number of ways that you may accidentally stage a file that
+you don’t want to commit.  Create a file called <code class="docutils literal notranslate"><span class="pre">temp_notes</span></code> that
+describes what you had for breakfast, and then add that file to your
+repo.  Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> to see that it is added but not committed.</p>
+<p>You can now unstage that file with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>temp_notes
+</pre></div>
+</div>
+<p>Check with <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes"></a></p>
+</section>
+<section id="git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">
+<h1>git checkout : Discarding unstaged modifications (git checkout has other purposes)<a class="headerlink" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes" title="Link to this heading">#</a></h1>
+<p>Perhaps you have made a number of changes that you realize are not
+going anywhere.  Add a line to <code class="docutils literal notranslate"><span class="pre">README.md</span></code> that describes your dinner
+last night.  Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> to see that the file is changed and
+ready to be added.</p>
+<p>You can now return to previous checked in version with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>README.md
+</pre></div>
+</div>
+<p>Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> and take a look at the file.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-rm-removing-files"></a></p>
+</section>
+<section id="git-rm-removing-files">
+<h1>git rm : Removing files<a class="headerlink" href="#git-rm-removing-files" title="Link to this heading">#</a></h1>
+<p>There are a variety of reasons you way want to remove a file from the
+repository after it has been committed.  Create a file called <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code> with the first names of all your immediate family members, and add/commit it to the repository.</p>
+<p>You can now remove the file from the repository with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>READYOU.md
+</pre></div>
+</div>
+<p>List the directory to see that you have no file named <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code>. Use <code class="docutils literal notranslate"><span class="pre">status</span></code> to determine if you need any additional steps.</p>
+<p>What if you delete a file in the shell without <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>? Try deleting <code class="docutils literal notranslate"><span class="pre">README.md</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>README.md
+</pre></div>
+</div>
+<p>What does <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> say?  Oops! How can you recover this important
+file?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>README.md
+</pre></div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="git-revert-the-promised-undo-button"></a></p>
+</section>
+<section id="git-revert-the-promised-undo-button">
+<h1>git revert : the promised “undo” button<a class="headerlink" href="#git-revert-the-promised-undo-button" title="Link to this heading">#</a></h1>
+<p>It is possible that after many commits, you decide that you really want to <strong>rollback</strong> a set of commits and start over.  It is easy to revert your code to a previous version.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> to explore your history and determine which version you are interested in.  Choose a version and note the <em>hash</em> for that version. (Let’s assume <code class="docutils literal notranslate"><span class="pre">abc456</span></code>)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>revert<span class="w"> </span>abc456
+</pre></div>
+</div>
+<p><strong>Importantly,</strong> this will not erase the intervening commits.  This will create a new commit that is changed from the previous commit by a change that will recreate the desired version.  This retains a complete provenance of your software, and be compared to the prohibition in removing pages from a lab notebook.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="visualize-git-log-tree"></a></p>
+</section>
+<section id="visualize-git-log-tree">
+<h1>Visualize Git Log Tree<a class="headerlink" href="#visualize-git-log-tree" title="Link to this heading">#</a></h1>
+<p>For this section, you can read the necessary information <a class="reference external" href="https://tech.serhatteker.com/post/2021-02/git-log-tree/">here</a>. The idea is just to make your commits a bit fancy. To really see the beauty of it, try to play with your files and do quite a number of commits.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>oneline
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--pretty<span class="o">=</span><span class="s1">&#39;%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span><span class="w"> </span>--all
+</pre></div>
+</div>
+<hr class="docutils" />
+<section id="exercise">
+<h2>Exercise :<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create 5 files in your directory with one line of content in each
+file.</p></li>
+<li><p>Commit the files to the repository.</p></li>
+<li><p>Change 2 of the 5 files and commit them.</p></li>
+<li><p>Undo the changes in step 3.</p></li>
+<li><p>Print out the last entry in the log.</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+</section>
+<section id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://git-scm.com/book">git book</a> - Free and Open</p></li>
+</ol>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Version control tracks changes to files over time, enabling collaboration and rollback.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>git init</code>, <code>git add</code>, <code>git commit</code> form the basic workflow: initialize, stage, snapshot.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>git status</code> and <code>git log</code> let you inspect the current state and history.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>git diff</code> shows differences between versions of your files.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Good commit messages describe <em>what</em> changed and <em>why</em> — they are crucial for collaboration.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 4 — Version Control with Git</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 28%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 28% complete (5 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="03-strings-files.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">📝 Lecture 3: Strings and Files</span></a></td><td style="text-align: center; width: 10%;"><a href="index.ipynb" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="05-containers.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">📦 Lecture 5: Iterable Objects or Containers</span></a></td></tr></table></div>—</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03-strings-files.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-containers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

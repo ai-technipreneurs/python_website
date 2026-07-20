@@ -1,0 +1,1768 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/03-strings-files';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="You might find this reference , this command list as well as this resource very useful for this practical." href="04-git.html" />
+    <link rel="prev" title="2.0. None (nothing)" href="02-variables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/03-strings-files.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/03-strings-files.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03-strings-files.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/03-strings-files.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-3-strings-and-files"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 3 of 18 — Progress: 17%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📝 Lecture 3 — Strings and Files</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">45 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #4CAF50; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Beginner</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <strong style="color:#000;">AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong>, AI.Technipreneurs, Bénin<br>&amp; <strong style="color:#000;">African Center for Advanced Studies (ACAS)</strong>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="index.ipynb" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 5px solid #4CAF50;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">
+🎯 Learning Objectives
+</h3>
+<p style="color: #555; font-size: 0.95em; margin-bottom: 10px;">
+By the end of this lecture, you will be able to:
+</p>
+<ul style="list-style-type: none; padding-left: 5px; font-size: 0.95em;">
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Manipulate strings using indexing, slicing, and methods</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Format strings with f-strings and <code>.format()</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Open, read, and write text files using <code>open()</code> and <code>with</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Navigate the filesystem with <code>os</code> and <code>pathlib</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Handle different file modes: read, write, append, binary</li>
+</ul>
+</div><div class="transition-bridge" style="background: transparent; border-left: 3px solid #b0bec5; padding: 10px 18px; margin: 20px 0 10px; color: #546e7a; font-size: 0.95em; font-style: italic; font-family: 'Segoe UI', sans-serif;">
+Strings don't just live in memory — they come from and go to <strong>files</strong>. Let's learn how Python reads and writes data to the file system.
+</div><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-3-strings-and-files" style="color: #424242; text-decoration: none;">● 📝 Lecture 3 — Strings and Files</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#instructor" style="color: #424242; text-decoration: none;">1. ▸ 👨‍🏫 Instructor</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#0-introduction" style="color: #424242; text-decoration: none;">2. ▸ 📚 0. Introduction</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#1-strings" style="color: #424242; text-decoration: none;">3. ▸ 📝 1. Strings</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#2-file-i-o" style="color: #424242; text-decoration: none;">4. ▸ 📁 2. File I/O</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">5. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border-left: 5px solid #7E57C2; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #4527A0; margin-top: 0; font-size: 1.1em;">🔗 Building on What You Know</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin: 0;">You now know how to create variables of different types and perform operations on them. One of the most common types you'll work with is <strong>text</strong> — from user names to file paths to entire documents. This lecture focuses on mastering strings and connecting your programs to the outside world through <strong>files</strong>.</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="instructor"></a></p>
+<div align="center" style="
+background: linear-gradient(135deg, #f3e5f5 0%, #e8f5e9 100%);
+border-radius: 12px;
+padding: 18px 25px;
+width: 75%;
+margin: auto;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+font-family:'Segoe UI', sans-serif;
+">
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td align="center" style="padding: 10px;">
+      <span style="font-size:1.1em; color:#ff7043; font-weight:bold;">Instructor</span><br>
+      <span style="color:#424242;">Yaé Gaba</span>
+    </td>
+    <td align="center" style="padding: 10px;">
+      <span style="font-size:1.1em; color:#43a047; font-weight:bold;">Course</span><br>
+      <span style="color:#424242;">Python for Scientific Computing and Data Science</span>
+    </td>
+    <td align="center" style="padding: 10px;">
+      <span style="font-size:1.1em; color:#1e88e5; font-weight:bold;">Date</span><br>
+      <span style="color:#424242;">October 2025</span>
+    </td>
+  </tr>
+</table>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #E3F2FD 0%, #E1F5FE 100%);
+border-radius: 10px;
+padding: 18px 22px;
+font-size:1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#1976D2;">👨‍🏫 <b>Instructor</b></h3>
+<ul style="list-style-type: none; padding-left: 10px; color:#424242;">
+  <li>📝 <b>Yaé Ulrich Gaba:</b> <a href="https://github.com/gabayae" target="_blank" style="color:#1565C0; text-decoration:none;">github.com/gabayae</a></li>
+</ul>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#388E3C; margin-top:0;">🧾 <b>Summary</b></h3>
+<p style="color:#424242; line-height:1.6;">
+This lecture aims to present <code>strings</code>, reviewing some of the most commonly encountered operations, particularly in text processing tasks. We will also examine the string class in greater detail, including how to use the <code>open()</code> function to open, read, and write to <code>files</code>.
+</p>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #E3F2FD 0%, #E1F5FE 100%);
+border-radius: 10px;
+padding: 18px 22px;
+font-size:1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#1976D2;">🔑 <b>Key Concepts</b></h3>
+<ul style="list-style-type: none; padding-left: 10px; color:#424242;">
+  <li>📝 <b>String Operations:</b> Common methods and text processing techniques</li>
+  <li>🔍 <b>String Class:</b> In-depth examination of string methods and properties</li>
+  <li>📁 <b>File Handling:</b> Using <code>open()</code> to read and write files</li>
+  <li>🔄 <b>Text Processing:</b> Practical applications and common patterns</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
+border-radius: 10px;
+padding: 18px 22px;
+font-size:1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#C2185B;">🔗 <b>Resources</b></h3>
+<ul style="list-style-type: none; padding-left: 10px; color:#424242;">
+  <li>📘 <b>GitHub Repository:</b> <a href="https://github.com/gabayae/the-shell" target="_blank" style="color:#AD1457; text-decoration:none;">PyPro-SCiDaS — The Shell</a></li>
+  <li>💡 Feel free to explore, fork, and practice before the session!</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div align="center" style="
+background: linear-gradient(90deg, #fff8e1 0%, #fffde7 100%);
+border-radius: 10px;
+padding: 15px;
+margin-top: 25px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+font-size:1.05em;
+">
+✨ <i>Let's dive into Python strings and master text processing fundamentals!</i> 🚀
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="0-introduction"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">📚 <b>0. Introduction</b></h3>
+<p style="color:#424242; line-height:1.6;">
+Strings in Python are not merely standalone objects; rather, they are sequences of characters that represent text data. Similar to numerical data types, which consist of sequences of digits, strings consist of sequences of characters. These sequences are fundamental in Python programming, as they are often used to construct and manipulate more complex data structures like lists, tuples, and dictionaries.
+</p>
+<p style="color:#424242; line-height:1.6;">
+Python treats strings as immutable sequences, meaning that once a string is created, its contents cannot be changed. However, various operations can be performed on strings to generate new strings or extract specific information. These operations include concatenation, slicing, formatting, and various methods for searching and transforming the text. Understanding how to effectively manipulate strings is crucial, as strings are one of the most commonly used data types in Python, especially in tasks involving data processing, file handling, and user input.
+</p>
+<p style="color:#424242; line-height:1.6;">
+Moreover, strings serve as the foundation for more advanced objects and data structures. For instance, strings can be used to represent elements within lists or tuples, and they play a critical role in tasks ranging from basic text processing to complex data analysis. As we delve deeper into Python, we will explore the extensive functionality provided by string operations and how they integrate with other Python data types.
+</p>
+<p style="color:#424242; line-height:1.6;">
+In addition to handling strings, Python provides robust support for working with files, which is essential for tasks like reading input data, storing output, or simply managing data over the course of a program's execution. Python uses the <code>open()</code> function to handle files, allowing you to open, read, write, and close them efficiently. 
+</p>
+<p style="color:#424242; line-height:1.6;">
+The <code>open()</code> function is versatile, enabling you to open a file in various modes, such as reading ('r'), writing ('w'), appending ('a'), or even reading and writing in binary mode ('rb', 'wb'). Once a file is opened, you can perform operations like reading the entire file content into a string, reading it line by line, or writing data back into the file. After completing these operations, it is important to close the file using the <code>close()</code> method to free up system resources and ensure data integrity.
+</p>
+<p style="color:#424242; line-height:1.6;">
+Understanding how to work with files in Python is critical, especially when dealing with real-world data that often needs to be read from or written to external files. This capability, combined with string manipulation techniques, forms the backbone of many Python programs, enabling efficient data processing, storage, and retrieval.
+</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="1-strings"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">📝 <b>1. Strings</b></h3>
+<h4 style="color:#1976D2; margin-top:10px;">1.0. Definition of a string variable</h4>
+<p style="color:#424242; line-height:1.6;">
+A string variable is defined in the traditional manner by direct assignment using the equality symbol (as discussed in the section on variable creation). The only distinction between string variables and numerical variables is that the values of string variables must be enclosed in quotation marks during assignment. The three examples below illustrate this.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch1</span> <span class="o">=</span> <span class="s1">&#39;Will you be at the meeting tonight?&#39;</span>
+<span class="n">ch2</span> <span class="o">=</span> <span class="s1">&#39;&quot;Yes,&quot; he replies.&#39;</span>
+<span class="n">ch3</span> <span class="o">=</span> <span class="s2">&quot;Alright, I would appreciate it.&quot;</span>
+<span class="n">ch4</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;This sentence is a long string containing all types of quotes: &quot; &#39; « » as well as many special characters.&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ch4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">💬 String Variable Examples</h4>
+<p style="color:#424242; line-height:1.6;">
+These four examples demonstrate different uses of quotation marks when defining a string variable.
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li>In the first example (<code>ch1</code>), single quotes are used because there is no issue with the string specified. Double quotes could also be used.</li>
+  <li>In the second example (<code>ch2</code>), single quotes are used because the specified string already contains double quotes as values.</li>
+  <li>In the third example (<code>ch3</code>), double quotes are used because the text contains apostrophes, which are actually single quotes.</li>
+  <li>In the fourth example (<code>ch4</code>), triple quotes are used because the text contains not only single quotes, apostrophes, and double quotes but also spans multiple lines. In this case, triple quotes are necessary.</li>
+</ul>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">🔤 1.1. Indexing strings and slicing</h4>
+<p style="color:#424242; line-height:1.6;">
+A string is a sequence of ordered and indexed values. This means you can access each element in the sequence by specifying its index, similar to lists. Portions of a string can also be extracted using slices, with the general notation <code>[start=0]:[stop=len][:step=1]</code>. Indexing in Python starts at 0: the 1st element of a list is at index 0, the 2nd is at index 1, and so on. Thus, the n elements of a list are indexed from <i>0</i> to <i>n-1</i>. The examples below illustrate this.
+</p>
+<p style="color:#424242; line-height:1.6;">
+<strong>Indexing:</strong>
+</p>
+<p style="color:#424242; line-height:1.6;">
+To access a specific character in a string, you use the index inside square brackets. For example:
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li><code>ch[0]</code> returns the first character of the string <code>ch</code>.</li>
+  <li><code>ch[2]</code> returns the third character.</li>
+  <li><code>ch[-1]</code> returns the last character of the string.</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+<strong>Slicing:</strong>
+</p>
+<p style="color:#424242; line-height:1.6;">
+Slicing allows you to extract a portion of the string. The syntax for slicing is <code>[start:stop:step]</code>, where:
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li><code>start</code> is the index of the first character you want to include in the slice.</li>
+  <li><code>stop</code> is the index of the character just after the last character you want to include.</li>
+  <li><code>step</code> specifies the interval between characters in the slice (optional; default is 1).</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+Examples of slicing:
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li><code>ch[:6]</code> returns a substring from the beginning of <code>ch</code> up to, but not including, index 6.</li>
+  <li><code>ch[6:]</code> returns a substring from index 6 to the end of the string.</li>
+  <li><code>ch[0:10:2]</code> returns every second character from index 0 to 10.</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+<strong>Examples:</strong>
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+ch = "Christelle"<br>
+print(ch[0])    # Returns 'C'<br>
+print(ch[2])    # Returns 'r'<br>
+print(ch[-1])   # Returns 'e', the last character<br>
+print(ch[:6])   # Returns 'Christ'<br>
+print(ch[6:])   # Returns 'elle'<br>
+print(ch[0:10:2]) # Returns 'Crsel'
+</div>
+<p style="color:#424242; line-height:1.6;">
+These operations make it easy to manipulate and extract data from strings, which is crucial for text processing and data manipulation in Python.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span><span class="o">=</span><span class="s2">&quot;Christelle&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># returns &#39;C&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns &#39;r&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># returns &#39;e&#39;, the last element of ch</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># returns &#39;Christ&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">6</span> <span class="p">:])</span> <span class="c1"># returns &#39;elle&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns &#39;Crsel&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+The elements of a string are not defined by words separated by spaces but by the characters that make up the string. In fact, even if the string consists of a sentence with multiple words, indexing is done solely based on the individual characters that form the entire string.
+</p>
+<div style="background: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #FF9800; margin: 16px 0;">
+<p style="color:#424242; line-height:1.6; margin: 0;">
+<strong>💡 Important Note:</strong> You can manipulate a string (and generally any sequence) using functions (procedural concept) or methods (object-oriented concept). We will discuss this further below.
+</p>
+</div>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">📏 1.2. Length of a string</h4>
+<p style="color:#424242; line-height:1.6;">
+To determine the length of a string, the <code>len()</code> function is used.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+ch = "This is a string of several words"<br>
+print(len(ch))  # returns 37; The string 'ch' consists of 37 characters, including spaces.
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ch</span> <span class="o">=</span> <span class="s2">&quot;This is a string of several words&quot;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>  <span class="c1"># returns 36; The string &#39;ch&#39; consists of 36 characters, including spaces.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">🔗 1.3. Addition of strings (Concatenation)</h4>
+<p style="color:#424242; line-height:1.6;">
+String addition refers to the process of placing strings together, one after the other, to form a single string. This operation is known as <b>concatenation</b>. To perform concatenation, the <code>+</code> symbol is used between the string variable names. The resulting string is then assigned to a new variable. Examples:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+str1 = "Hello"<br>
+str2 = "World"<br>
+result = str1 + " " + str2  # Concatenates 'Hello' and 'World' with a space in between<br>
+print(result)  # Outputs: Hello World
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;One small step for man,&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;one giant leap for mankind.&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># Concatenates the two strings with a space in between</span>
+<span class="n">z</span>  <span class="c1"># Outputs: &#39;Un petit pas pour l&#39;homme, un grand pas pour l&#39;humanité&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Un petit pas pour l&#39;homme, un grand pas pour l&#39;humanité.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">⚠️ Concatenation with Numeric Values</h4>
+<p style="color:#424242; line-height:1.6;">
+Be cautious when using the concatenation operator to combine a numeric value with a string to form a single string. For example:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = 'The price of the pen is'<br>
+y = 5<br>
+z = 'dollars'
+</div>
+<p style="color:#424242; line-height:1.6;">
+If you want to concatenate <code>x</code>, <code>y</code>, and <code>z</code> to obtain the sentence 'The price of the pen is 5 dollars', you can't directly do <code>x + y + z</code> because <code>y</code> is a numeric type. You need to first convert <code>y</code> to a string using the <code>str()</code> function. Here's how it should be done:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+result = x + " " + str(y) + " " + z<br>
+print(result)  # Outputs: 'The price of the pen is 5 dollars'
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;The price of the pen is&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;dollars&#39;</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">z</span>
+<span class="n">ch</span> <span class="c1"># returns &#39;The price of the pen is5euros&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Le prix du stylo est  5 euros&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">🔧 1.4. Methods</h4>
+<p style="color:#424242; line-height:1.6;">
+Strings come with <a href="https://docs.python.org/2/library/stdtypes.html#string-methods" target="_blank" style="color:#1565C0; text-decoration:none;">numerous features</a>—referred to as <code>methods</code> in Object-Oriented Programming (OOP)—that facilitate their manipulation. The <code>dir()</code> function lists all available methods for strings. Among these, the most commonly used are <code>upper()</code>, <code>lower()</code>, <code>capitalize()</code>, <code>find()</code>, <code>replace()</code>, <code>count()</code>, <code>startswith()</code>, <code>endswith()</code>, and the <code>in</code> keyword. 
+</p>
+<p style="color:#424242; line-height:1.6;">
+These methods allow for operations such as converting text to different cases, searching for and replacing substrings, and checking string content for specific patterns. They are crucial for text processing and data manipulation tasks, enabling efficient handling and transformation of string data. Understanding and utilizing these methods effectively can greatly enhance the capability to work with and analyze text-based information in Python.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Python course&quot;</span>
+<span class="n">help</span><span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">enfant</span><span class="p">,</span> <span class="n">peluche</span> <span class="o">=</span> <span class="s2">&quot;Calvin&quot;</span><span class="p">,</span> <span class="s1">&#39;Hobbes&#39;</span>  <span class="c1"># Multiple assignment</span>
+
+<span class="n">titre</span> <span class="o">=</span> <span class="n">enfant</span> <span class="o">+</span> <span class="s1">&#39; et &#39;</span> <span class="o">+</span> <span class="n">peluche</span>  <span class="c1"># +: String concatenation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;et&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">))</span>  <span class="c1"># Substring replacement: &#39;Calvin &amp; Hobbes&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &amp; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; et &#39;</span><span class="p">)))</span>  <span class="c1"># Splitting and joining</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hobbes&#39;</span> <span class="ow">in</span> <span class="n">titre</span><span class="p">)</span>  <span class="c1"># in: Inclusion test</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Hobbes&quot;</span><span class="p">))</span>  <span class="c1"># str.find: Substring search</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">titre</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>  <span class="c1"># &#39;-------Calvin et Hobbes-------&#39;</span>
+
+<span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>  <span class="c1"># Lists all string methods</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">🎨 1.5. Formatting</h4>
+<p style="color:#424242; line-height:1.6;">
+It is often necessary to retrieve the value of a variable and incorporate it into a string to form a new, usable string for other purposes. For instance, consider a variable <code>prix</code> defined as follows:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+prix = 2
+</div>
+<p style="color:#424242; line-height:1.6;">
+We want to display a message like <code>"The price of the pen is 2 euros"</code>.
+</p>
+<p style="color:#424242; line-height:1.6;">
+The goal of formatting is to embed the value of a variable within a string. There are three primary methods to achieve this:
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li>Using the concatenation operator <code>+</code></li>
+  <li>Using the formatting operator <code>%</code></li>
+  <li>Using the <code>str.format()</code> method</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+We will illustrate just one example using the <code>str.format()</code> method. The formatting system allows for precise control over the conversion of variables into strings. It primarily relies on the <code>str.format()</code> method, which enables detailed specification of how variables should be inserted and formatted within a string. For more information, you can refer to the <a href="https://docs.python.org/2/library/string.html#formatstrings" target="_blank" style="color:#1565C0; text-decoration:none;">formatting documentation</a>.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{nom}</span><span class="s2"> a </span><span class="si">{age}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s1">&#39;Calvin&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># &#39;Calvin a 6 ans&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Calvin&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Shortcut &#39;Calvin a 6 ans&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926535897931</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{x:f}</span><span class="s2"> </span><span class="si">{x:.2f}</span><span class="s2"> </span><span class="si">{y:f}</span><span class="s2"> </span><span class="si">{y:g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">pi</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="p">))</span> <span class="c1"># &#39;3.141593 3.14 3141592653.589793 3.14159e+09&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">📋 Explanation</h4>
+<ul style="color:#424242; line-height:1.7;">
+  <li><strong>Named Fields:</strong> In the first example, <code>"{nom} a {age} ans".format(nom='Calvin', age=6)</code> uses named fields in the format string. The placeholders <code>{nom}</code> and <code>{age}</code> are replaced by the values provided in the <code>format</code> method.</li>
+  <li><strong>Positional Fields:</strong> The second example, <code>"{} a {} ans".format('Calvin', 6)</code>, uses positional placeholders <code>{}</code>. The values are inserted in the order they appear in the <code>format</code> method.</li>
+  <li><strong>Formatting Numbers:</strong> The third example demonstrates formatting numerical values. <code>"{x:f} {x:.2f} {y:f} {y:g}".format(x=pi, y=pi*1e9)</code> formats the floating-point number <code>pi</code> in various ways:
+    <ul style="color:#666; margin-top:5px;">
+      <li><code>{x:f}</code> displays <code>pi</code> with six decimal places.</li>
+      <li><code>{x:.2f}</code> formats <code>pi</code> to two decimal places.</li>
+      <li><code>{y:f}</code> shows <code>pi*1e9</code> with six decimal places.</li>
+      <li><code>{y:g}</code> formats <code>pi*1e9</code> in a more compact form using scientific notation.</li>
+    </ul>
+  </li>
+</ul>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calvin and Hobbes</span><span class="se">\n</span><span class="s2">Scientific progress goes &#39;boink&#39;&quot;</span><span class="p">)</span> <span class="c1"># Calvin and Hobbes Scientific progress goes &#39;boink&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> fois </span><span class="si">{1}</span><span class="s2"> font </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># Formatting and display</span>
+<span class="c1"># Output: 3 fois 4 font 12</span>
+<span class="c1"># A small exercise in this section is to display a multiplication table.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">📋 Explanation</h4>
+<ul style="color:#424242; line-height:1.7;">
+  <li><strong>Indexed Fields:</strong> In the example <code>"{0} fois {1} font {2}".format(3, 4, 3*4)</code>, the <code>{0}</code>, <code>{1}</code>, and <code>{2}</code> are positional placeholders. They are replaced by the values <code>3</code>, <code>4</code>, and <code>3*4</code> (which evaluates to <code>12</code>) respectively. This results in the output: <code>3 fois 4 font 12</code>.</li>
+  <li><strong>Multiplication Table Exercise:</strong> The comment suggests a small exercise where one can display a multiplication table, which would involve iterating through numbers and formatting them into a table structure using similar formatting techniques.</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+In concluding this section, we mention the study of regular expressions (regex or <code>re</code>), which will not be discussed in this course. As a guide, we can say that regular expressions are extensions of the <code>str()</code> function that allow for more complex pattern-matching operations than what the <code>str()</code> functions alone can achieve.
+</p>
+</div><p><strong>Practical</strong></p>
+<p>Explore the functions:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.upper"><code class="docutils literal notranslate"><span class="pre">upper()</span></code>, <code class="docutils literal notranslate"><span class="pre">lower()</span></code>, and <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find"><code class="docutils literal notranslate"><span class="pre">find()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count"><code class="docutils literal notranslate"><span class="pre">count()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split"><code class="docutils literal notranslate"><span class="pre">split()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.startswith"><code class="docutils literal notranslate"><span class="pre">startswith()</span></code> and <code class="docutils literal notranslate"><span class="pre">endswith()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.islower"><code class="docutils literal notranslate"><span class="pre">islower()</span></code> and <code class="docutils literal notranslate"><span class="pre">isupper()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.istitle"><code class="docutils literal notranslate"><span class="pre">istitle()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isalpha"><code class="docutils literal notranslate"><span class="pre">isalpha()</span></code> and <code class="docutils literal notranslate"><span class="pre">isalnum()</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.isdigit"><code class="docutils literal notranslate"><span class="pre">isdigit()</span></code></a></p></li>
+</ol>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">💡 Note</h4>
+<p style="color:#424242; line-height:1.6;">
+It is important to distinguish between a character value and an alphabetical value. An alphabetical value is always a string, whereas a string is not necessarily an alphabetical value. In Python, a character value is always enclosed in quotes (single, double, or triple), while a numeric value is expressed without quotes. There are two main types of data: numeric data and character data. It is worth noting that a numeric value enclosed in quotes is automatically treated as a character value, even if it is not alphabetical. Keeping these details in mind is crucial when handling sequences of values in Python (see the example below):
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = 12 # x is a numeric variable<br>
+y = "12" # y is a string formed by digits<br>
+z = "mon texte" # z is a string formed by alphabetical values<br>
+k = "Ce stylo coûte 5 euros" # k is a string formed by alphanumeric values
+</div>
+<p style="color:#424242; line-height:1.6;">
+For more details on string processing, refer to <a href="http://www.tutorialspoint.com/python/python_strings.htm" target="_blank" style="color:#1565C0; text-decoration:none;">this page</a>.
+</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-file-i-o"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">📁 2. File I/O</h3>
+<p style="color:#424242; line-height:1.6;">
+File I/O (Input/Output) in Python involves reading from and writing to files. Python provides several built-in functions and methods to handle files. The primary function for file manipulation is <code>open()</code>, which allows you to open a file and returns a file object. This file object provides methods for reading and writing data. Here's a detailed overview with various examples:
+</p>
+<h4 style="color:#1976D2; margin-top:20px;">Basic File Operations</h4>
+<p style="color:#424242; line-height:1.6;">
+<strong>1. Opening and Closing a File</strong><br>
+To open a file, use the <code>open()</code> function. The basic syntax is <code>open(filename, mode)</code>, where <code>filename</code> is the name of the file and <code>mode</code> is the mode of operation (<code>'r'</code> for read, <code>'w'</code> for write, <code>'a'</code> for append, etc.). To close a file, use the <code>close()</code> method of the file object.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+# Opening a file in read mode<br>
+file = open('example.txt', 'r')<br>
+# Perform operations on the file<br>
+file.close()
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>2. Reading from a File</strong><br>
+<code>read()</code> method reads the entire content of the file. <code>readline()</code> method reads a single line from the file, and <code>readlines()</code> method reads all lines into a list.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+# Read entire file<br>
+file = open('example.txt', 'r')<br>
+content = file.read()<br>
+print(content)<br>
+file.close()<br><br>
+# Read line by line<br>
+file = open('example.txt', 'r')<br>
+line = file.readline()<br>
+while line:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(line, end='')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;line = file.readline()<br>
+file.close()<br><br>
+# Read all lines into a list<br>
+file = open('example.txt', 'r')<br>
+lines = file.readlines()<br>
+print(lines)<br>
+file.close()
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>3. Writing to a File</strong><br>
+<code>write()</code> method writes a string to the file. <code>writelines()</code> method writes a list of strings to the file.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+# Write a string to a file<br>
+file = open('example.txt', 'w')<br>
+file.write('Hello, World!')<br>
+file.close()<br><br>
+# Write multiple lines to a file<br>
+lines = ['First line\n', 'Second line\n', 'Third line\n']<br>
+file = open('example.txt', 'w')<br>
+file.writelines(lines)<br>
+file.close()
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>4. Appending to a File</strong><br>
+To append data to an existing file, open the file in append mode (<code>'a'</code>).
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+file = open('example.txt', 'a')<br>
+file.write('This is an appended line.\n')<br>
+file.close()
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>5. Using <code>with</code> Statement</strong><br>
+The <code>with</code> statement is used for resource management. It ensures that the file is properly closed after its suite finishes, even if an exception is raised.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+# Reading a file using with statement<br>
+with open('example.txt', 'r') as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(content)<br><br>
+# Writing to a file using with statement<br>
+with open('example.txt', 'w') as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file.write('This is a new content.')
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>6. File Modes</strong><br>
+<code>'r'</code>: Read (default mode, opens the file for reading)<br>
+<code>'w'</code>: Write (creates a new file or truncates an existing file)<br>
+<code>'a'</code>: Append (opens the file for appending)<br>
+<code>'b'</code>: Binary (reads or writes in binary mode, e.g., <code>'rb'</code> or <code>'wb'</code>)<br>
+<code>'t'</code>: Text (default mode, opens the file in text mode, e.g., <code>'rt'</code> or <code>'wt'</code>)
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+# Binary mode example<br>
+with open('example.jpg', 'rb') as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;# Process binary data
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>7. File Positioning</strong><br>
+<code>seek(offset, whence)</code>: Moves the file pointer to a specific position.<br>
+<code>tell()</code>: Returns the current file pointer position.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+with open('example.txt', 'r') as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file.seek(10)  # Move to the 10th byte<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(file.tell())  # Print the current file pointer position<br>
+&nbsp;&nbsp;&nbsp;&nbsp;content = file.read(20)  # Read 20 bytes from the current position<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(content)
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>8. Working with File Paths</strong><br>
+Use the <code>os</code> and <code>pathlib</code> modules to handle file paths.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+import os<br>
+from pathlib import Path<br><br>
+# Get current working directory<br>
+print(os.getcwd())<br><br>
+# Join paths<br>
+file_path = os.path.join('folder', 'example.txt')<br><br>
+# Using pathlib<br>
+path = Path('folder') / 'example.txt'
+</div>
+<p style="color:#424242; line-height:1.6;">
+<strong>9. Handling File Exceptions</strong><br>
+Use <code>try</code> and <code>except</code> blocks to handle file-related exceptions.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+try:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with open('example.txt', 'r') as file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content = file.read()<br>
+except FileNotFoundError:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print('File not found.')<br>
+except IOError:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print('An IOError occurred.')
+</div>
+<p style="color:#424242; line-height:1.6;">
+These examples cover a wide range of file operations in Python. Whether you are reading from, writing to, or managing files, Python's file I/O capabilities provide a flexible and powerful way to handle file data.
+</p>
+</div><div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">ℹ️ Help Information for open()</h4>
+<p style="color:#424242; line-height:1.6;">
+The help information for open is below:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get help documentation</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">open</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On your machine, in the folder <code class="docutils literal notranslate"><span class="pre">notebooks_lecture_notes</span></code>, create a file name <code class="docutils literal notranslate"><span class="pre">testfile.txt</span></code> and populate it withthis info:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fghij
+aims class
+Rwanda 2025
+this is really cool
+</pre></div>
+</div>
+<p>In the code below, I’ve opened that file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cat testfile.txt
+fghij
+aims class
+Rwanda 2025
+this is really cool
+</pre></div>
+</div>
+<p>Now let’s open this file in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fgh
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+We read the first three characters, where each character is a byte long.<br>
+We can see that the file handle points to the 4th byte (index number 3) in the file:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;i&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># close the old handle</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># can&#39;t read anymore because the file is closed.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="ne">ValueError</span>: I/O operation on closed file.
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+The file we are using is a long series of characters, but two of the characters are new line characters. If we looked at the file in sequence, it would look like "abcdenfghijn". Separating a file into lines is popular enough that there are two ways to read whole lines in a file. The first is to use the <code>readlines()</code> method:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># Always close the file when you are done with it</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fghij\n&#39;, &#39;aims class\n&#39;, &#39;Rwanda 2025\n&#39;, &#39;this is really cool&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A very important point about the readline method is that it <em>keeps</em> the
+newline character at the end of each line. You can use the strip()
+method to get rid of the string.</p>
+<p>File handles are also iterable, which means we can use them in for loops
+or list extensions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;fghij&#39;, &#39;aims class&#39;, &#39;Rwanda 2025&#39;, &#39;this is really cool&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+These are equivalent operations. It's often best to handle a file one line at a time, particularly when the file is so large it might not fit in memory.
+</p>
+<p style="color:#424242; line-height:1.6;">
+The other half of the story is writing output to files. We'll talk about two techniques: writing to the shell and writing to files directly.
+</p>
+<p style="color:#424242; line-height:1.6;">
+If your program only creates one stream of output, it's often a good idea to write to the shell using the print function. There are several advantages to this strategy, including the fact that it allows the user to select where they want to store the output without worrying about any command line flags. You can use <code>\></code> to direct the output of your program to a file or use <code>|</code> to pipe it to another program.
+</p>
+<p style="color:#424242; line-height:1.6;">
+Sometimes, you need to direct your output directly to a file handle. For instance, if your program produces two output streams, you may want to assign two open file handles. Opening a file for reading simply requires changing the second option from <code>r</code> to <code>w</code> or <code>a</code>.
+</p>
+<div style="background: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #FF9800; margin: 16px 0;">
+<p style="color:#424242; line-height:1.6; margin: 0;">
+<strong>⚠️ Caution!</strong> Opening a file with the 'w' option means start writing <i>at the beginning</i>, which may overwrite old material. If you want to append to the file without losing what is already there, open it with 'a'.
+</p>
+</div>
+<p style="color:#424242; line-height:1.6;">
+Writing to a file uses the <code>write()</code> command, which accepts a string.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;outfile.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is the first line!&#39;</span><span class="p">)</span>
+<span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+Another way to write to a file is to use <code>writelines()</code>, which accepts a list of strings and writes them in order.
+</p>
+<div style="background: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #FF9800; margin: 16px 0;">
+<p style="color:#424242; line-height:1.6; margin: 0;">
+<strong>⚠️ Caution!</strong> <code>writelines()</code> does not append newlines. If you really want to write a newline at the end of each string in the list, add it yourself.
+</p>
+</div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Strings are immutable sequences of characters, created with single or double quotes.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Indexing (<code>s[0]</code>) and slicing (<code>s[1:4]</code>) let you access parts of a string.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">String methods like <code>.upper()</code>, <code>.split()</code>, <code>.replace()</code>, <code>.format()</code> are essential tools.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">f-strings (<code>f"Hello {name}"</code>) provide the most readable way to format strings.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">File I/O uses <code>open()</code> with modes <code>r</code>, <code>w</code>, <code>a</code> — always use <code>with</code> statements for safe handling.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 3 — Strings and Files</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 22%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 22% complete (4 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="02-variables.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">📦 Lecture 2: Variables, Types, and Assignment</span></a></td><td style="text-align: center; width: 10%;"><a href="index.ipynb" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="04-git.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">💻 Lecture 4: Version Control with Git</span></a></td></tr></table></div>—</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02-variables.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2.0. None (nothing)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04-git.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">You might find this reference ,   this command list as well as  this resource very useful for this practical.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

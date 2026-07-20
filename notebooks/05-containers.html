@@ -1,0 +1,2075 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/05-containers';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/05-containers.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="06-flow-control.html" />
+    <link rel="prev" title="You might find this reference , this command list as well as this resource very useful for this practical." href="04-git.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/05-containers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/05-containers.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/05-containers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/05-containers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-5-iterable-objects-or-containers"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 5 of 18 — Progress: 28%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📦 Lecture 5 — Iterable Objects or Containers</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">50 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #4CAF50; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Beginner</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <strong style="color:#000;">AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong>, AI.Technipreneurs, Bénin<br>&amp; <strong style="color:#000;">African Center for Advanced Studies (ACAS)</strong>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="index.ipynb" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 5px solid #4CAF50;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">
+🎯 Learning Objectives
+</h3>
+<p style="color: #555; font-size: 0.95em; margin-bottom: 10px;">
+By the end of this lecture, you will be able to:
+</p>
+<ul style="list-style-type: none; padding-left: 5px; font-size: 0.95em;">
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Create and manipulate <code>list</code>, <code>tuple</code>, <code>dict</code>, and <code>set</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Use indexing, slicing, and iteration on containers</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Understand mutability vs. immutability</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Apply common methods: <code>append</code>, <code>pop</code>, <code>update</code>, <code>keys</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Choose the right container for each task</li>
+</ul>
+</div><div class="transition-bridge" style="background: transparent; border-left: 3px solid #b0bec5; padding: 10px 18px; margin: 20px 0 10px; color: #546e7a; font-size: 0.95em; font-style: italic; font-family: 'Segoe UI', sans-serif;">
+Lists are great for ordered collections, but what if you need to look up values by a <strong>key</strong> rather than a position? That's where dictionaries shine.
+</div><div style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-left: 5px solid #e91e63; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #880E4F; margin-top: 0; font-size: 1.2em;">📝 Practice Exercises</h3>
+<ol style="color: #424242; font-size: 0.95em; line-height: 1.7;">
+<li><strong>List operations:</strong> Create a list of 5 cities. Append a 6th city, insert one at position 2, remove the last one, and sort the list alphabetically.</li>
+<li><strong>Dictionary builder:</strong> Create a dictionary mapping 5 country names to their capitals. Add a new country, update one capital, and print all key-value pairs.</li>
+<li><strong>Set operations:</strong> Create two sets: students who passed math and students who passed science. Find students who passed both, either, and only one subject.</li>
+<li><strong>Nested containers:</strong> Create a list of dictionaries representing 3 students, each with keys <code>"name"</code>, <code>"age"</code>, and <code>"grades"</code> (a list of numbers). Print the average grade for each student.</li>
+<li><strong>Challenge:</strong> Given <code>text = "the quick brown fox jumps over the lazy dog"</code>, use a dictionary to count how many times each word appears.</li>
+</ol>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: List operations</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Your code here</span>
+
+
+<span class="c1"># Exercise 2: Dictionary builder</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># Your code here</span>
+
+
+<span class="c1"># Exercise 3: Set operations</span>
+<span class="n">passed_math</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">}</span>
+<span class="n">passed_science</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Frank&quot;</span><span class="p">}</span>
+<span class="c1"># Your code here</span>
+
+
+<span class="c1"># Exercise 4: Nested containers</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Your code here</span>
+
+
+<span class="c1"># Exercise 5 (Challenge): Word counter</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span>
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: List operations</span>
+<span class="n">cities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Sydney&quot;</span><span class="p">]</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Cairo&quot;</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Rome&quot;</span><span class="p">)</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">cities</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cities</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 2: Dictionary builder</span>
+<span class="n">countries</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;France&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Japan&quot;</span><span class="p">:</span> <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Brazil&quot;</span><span class="p">:</span> <span class="s2">&quot;Brasilia&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australia&quot;</span><span class="p">:</span> <span class="s2">&quot;Canberra&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">countries</span><span class="p">[</span><span class="s2">&quot;Canada&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Ottawa&quot;</span>
+<span class="n">countries</span><span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Berlin (confirmed)&quot;</span>
+<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">capital</span> <span class="ow">in</span> <span class="n">countries</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">capital</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 3: Set operations</span>
+<span class="n">passed_math</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">}</span>
+<span class="n">passed_science</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">,</span> <span class="s2">&quot;Eve&quot;</span><span class="p">,</span> <span class="s2">&quot;Frank&quot;</span><span class="p">}</span>
+
+<span class="n">both</span> <span class="o">=</span> <span class="n">passed_math</span> <span class="o">&amp;</span> <span class="n">passed_science</span>
+<span class="n">either</span> <span class="o">=</span> <span class="n">passed_math</span> <span class="o">|</span> <span class="n">passed_science</span>
+<span class="n">only_one</span> <span class="o">=</span> <span class="n">passed_math</span> <span class="o">^</span> <span class="n">passed_science</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Both:     </span><span class="si">{</span><span class="n">both</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Either:   </span><span class="si">{</span><span class="n">either</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Only one: </span><span class="si">{</span><span class="n">only_one</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 4: Nested containers</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">80</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">92</span><span class="p">]},</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;grades&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;grades&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: average grade = </span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 5 (Challenge): Word counter</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span>
+<span class="n">word_counts</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="n">word_counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">word_counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-5-iterable-objects-or-containers" style="color: #424242; text-decoration: none;">● 📦 Lecture 5 — Iterable Objects or Containers</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#python-data-structures-overview" style="color: #424242; text-decoration: none;">1. ▸ 🏗️ Python Data Structures Overview</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#0-lists" style="color: #424242; text-decoration: none;">2. ▸ 📋 0. Lists</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#1-dictionaries" style="color: #424242; text-decoration: none;">3. ▸ 📚 1. Dictionaries</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">4. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border-left: 5px solid #7E57C2; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #4527A0; margin-top: 0; font-size: 1.1em;">🔗 Building on What You Know</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin: 0;">So far, you've worked with individual values: a number, a string, a boolean. But real programs need to manage <strong>collections</strong> of data — a list of temperatures, a mapping of student names to grades, a set of unique IDs. Python provides four powerful container types for exactly this purpose.</p>
+</div><div style="background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%); border-left: 5px solid #FF9800; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #E65100; margin-top: 0; font-size: 1.1em;">🌍 Real-World Scenario</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin-bottom: 10px;">You are building an application to manage student records at a university. You need a <strong>list</strong> of enrolled students (ordered, can change), a <strong>tuple</strong> for each student's immutable ID and birth date, a <strong>dictionary</strong> mapping student IDs to their grades for fast lookup, and a <strong>set</strong> to track which courses have been taken (no duplicates).</p><p style="color: #424242; font-size: 0.95em; line-height: 1.6;">Each container type exists because it solves a different kind of problem. By the end of this lecture, you'll know <strong>which container to reach for</strong> in any situation.</p>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#388E3C; margin-top:0;">🧾 <b>Summary</b></h3>
+<p style="color:#424242; line-height:1.6;">
+This lecture aims to present <code>iterable objects</code> and <code>containers</code>, focusing on <code>lists</code>, <code>tuples</code>, <code>dictionaries</code>, and <code>sets</code>. We will review some of the most commonly encountered operations with these data structures, particularly in data organization and retrieval tasks. Additionally, we will explore how to use <code>lists</code>, <code>tuples</code>, <code>dictionaries</code>, and <code>sets</code> to efficiently store and manage collections of data.
+</p>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #E3F2FD 0%, #E1F5FE 100%);
+border-radius: 10px;
+padding: 18px 22px;
+font-size:1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#1976D2;">🔗 <b>Key Concepts</b></h3>
+<ul style="list-style-type: none; padding-left: 10px; color:#424242;">
+  <li>📊 <b>Iterable Objects:</b> Understanding sequences and containers in Python</li>
+  <li>🗂️ <b>Data Structures:</b> Lists, tuples, dictionaries, and sets</li>
+  <li>🔍 <b>Common Operations:</b> Data organization and retrieval techniques</li>
+  <li>💾 <b>Efficient Storage:</b> Managing collections of data effectively</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%);
+border-radius: 10px;
+padding: 18px 22px;
+font-size:1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#C2185B;">🔗 <b>Resources</b></h3>
+<ul style="list-style-type: none; padding-left: 10px; color:#424242;">
+  <li>📘 <b>GitHub Repository:</b> <a href="https://github.com/gabayae/the-shell" target="_blank" style="color:#AD1457; text-decoration:none;">PyPro-SCiDaS — The Shell</a></li>
+  <li>💡 Feel free to explore, fork, and practice before the session!</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div align="center" style="
+background: linear-gradient(90deg, #fff8e1 0%, #fffde7 100%);
+border-radius: 10px;
+padding: 15px;
+margin-top: 25px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+font-size:1.05em;
+">
+✨ <i>Let's dive into Python data structures and master collection management!</i> 🚀
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="python-data-structures-overview"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">🏗️ Python Data Structures Overview</h3>
+<p style="color:#424242; line-height:1.6;">
+As mentioned in previous sections, a Python program always operates based on the manipulation of objects. The instructions are always executed on objects. Variables represent a particular type of Python object. In general, instructions in a Python program are defined from a collection of objects that come in various forms of value sequences.
+</p>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">📋 List Object</h4>
+<p style="color:#424242; line-height:1.6;">
+A <b>list</b> object is a sequence of values (numerical and/or characters) that are <b>indexed</b> and specified within <b>square brackets</b>, separated by commas.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = [1, 5, 8, 10, 4, 50, 8] # List consisting only of numbers<br>
+y = ["Olivier", "ENGEL", "Strasbourg"] # List consisting only of characters<br>
+z = [1, "Olivier", 5, 8, "ENGEL", 10, 4, 50, "Strasbourg"] # Mixed list
+</div>
+<p style="color:#424242; line-height:1.6;">
+A list object can be generated manually or automatically using the <code>list()</code> function.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = list(range(1, 10))<br>
+print(x) # returns [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">📦 Tuple Object</h4>
+<p style="color:#424242; line-height:1.6;">
+A <b>tuple</b> object is a sequence of values (numerical and/or characters) that are <b>indexed</b> and specified within <b>parentheses</b>, separated by commas.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = (1, 5, 8, 10, 4, 50, 8) # Tuple consisting only of numbers<br>
+y = ("Olivier", "ENGEL", "Strasbourg") # Tuple consisting only of characters<br>
+z = (1, "Olivier", 5, 8, "ENGEL", 10, 4, 50, "Strasbourg") # Mixed tuple
+</div>
+<p style="color:#424242; line-height:1.6;">
+A tuple object can be generated manually or automatically using the <code>tuple()</code> function.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = tuple(range(1, 10))<br>
+print(x) # returns (1, 2, 3, 4, 5, 6, 7, 8, 9)
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">🎯 Set Object</h4>
+<p style="color:#424242; line-height:1.6;">
+A <b>set</b> object is a sequence of values (numerical and/or characters) that are <b>non-duplicated</b> and <b>non-indexed</b>, and specified within <b>curly braces</b>, separated by commas.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = {1, 5, 8, 10, 4, 50, 8} # Set consisting only of numbers<br>
+y = {"Olivier", "ENGEL", "Strasbourg"} # Set consisting only of characters<br>
+z = {1, "Olivier", 5, 8, "ENGEL", 10, 4, 50, "Strasbourg"} # Mixed set
+</div>
+<p style="color:#424242; line-height:1.6;">
+A set object can be generated manually or automatically using the <code>set()</code> function.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+v = [2, 4, "orange", "meat", 4, "orange"]<br>
+V = set(v)<br>
+print(V) # returns {2, 'orange', 4, 'meat'}
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">📚 Dictionary Object</h4>
+<p style="color:#424242; line-height:1.6;">
+A <b>dictionary</b> object is a sequence of values (numerical and/or characters) that are <b>indexed by keys</b> and specified within <b>curly braces</b>, separated by commas. Each <code>key</code> corresponds to one or more <code>values</code>.
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = {'name': 'Jean', 'weight': 70, 'height': 1.75} # Keys with unique values<br>
+y = {'Jean': [25, 70, 1.75], 'Paul': [30, 65, 1.80], 'Pierre': [35, 75, 1.65]} # Key with list values
+</div>
+<p style="color:#424242; line-height:1.6;">
+A dictionary object can be generated manually or automatically using the <code>dict()</code> function.
+</p>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">📦 Container Properties</h4>
+<p style="color:#424242; line-height:1.6;">
+The four objects we have just mentioned are also what we call <code>containers</code> simply because they <code>can contain</code> something. Thus, strings, lists, tuples, and dictionaries are the basic iterable objects in Python. <b>Lists and dictionaries are mutable</b> – their elements can be changed on the fly – while <b>strings and tuples are immutable</b>.
+</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="0-lists"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">📋 0. Lists</h3>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">📝 0.0. Definition of a list object</h4>
+<p style="color:#424242; line-height:1.6;">
+A list object can be declared and defined manually or by using the <code>list()</code> function. There are two categories of lists: one-dimensional lists (or simple lists) and multi-dimensional lists.
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li>A simple list is a list whose elements consist of unique values separated by commas.</li>
+</ul>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltage</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+
+<span class="n">courant</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">voltage</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;============================= </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courant</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-2.0, -1.0, 0.0, 1.0, 2.0]
+============================= 
+
+[-1.0, -0.5, 0.0, 0.5, 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">voltage</span><span class="p">)</span> <span class="c1"># Returns the type of the variable &#39;courant&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the variable type</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">courant</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get help documentation</span>
+<span class="n">help</span><span class="p">(</span><span class="n">voltage</span><span class="o">.</span><span class="n">sort</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on NoneType object:
+
+class NoneType(object)
+ |  The type of the None singleton.
+ |
+ |  Methods defined here:
+ |
+ |  __bool__(self, /)
+ |      True if self else False
+ |
+ |  __eq__(self, value, /)
+ |      Return self==value.
+ |
+ |  __ge__(self, value, /)
+ |      Return self&gt;=value.
+ |
+ |  __gt__(self, value, /)
+ |      Return self&gt;value.
+ |
+ |  __hash__(self, /)
+ |      Return hash(self).
+ |
+ |  __le__(self, value, /)
+ |      Return self&lt;=value.
+ |
+ |  __lt__(self, value, /)
+ |      Return self&lt;value.
+ |
+ |  __ne__(self, value, /)
+ |      Return self!=value.
+ |
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+Moreover, in some situations, you may first create an empty list which will later be filled with values using the <code>append()</code> function. To create an empty list, you can use:<br>
+<code>x = list()</code> or <code>x = []</code>.
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li>Unlike a simple list, a multi-dimensional list is a list where the individual elements consist of multiple values. In general, a multi-dimensional list is presented as a list of lists.</li>
+</ul>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span> <span class="c1"># liste à deux dimensions (liste de listes)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]],[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]]</span> <span class="c1"># liste à trois dimensions (liste de listes de listes)</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([[1, 2, 3], [2, 3, 4], [3, 4, 5]], [[[1, 2], [2, 3]], [[4, 5], [5, 6]]])
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+Since a list is a sequence of indexed values, you can access each value or groups of values by specifying their index:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mf">20.357</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">])</span> <span class="c1"># Definition of a list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Displays all the elements of the list x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, 1800, 20.357, &#39;Thursday&#39;, &#39;Friday&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Returns the first element of x: &#39;Monday&#39; (Note: indexing starts at 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Returns the element at index 3 (fourth element of x): 1800</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Returns all elements between index 1 and index 3 (Note: element at index 3 is excluded)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Returns all elements between index 1 and index 6 with a step of 2 elements each time [&#39;Tuesday&#39;, 1800, &#39;Thursday&#39;] (element at index 6 is excluded).</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span> <span class="c1"># Returns all elements starting from index 2 (inclusive).</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Returns all elements up to but not including index 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Negative indexing, returns the last element of the list (equivalent to x[6])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Negative indexing, returns the second to last element of the list (equivalent to x[5])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Iterates through all elements between index 0 and the last index, returning every second element [&#39;Monday&#39;, &#39;Wednesday&#39;, 20.357, &#39;Friday&#39;].</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Returns a list containing all elements of x, rearranged from the last element to the first. This is a reverse of x. Returns [&#39;Friday&#39;, &#39;Thursday&#39;, 20.357, 1800, &#39;Wednesday&#39;, &#39;Tuesday&#39;, &#39;Monday&#39;].</span>
+<span class="c1"># The same result can be obtained by using x.reverse()</span>
+<span class="n">x_rev</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">x_rev</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Returns the first element of x: &#39;Monday&#39; (Note: indexing starts at 0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>With a multi-dimensional list, indexing is done at multiple levels. For example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Returns the first sublist [1, 2, 3]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Returns the first element of the first sublist, which is 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Returns the third sublist [3, 4, 5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Returns the element at index 1 of the third sublist, which is 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="c1"># Returns all sublists starting from index 1: [[2, 3, 4], [3, 4, 5]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Returns the first sublist from the sliced list: [2, 3, 4]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Returns the last sublist [3, 4, 5]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Returns the first two elements of the second sublist: [2, 3]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:])</span> <span class="c1"># Returns elements from index 1 to the end of the second sublist: [3, 4]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+================================================
+	
+[1, 2, 3]
+================================================
+	
+1
+================================================
+	
+[3, 4, 5]
+================================================
+	
+4
+================================================
+	
+[[2, 3, 4], [3, 4, 5]]
+================================================
+	
+[2, 3, 4]
+================================================
+	
+[3, 4, 5]
+================================================
+	
+[2, 3]
+================================================
+	
+[3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">🔢 0.1. The <code>range()</code> Function</h4>
+<p style="color:#424242; line-height:1.6;">
+Value sequences are variables that are frequently encountered in Python programs. They represent a set of successive and ordered values that can be extracted like a list. Value sequences are generated using the <code>range()</code> function.
+</p>
+<p style="color:#424242; line-height:1.6;">
+The function has the following syntax:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+range(start, stop, step)
+</div>
+<ul style="color:#424242; line-height:1.7;">
+  <li><code>start</code> (optional): The value of the first number in the sequence. If omitted, the sequence starts from 0.</li>
+  <li><code>stop</code>: The end of the sequence. This value is not included in the sequence.</li>
+  <li><code>step</code> (optional): The difference between each pair of consecutive values in the sequence. If omitted, the default step is 1.</li>
+</ul>
+<p style="color:#424242; line-height:1.6;">
+Example:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Creates a sequence of integer values from 0 to 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Creates a sequence of integer values from 2 to 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;================================================&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Creates a sequence of integer values from 1 to 9 with a step of 2. It returns 1, 3, 5, 7, and 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+================================================
+	
+range(2, 10)
+================================================
+	
+range(1, 10, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+To display the generated values, you can use the <code>list()</code> function, as shown below:
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># Returns a list: values in square brackets [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#0D47A1; margin-top:0;">🔧 0.2. Operations on Lists</h4>
+<p style="color:#424242; line-height:1.6;">
+Once a list is defined, several operations can be performed to modify its structure or its elements.
+</p>
+<ul style="color:#424242; line-height:1.7;">
+  <li>To find the number of elements in a list, we use the <code>len()</code> function. Example: consider the list <code>x</code> defined as follows:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['Monday', 'Tuesday', 'Wednesday', 1800, 20.357, 'Thursday', 'Friday']
+</div>
+<p style="color:#424242; line-height:1.6;">
+To find the length of <code>x</code> (the number of elements in <code>x</code>), we do:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+print(len(x)) # returns 7
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mf">20.357</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># returns 7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>We can concatenate two lists to form a single list using the <code>+</code> operator, which allows for list concatenation:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['giraffe', 'tiger']<br>
+y = ['monkey', 'mouse']<br>
+z = x + y<br>
+print(z) # returns ['giraffe', 'tiger', 'monkey', 'mouse']
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;giraffe&#39;</span><span class="p">,</span> <span class="s1">&#39;tiger&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;monkey&#39;</span><span class="p">,</span> <span class="s1">&#39;mouse&#39;</span><span class="p">]</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># returns [&#39;giraffe&#39;, &#39;tiger&#39;, &#39;monkey&#39;, &#39;mouse&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;giraffe&#39;, &#39;tiger&#39;, &#39;monkey&#39;, &#39;mouse&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>We can repeat the elements of a list using the multiplication operator <code>*</code>:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['giraffe', 24, 18, 'tiger', 2400, 150]<br>
+y = x * 3<br>
+print(y) # returns ['giraffe', 24, 18, 'tiger', 2400, 150, 'giraffe', 24, 18, 'tiger', 2400, 150, 'giraffe', 24, 18, 'tiger', 2400, 150]
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;giraffe&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;tiger&#39;</span><span class="p">,</span> <span class="mi">2400</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1"># returns [&#39;giraffe&#39;, 24, 18, &#39;tiger&#39;, 2400, 150, &#39;giraffe&#39;, 24, 18,</span>
+         <span class="c1"># &#39;tiger&#39;, 2400, 150, &#39;giraffe&#39;, 24, 18, &#39;tiger&#39;, 2400, 150]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;giraffe&#39;, 24, 18, &#39;tiger&#39;, 2400, 150, &#39;giraffe&#39;, 24, 18, &#39;tiger&#39;, 2400, 150, &#39;giraffe&#39;, 24, 18, &#39;tiger&#39;, 2400, 150]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>It is possible to modify a particular element in a list by using its index:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['Monday', 'Tuesday', 'Wednesday', 1800, 20.357, 'Thursday', 'Friday']<br>
+x[3] = x[3] + 100<br>
+print(x) # returns ['Monday', 'Tuesday', 'Wednesday', 1900, 20.357, 'Thursday', 'Friday']<br><br>
+x[6] = x[6] + ' Saint' # Note the space in ' Saint', otherwise you'll get 'FridaySaint'.<br>
+print(x) # returns ['Monday', 'Tuesday', 'Wednesday', 1900, 20.357, 'Thursday', 'Friday Saint']
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mf">20.357</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># returns [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, 1900, 20.357, &#39;Thursday&#39;, &#39;Friday&#39;]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==================================================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; Saint&#39;</span> <span class="c1"># Note the space in &#39; Saint&#39;, otherwise you&#39;ll get &#39;FridaySaint&#39;.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># returns [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, 1900, 20.357, &#39;Thursday&#39;, &#39;Friday Saint&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, 1900, 20.357, &#39;Thursday&#39;, &#39;Friday&#39;]
+==================================================================
+
+[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, 1900, 20.357, &#39;Thursday&#39;, &#39;Friday Saint&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>New elements can be added in addition to the initial elements. For this, we use the <code>append()</code> function:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br>
+x.append('Saturday')<br>
+x.append('Sunday')<br>
+print(x)
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">]</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Saturday&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Sunday&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+As we can see, the <code>append()</code> function can only add one element to a list at a time. Therefore, we can use the <code>extend()</code> function when we want to add multiple elements at once. Example:
+</p>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']<br>
+x.extend(['Saturday', 'Sunday'])<br>
+print(x)
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">]</span>
+<span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunday&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;, &#39;Thursday&#39;, &#39;Friday&#39;, &#39;Saturday&#39;, &#39;Sunday&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<div style="background: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #FF9800; margin: 16px 0;">
+<p style="color:#424242; line-height:1.6; margin: 0;">
+<strong>📚 Further Study:</strong> Explore the following methods and how they operate on lists:<br>
+<code>insert()</code>, <code>remove()</code>, <code>index()</code>, <code>count()</code>.
+</p>
+</div>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<div style="background: #FFF3E0; padding: 12px; border-radius: 6px; border-left: 4px solid #FF9800; margin: 16px 0;">
+<p style="color:#424242; line-height:1.6; margin: 0;">
+<strong>💡 Note:</strong> Given that their usage is quite uncommon, we will not cover <code>tuple</code> and <code>set</code> objects in this course. The brief presentation given above is relatively sufficient, and readers who explicitly need more information can consult the extensive documentation available online.
+</p>
+</div>
+<p style="color:#424242; line-height:1.6;">
+However, we can mention that a <code>set</code> is an unordered iterable collection of distinct hashable elements and that classic mathematical operations on sets can be performed in Python. For example:
+</p>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+X, Y = set('abcd'), set('sbds')<br>
+print("X =", X) # X = {'a', 'c', 'b', 'd'}<br>
+print("Y =", Y) # Y = {'s', 'b', 'd'} : only one element 's'<br><br>
+print('c' in X)  # True<br>
+print('a' in Y)  # False<br>
+print(X - Y)     # {'a', 'c'}<br>
+print(Y - X)     # {'s'}<br>
+print(X | Y)     # {'a', 'c', 'b', 'd', 's'}<br>
+print(X & Y)     # {'b', 'd'}
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">),</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;sbds&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X =&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="c1"># X = {&#39;a&#39;, &#39;c&#39;, &#39;b&#39;, &#39;d&#39;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y =&quot;</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span> <span class="c1"># Y = {&#39;s&#39;, &#39;b&#39;, &#39;d&#39;} : only one element &#39;s&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c&#39;</span> <span class="ow">in</span> <span class="n">X</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">Y</span><span class="p">)</span>  <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">Y</span><span class="p">)</span>     <span class="c1"># {&#39;a&#39;, &#39;c&#39;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">X</span><span class="p">)</span>     <span class="c1"># {&#39;s&#39;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">|</span> <span class="n">Y</span><span class="p">)</span>     <span class="c1"># {&#39;a&#39;, &#39;c&#39;, &#39;b&#39;, &#39;d&#39;, &#39;s&#39;}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">&amp;</span> <span class="n">Y</span><span class="p">)</span>     <span class="c1"># {&#39;b&#39;, &#39;d&#39;}</span>
+
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = {&#39;a&#39;, &#39;d&#39;, &#39;b&#39;, &#39;c&#39;}
+=========================================
+
+Y = {&#39;s&#39;, &#39;d&#39;, &#39;b&#39;}
+=========================================
+
+True
+=========================================
+
+False
+=========================================
+
+{&#39;a&#39;, &#39;c&#39;}
+=========================================
+
+{&#39;s&#39;}
+=========================================
+
+{&#39;d&#39;, &#39;b&#39;, &#39;c&#39;, &#39;s&#39;, &#39;a&#39;}
+=========================================
+
+{&#39;d&#39;, &#39;b&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="1-dictionaries"></a></p>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h3 style="color:#0D47A1; margin-top:0;">📚 1. Dictionaries</h3>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">🔑 1.0. About dictionaries</h4>
+<p style="color:#424242; line-height:1.6;">
+In Pythonic design, a dictionary (also called a map) is a versatile collection of objects that adheres to the <code>key-value</code> principle. Unlike lists, where elements are accessed by their position or index, dictionaries use unique keys to identify and retrieve values. These keys are typically strings but can also be other immutable types, such as numbers or tuples. This key-value structure allows for efficient lookups, additions, and deletions, making dictionaries a powerful tool for organizing and managing data in a more intuitive and flexible way compared to lists.
+</p>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jean&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="mf">1.75</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">],</span> <span class="s1">&#39;Paul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">],</span> <span class="s1">&#39;Pierre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">]}</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jean&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">),</span> <span class="s1">&#39;Paul&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">),</span> <span class="s1">&#39;Pierre&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">)}</span>
+<span class="n">k</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jean&#39;</span><span class="p">,</span> <span class="s1">&#39;biometrics&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">],</span> <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<p style="color:#424242; line-height:1.6;">
+The four variables above represent <b>four</b> typical ways to define a dictionary. Variable <code>x</code> is a dictionary where the keys are <b>name, age, weight, and height</b>. The corresponding values are <b>Jean, 25, 70</b>, and <b>1.75</b>. In the definition of <code>x</code>, it is noted that each key corresponds to a unique value. However, it is very common to associate multiple values with a single key. This is the case with dictionary <code>y</code>.
+</p>
+</div><hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<h4 style="color:#388E3C; margin-top:0;">🔧 1.1. Operations on dictionaries</h4>
+<ul style="color:#424242; line-height:1.7;">
+  <li>To access the elements of a dictionary, you use the keys. The method <code>keys()</code> returns the list of keys in the dictionary, and the method <code>values()</code> returns the values.</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+X = {'name': 'Jean', 'age': 25, 'weight': 70, 'height': 1.75}<br>
+print(X.keys())  # returns ['name', 'age', 'weight', 'height']<br>
+print(X.values()) # returns ['Jean', 25, 70, 1.75]   <br>
+print(X['name'])  # returns 'Jean'   <br>
+x = {'Jean': [25, 70, 1.75], 'Paul': [30, 65, 1.80], 'Pierre': [35, 75, 1.65]}<br>
+print(x['Jean']) # returns [25, 70, 1.75]<br>
+print(x['Jean'][0]) # returns 25<br>
+print(x['Jean'][0:2]) # returns [25, 70]
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Jean&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="mf">1.75</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>  <span class="c1"># returns [&#39;name&#39;, &#39;age&#39;, &#39;weight&#39;, &#39;height&#39;]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># returns [&#39;Jean&#39;, 25, 70, 1.75]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>  <span class="c1"># returns &#39;Jean&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">],</span> <span class="s1">&#39;Paul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">],</span> <span class="s1">&#39;Pierre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Jean&#39;</span><span class="p">])</span> <span class="c1"># returns [25, 70, 1.75]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Jean&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># returns 25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Jean&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns [25, 70]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=========================================
+
+dict_keys([&#39;name&#39;, &#39;age&#39;, &#39;weight&#39;, &#39;height&#39;])
+=========================================
+
+dict_values([&#39;Jean&#39;, 25, 70, 1.75])
+=========================================
+
+Jean
+=========================================
+
+=========================================
+
+[25, 70, 1.75]
+=========================================
+
+25
+=========================================
+
+[25, 70]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #fff8e1 0%, #e3f2fd 100%);
+border-left: 6px solid #1976D2;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>Adding or modifying keys or values: You can modify a dictionary by either changing existing keys and values or by adding new ones. You can also remove values as well as keys.</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = {} # Creates an empty dictionary. You could also use x = dict()<br>
+x['name'] = 'Jean' # Adds the key-value pair 'name' and 'Jean' to the initial dictionary x<br>
+x['biometrics'] = [25, 70, 1.75] # Adds the key-value pair 'biometrics' and [25, 70, 1.75] to dictionary x<br>
+x['biometrics'] = [30, 70, 1.80] # Modifies the values of the 'biometrics' key by redefining it<br>
+x['biometrics'][0] = 2 # Modifies the element at index 0 in the list of values corresponding to the 'biometrics' key (previously defined)<br><br>
+Y = {'Jean': [25, 70, 1.75], 'Paul': [30, 65, 1.80], 'Pierre': [35, 75, 1.65]}<br>
+del Y['Jean'] # Deletes the key 'Jean' and all its corresponding values<br>
+del Y['Paul'][0] # Deletes the element at index 0 in the value sequence corresponding to the key 'Paul'. For a key with a single value, use del x['keyName'] where 'keyName' is the name of the key with the single value.
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Creates an empty dictionary. You could also use x = dict()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Jean&#39;</span> <span class="c1"># Adds the key-value pair &#39;name&#39; and &#39;Jean&#39; to the initial dictionary x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;biometrics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">]</span> <span class="c1"># Adds the key-value pair &#39;biometrics&#39; and [25, 70, 1.75] to dictionary x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;biometrics&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">]</span> <span class="c1"># Modifies the values of the &#39;biometrics&#39; key by redefining it</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;biometrics&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># Modifies the element at index 0 in the list of values corresponding to the &#39;biometrics&#39; key (previously defined)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+
+<span class="n">Y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">],</span> <span class="s1">&#39;Paul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">],</span> <span class="s1">&#39;Pierre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=========================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">Y</span><span class="p">[</span><span class="s1">&#39;Jean&#39;</span><span class="p">]</span> <span class="c1"># Deletes the key &#39;Jean&#39; and all its corresponding values</span>
+
+<span class="k">del</span> <span class="n">Y</span><span class="p">[</span><span class="s1">&#39;Paul&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Deletes the element at index 0 in the value sequence corresponding to the key &#39;Paul&#39;. For a key with a single value, use del x[&#39;keyName&#39;] where &#39;keyName&#39; is the name of the key with the single value.</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+=========================================
+
+{&#39;name&#39;: &#39;Jean&#39;}
+=========================================
+
+{&#39;name&#39;: &#39;Jean&#39;, &#39;biometrics&#39;: [25, 70, 1.75]}
+=========================================
+
+{&#39;name&#39;: &#39;Jean&#39;, &#39;biometrics&#39;: [30, 70, 1.8]}
+=========================================
+
+{&#39;name&#39;: &#39;Jean&#39;, &#39;biometrics&#39;: [2, 70, 1.8]}
+=========================================
+
+{&#39;Jean&#39;: [25, 70, 1.75], &#39;Paul&#39;: [30, 65, 1.8], &#39;Pierre&#39;: [35, 75, 1.65]}
+=========================================
+
+{&#39;Paul&#39;: [65, 1.8], &#39;Pierre&#39;: [35, 75, 1.65]}
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div style="
+background: linear-gradient(135deg, #f9fbe7 0%, #e8f5e9 100%);
+border-left: 6px solid #4CAF50;
+padding: 18px 22px;
+border-radius:10px;
+font-size: 1.05em;
+box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+font-family:'Segoe UI', sans-serif;
+">
+<ul style="color:#424242; line-height:1.7;">
+  <li>To rename a key in a dictionary, you use the <code>pop()</code> function as defined in the following example:</li>
+</ul>
+<div style="background: #2E3440; color: #D8DEE9; padding: 12px; border-radius: 6px; font-family: 'Monaco', 'Consolas', monospace; margin: 10px 0; line-height: 1.5;">
+x = {'Jean': [25, 70, 1.75], 'Paul': [30, 65, 1.80], 'Pierre': [35, 75, 1.65]}<br>
+x['John'] = x.pop('Jean') # Renames the key 'Jean' to 'John'<br>
+print(x)
+</div>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jean&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">],</span> <span class="s1">&#39;Paul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mf">1.80</span><span class="p">],</span> <span class="s1">&#39;Pierre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">)</span> <span class="c1"># Renames the key &#39;Jean&#39; to &#39;John&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Jean&#39;: [25, 70, 1.75], &#39;Paul&#39;: [30, 65, 1.8], &#39;Pierre&#39;: [35, 75, 1.65]}
+{&#39;Paul&#39;: [30, 65, 1.8], &#39;Pierre&#39;: [35, 75, 1.65], &#39;John&#39;: [25, 70, 1.75]}
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Lists are ordered, mutable sequences — the most versatile Python container.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Tuples are ordered but immutable — use them for fixed collections and dictionary keys.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Dictionaries store key-value pairs with fast lookup: <code>d["key"]</code>.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Sets store unique elements and support mathematical set operations (union, intersection).</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Choose the right container: lists for ordered data, dicts for lookups, sets for uniqueness, tuples for immutability.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 5 — Iterable Objects or Containers</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 33%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 33% complete (6 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="04-git.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">💻 Lecture 4: Version Control with Git</span></a></td><td style="text-align: center; width: 10%;"><a href="index.ipynb" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="06-flow-control.ipynb" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">🔀 Lecture 6: Flow Control and Loops</span></a></td></tr></table></div>—</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-git.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">You might find this reference ,   this command list as well as  this resource very useful for this practical.</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06-flow-control.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
