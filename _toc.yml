@@ -5,48 +5,57 @@ format: jb-book
 root: intro
 parts:
 
-- caption: Lectures
-  chapters:
-  - file: notebooks/Lecture0
-  - file: notebooks/Lecture1
-  - file: notebooks/Lecture2
-  - file: notebooks/Lecture3
-  - file: notebooks/Lecture4
-  - file: notebooks/Lecture5
-  - file: notebooks/Lecture6
-  - file: notebooks/Lecture7   
-- caption: Light practicals 
-  chapters:
-  - file: practicals/Practical_1
-  - file: practicals/Practical_2  
-  - file: practicals/Practical_3
-  - file: practicals/Practical_4
-  - file: practicals/Practical_5
-  - file: practicals/Practical_6
-  - file: practicals/Practical_7 
-- caption: Challenges 
-  chapters:
-  - file: challenges/PyPro_challenge-1
-  - file: challenges/PyPro_challenge-2
-  - file: challenges/PyPro_challenge-3  
-- caption: Labs & indivdual projects
-  chapters:
-  - file: labs/lab_0
-  - file: VC/version_control_local
-  - file: VC/version_control_remote 
-  - file: VC/presentations 
-- caption: Going deeper and further
-  chapters:
-  - file: VC/advanced-python-projects
-- caption: Local development set up
-  chapters:
-  - file: labs/Lab_Prerequisites
-  - file: VC/git-and-vscode
-  - file: VC/codespaces
-  - file: VC/copilot
-  
-  
-   
-  
-  
-  
+  - caption: Lectures
+    chapters:
+      - file: notebooks/00-shell
+      - file: notebooks/01-intro-python
+      - file: notebooks/02-variables
+      - file: notebooks/03-strings-files
+      - file: notebooks/04-git
+      - file: notebooks/05-containers
+      - file: notebooks/06-flow-control
+      - file: notebooks/07-functions
+      - file: notebooks/08-recursion-lambda
+      - file: notebooks/09-errors-debugging
+      - file: notebooks/10-numpy-1
+      - file: notebooks/11-numpy-2
+      - file: notebooks/12-matplotlib
+      - file: notebooks/13-oop
+      - file: notebooks/14-comprehensions
+      - file: notebooks/15-pandas
+      - file: notebooks/16-decorators
+      - file: notebooks/17-data-apis
+
+  - caption: Light practicals
+    chapters:
+      - file: practicals/Practical_1
+      - file: practicals/Practical_2
+      - file: practicals/Practical_3
+      - file: practicals/Practical_4
+      - file: practicals/Practical_5
+      - file: practicals/Practical_6
+      - file: practicals/Practical_7
+
+  - caption: Challenges
+    chapters:
+      - file: challenges/PyPro_challenge-1
+      - file: challenges/PyPro_challenge-2
+      - file: challenges/PyPro_challenge-3
+
+  - caption: Labs and individual projects
+    chapters:
+      - file: labs/lab_0
+      - file: VC/version_control_local
+      - file: VC/version_control_remote
+      - file: VC/presentations
+
+  - caption: Going deeper
+    chapters:
+      - file: VC/advanced-python-projects
+
+  - caption: Local development setup
+    chapters:
+      - file: labs/Lab_Prerequisites
+      - file: VC/git-and-vscode
+      - file: VC/codespaces
+      - file: VC/copilot
