@@ -12,10 +12,6 @@ copyright: "2024. CC0 Licensed - Use as you like. Appropriate credit is very wel
 execute:
   execute_notebooks: off
   timeout: -1
-  exclude_patterns:
-    - 'S*'
-    - '09*'
-    - '10*'
 
 # Include slides
 #sphinx:
@@ -34,7 +30,7 @@ execute:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/ai-technipreneurs/python_website  # Online location of the book
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
