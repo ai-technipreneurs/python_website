@@ -24,6 +24,14 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = REPO_ROOT.parent / "notebooks-python-class-2025"
 DEST_DIR = REPO_ROOT / "notebooks"
 
+# Image files are ALSO mirrored to a separate asset directory so Sphinx's
+# `html_extra_path` can copy them into the built site under notebooks/*.
+# The mirror is required because Sphinx doesn't auto-copy images referenced
+# from raw HTML `<img>` tags (only from markdown ![](...) form), and we
+# can't point `html_extra_path` at `notebooks/` itself — Sphinx would then
+# exclude the notebooks from the docs build.
+IMAGE_MIRROR_DIR = REPO_ROOT / "notebook-assets" / "notebooks"
+
 # Notebook JSON stores HTML with escaped quotes, so an `<img src="foo.png">`
 # ends up as `<img src=\"foo.png\">` in the raw file text. Match either
 # an escaped-quote pair (`src=\"...\"`) or a plain quote (`src="..."`),
@@ -116,21 +124,26 @@ def main() -> None:
         for m in missing:
             print(f"  - {m}")
 
-    # Copy every referenced image file alongside the destination notebooks
-    # (source notebooks reference images as siblings, so the same relative
-    # layout keeps them resolvable on both the deployed site and Colab).
+    # Copy every referenced image file to two locations:
+    #   1. Alongside the destination notebooks under notebooks/  — needed
+    #      by Colab (which reads raw ipynb + sibling images from GitHub).
+    #   2. Into notebook-assets/notebooks/  — Sphinx's html_extra_path
+    #      copies this tree verbatim to _build/html/notebooks/*, which is
+    #      how the images end up served on the deployed site.
     print(f"\nSyncing {len(all_img_refs)} referenced image(s):")
+    IMAGE_MIRROR_DIR.mkdir(parents=True, exist_ok=True)
     img_missing: list[str] = []
     for ref in sorted(all_img_refs):
         src_img = SOURCE_DIR / ref
-        dst_img = DEST_DIR / ref
         if not src_img.is_file():
             img_missing.append(ref)
             print(f"  MISSING: {ref}")
             continue
-        dst_img.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src_img, dst_img)
-        print(f"  {ref}  ({src_img.stat().st_size:,} bytes)")
+        for dst_dir in (DEST_DIR, IMAGE_MIRROR_DIR):
+            dst_img = dst_dir / ref
+            dst_img.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src_img, dst_img)
+        print(f"  {ref}  ({src_img.stat().st_size:,} bytes) -> notebooks/ + notebook-assets/notebooks/")
     if img_missing:
         print(f"\n{len(img_missing)} referenced image(s) not found in source folder.")
 
