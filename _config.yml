@@ -45,9 +45,3 @@ launch_buttons:
 sphinx:
   extra_extensions:
     - sphinx_design    # cards, grids, tabs
-  config:
-    # Copy everything in notebooks/ verbatim to the built site — so image
-    # files referenced from raw HTML <img src="foo.jpeg"> inside notebook
-    # markdown resolve (Sphinx only auto-copies images referenced via
-    # markdown ![](...) syntax), and so raw .ipynb URLs are also served.
-    html_extra_path: ["notebooks"]
