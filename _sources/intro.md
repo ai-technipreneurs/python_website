@@ -26,7 +26,7 @@ Eighteen self-contained lectures with runnable code. Begin at Lecture 0 and buil
 :link: practicals/Practical_1
 :link-type: doc
 
-Short guided exercises to consolidate each week's material. *Being realigned to the new 18-lecture curriculum — the current set still reflects the legacy ordering.*
+Short guided exercises to consolidate each week's material.
 :::
 
 :::{grid-item-card} 🏆 Challenges

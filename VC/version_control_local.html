@@ -7,8 +7,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Practical 1 — Version Control with Git (Local)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ai-technipreneurs.github.io/python_website/VC/version_control_local.html" />
+<meta property="og:site_name" content="PyPro-SCiDaS — Python Programming" />
+<meta property="og:description" content="This notebook is focused on version control with a local repository. You are expected to go through it line by line, step by step. Execute each code cell and follow the instructions to understand how to manage version control locally. Experiment with commands, make changes, and observe how they a..." />
+<meta property="og:image" content="https://ai-technipreneurs.github.io/python_website/_static/banner.jpeg" />
+<meta property="og:image:alt" content="PyPro-SCiDaS — Python Programming" />
+<meta name="description" content="This notebook is focused on version control with a local repository. You are expected to go through it line by line, step by step. Execute each code cell and follow the instructions to understand how to manage version control locally. Experiment with commands, make changes, and observe how they a..." />
 
-    <title>Practical 1: Version Control with Git: local &#8212; Python Programming</title>
+    <title>Practical 1 — Version Control with Git (Local) &#8212; Python Programming</title>
   
   
   
@@ -64,10 +72,11 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'VC/version_control_local';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/VC/version_control_local.html" />
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Practical 2: Version Control with Git: remote" href="version_control_remote.html" />
-    <link rel="prev" title="Practial 0: Taking control of a jupyter notebook" href="../labs/lab_0.html" />
+    <link rel="next" title="Practical 2 — Version Control with Git (Remote)" href="version_control_remote.html" />
+    <link rel="prev" title="Lab 0 — Taking Control of a Jupyter Notebook" href="../labs/lab_0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -257,45 +266,21 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: Challenge 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Lab 0 — Taking Control of a Jupyter Notebook</a></li>
 
 
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical 1 — Version Control with Git (Local)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version_control_remote.html">Practical 2 — Version Control with Git (Remote)</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual presentations topics:</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual Presentation Topics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
 <ul class="nav bd-sidenav">
@@ -538,7 +523,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Practical 1: Version Control with Git: local</h1>
+    <h1>Practical 1 — Version Control with Git (Local)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -548,41 +533,39 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -593,16 +576,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="practical-1-version-control-with-git-local">
-<h1>Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code><a class="headerlink" href="#practical-1-version-control-with-git-local" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="practical-1-version-control-with-git-local">
+<h1>Practical 1 — Version Control with Git (Local)<a class="headerlink" href="#practical-1-version-control-with-git-local" title="Link to this heading">#</a></h1>
 <p><left> <b> <span style="color:red;">
 This notebook is focused on version control with a local repository. You are expected to go through it line by line, step by step. Execute each code cell and follow the instructions to understand how to manage version control locally. Experiment with commands, make changes, and observe how they affect your repository. Your hands-on interaction with the examples will enhance your comprehension of local version control practices.
 </span> </b></left></p>
-</section>
 <section id="you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">
-<h1>You might find <a class="reference external" href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">this reference</a> ,   <a class="reference external" href="https://git-scm.com/docs">this command list</a> as well as  this <a class="reference external" href="https://git-scm.com/docs/gittutorial">resource</a> very useful for this practical.<a class="headerlink" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical" title="Link to this heading">#</a></h1>
+<h2>You might find <a class="reference external" href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">this reference</a> ,   <a class="reference external" href="https://git-scm.com/docs">this command list</a> as well as  this <a class="reference external" href="https://git-scm.com/docs/gittutorial">resource</a> very useful for this practical.<a class="headerlink" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical" title="Link to this heading">#</a></h2>
 <section id="what-is-version-control">
-<h2>What is Version Control ?<a class="headerlink" href="#what-is-version-control" title="Link to this heading">#</a></h2>
+<h3>What is Version Control ?<a class="headerlink" href="#what-is-version-control" title="Link to this heading">#</a></h3>
 <p>In software development, revision control systems (RCS) are essential tools. They are widely used across all development environments and by developers everywhere.</p>
 <p>RCS are versatile and not limited to just software projects; they are also invaluable for managing various types of digital content, including manuscripts, figures, data, and notebooks.</p>
 <p>Revision control systems (RCS) serve two primary purposes:</p>
@@ -625,7 +607,7 @@ This notebook is focused on version control with a local repository. You are exp
 </ol>
 </section>
 <section id="basic-principles-and-terminology-of-revision-control-systems-rcs">
-<h2>Basic Principles and Terminology of Revision Control Systems (RCS)<a class="headerlink" href="#basic-principles-and-terminology-of-revision-control-systems-rcs" title="Link to this heading">#</a></h2>
+<h3>Basic Principles and Terminology of Revision Control Systems (RCS)<a class="headerlink" href="#basic-principles-and-terminology-of-revision-control-systems-rcs" title="Link to this heading">#</a></h3>
 <p>In an RCS, source code or digital content is managed within a repository.</p>
 <ul class="simple">
 <li><p><strong>Repository:</strong> Stores not only the latest version of files but also the complete history of all changes made to these files since their initial addition to the repository.</p></li>
@@ -643,7 +625,7 @@ provides both a nice vocabulary list and a fairly complete table of some
 popular version control systems and their equivalent commands.</p>
 </section>
 <section id="popular-revision-control-systems">
-<h2>Popular Revision Control Systems<a class="headerlink" href="#popular-revision-control-systems" title="Link to this heading">#</a></h2>
+<h3>Popular Revision Control Systems<a class="headerlink" href="#popular-revision-control-systems" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Git (git):</strong> <a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></p></li>
 <li><p><strong>Mercurial (hg):</strong> <a class="reference external" href="http://mercurial.selenic.com/">http://mercurial.selenic.com/</a></p></li>
@@ -671,7 +653,7 @@ suffice.</p>
 </section>
 </section>
 <section id="git-help-getting-help">
-<h1>git –help : Getting Help<a class="headerlink" href="#git-help-getting-help" title="Link to this heading">#</a></h1>
+<h2>git –help : Getting Help<a class="headerlink" href="#git-help-getting-help" title="Link to this heading">#</a></h2>
 <p>The first thing you should know about any <strong>tool</strong> is how to get <strong>help</strong>. From the command line type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>man<span class="w"> </span>git
 </pre></div>
@@ -689,7 +671,7 @@ keywords by typing <strong>/</strong> followed by the search term. I’m interes
 </div>
 </section>
 <section id="git-config-controls-the-behavior-of-git">
-<h1>git config : Controls the behavior of git<a class="headerlink" href="#git-config-controls-the-behavior-of-git" title="Link to this heading">#</a></h1>
+<h2>git config : Controls the behavior of git<a class="headerlink" href="#git-config-controls-the-behavior-of-git" title="Link to this heading">#</a></h2>
 <p>A few settings are in order. You don’t have to do it now but it is recommanded.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;YOUR NAME&quot;</span>
 $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;YOUR EMAIL&quot;</span>
@@ -697,7 +679,7 @@ $<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </spa
 </div>
 </section>
 <section id="git-init-creating-a-local-repository">
-<h1>git init : Creating a Local Repository<a class="headerlink" href="#git-init-creating-a-local-repository" title="Link to this heading">#</a></h1>
+<h2>git init : Creating a Local Repository<a class="headerlink" href="#git-init-creating-a-local-repository" title="Link to this heading">#</a></h2>
 <p>To keep track of numerous versions of your work without saving numerous
 copies, you can make a local repository for it on your computer. What git
 does is to save the first version, then for each subsequent version it
@@ -711,7 +693,7 @@ keep a record of things within the repository that you’re concerned
 about. The command to do this is <strong>git init</strong> .</p>
 <hr class="docutils" />
 <section id="practical-create-a-local-repository">
-<h2>Practical : Create a Local Repository<a class="headerlink" href="#practical-create-a-local-repository" title="Link to this heading">#</a></h2>
+<h3>Practical : Create a Local Repository<a class="headerlink" href="#practical-create-a-local-repository" title="Link to this heading">#</a></h3>
 <p>Step 1 : Initialize your repository. Navigate to <code class="docutils literal notranslate"><span class="pre">/home</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span>
 $<span class="w"> </span>mkdir<span class="w"> </span>simplestats
@@ -743,17 +725,17 @@ No<span class="w"> </span>commits<span class="w"> </span>yet
 nothing<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>create/copy<span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>to<span class="w"> </span>track<span class="o">)</span>
 </pre></div>
 </div>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="git-add-adding-a-file-to-version-control">
-<h1>git add : Adding a File To Version Control<a class="headerlink" href="#git-add-adding-a-file-to-version-control" title="Link to this heading">#</a></h1>
+<h2>git add : Adding a File To Version Control<a class="headerlink" href="#git-add-adding-a-file-to-version-control" title="Link to this heading">#</a></h2>
 <p>For the git repository to know which files within this directory you
 would like to keep track of, you must add them. First, you’ll need to
 create one, then we’ll learn the <strong>git add</strong> command.</p>
 <hr class="docutils" />
 <section id="practical-add-a-file-to-your-local-repository">
-<h2>Practical : Add a File to Your Local Repository<a class="headerlink" href="#practical-add-a-file-to-your-local-repository" title="Link to this heading">#</a></h2>
+<h3>Practical : Add a File to Your Local Repository<a class="headerlink" href="#practical-add-a-file-to-your-local-repository" title="Link to this heading">#</a></h3>
 <p>Step 1 : Create a file to add to your repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>README.md
 </pre></div>
@@ -778,7 +760,7 @@ in this file.</p>
 </section>
 </section>
 <section id="git-status-checking-the-status-of-your-local-copy">
-<h1>git status : Checking the status of your local copy<a class="headerlink" href="#git-status-checking-the-status-of-your-local-copy" title="Link to this heading">#</a></h1>
+<h2>git status : Checking the status of your local copy<a class="headerlink" href="#git-status-checking-the-status-of-your-local-copy" title="Link to this heading">#</a></h2>
 <p>The files you’ve created on your machine are your local “working” copy.
 The changes your make in this local copy aren’t backed up online
 automatically. Until you commit them, the changes you make are local
@@ -803,7 +785,7 @@ between the repository HEAD (which, so far, is empty) and your
 <code class="docutils literal notranslate"><span class="pre">simplestats</span></code> directory is this new <a class="reference external" href="http://README.md">README.md</a> file.</p>
 </section>
 <section id="git-commit-saving-a-snapshot">
-<h1>git commit : Saving a snapshot<a class="headerlink" href="#git-commit-saving-a-snapshot" title="Link to this heading">#</a></h1>
+<h2>git commit : Saving a snapshot<a class="headerlink" href="#git-commit-saving-a-snapshot" title="Link to this heading">#</a></h2>
 <p>In order to save a snapshot of the current state (revision) of the
 repository, we use the commit command. This command is always associated
 with a message describing the changes since the last commit and
@@ -818,7 +800,7 @@ More frequent commits increase the granularity of your <strong>undo</strong> but
 <p>There are no hard and fast rules, but good commits are atomic: they are the smallest change that remain meaningful. A good commit message usually contains a one-line description followed by a longer explanation if necessary.</p>
 <hr class="docutils" />
 <section id="practical-commit-your-changes">
-<h2>Practical : Commit Your Changes<a class="headerlink" href="#practical-commit-your-changes" title="Link to this heading">#</a></h2>
+<h3>Practical : Commit Your Changes<a class="headerlink" href="#practical-commit-your-changes" title="Link to this heading">#</a></h3>
 <p>Step 1 : Commit the file you’ve added to your repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-am<span class="w"> </span><span class="s2">&quot;This is the first commit. It adds a readme file.&quot;</span>
 <span class="w">  </span><span class="o">[</span>master<span class="w"> </span><span class="o">(</span>root-commit<span class="o">)</span><span class="w"> </span>664867c<span class="o">]</span><span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>first<span class="w"> </span>commit.<span class="w"> </span>It<span class="w"> </span>adds<span class="w"> </span>a<span class="w"> </span>readme<span class="w"> </span>file.
@@ -835,7 +817,7 @@ nothing<span class="w"> </span>to<span class="w"> </span>commit,<span class="w">
 </section>
 </section>
 <section id="git-diff-viewing-the-differences">
-<h1>git diff : Viewing the Differences<a class="headerlink" href="#git-diff-viewing-the-differences" title="Link to this heading">#</a></h1>
+<h2>git diff : Viewing the Differences<a class="headerlink" href="#git-diff-viewing-the-differences" title="Link to this heading">#</a></h2>
 <p>There are many diff tools.</p>
 <p>If you have a favorite you can set your default git diff tool to execute that one. Git, however, comes with its own diff system.</p>
 <p>Let’s recall the behavior of the linux <a class="reference external" href="https://www.geeksforgeeks.org/diff-command-linux-examples/"><code class="docutils literal notranslate"><span class="pre">diff</span></code></a> command on the command line. The equivalent command for windows is <a class="reference external" href="https://www.howtogeek.com/206123/how-to-use-fc-file-compare-from-the-windows-command-prompt/">fc</a>. Choosing two files that are similar, the command:</p>
@@ -863,7 +845,7 @@ type git commit without the -a flag), you can try :</p>
 </div>
 </section>
 <section id="git-log-viewing-the-history">
-<h1>git log : Viewing the History<a class="headerlink" href="#git-log-viewing-the-history" title="Link to this heading">#</a></h1>
+<h2>git log : Viewing the History<a class="headerlink" href="#git-log-viewing-the-history" title="Link to this heading">#</a></h2>
 <p>A log of the commit messages is kept by the repository and can be
 reviewed with the log command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>$<span class="w"> </span>git<span class="w"> </span>log<span class="w">       </span>
@@ -888,7 +870,7 @@ reviewed with the log command.</p>
 </div>
 </section>
 <section id="git-reset-unstaging-a-staged-file">
-<h1>git reset : Unstaging a staged file<a class="headerlink" href="#git-reset-unstaging-a-staged-file" title="Link to this heading">#</a></h1>
+<h2>git reset : Unstaging a staged file<a class="headerlink" href="#git-reset-unstaging-a-staged-file" title="Link to this heading">#</a></h2>
 <p>There are a number of ways that you may accidentally stage a file that
 you don’t want to commit.  Create a file called <code class="docutils literal notranslate"><span class="pre">temp_notes</span></code> that
 describes what you had for breakfast, and then add that file to your
@@ -900,7 +882,7 @@ repo.  Check with <code class="docutils literal notranslate"><span class="pre">s
 <p>Check with <code class="docutils literal notranslate"><span class="pre">status</span></code>.</p>
 </section>
 <section id="git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">
-<h1>git checkout : Discarding unstaged modifications (git checkout has other purposes)<a class="headerlink" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes" title="Link to this heading">#</a></h1>
+<h2>git checkout : Discarding unstaged modifications (git checkout has other purposes)<a class="headerlink" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes" title="Link to this heading">#</a></h2>
 <p>Perhaps you have made a number of changes that you realize are not
 going anywhere.  Add a line to <code class="docutils literal notranslate"><span class="pre">README.md</span></code> that describes your dinner
 last night.  Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> to see that the file is changed and
@@ -912,7 +894,7 @@ ready to be added.</p>
 <p>Check with <code class="docutils literal notranslate"><span class="pre">status</span></code> and take a look at the file.</p>
 </section>
 <section id="git-rm-removing-files">
-<h1>git rm : Removing files<a class="headerlink" href="#git-rm-removing-files" title="Link to this heading">#</a></h1>
+<h2>git rm : Removing files<a class="headerlink" href="#git-rm-removing-files" title="Link to this heading">#</a></h2>
 <p>There are a variety of reasons you way want to remove a file from the
 repository after it has been committed.  Create a file called <code class="docutils literal notranslate"><span class="pre">READYOU.md</span></code> with the first names of all your immediate family members, and add/commit it to the repository.</p>
 <p>You can now remove the file from the repository with:</p>
@@ -931,7 +913,7 @@ file?</p>
 </div>
 </section>
 <section id="git-revert-the-promised-undo-button">
-<h1>git revert : the promised “undo” button<a class="headerlink" href="#git-revert-the-promised-undo-button" title="Link to this heading">#</a></h1>
+<h2>git revert : the promised “undo” button<a class="headerlink" href="#git-revert-the-promised-undo-button" title="Link to this heading">#</a></h2>
 <p>It is possible that after many commits, you decide that you really want to <strong>rollback</strong> a set of commits and start over.  It is easy to revert your code to a previous version.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> to explore your history and determine which version you are interested in.  Choose a version and note the <em>hash</em> for that version. (Let’s assume <code class="docutils literal notranslate"><span class="pre">abc456</span></code>)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>revert<span class="w"> </span>abc456
@@ -940,7 +922,7 @@ file?</p>
 <p><strong>Importantly,</strong> this will not erase the intervening commits.  This will create a new commit that is changed from the previous commit by a change that will recreate the desired version.  This retains a complete provenance of your software, and be compared to the prohibition in removing pages from a lab notebook.</p>
 </section>
 <section id="visualize-git-log-tree">
-<h1>Visualize Git Log Tree<a class="headerlink" href="#visualize-git-log-tree" title="Link to this heading">#</a></h1>
+<h2>Visualize Git Log Tree<a class="headerlink" href="#visualize-git-log-tree" title="Link to this heading">#</a></h2>
 <p>For this section, you can read the necessary information <a class="reference external" href="https://tech.serhatteker.com/post/2021-02/git-log-tree/">here</a>. The idea is just to make your commits a bit fancy. To really see the beauty of it, try to play with your files and do quite a number of commits.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
 </pre></div>
@@ -955,7 +937,7 @@ file?</p>
 </div>
 <hr class="docutils" />
 <section id="exercise">
-<h2>Exercise :<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<h3>Exercise :<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Create 5 files in your directory with one line of content in each
 file.</p></li>
@@ -964,14 +946,15 @@ file.</p></li>
 <li><p>Undo the changes in step 3.</p></li>
 <li><p>Print out the last entry in the log.</p></li>
 </ol>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="resources">
-<h1>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h1>
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="http://git-scm.com/book">git book</a> - Free and Open</p></li>
 </ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1010,7 +993,7 @@ file.</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Practial 0: Taking control of a jupyter notebook</p>
+        <p class="prev-next-title">Lab 0 — Taking Control of a Jupyter Notebook</p>
       </div>
     </a>
     <a class="right-next"
@@ -1018,7 +1001,7 @@ file.</p></li>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></p>
+        <p class="prev-next-title">Practical 2 — Version Control with Git (Remote)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1040,41 +1023,39 @@ file.</p></li>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-might-find-this-reference-this-command-list-as-well-as-this-resource-very-useful-for-this-practical">You might find this reference ,   this command list as well as  this resource very useful for this practical.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-version-control">What is Version Control ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-principles-and-terminology-of-revision-control-systems-rcs">Basic Principles and Terminology of Revision Control Systems (RCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-revision-control-systems">Popular Revision Control Systems</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-help-getting-help">git –help : Getting Help</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-config-controls-the-behavior-of-git">git config : Controls the behavior of git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-init-creating-a-local-repository">git init : Creating a Local Repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-create-a-local-repository">Practical : Create a Local Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-adding-a-file-to-version-control">git add : Adding a File To Version Control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-add-a-file-to-your-local-repository">Practical : Add a File to Your Local Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-status-checking-the-status-of-your-local-copy">git status : Checking the status of your local copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-commit-saving-a-snapshot">git commit : Saving a snapshot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-commit-your-changes">Practical : Commit Your Changes</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-diff-viewing-the-differences">git diff : Viewing the Differences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log-viewing-the-history">git log : Viewing the History</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-reset-unstaging-a-staged-file">git reset : Unstaging a staged file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-checkout-discarding-unstaged-modifications-git-checkout-has-other-purposes">git checkout : Discarding unstaged modifications (git checkout has other purposes)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-rm-removing-files">git rm : Removing files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-revert-the-promised-undo-button">git revert : the promised “undo” button</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-git-log-tree">Visualize Git Log Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise :</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

@@ -7,8 +7,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Practical 2 — Version Control with Git (Remote)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ai-technipreneurs.github.io/python_website/VC/version_control_remote.html" />
+<meta property="og:site_name" content="PyPro-SCiDaS — Python Programming" />
+<meta property="og:description" content="Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna Narayanan, and Matt Gidden This notebook is focused on version control with remote repositories. You are expected to follow along line by line and step by step. Execute each code cell and adhere to the instructions to learn how to ..." />
+<meta property="og:image" content="https://ai-technipreneurs.github.io/python_website/_static/banner.jpeg" />
+<meta property="og:image:alt" content="PyPro-SCiDaS — Python Programming" />
+<meta name="description" content="Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna Narayanan, and Matt Gidden This notebook is focused on version control with remote repositories. You are expected to follow along line by line and step by step. Execute each code cell and adhere to the instructions to learn how to ..." />
 
-    <title>Practical 2: Version Control with Git: remote &#8212; Python Programming</title>
+    <title>Practical 2 — Version Control with Git (Remote) &#8212; Python Programming</title>
   
   
   
@@ -64,10 +72,11 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'VC/version_control_remote';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/VC/version_control_remote.html" />
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Individual presentations topics:" href="presentations.html" />
-    <link rel="prev" title="Practical 1: Version Control with Git: local" href="version_control_local.html" />
+    <link rel="next" title="Individual Presentation Topics" href="presentations.html" />
+    <link rel="prev" title="Practical 1 — Version Control with Git (Local)" href="version_control_local.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -257,45 +266,21 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: Challenge 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Lab 0 — Taking Control of a Jupyter Notebook</a></li>
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="version_control_local.html">Practical 1 — Version Control with Git (Local)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical 2 — Version Control with Git (Remote)</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual presentations topics:</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="presentations.html">Individual Presentation Topics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
 <ul class="nav bd-sidenav">
@@ -538,7 +523,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Practical 2: Version Control with Git: remote</h1>
+    <h1>Practical 2 — Version Control with Git (Remote)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -548,20 +533,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 2 — Version Control with Git (Remote)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-an-exercise-in-github-and-testing">Collaboration : An exercise in GitHub and Testing</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
@@ -591,16 +578,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="practical-2-version-control-with-git-remote">
-<h1>Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code><a class="headerlink" href="#practical-2-version-control-with-git-remote" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="practical-2-version-control-with-git-remote">
+<h1>Practical 2 — Version Control with Git (Remote)<a class="headerlink" href="#practical-2-version-control-with-git-remote" title="Link to this heading">#</a></h1>
 <p><strong>Based on material by Katy Huff, Anthony Scopatz, Sri Hari Krishna
 Narayanan, and Matt Gidden</strong></p>
 <p><left> <b> <span style="color:red;">
 This notebook is focused on version control with remote repositories. You are expected to follow along line by line and step by step. Execute each code cell and adhere to the instructions to learn how to manage version control in a remote context. Experiment with commands, interact with remote repositories, and observe the effects of your actions. Engaging thoroughly with each section will deepen your understanding of remote version control practices.
 </span> </b></left></p>
-</section>
 <section id="github-com">
-<h1><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Link to this heading">#</a></h1>
+<h2><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Link to this heading">#</a></h2>
 <p>GitHub is a site where many people store their open (and closed) source
 code repositories. It provides tools for browsing, collaborating on and
 documenting code. Your home institution may have a repository hosting
@@ -625,13 +611,13 @@ want to share (in the most liberal sense) your stuff with the world, pay
 girths money for private repos, or host your own.</p>
 </section>
 <section id="github-password">
-<h1>GitHub password<a class="headerlink" href="#github-password" title="Link to this heading">#</a></h1>
+<h2>GitHub password<a class="headerlink" href="#github-password" title="Link to this heading">#</a></h2>
 <p>Setting up GitHub requires a GitHub user name and password.  Please take a
 moment to <a class="reference external" href="https://github.com/signup/free">create a free GitHub account</a> (if you
 want to start paying, you can add that to your account some other day).</p>
 </section>
 <section id="git-remote-steps-for-forking-a-repository">
-<h1>git remote : Steps for Forking a Repository<a class="headerlink" href="#git-remote-steps-for-forking-a-repository" title="Link to this heading">#</a></h1>
+<h2>git remote : Steps for Forking a Repository<a class="headerlink" href="#git-remote-steps-for-forking-a-repository" title="Link to this heading">#</a></h2>
 <p>A key step to interacting with an online repository that you have forked
 is adding the original as a remote repository. By adding the remote
 repository, you inform git of a new option for fetching updates and
@@ -643,7 +629,7 @@ fork, others that may be <strong>parallel</strong> to your fork, and so on.</p>
 so you’ll need to start off by getting a copy of that repository to work on!</p>
 <hr class="docutils" />
 <section id="exercise-fork-our-github-repository">
-<h2>Exercise : Fork Our GitHub Repository<a class="headerlink" href="#exercise-fork-our-github-repository" title="Link to this heading">#</a></h2>
+<h3>Exercise : Fork Our GitHub Repository<a class="headerlink" href="#exercise-fork-our-github-repository" title="Link to this heading">#</a></h3>
 <p>Step 1 : Go to our
 <a class="reference external" href="https://github.com/ai-technipreneurs/simplestats">repository</a>
 from your browser, and click on the <a class="reference external" href="https://github.com/ai-technipreneurs/simplestats/fork"><code class="docutils literal notranslate"><span class="pre">Fork</span> <span class="pre">button</span></code></a>. Choose to fork it to your user name rather than any organizations.</p>
@@ -662,11 +648,11 @@ upstream<span class="w">        </span>https://github.com/ai-technipreneurs/simp
 </pre></div>
 </div>
 <p>All repositories that are clones begin with a remote called origin.</p>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="git-fetch-fetching-the-contents-of-a-remote">
-<h1>git fetch : Fetching the contents of a remote<a class="headerlink" href="#git-fetch-fetching-the-contents-of-a-remote" title="Link to this heading">#</a></h1>
+<h2>git fetch : Fetching the contents of a remote<a class="headerlink" href="#git-fetch-fetching-the-contents-of-a-remote" title="Link to this heading">#</a></h2>
 <p>Now that you have alerted your repository to the presence of others, it
 is able to pull in updates from those repositories. In this case, if you
 want your master branch to track updates in the original simplestats
@@ -679,7 +665,7 @@ working copy to include recent changes in the original (upstream)
 repository, it is necessary to also merge.</p>
 </section>
 <section id="git-merge-merging-the-contents-of-a-remote">
-<h1>git merge : Merging the contents of a remote<a class="headerlink" href="#git-merge-merging-the-contents-of-a-remote" title="Link to this heading">#</a></h1>
+<h2>git merge : Merging the contents of a remote<a class="headerlink" href="#git-merge-merging-the-contents-of-a-remote" title="Link to this heading">#</a></h2>
 <p>To incorporate upstream changes from the original master repository (in
 this case UW-Madison-ACI/simplestats) into your local working copy, you
 must both fetch and merge. The process of merging may result in
@@ -687,7 +673,7 @@ conflicts, so pay attention. This is where version control is both at
 its most powerful and its most complicated.</p>
 <hr class="docutils" />
 <section id="exercise-fetch-and-merge-the-contents-of-our-github-repository">
-<h2>Exercise : Fetch and Merge the Contents of Our GitHub Repository<a class="headerlink" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository" title="Link to this heading">#</a></h2>
+<h3>Exercise : Fetch and Merge the Contents of Our GitHub Repository<a class="headerlink" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository" title="Link to this heading">#</a></h3>
 <p>This exercise is meant to represent the general work flow you should use to
 update your fork. Let’s say that you come in and sit down in the morning, you’ve
 gotten your coffee (or tea) and you’re ready to get started. However, someone
@@ -704,11 +690,11 @@ $<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span
 </pre></div>
 </div>
 <p>Step 3 : Check out what happened by browsing the directory.</p>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="git-pull-pull-fetch-merge">
-<h1>git pull : Pull = Fetch + Merge<a class="headerlink" href="#git-pull-pull-fetch-merge" title="Link to this heading">#</a></h1>
+<h2>git pull : Pull = Fetch + Merge<a class="headerlink" href="#git-pull-pull-fetch-merge" title="Link to this heading">#</a></h2>
 <p>The command <strong>git pull</strong> is the same as executing <strong>git fetch</strong> followed
 by <strong>git merge</strong>. Though it is not recommend for cases in which there
 are many branches to consider, the pull command is shorter and simpler
@@ -724,12 +710,13 @@ to your local branch, unless there are conflicts with your local
 changes.</p>
 </section>
 <section id="git-push-sending-your-commits-to-remote-repositories">
-<h1>git push : Sending Your Commits to Remote Repositories<a class="headerlink" href="#git-push-sending-your-commits-to-remote-repositories" title="Link to this heading">#</a></h1>
+<h2>git push : Sending Your Commits to Remote Repositories<a class="headerlink" href="#git-push-sending-your-commits-to-remote-repositories" title="Link to this heading">#</a></h2>
 <p>The <strong>git push</strong> command pushes commits in a local working copy to a
 remote repository. The syntax is git push [remote] [local branch].
 Before pushing, a developer should always pull (or fetch + merge), so
 that there is an opportunity to resolve conflicts before pushing to the
 remote.</p>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="collaboration-an-exercise-in-github-and-testing">
 <h1>Collaboration : An exercise in GitHub and Testing<a class="headerlink" href="#collaboration-an-exercise-in-github-and-testing" title="Link to this heading">#</a></h1>
@@ -1005,7 +992,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></p>
+        <p class="prev-next-title">Practical 1 — Version Control with Git (Local)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1013,7 +1000,7 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Individual presentations topics:</p>
+        <p class="prev-next-title">Individual Presentation Topics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1035,20 +1022,22 @@ $<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Practical 2 — Version Control with Git (Remote)</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-password">GitHub password</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-remote-steps-for-forking-a-repository">git remote : Steps for Forking a Repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fork-our-github-repository">Exercise : Fork Our GitHub Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-fetch-fetching-the-contents-of-a-remote">git fetch : Fetching the contents of a remote</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-merge-merging-the-contents-of-a-remote">git merge : Merging the contents of a remote</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-fetch-and-merge-the-contents-of-our-github-repository">Exercise : Fetch and Merge the Contents of Our GitHub Repository</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-pull-pull-fetch-merge">git pull : Pull = Fetch + Merge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git-push-sending-your-commits-to-remote-repositories">git push : Sending Your Commits to Remote Repositories</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration-an-exercise-in-github-and-testing">Collaboration : An exercise in GitHub and Testing</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-get-set-up">Exercise : Get set up</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests-sending-your-collaborators-an-update">Pull Requests : Sending Your Collaborators an Update</a><ul class="nav section-nav flex-column">
