@@ -1,5 +1,6 @@
 jupyter-book>=1.0,<2
 sphinx-design>=0.5
+sphinxext-opengraph>=0.9
 matplotlib
 numpy
 pandas

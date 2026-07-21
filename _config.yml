@@ -44,7 +44,8 @@ launch_buttons:
 # Sphinx extras
 sphinx:
   extra_extensions:
-    - sphinx_design    # cards, grids, tabs
+    - sphinx_design         # cards, grids, tabs
+    - sphinxext.opengraph   # Open Graph + Twitter Card meta tags for link previews
   config:
     # `notebook-assets/` mirrors notebooks/*.{png,jpeg,...}. Sphinx copies
     # its contents verbatim to output root, preserving structure — so the
@@ -55,3 +56,15 @@ sphinx:
     html_extra_path: ["notebook-assets"]
     # Site-wide overrides (see _static/custom.css).
     html_css_files: ["custom.css"]
+    # Browser tab icon (brand-purple 'Py' tile).
+    html_favicon: "_static/favicon.svg"
+    # Site-wide <meta> tags for search engines.
+    html_meta:
+      description: "An 18-lecture Jupyter Book on Python for scientific computing and data science — from the shell to real data pipelines. By Yaé Ulrich Gaba."
+      keywords: "Python, scientific computing, data science, NumPy, pandas, matplotlib, Jupyter Book, PyPro-SCiDaS, AIRINA Labs, ACAS"
+    # sphinxext-opengraph: link previews on Slack, LinkedIn, Twitter, etc.
+    ogp_site_url: "https://ai-technipreneurs.github.io/python_website/"
+    ogp_site_name: "PyPro-SCiDaS — Python Programming"
+    ogp_image: "https://ai-technipreneurs.github.io/python_website/_static/banner.jpeg"
+    ogp_description_length: 300
+    ogp_type: "article"
