@@ -1,22 +1,30 @@
 """Sync PyPro-SCiDaS source notebooks into python_website/notebooks/.
 
 Copies the 18 source lecture notebooks (+ index) from the local class folder
-into the repo, rewriting every internal href from the long PyPro-SCiDaS-*
-filenames to the short NN-shortname.ipynb names used in the site's _toc.yml.
+into the repo. Internal hrefs that point at sibling source notebooks are
+rewritten to absolute deployed-site URLs (`.html` on GitHub Pages), so that
+prev / next / index navigation works when the site serves the built HTML —
+GitHub Pages doesn't serve raw `.ipynb`, so relative `.ipynb` hrefs 404.
+
+Colab opens the raw `.ipynb` off the repo, so the internal links there
+route the reader to the site rather than to another Colab tab. That's the
+intended trade-off; the source notebooks kept in the class folder retain
+their relative `.ipynb` navigation for local Jupyter use.
 
 Run from anywhere; paths are resolved relative to this file.
 """
 
 from __future__ import annotations
 
-import shutil
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = REPO_ROOT.parent / "notebooks-python-class-2025"
 DEST_DIR = REPO_ROOT / "notebooks"
 
-MAPPING: dict[str, str] = {
+SITE_BASE = "https://ai-technipreneurs.github.io/python_website/notebooks/"
+
+FILENAME_MAP: dict[str, str] = {
     "PyPro-SCiDaS-index.ipynb": "index.ipynb",
     "PyPro-SCiDaS-lec_00_introduction_to_shell.ipynb": "00-shell.ipynb",
     "PyPro-SCiDaS-lec_01_introduction_to_python.ipynb": "01-intro-python.ipynb",
@@ -39,10 +47,19 @@ MAPPING: dict[str, str] = {
 }
 
 
+def _url_for(dest_name: str) -> str:
+    """Return the absolute deployed-site URL for a destination ipynb name."""
+    return SITE_BASE + dest_name[: -len(".ipynb")] + ".html"
+
+
 def rewrite(text: str) -> str:
-    # Longer source names first so index doesn't shadow a lec_* match.
-    for src, dst in sorted(MAPPING.items(), key=lambda kv: -len(kv[0])):
-        text = text.replace(src, dst)
+    """Replace every reference to a source ipynb with the deployed-site URL.
+
+    Longest keys first so `PyPro-SCiDaS-lec_10_numpy_part1.ipynb` never gets
+    partial-matched by a shorter substring.
+    """
+    for src_name, dst_name in sorted(FILENAME_MAP.items(), key=lambda kv: -len(kv[0])):
+        text = text.replace(src_name, _url_for(dst_name))
     return text
 
 
@@ -53,7 +70,7 @@ def main() -> None:
 
     missing: list[str] = []
     written: list[tuple[str, str, int]] = []
-    for src_name, dst_name in MAPPING.items():
+    for src_name, dst_name in FILENAME_MAP.items():
         src_path = SOURCE_DIR / src_name
         if not src_path.is_file():
             missing.append(src_name)
