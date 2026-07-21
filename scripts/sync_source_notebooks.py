@@ -16,11 +16,23 @@ Run from anywhere; paths are resolved relative to this file.
 
 from __future__ import annotations
 
+import re
+import shutil
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = REPO_ROOT.parent / "notebooks-python-class-2025"
 DEST_DIR = REPO_ROOT / "notebooks"
+
+# Notebook JSON stores HTML with escaped quotes, so an `<img src="foo.png">`
+# ends up as `<img src=\"foo.png\">` in the raw file text. Match either
+# an escaped-quote pair (`src=\"...\"`) or a plain quote (`src="..."`),
+# plus the Markdown image form `![alt](foo.png)`.
+IMG_REF_RE = re.compile(
+    r'src=\\?["\']([^"\'\\\s>]+\.(?:png|jpg|jpeg|gif|svg))\\?["\']'
+    r'|!\[[^\]]*\]\(([^)]+\.(?:png|jpg|jpeg|gif|svg))\)',
+    re.IGNORECASE,
+)
 
 SITE_BASE = "https://ai-technipreneurs.github.io/python_website/notebooks/"
 
@@ -63,6 +75,18 @@ def rewrite(text: str) -> str:
     return text
 
 
+def collect_image_refs(text: str) -> set[str]:
+    """Return every relative image reference (basename or subpath, no scheme)."""
+    refs: set[str] = set()
+    for m in IMG_REF_RE.finditer(text):
+        ref = (m.group(1) or m.group(2) or "").replace("\\/", "/")
+        # Skip absolute URLs and Jupyter attachments (embedded base64 in notebook JSON).
+        if not ref or ref.startswith(("http:", "https:", "attachment:", "data:", "/")):
+            continue
+        refs.add(ref)
+    return refs
+
+
 def main() -> None:
     if not SOURCE_DIR.is_dir():
         raise SystemExit(f"Source folder missing: {SOURCE_DIR}")
@@ -70,12 +94,14 @@ def main() -> None:
 
     missing: list[str] = []
     written: list[tuple[str, str, int]] = []
+    all_img_refs: set[str] = set()
     for src_name, dst_name in FILENAME_MAP.items():
         src_path = SOURCE_DIR / src_name
         if not src_path.is_file():
             missing.append(src_name)
             continue
         content = src_path.read_text(encoding="utf-8")
+        all_img_refs.update(collect_image_refs(content))
         rewritten = rewrite(content)
         dst_path = DEST_DIR / dst_name
         dst_path.write_text(rewritten, encoding="utf-8", newline="\n")
@@ -89,6 +115,24 @@ def main() -> None:
         print(f"\nMissing sources ({len(missing)}):")
         for m in missing:
             print(f"  - {m}")
+
+    # Copy every referenced image file alongside the destination notebooks
+    # (source notebooks reference images as siblings, so the same relative
+    # layout keeps them resolvable on both the deployed site and Colab).
+    print(f"\nSyncing {len(all_img_refs)} referenced image(s):")
+    img_missing: list[str] = []
+    for ref in sorted(all_img_refs):
+        src_img = SOURCE_DIR / ref
+        dst_img = DEST_DIR / ref
+        if not src_img.is_file():
+            img_missing.append(ref)
+            print(f"  MISSING: {ref}")
+            continue
+        dst_img.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src_img, dst_img)
+        print(f"  {ref}  ({src_img.stat().st_size:,} bytes)")
+    if img_missing:
+        print(f"\n{len(img_missing)} referenced image(s) not found in source folder.")
 
 
 if __name__ == "__main__":
