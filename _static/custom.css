@@ -1,0 +1,15 @@
+/* Widen the article body from the sphinx-book-theme default 60em to fill
+   the available page width. The fancy notebook banners (100% wide inside
+   the article) look correctly proportioned again on desktop screens. */
+.bd-main .bd-content .bd-article-container {
+    max-width: none;
+}
+
+/* Give the article some breathing room from the sidebar edge on wide
+   screens so text doesn't hug the primary sidebar directly. */
+@media (min-width: 1200px) {
+    .bd-main .bd-content .bd-article-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
