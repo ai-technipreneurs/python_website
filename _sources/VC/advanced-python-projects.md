@@ -1,4 +1,4 @@
-### Advanced Python Proficiency Projects with Real-Life Problems
+# Advanced Python Proficiency Projects with Real-Life Problems
 
 #### 1. **Personal Health Tracker**
    - **Real-Life Problem:** Managing personal health metrics and fitness goals can be overwhelming.
