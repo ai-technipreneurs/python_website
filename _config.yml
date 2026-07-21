@@ -58,13 +58,12 @@ sphinx:
     html_css_files: ["custom.css"]
     # Browser tab icon (brand-purple 'Py' tile).
     html_favicon: "_static/favicon.svg"
-    # Site-wide <meta> tags for search engines.
-    html_meta:
-      description: "An 18-lecture Jupyter Book on Python for scientific computing and data science — from the shell to real data pipelines. By Yaé Ulrich Gaba."
-      keywords: "Python, scientific computing, data science, NumPy, pandas, matplotlib, Jupyter Book, PyPro-SCiDaS, AIRINA Labs, ACAS"
     # sphinxext-opengraph: link previews on Slack, LinkedIn, Twitter, etc.
+    # `ogp_enable_meta_description` also emits <meta name="description"> so
+    # search engines see the same description as social cards.
     ogp_site_url: "https://ai-technipreneurs.github.io/python_website/"
     ogp_site_name: "PyPro-SCiDaS — Python Programming"
     ogp_image: "https://ai-technipreneurs.github.io/python_website/_static/banner.jpeg"
     ogp_description_length: 300
     ogp_type: "article"
+    ogp_enable_meta_description: true
