@@ -44,19 +44,31 @@ Three graded programming challenges — beginner, intermediate, advanced — to 
 :gutter: 3
 
 :::{grid-item-card} Read online
+:link: notebooks/00-shell
+:link-type: doc
+
 Every lecture renders as an HTML page with a searchable sidebar. Nothing to install.
 :::
 
 :::{grid-item-card} 🚀 Run on Colab
-Click the rocket icon at the top of any lecture to open it in Google Colab — no local Python needed.
+:link: https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/00-shell.ipynb
+:link-type: url
+
+Click here — or the rocket icon at the top of any lecture — to open in Google Colab. No local Python needed.
 :::
 
 :::{grid-item-card} 🔧 Run locally
-Clone the repo, follow the {doc}`Prerequisites lab <labs/Lab_Prerequisites>`, then launch Jupyter or JupyterLab.
+:link: labs/Lab_Prerequisites
+:link-type: doc
+
+Clone the repo, follow the Prerequisites lab, then launch Jupyter or JupyterLab.
 :::
 
 :::{grid-item-card} 🐙 Contribute
-Spot an issue or want to add something? Open an [issue](https://github.com/ai-technipreneurs/python_website/issues) or PR on GitHub.
+:link: https://github.com/ai-technipreneurs/python_website
+:link-type: url
+
+Spot an issue or want to add something? Open an issue or PR on GitHub.
 :::
 
 ::::
@@ -122,7 +134,7 @@ Ouvrages de référence :
 
 ```{admonition} Author
 :class: seealso
-Yaé Ulrich Gaba — [LinkedIn](https://www.linkedin.com/in/gabayae/).
+Yaé Ulrich Gaba — [LinkedIn](https://www.linkedin.com/in/gabayae/) · [Website](https://gabayae.github.io/).
 ```
 
 ```{admonition} Technical support
