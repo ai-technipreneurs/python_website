@@ -1,4 +1,4 @@
-### Individual presentations topics:
+# Individual Presentation Topics
 #### <left> <b> <span style="color:brown;"> A list of presentation topics is given below, and you are required to choose at least one to present: </span> </b></left>
 
 
