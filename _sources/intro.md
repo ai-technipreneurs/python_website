@@ -144,5 +144,5 @@ This Jupyter Book was built with the support of the technical team at [ai.techni
 
 ```{admonition} Template credit
 :class: note
-The book structure is adapted from [Joaquin Vanschoren's ML course template](https://ml-course.github.io/master/intro.html).
+The book structure is adapted from [Joaquin Vanschoren's ML course template](https://github.com/joaquinvanschoren/ML-course-R).
 ```
