@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Python Programming</title>
+    <title>Lecture 3 — Strings and Files &#8212; Python Programming</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What is Version Control ?" href="04-git.html" />
-    <link rel="prev" title="2.0. None (nothing)" href="02-variables.html" />
+    <link rel="next" title="Lecture 4 — Version Control with Git" href="04-git.html" />
+    <link rel="prev" title="Lecture 2 — Variables, Types, and Assignment" href="02-variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -154,10 +154,6 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -221,79 +217,28 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -575,9 +520,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -588,19 +531,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Lecture 3 — Strings and Files</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple pst-show_toc_level nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -610,7 +545,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a id="lecture-3-strings-and-files"></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-3-strings-and-files">
+<h1>Lecture 3 — Strings and Files<a class="headerlink" href="#lecture-3-strings-and-files" title="Link to this heading">#</a></h1>
+<p><a id="lecture-3-strings-and-files"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 3 of 18 — Progress: 17%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📝 Lecture 3 — Strings and Files</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
 <table style="margin: 0 auto; border-collapse: collapse;">
 <tr>
@@ -1645,6 +1582,7 @@ Another way to write to a file is to use <code>writelines()</code>, which accept
 </ul>
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 3 — Strings and Files</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 22%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 22% complete (4 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/02-variables.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">📦 Lecture 2: Variables, Types, and Assignment</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/04-git.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">💻 Lecture 4: Version Control with Git</span></a></td></tr></table></div>—</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1682,7 +1620,7 @@ Another way to write to a file is to use <code>writelines()</code>, which accept
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.0. None (nothing)</p>
+        <p class="prev-next-title">Lecture 2 — Variables, Types, and Assignment</p>
       </div>
     </a>
     <a class="right-next"
@@ -1690,7 +1628,7 @@ Another way to write to a file is to use <code>writelines()</code>, which accept
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What is Version Control ?</p>
+        <p class="prev-next-title">Lecture 4 — Version Control with Git</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1700,23 +1638,6 @@ Another way to write to a file is to use <code>writelines()</code>, which accept
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="simple pst-show_toc_level nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

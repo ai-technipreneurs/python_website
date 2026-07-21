@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>What is NumPy? &#8212; Python Programming</title>
+    <title>Lecture 10 — NumPy, Part 1 &#8212; Python Programming</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/10-numpy-1.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🧩 What is NumPy and Why Use It?" href="11-numpy-2.html" />
-    <link rel="prev" title="Why does debugging matter?" href="09-errors-debugging.html" />
+    <link rel="next" title="Lecture 11 — NumPy, Part 2" href="11-numpy-2.html" />
+    <link rel="prev" title="Lecture 9 — Errors and Debugging" href="09-errors-debugging.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,77 +225,26 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-strings-files.html">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -590,7 +539,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>What is NumPy?</h1>
+    <h1>Lecture 10 — NumPy, Part 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -600,29 +549,28 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">What is NumPy?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-use-numpy-you-need-to-import-the-module">To use numpy you need to import the module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-lists">From lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-code">🧠 Understanding the Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-explanation">🔍 Step-by-Step Explanation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-output">✅ <strong>Summary of the Output</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-also-provides-many-functions-to-create-arrays">Numpy also provides many functions to create arrays:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy Array Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-use-numpy-you-need-to-import-the-module">To use numpy you need to import the module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-lists">From lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-code">🧠 Understanding the Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-explanation">🔍 Step-by-Step Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-output">✅ <strong>Summary of the Output</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-also-provides-many-functions-to-create-arrays">Numpy also provides many functions to create arrays:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy Array Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-accessing-elements-subarrays">Array Indexing: Accessing Elements/Subarrays</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-of-arrays">Reshaping of Arrays</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancy-indexing">Fancy indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-accessing-elements-subarrays">Array Indexing: Accessing Elements/Subarrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-of-arrays">Reshaping of Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fancy-indexing">Fancy indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#array-math">Array math</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizing-functions">Vectorizing functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-math">Array math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizing-functions">Vectorizing functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -633,7 +581,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a id="lecture-10-numpy-part-1"></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-10-numpy-part-1">
+<h1>Lecture 10 — NumPy, Part 1<a class="headerlink" href="#lecture-10-numpy-part-1" title="Link to this heading">#</a></h1>
+<p><a id="lecture-10-numpy-part-1"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 10 of 18 — Progress: 56%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📊 Lecture 10 — NumPy — Part 1</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
 <table style="margin: 0 auto; border-collapse: collapse;">
 <tr>
@@ -707,7 +657,7 @@ What happens when you try to operate on arrays of <strong>different shapes</stro
 </div><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/">The NumPy Reference</a>.</p>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="what-is-numpy"></a></p>
 <section id="what-is-numpy">
-<h1>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h1>
+<h2>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>NumPy (Numerical Python)</strong> is the core library for scientific computing in Python, that provide high-performance vector, matrix, and higher-dimensional data structures for Python. It is implemented in <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">Fortran</span></code>. so when calculations are vectorized (formulated with vectors and matrices), the performance is very good. It provides a high-performance multidimensional array object, and tools for working with these arrays.</p>
 </div></blockquote>
@@ -723,7 +673,7 @@ What happens when you try to operate on arrays of <strong>different shapes</stro
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="numpy-arrays"></a></p>
 </section>
 <section id="numpy-arrays">
-<h1>NumPy arrays<a class="headerlink" href="#numpy-arrays" title="Link to this heading">#</a></h1>
+<h2>NumPy arrays<a class="headerlink" href="#numpy-arrays" title="Link to this heading">#</a></h2>
 <p>At the core of the NumPy package, is the <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> object. This encapsulates n-dimensional arrays of homogeneous data types, with many operations being performed in compiled code for performance.</p>
 <p>A numpy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. The number of dimensions is the <em>rank</em> of the array; the <em>shape</em> of an array is a tuple of integers giving the size of the array along each dimension.</p>
 <p>Data manipulation in Python is nearly synonymous with NumPy array manipulation: even newer tools like Pandas are built around the NumPy array. This section will present several examples of using NumPy array manipulation to access data and subarrays, and to split, reshape, and join the arrays.</p>
@@ -735,7 +685,7 @@ What happens when you try to operate on arrays of <strong>different shapes</stro
 </ul>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="to-use-numpy-you-need-to-import-the-module"></a></p>
 <section id="to-use-numpy-you-need-to-import-the-module">
-<h2>To use numpy you need to import the module<a class="headerlink" href="#to-use-numpy-you-need-to-import-the-module" title="Link to this heading">#</a></h2>
+<h3>To use numpy you need to import the module<a class="headerlink" href="#to-use-numpy-you-need-to-import-the-module" title="Link to this heading">#</a></h3>
 <p><strong>Import conventions</strong> : The recommended convention to import numpy is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -750,7 +700,7 @@ What happens when you try to operate on arrays of <strong>different shapes</stro
 <p><a id="from-lists"></a></p>
 </section>
 <section id="from-lists">
-<h2>From lists<a class="headerlink" href="#from-lists" title="Link to this heading">#</a></h2>
+<h3>From lists<a class="headerlink" href="#from-lists" title="Link to this heading">#</a></h3>
 <p>For example, to create new vector and matrix arrays from Python lists we can use the <code class="docutils literal notranslate"><span class="pre">np.array</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -821,7 +771,7 @@ If the argument is a tuple, the return value is the same object.
 <p><a id="understanding-the-code"></a></p>
 </section>
 <section id="understanding-the-code">
-<h2>🧠 Understanding the Code<a class="headerlink" href="#understanding-the-code" title="Link to this heading">#</a></h2>
+<h3>🧠 Understanding the Code<a class="headerlink" href="#understanding-the-code" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>   <span class="c1"># Create a rank-1 NumPy array</span>
@@ -832,7 +782,7 @@ If the argument is a tuple, the return value is the same object.
 </section>
 <hr class="docutils" />
 <section id="step-by-step-explanation">
-<h2>🔍 Step-by-Step Explanation<a class="headerlink" href="#step-by-step-explanation" title="Link to this heading">#</a></h2>
+<h3>🔍 Step-by-Step Explanation<a class="headerlink" href="#step-by-step-explanation" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></strong>
 This imports the <strong>NumPy</strong> library, a powerful tool for numerical computations in Python, and gives it the alias <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p></li>
@@ -869,7 +819,7 @@ The array has <strong>one dimension</strong> with <strong>3 elements</strong>.</
 </section>
 <hr class="docutils" />
 <section id="summary-of-the-output">
-<h2>✅ <strong>Summary of the Output</strong><a class="headerlink" href="#summary-of-the-output" title="Link to this heading">#</a></h2>
+<h3>✅ <strong>Summary of the Output</strong><a class="headerlink" href="#summary-of-the-output" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Command</strong></p></th>
@@ -928,7 +878,7 @@ The array has <strong>one dimension</strong> with <strong>3 elements</strong>.</
 <p><a id="numpy-also-provides-many-functions-to-create-arrays"></a></p>
 </section>
 <section id="numpy-also-provides-many-functions-to-create-arrays">
-<h2>Numpy also provides many functions to create arrays:<a class="headerlink" href="#numpy-also-provides-many-functions-to-create-arrays" title="Link to this heading">#</a></h2>
+<h3>Numpy also provides many functions to create arrays:<a class="headerlink" href="#numpy-also-provides-many-functions-to-create-arrays" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1045,7 +995,7 @@ Look at the function <code class="docutils literal notranslate"><span class="pre
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="numpy-array-attributes"></a></p>
 </section>
 <section id="numpy-array-attributes">
-<h2>NumPy Array Attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h2>
+<h3>NumPy Array Attributes<a class="headerlink" href="#numpy-array-attributes" title="Link to this heading">#</a></h3>
 <p>Each array has attributes <code class="docutils literal notranslate"><span class="pre">ndim</span></code> (the number of dimensions), <code class="docutils literal notranslate"><span class="pre">shape</span></code> (the size of each dimension), and <code class="docutils literal notranslate"><span class="pre">size</span></code> (the total size of the array):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,7 +1030,7 @@ x3 size:  60
 <p><a id="basic-data-types"></a></p>
 </section>
 <section id="basic-data-types">
-<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
+<h3>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h3>
 <p>Different data-types allow us to store data more compactly in memory, but most of the time we simply work with floating point numbers. Note that, in the example above, NumPy auto-detects the data-type from the input.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1134,7 +1084,7 @@ Now that we can create arrays, we need to <strong>access specific elements</stro
 </section>
 </section>
 <section id="array-indexing-accessing-elements-subarrays">
-<h1>Array Indexing: Accessing Elements/Subarrays<a class="headerlink" href="#array-indexing-accessing-elements-subarrays" title="Link to this heading">#</a></h1>
+<h2>Array Indexing: Accessing Elements/Subarrays<a class="headerlink" href="#array-indexing-accessing-elements-subarrays" title="Link to this heading">#</a></h2>
 <p>Numpy offers several ways to index into arrays.</p>
 <p><strong>Slicing</strong>: Similar to Python lists, numpy arrays can be sliced. Since arrays may be multidimensional, you must specify a slice for each dimension of the array:</p>
 <div class="cell docutils container">
@@ -1215,7 +1165,7 @@ Now that we can create arrays, we need to <strong>access specific elements</stro
 </div>
 <p><a id="reshaping-of-arrays"></a></p>
 <section id="reshaping-of-arrays">
-<h2>Reshaping of Arrays<a class="headerlink" href="#reshaping-of-arrays" title="Link to this heading">#</a></h2>
+<h3>Reshaping of Arrays<a class="headerlink" href="#reshaping-of-arrays" title="Link to this heading">#</a></h3>
 <p>Another useful type of operation is reshaping of arrays. The most flexible way of doing this is with the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> method. For example, if you want to put the numbers 1 through 9 in a <span class="math notranslate nohighlight">\(3 \times 3\)</span> grid, you can do the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +1179,7 @@ Now that we can create arrays, we need to <strong>access specific elements</stro
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="fancy-indexing"></a></p>
 </section>
 <section id="fancy-indexing">
-<h2>Fancy indexing<a class="headerlink" href="#fancy-indexing" title="Link to this heading">#</a></h2>
+<h3>Fancy indexing<a class="headerlink" href="#fancy-indexing" title="Link to this heading">#</a></h3>
 <p>Fancy indexing is the name for when an array or a list is used in-place of an index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1314,7 +1264,7 @@ Now that we can create arrays, we need to <strong>access specific elements</stro
 </section>
 <hr class="docutils" />
 <section id="exercise">
-<h2>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<h3>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>Investigate the <strong>Concatenation, Splitting, Copies,repeat, tile, vstack, hstack</strong>  functions for numpy arrays.</p>
 </div></blockquote>
@@ -1329,7 +1279,7 @@ With arrays created and elements accessible, let's put them to work: <strong>mat
 </section>
 </section>
 <section id="array-math">
-<h1>Array math<a class="headerlink" href="#array-math" title="Link to this heading">#</a></h1>
+<h2>Array math<a class="headerlink" href="#array-math" title="Link to this heading">#</a></h2>
 <p>Basic mathematical functions operate elementwise on arrays, and are available both as operator overloads and as functions in the numpy module:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1441,7 +1391,7 @@ What if you have a custom Python function and want it to run on every element of
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="vectorizing-functions"></a></p>
 </section>
 <section id="vectorizing-functions">
-<h1>Vectorizing functions<a class="headerlink" href="#vectorizing-functions" title="Link to this heading">#</a></h1>
+<h2>Vectorizing functions<a class="headerlink" href="#vectorizing-functions" title="Link to this heading">#</a></h2>
 <p>As mentioned several times by now, to get good performance we should always try to avoid looping over elements in our vectors and matrices, and instead use vectorized algorithms. The first step in converting a scalar algorithm to a vectorized algorithm is to make sure that the functions we write work with vector inputs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1509,7 +1459,7 @@ What if you have a custom Python function and want it to run on every element of
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="broadcasting"></a></p>
 </section>
 <section id="broadcasting">
-<h1>Broadcasting<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h1>
+<h2>Broadcasting<a class="headerlink" href="#broadcasting" title="Link to this heading">#</a></h2>
 <p>Broadcasting is a powerful mechanism that allows numpy to work with arrays of different shapes when performing arithmetic operations. Frequently we have a smaller array and a larger array, and we want to use the smaller array multiple times to perform some operation on the larger array.</p>
 <p>For example, suppose that we want to add a constant vector to each row of a matrix. We could do it like this:</p>
 <div class="cell docutils container">
@@ -1658,6 +1608,7 @@ Functions that support broadcasting are known as universal functions. You can fi
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 10 — NumPy — Part 1</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 61%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 61% complete (11 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/09-errors-debugging.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🐛 Lecture 9: Errors and Debugging</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/11-numpy-2.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">📊 Lecture 11: NumPy — Part 2</span></a></td></tr></table></div>—</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1695,7 +1646,7 @@ Functions that support broadcasting are known as universal functions. You can fi
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Why does debugging matter?</p>
+        <p class="prev-next-title">Lecture 9 — Errors and Debugging</p>
       </div>
     </a>
     <a class="right-next"
@@ -1703,7 +1654,7 @@ Functions that support broadcasting are known as universal functions. You can fi
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🧩 What is NumPy and Why Use It?</p>
+        <p class="prev-next-title">Lecture 11 — NumPy, Part 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1725,29 +1676,28 @@ Functions that support broadcasting are known as universal functions. You can fi
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">What is NumPy?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-use-numpy-you-need-to-import-the-module">To use numpy you need to import the module</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-lists">From lists</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-code">🧠 Understanding the Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-explanation">🔍 Step-by-Step Explanation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-output">✅ <strong>Summary of the Output</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-also-provides-many-functions-to-create-arrays">Numpy also provides many functions to create arrays:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy Array Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-use-numpy-you-need-to-import-the-module">To use numpy you need to import the module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-lists">From lists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-code">🧠 Understanding the Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-explanation">🔍 Step-by-Step Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-output">✅ <strong>Summary of the Output</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-also-provides-many-functions-to-create-arrays">Numpy also provides many functions to create arrays:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-attributes">NumPy Array Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic data types</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-accessing-elements-subarrays">Array Indexing: Accessing Elements/Subarrays</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-of-arrays">Reshaping of Arrays</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fancy-indexing">Fancy indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-accessing-elements-subarrays">Array Indexing: Accessing Elements/Subarrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-of-arrays">Reshaping of Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fancy-indexing">Fancy indexing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#array-math">Array math</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizing-functions">Vectorizing functions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-math">Array math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizing-functions">Vectorizing functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">Broadcasting</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

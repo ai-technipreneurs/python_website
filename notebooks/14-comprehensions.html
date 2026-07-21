@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.1 Basic Syntax &#8212; Python Programming</title>
+    <title>Lecture 14 — List Comprehensions and Generators &#8212; Python Programming</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/14-comprehensions.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="15-pandas.html" />
-    <link rel="prev" title="2.1 Defining a Class" href="13-oop.html" />
+    <link rel="next" title="Lecture 15 — Pandas for Data Analysis" href="15-pandas.html" />
+    <link rel="prev" title="Lecture 13 — Object-Oriented Programming" href="13-oop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,77 +223,26 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-strings-files.html">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -588,7 +537,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.1 Basic Syntax</h1>
+    <h1>Lecture 14 — List Comprehensions and Generators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -598,14 +547,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1 Basic Syntax</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-conditions">1.2 Filtering with Conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-in-comprehensions">1.3 If-Else in Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">1.4 Nested Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehensions">2.1 Dictionary Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-comprehensions">2.2 Set Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">1.1 Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-conditions">1.2 Filtering with Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-in-comprehensions">1.3 If-Else in Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">1.4 Nested Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehensions">2.1 Dictionary Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-comprehensions">2.2 Set Comprehensions</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -616,7 +564,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a id="lecture-14-list-comprehensions-generators"></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-14-list-comprehensions-and-generators">
+<h1>Lecture 14 — List Comprehensions and Generators<a class="headerlink" href="#lecture-14-list-comprehensions-and-generators" title="Link to this heading">#</a></h1>
+<p><a id="lecture-14-list-comprehensions-generators"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 14 of 18 — Progress: 78%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">💨 Lecture 14 — List Comprehensions & Generators</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
 <table style="margin: 0 auto; border-collapse: collapse;">
 <tr>
@@ -704,7 +654,7 @@ By the end of this lecture, you will be able to:
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="1-1-basic-syntax"></a></p>
 <section id="basic-syntax">
-<h1>1.1 Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h1>
+<h2>1.1 Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h2>
 <p>The general form is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">expression</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span>
 </pre></div>
@@ -757,7 +707,7 @@ By the end of this lecture, you will be able to:
 <p><a id="1-2-filtering-with-conditions"></a></p>
 </section>
 <section id="filtering-with-conditions">
-<h1>1.2 Filtering with Conditions<a class="headerlink" href="#filtering-with-conditions" title="Link to this heading">#</a></h1>
+<h2>1.2 Filtering with Conditions<a class="headerlink" href="#filtering-with-conditions" title="Link to this heading">#</a></h2>
 <p>Add an <code class="docutils literal notranslate"><span class="pre">if</span></code> clause to include only items that meet a condition:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">expression</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span> <span class="k">if</span> <span class="n">condition</span><span class="p">]</span>
 </pre></div>
@@ -786,7 +736,7 @@ By the end of this lecture, you will be able to:
 <p><a id="1-3-if-else-in-comprehensions"></a></p>
 </section>
 <section id="if-else-in-comprehensions">
-<h1>1.3 If-Else in Comprehensions<a class="headerlink" href="#if-else-in-comprehensions" title="Link to this heading">#</a></h1>
+<h2>1.3 If-Else in Comprehensions<a class="headerlink" href="#if-else-in-comprehensions" title="Link to this heading">#</a></h2>
 <p>When you need an <code class="docutils literal notranslate"><span class="pre">else</span></code> branch, the conditional goes <strong>before</strong> the <code class="docutils literal notranslate"><span class="pre">for</span></code> (not after):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtering (no else):     [expr for x in items if condition]</span>
 <span class="c1"># Transforming (with else): [expr_true if condition else expr_false for x in items]</span>
@@ -818,7 +768,7 @@ By the end of this lecture, you will be able to:
 <p><a id="1-4-nested-comprehensions"></a></p>
 </section>
 <section id="nested-comprehensions">
-<h1>1.4 Nested Comprehensions<a class="headerlink" href="#nested-comprehensions" title="Link to this heading">#</a></h1>
+<h2>1.4 Nested Comprehensions<a class="headerlink" href="#nested-comprehensions" title="Link to this heading">#</a></h2>
 <p>You can nest <code class="docutils literal notranslate"><span class="pre">for</span></code> loops inside a comprehension. This is especially useful for working with matrices and multi-dimensional data — something you’ll encounter frequently with <a class="reference external" href="https://ai-technipreneurs.github.io/python_website/notebooks/10-numpy-1.html">NumPy</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,7 +823,7 @@ By the end of this lecture, you will be able to:
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-1-dictionary-comprehensions"></a></p>
 </section>
 <section id="dictionary-comprehensions">
-<h1>2.1 Dictionary Comprehensions<a class="headerlink" href="#dictionary-comprehensions" title="Link to this heading">#</a></h1>
+<h2>2.1 Dictionary Comprehensions<a class="headerlink" href="#dictionary-comprehensions" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key_expr</span><span class="p">:</span> <span class="n">value_expr</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -907,7 +857,7 @@ By the end of this lecture, you will be able to:
 <p><a id="2-2-set-comprehensions"></a></p>
 </section>
 <section id="set-comprehensions">
-<h1>2.2 Set Comprehensions<a class="headerlink" href="#set-comprehensions" title="Link to this heading">#</a></h1>
+<h2>2.2 Set Comprehensions<a class="headerlink" href="#set-comprehensions" title="Link to this heading">#</a></h2>
 <p>Same syntax as list comprehensions but with curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Duplicates are automatically removed — that’s what sets do!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1245,6 +1195,7 @@ Click to show solution
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 14 — List Comprehensions &amp; Generators</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 83%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 83% complete (15 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/13-oop.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🏗️ Lecture 13: Object-Oriented Programming</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">🐼 Lecture 15: Pandas for Data Analysis</span></a></td></tr></table></div>—</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1282,7 +1233,7 @@ Click to show solution
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.1 Defining a Class</p>
+        <p class="prev-next-title">Lecture 13 — Object-Oriented Programming</p>
       </div>
     </a>
     <a class="right-next"
@@ -1290,7 +1241,7 @@ Click to show solution
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Lecture 15 — Pandas for Data Analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1312,14 +1263,13 @@ Click to show solution
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.1 Basic Syntax</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-conditions">1.2 Filtering with Conditions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-in-comprehensions">1.3 If-Else in Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">1.4 Nested Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehensions">2.1 Dictionary Comprehensions</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set-comprehensions">2.2 Set Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">1.1 Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-with-conditions">1.2 Filtering with Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-in-comprehensions">1.3 If-Else in Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-comprehensions">1.4 Nested Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-comprehensions">2.1 Dictionary Comprehensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-comprehensions">2.2 Set Comprehensions</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

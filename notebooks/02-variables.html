@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.0. None (nothing) &#8212; Python Programming</title>
+    <title>Lecture 2 — Variables, Types, and Assignment &#8212; Python Programming</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/02-variables.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="03-strings-files.html" />
-    <link rel="prev" title="Creating a sublist from index 0 to 2 (not including 2)" href="01-intro-python.html" />
+    <link rel="next" title="Lecture 3 — Strings and Files" href="03-strings-files.html" />
+    <link rel="prev" title="Lecture 1 — Introduction to Python" href="01-intro-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,77 +223,26 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-strings-files.html">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -588,7 +537,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>2.0. None (nothing)</h1>
+    <h1>Lecture 2 — Variables, Types, and Assignment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -598,58 +547,57 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.0. None (nothing)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#string-types-str">2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">2.2. Numeric Types</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-bool">2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-int">2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reals-float">2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-complex">2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#none-nothing">2.0. None (nothing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-types-str">2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">2.2. Numeric Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-bool">2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-int">2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reals-float">2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-complex">2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-objects">2.3. Iterable Objects</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-list">2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#immutable-lists-tuple">2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyed-lists-dict">2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-sets-of-unique-elements-set">2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-objects">2.3. Iterable Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-list">2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#immutable-lists-tuple">2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyed-lists-dict">2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-sets-of-unique-elements-set">2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-typing-in-python">2.4. Dynamic Typing in Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-dynamic-typing">Key Characteristics of Dynamic Typing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-dynamic-typing">Pros and Cons of Dynamic Typing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-typing-in-python">2.4. Dynamic Typing in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-dynamic-typing">Key Characteristics of Dynamic Typing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-dynamic-typing">Pros and Cons of Dynamic Typing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coercion-in-python">2.5.  Coercion in Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-coercion">Key Points About Coercion:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-coercion-example">2.5. 0. Implicit Coercion Example:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-coercion-example">2.5.1. Explicit Coercion Example:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-coercion-scenarios">2.5.2. Common Coercion Scenarios:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-coercion">2.5.3. Pros and Cons of Coercion:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coercion-in-python">2.5.  Coercion in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-coercion">Key Points About Coercion:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-coercion-example">2.5. 0. Implicit Coercion Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-coercion-example">2.5.1. Explicit Coercion Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-coercion-scenarios">2.5.2. Common Coercion Scenarios:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-coercion">2.5.3. Pros and Cons of Coercion:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-associated-with-variables">3. Methods associated with variables</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-and-logical-boolean-operators">4. Arithmetic and Logical (Boolean) Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">4.0. Arithmetic Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">4.1. Logical Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-associated-with-variables">3. Methods associated with variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-and-logical-boolean-operators">4. Arithmetic and Logical (Boolean) Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">4.0. Arithmetic Operators</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">4.1. Logical Operators</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input-the-input-function">5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">5.0. Basic Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">5.1. Important Notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-user-inputs-as-both-integer-and-string">5.2.  Accepting User Inputs (as both integer and string)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eval-accepting-user-inputs-only-as-integer">5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage-of-eval">Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Important Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input-the-input-function">5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">5.0. Basic Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">5.1. Important Notes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-user-inputs-as-both-integer-and-string">5.2.  Accepting User Inputs (as both integer and string)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eval-accepting-user-inputs-only-as-integer">5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage-of-eval">Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Important Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem">Practice Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem">Practice Problem</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -660,7 +608,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a id="lecture-2-variables-types-and-assignment"></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-variables-types-and-assignment">
+<h1>Lecture 2 — Variables, Types, and Assignment<a class="headerlink" href="#lecture-2-variables-types-and-assignment" title="Link to this heading">#</a></h1>
+<p><a id="lecture-2-variables-types-and-assignment"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 2 of 18 — Progress: 11%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📦 Lecture 2 — Variables, Types, and Assignment</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
 <table style="margin: 0 auto; border-collapse: collapse;">
 <tr>
@@ -1849,7 +1799,7 @@ The basic types include:
 ---
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-0-none-nothing"></a></p>
 <section id="none-nothing">
-<h1>2.0. None (nothing)<a class="headerlink" href="#none-nothing" title="Link to this heading">#</a></h1>
+<h2>2.0. None (nothing)<a class="headerlink" href="#none-nothing" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">None</span></code> type represents the absence of a value or a null value in Python. It is often used to signify that a variable has no value assigned to it or to indicate the end of a list, function, or loop.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1868,7 +1818,7 @@ The basic types include:
 <p><a id="2-1-string-types-str"></a></p>
 </section>
 <section id="string-types-str">
-<h1>2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)<a class="headerlink" href="#string-types-str" title="Link to this heading">#</a></h1>
+<h2>2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)<a class="headerlink" href="#string-types-str" title="Link to this heading">#</a></h2>
 <p>Strings in Python are sequences of characters enclosed in quotes. They can be defined using single (<code class="docutils literal notranslate"><span class="pre">'</span></code>), double (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), or triple quotes (<code class="docutils literal notranslate"><span class="pre">'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>). Triple quotes allow for multi-line strings.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Calvin&#39;</span>
@@ -1979,9 +1929,9 @@ Now that we understand how strings work as text data, let's explore the <strong>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-2-numeric-types"></a></p>
 </section>
 <section id="numeric-types">
-<h1>2.2. Numeric Types<a class="headerlink" href="#numeric-types" title="Link to this heading">#</a></h1>
+<h2>2.2. Numeric Types<a class="headerlink" href="#numeric-types" title="Link to this heading">#</a></h2>
 <section id="booleans-bool">
-<h2>2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleans-bool" title="Link to this heading">#</a></h2>
+<h3>2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)<a class="headerlink" href="#booleans-bool" title="Link to this heading">#</a></h3>
 <p>Booleans represent one of two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. They are often used in conditional statements to determine the flow of a program.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">is_active</span> <span class="o">=</span> <span class="kc">True</span>
@@ -2004,7 +1954,7 @@ Now that we understand how strings work as text data, let's explore the <strong>
 </div>
 </section>
 <section id="integers-int">
-<h2>2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#integers-int" title="Link to this heading">#</a></h2>
+<h3>2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)<a class="headerlink" href="#integers-int" title="Link to this heading">#</a></h3>
 <p>Integers are whole numbers without a fractional component. In Python, integers can be of arbitrary precision, meaning they can be as large as the memory allows.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
@@ -2032,7 +1982,7 @@ Now that we understand how strings work as text data, let's explore the <strong>
 </div>
 </section>
 <section id="reals-float">
-<h2>2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#reals-float" title="Link to this heading">#</a></h2>
+<h3>2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)<a class="headerlink" href="#reals-float" title="Link to this heading">#</a></h3>
 <p>Floating-point numbers (floats) are numbers with a decimal point. They are used to represent real numbers in Python.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
@@ -2054,7 +2004,7 @@ Now that we understand how strings work as text data, let's explore the <strong>
 </div>
 </section>
 <section id="complex-complex">
-<h2>2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)<a class="headerlink" href="#complex-complex" title="Link to this heading">#</a></h2>
+<h3>2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)<a class="headerlink" href="#complex-complex" title="Link to this heading">#</a></h3>
 <p>Complex numbers in Python consist of a real part and an imaginary part. They are represented by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">bj</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code> is the real part and <code class="docutils literal notranslate"><span class="pre">b</span></code> is the imaginary part.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span>
@@ -2087,9 +2037,9 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </section>
 </section>
 <section id="iterable-objects">
-<h1>2.3. Iterable Objects<a class="headerlink" href="#iterable-objects" title="Link to this heading">#</a></h1>
+<h2>2.3. Iterable Objects<a class="headerlink" href="#iterable-objects" title="Link to this heading">#</a></h2>
 <section id="lists-list">
-<h2>2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#lists-list" title="Link to this heading">#</a></h2>
+<h3>2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)<a class="headerlink" href="#lists-list" title="Link to this heading">#</a></h3>
 <p>A list is an ordered collection of items that can be of different types. Lists are mutable, meaning their contents can be changed after creation.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">]</span>
@@ -2111,7 +2061,7 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </div>
 </section>
 <section id="immutable-lists-tuple">
-<h2>2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)<a class="headerlink" href="#immutable-lists-tuple" title="Link to this heading">#</a></h2>
+<h3>2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)<a class="headerlink" href="#immutable-lists-tuple" title="Link to this heading">#</a></h3>
 <p>A tuple is similar to a list but is immutable, meaning its contents cannot be changed after creation. Tuples are often used to store collections of related data.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">)</span>
@@ -2132,7 +2082,7 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </div>
 </section>
 <section id="keyed-lists-dict">
-<h2>2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)<a class="headerlink" href="#keyed-lists-dict" title="Link to this heading">#</a></h2>
+<h3>2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)<a class="headerlink" href="#keyed-lists-dict" title="Link to this heading">#</a></h3>
 <p>A dictionary is a collection of key-value pairs, where each key is associated with a value. Dictionaries are mutable and allow for fast lookup of values based on their keys.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
@@ -2154,7 +2104,7 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </div>
 </section>
 <section id="unordered-sets-of-unique-elements-set">
-<h2>2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)<a class="headerlink" href="#unordered-sets-of-unique-elements-set" title="Link to this heading">#</a></h2>
+<h3>2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)<a class="headerlink" href="#unordered-sets-of-unique-elements-set" title="Link to this heading">#</a></h3>
 <p>A set is an unordered collection of unique elements. Sets are useful for membership tests and eliminating duplicate entries.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
@@ -2180,10 +2130,10 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </section>
 </section>
 <section id="dynamic-typing-in-python">
-<h1>2.4. Dynamic Typing in Python<a class="headerlink" href="#dynamic-typing-in-python" title="Link to this heading">#</a></h1>
+<h2>2.4. Dynamic Typing in Python<a class="headerlink" href="#dynamic-typing-in-python" title="Link to this heading">#</a></h2>
 <p>Python is a dynamically typed language, meaning that the type of a variable is determined at runtime rather than at compile time. In Python, you don’t need to declare the type of a variable when you create it. Instead, the type is inferred based on the value assigned to the variable. This allows for more flexibility but also requires careful handling to avoid type-related errors.</p>
 <section id="key-characteristics-of-dynamic-typing">
-<h2>Key Characteristics of Dynamic Typing:<a class="headerlink" href="#key-characteristics-of-dynamic-typing" title="Link to this heading">#</a></h2>
+<h3>Key Characteristics of Dynamic Typing:<a class="headerlink" href="#key-characteristics-of-dynamic-typing" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><strong>No Type Declaration</strong>: You simply assign a value to a variable, and Python automatically knows what type it is.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>        <span class="c1"># x is an integer</span>
@@ -2201,7 +2151,7 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </ul>
 </section>
 <section id="pros-and-cons-of-dynamic-typing">
-<h2>Pros and Cons of Dynamic Typing:<a class="headerlink" href="#pros-and-cons-of-dynamic-typing" title="Link to this heading">#</a></h2>
+<h3>Pros and Cons of Dynamic Typing:<a class="headerlink" href="#pros-and-cons-of-dynamic-typing" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Pros</strong>:</p>
 <ul>
@@ -2218,7 +2168,7 @@ Beyond single values, Python provides <strong>container types</strong> that can 
 </ul>
 </section>
 <section id="example">
-<h2>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<h3>Example:<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initially, &#39;data&#39; is an integer</span>
 <span class="n">data</span> <span class="o">=</span> <span class="mi">100</span>
 
@@ -2264,10 +2214,10 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </section>
 </section>
 <section id="coercion-in-python">
-<h1>2.5.  Coercion in Python<a class="headerlink" href="#coercion-in-python" title="Link to this heading">#</a></h1>
+<h2>2.5.  Coercion in Python<a class="headerlink" href="#coercion-in-python" title="Link to this heading">#</a></h2>
 <p><strong>Coercion</strong> in Python refers to the automatic conversion of one data type to another during operations that involve different types. Python is designed to handle these type conversions in a way that makes the language easier to use and reduces the need for manual type casting.</p>
 <section id="key-points-about-coercion">
-<h2>Key Points About Coercion:<a class="headerlink" href="#key-points-about-coercion" title="Link to this heading">#</a></h2>
+<h3>Key Points About Coercion:<a class="headerlink" href="#key-points-about-coercion" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Implicit Coercion</strong>: Python automatically converts one data type to another when necessary to perform an operation. This usually happens in arithmetic operations involving different types, like an integer and a float.</p>
 <ul>
@@ -2278,7 +2228,7 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </ul>
 </section>
 <section id="implicit-coercion-example">
-<h2>2.5. 0. Implicit Coercion Example:<a class="headerlink" href="#implicit-coercion-example" title="Link to this heading">#</a></h2>
+<h3>2.5. 0. Implicit Coercion Example:<a class="headerlink" href="#implicit-coercion-example" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding an integer and a float</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>        <span class="c1"># int</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">3.2</span>      <span class="c1"># float</span>
@@ -2340,7 +2290,7 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </div>
 </section>
 <section id="explicit-coercion-example">
-<h2>2.5.1. Explicit Coercion Example:<a class="headerlink" href="#explicit-coercion-example" title="Link to this heading">#</a></h2>
+<h3>2.5.1. Explicit Coercion Example:<a class="headerlink" href="#explicit-coercion-example" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Converting a float to an integer</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">7.9</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># Explicit coercion using the int() function</span>
@@ -2400,7 +2350,7 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </div>
 </section>
 <section id="common-coercion-scenarios">
-<h2>2.5.2. Common Coercion Scenarios:<a class="headerlink" href="#common-coercion-scenarios" title="Link to this heading">#</a></h2>
+<h3>2.5.2. Common Coercion Scenarios:<a class="headerlink" href="#common-coercion-scenarios" title="Link to this heading">#</a></h3>
 <ul>
 <li><p><strong>String to Integer/Float</strong>: When you need to convert a string containing numeric characters to an integer or float.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_str</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
@@ -2423,7 +2373,7 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </ul>
 </section>
 <section id="pros-and-cons-of-coercion">
-<h2>2.5.3. Pros and Cons of Coercion:<a class="headerlink" href="#pros-and-cons-of-coercion" title="Link to this heading">#</a></h2>
+<h3>2.5.3. Pros and Cons of Coercion:<a class="headerlink" href="#pros-and-cons-of-coercion" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Pros</strong>:</p>
 <ul>
@@ -2463,7 +2413,7 @@ Since Python determines types at runtime, what happens when you mix types in an 
 </section>
 </section>
 <section id="methods-associated-with-variables">
-<h1>3. Methods associated with variables<a class="headerlink" href="#methods-associated-with-variables" title="Link to this heading">#</a></h1>
+<h2>3. Methods associated with variables<a class="headerlink" href="#methods-associated-with-variables" title="Link to this heading">#</a></h2>
 <p>In Python, every variable is linked to a variety of attributes and methods that define its behavior and interactions. These methods are functions that are built into the variable’s type and allow you to perform various operations on the variable. For example, methods can help you manipulate strings, perform mathematical operations, or interact with lists and dictionaries.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">dir()</span></code> function is useful for exploring these methods and understanding what operations are available for a given variable. By calling <code class="docutils literal notranslate"><span class="pre">dir()</span></code> on a variable, you get a list of all its attributes and methods, including those inherited from its type. This can be particularly helpful for discovering how to use a variable’s methods or for debugging.</p>
 <p>Here’s how you might use <code class="docutils literal notranslate"><span class="pre">dir()</span></code>:</p>
@@ -2767,7 +2717,7 @@ None
 </div>
 <p><a id="4-arithmetic-and-logical-boolean-operators"></a></p>
 <section id="arithmetic-and-logical-boolean-operators">
-<h2>4. Arithmetic and Logical (Boolean) Operators<a class="headerlink" href="#arithmetic-and-logical-boolean-operators" title="Link to this heading">#</a></h2>
+<h3>4. Arithmetic and Logical (Boolean) Operators<a class="headerlink" href="#arithmetic-and-logical-boolean-operators" title="Link to this heading">#</a></h3>
 <p>In Python, two major categories of operators are used to define variables and instructions: arithmetic operators and logical (boolean) operators.</p>
 <ul class="simple">
 <li><p><strong>Arithmetic Operators</strong>: These operators perform common mathematical operations. They include addition, subtraction, multiplication, division, and others that are essential for numerical computations.</p></li>
@@ -2775,7 +2725,7 @@ None
 </ul>
 <p><strong>Boolean values</strong> are crucial for control flow in programming, allowing for conditional execution based on whether a condition evaluates to true or false.</p>
 <section id="arithmetic-operators">
-<h3>4.0. Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h3>
+<h4>4.0. Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h4>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Operation</strong></p></th>
@@ -2826,7 +2776,7 @@ None
 </section>
 <hr class="docutils" />
 <section id="logical-operators">
-<h3>4.1. Logical Operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h3>
+<h4>4.1. Logical Operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h4>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Operation</strong></p></th>
@@ -3112,10 +3062,10 @@ class float(object)
 </section>
 </section>
 <section id="user-input-the-input-function">
-<h2>5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)<a class="headerlink" href="#user-input-the-input-function" title="Link to this heading">#</a></h2>
+<h3>5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)<a class="headerlink" href="#user-input-the-input-function" title="Link to this heading">#</a></h3>
 <p>In Python, the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function is used to capture user input from the console. It pauses the program’s execution and waits for the user to type something, which is then returned as a string. This input can be stored in a variable, allowing you to use the entered data later in your code.</p>
 <section id="basic-usage">
-<h3>5.0. Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h3>
+<h4>5.0. Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h4>
 <p>The basic syntax for the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 </pre></div>
@@ -3126,7 +3076,7 @@ class float(object)
 </ul>
 </section>
 <section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h4>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>Here’s a simple example of using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
@@ -3193,7 +3143,7 @@ class float(object)
 </div>
 </section>
 <section id="important-notes">
-<h3>5.1. Important Notes<a class="headerlink" href="#important-notes" title="Link to this heading">#</a></h3>
+<h4>5.1. Important Notes<a class="headerlink" href="#important-notes" title="Link to this heading">#</a></h4>
 <ul>
 <li><p><strong>Type Conversion</strong>: Since <code class="docutils literal notranslate"><span class="pre">input()</span></code> always returns the input as a string, you may need to convert it to the appropriate type (e.g., <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>) depending on the context.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
@@ -3208,7 +3158,7 @@ class float(object)
 So far we've hardcoded values. In real programs, you often need to get data from the user — let's see how.
 </div></section>
 <section id="accepting-user-inputs-as-both-integer-and-string">
-<h3>5.2.  Accepting User Inputs (as both integer and string)<a class="headerlink" href="#accepting-user-inputs-as-both-integer-and-string" title="Link to this heading">#</a></h3>
+<h4>5.2.  Accepting User Inputs (as both integer and string)<a class="headerlink" href="#accepting-user-inputs-as-both-integer-and-string" title="Link to this heading">#</a></h4>
 <p><strong><code class="docutils literal notranslate"><span class="pre">input(prompt)</span></code></strong> prompts for and returns input as a string. Hence, if the user inputs a integer, the code should convert the string to an integer and then proceed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3248,11 +3198,11 @@ So far we've hardcoded values. In real programs, you often need to get data from
 </div>
 </section>
 <section id="eval-accepting-user-inputs-only-as-integer">
-<h3>5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)<a class="headerlink" href="#eval-accepting-user-inputs-only-as-integer" title="Link to this heading">#</a></h3>
+<h4>5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)<a class="headerlink" href="#eval-accepting-user-inputs-only-as-integer" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">eval()</span></code> function in Python can be used in conjunction with <code class="docutils literal notranslate"><span class="pre">input()</span></code> to evaluate a string as a Python expression. This can be particularly useful when you want to allow the user to input a mathematical expression or Python code directly and have it evaluated at runtime.</p>
 </section>
 <section id="basic-usage-of-eval">
-<h3>Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code><a class="headerlink" href="#basic-usage-of-eval" title="Link to this heading">#</a></h3>
+<h4>Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code><a class="headerlink" href="#basic-usage-of-eval" title="Link to this heading">#</a></h4>
 <p>The basic syntax for using <code class="docutils literal notranslate"><span class="pre">eval()</span></code> with <code class="docutils literal notranslate"><span class="pre">input()</span></code> is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
 </pre></div>
@@ -3263,7 +3213,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
 </ul>
 </section>
 <section id="id2">
-<h3>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h4>Example<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>Here’s an example where the user is allowed to input a mathematical expression, and <code class="docutils literal notranslate"><span class="pre">eval()</span></code> evaluates it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a mathematical expression: &quot;</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
@@ -3287,7 +3237,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
 </ul>
 </section>
 <section id="id3">
-<h3>Important Notes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h4>Important Notes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>Use with Caution</strong>: The <code class="docutils literal notranslate"><span class="pre">eval()</span></code> function can be dangerous if used with untrusted input, as it will execute any code passed to it. This could potentially lead to security vulnerabilities, such as code injection attacks. It should only be used in safe, controlled environments where the input is trusted.</p></li>
 <li><p><strong>Valid Python Expressions</strong>: The string passed to <code class="docutils literal notranslate"><span class="pre">eval()</span></code> must be a valid Python expression. If the string contains syntax errors or invalid operations, Python will raise an exception.</p></li>
@@ -3298,7 +3248,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
 </section>
 </section>
 <section id="practice-problem">
-<h2>Practice Problem<a class="headerlink" href="#practice-problem" title="Link to this heading">#</a></h2>
+<h3>Practice Problem<a class="headerlink" href="#practice-problem" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accept one integer and one float number from the user and calculate the addition of both the numbers.</span>
@@ -3383,6 +3333,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 2 — Variables, Types, and Assignment</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 17%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 17% complete (3 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/01-intro-python.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🐍 Lecture 1: Introduction to Python</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">📝 Lecture 3: Strings and Files</span></a></td></tr></table></div>—</p>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3420,7 +3371,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Creating a sublist from index 0 to 2 (not including 2)</p>
+        <p class="prev-next-title">Lecture 1 — Introduction to Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -3428,7 +3379,7 @@ So far we've hardcoded values. In real programs, you often need to get data from
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Lecture 3 — Strings and Files</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -3450,58 +3401,57 @@ So far we've hardcoded values. In real programs, you often need to get data from
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.0. None (nothing)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#string-types-str">2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">2.2. Numeric Types</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-bool">2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-int">2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reals-float">2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-complex">2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#none-nothing">2.0. None (nothing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-types-str">2.1. String Types (<code class="docutils literal notranslate"><span class="pre">str</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-types">2.2. Numeric Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans-bool">2.2.0. Booleans (<code class="docutils literal notranslate"><span class="pre">bool</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integers-int">2.2.1. Integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reals-float">2.2.2. Reals (<code class="docutils literal notranslate"><span class="pre">float</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-complex">2.2.3. Complex (<code class="docutils literal notranslate"><span class="pre">complex</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-objects">2.3. Iterable Objects</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-list">2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#immutable-lists-tuple">2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyed-lists-dict">2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-sets-of-unique-elements-set">2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterable-objects">2.3. Iterable Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-list">2.3.0. Lists (<code class="docutils literal notranslate"><span class="pre">list</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#immutable-lists-tuple">2.3.1. Immutable Lists (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyed-lists-dict">2.3.2. Keyed Lists (<code class="docutils literal notranslate"><span class="pre">dict</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unordered-sets-of-unique-elements-set">2.3.3. Unordered Sets of Unique Elements (<code class="docutils literal notranslate"><span class="pre">set</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-typing-in-python">2.4. Dynamic Typing in Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-dynamic-typing">Key Characteristics of Dynamic Typing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-dynamic-typing">Pros and Cons of Dynamic Typing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-typing-in-python">2.4. Dynamic Typing in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics-of-dynamic-typing">Key Characteristics of Dynamic Typing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-dynamic-typing">Pros and Cons of Dynamic Typing:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#coercion-in-python">2.5.  Coercion in Python</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-coercion">Key Points About Coercion:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-coercion-example">2.5. 0. Implicit Coercion Example:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-coercion-example">2.5.1. Explicit Coercion Example:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-coercion-scenarios">2.5.2. Common Coercion Scenarios:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-coercion">2.5.3. Pros and Cons of Coercion:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coercion-in-python">2.5.  Coercion in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-coercion">Key Points About Coercion:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-coercion-example">2.5. 0. Implicit Coercion Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explicit-coercion-example">2.5.1. Explicit Coercion Example:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-coercion-scenarios">2.5.2. Common Coercion Scenarios:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pros-and-cons-of-coercion">2.5.3. Pros and Cons of Coercion:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-associated-with-variables">3. Methods associated with variables</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-and-logical-boolean-operators">4. Arithmetic and Logical (Boolean) Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">4.0. Arithmetic Operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">4.1. Logical Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-associated-with-variables">3. Methods associated with variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-and-logical-boolean-operators">4. Arithmetic and Logical (Boolean) Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">4.0. Arithmetic Operators</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">4.1. Logical Operators</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input-the-input-function">5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">5.0. Basic Usage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">5.1. Important Notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-user-inputs-as-both-integer-and-string">5.2.  Accepting User Inputs (as both integer and string)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eval-accepting-user-inputs-only-as-integer">5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage-of-eval">Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Important Notes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-input-the-input-function">5. User input ( the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">5.0. Basic Usage</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#important-notes">5.1. Important Notes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-user-inputs-as-both-integer-and-string">5.2.  Accepting User Inputs (as both integer and string)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#eval-accepting-user-inputs-only-as-integer">5.3. <code class="docutils literal notranslate"><span class="pre">eval()</span></code> (accepting user inputs; only as integer)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage-of-eval">Basic Usage of <code class="docutils literal notranslate"><span class="pre">eval()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Important Notes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem">Practice Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problem">Practice Problem</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

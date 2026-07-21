@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Simple curve plot &#8212; Python Programming</title>
+    <title>Lecture 12 — Matplotlib &#8212; Python Programming</title>
   
   
   
@@ -67,8 +67,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/12-matplotlib.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1 Defining a Class" href="13-oop.html" />
-    <link rel="prev" title="🧩 What is NumPy and Why Use It?" href="11-numpy-2.html" />
+    <link rel="next" title="Lecture 13 — Object-Oriented Programming" href="13-oop.html" />
+    <link rel="prev" title="Lecture 11 — NumPy, Part 2" href="11-numpy-2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -225,77 +225,26 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-strings-files.html">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -590,7 +539,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simple curve plot</h1>
+    <h1>Lecture 12 — Matplotlib</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -600,27 +549,26 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Simple curve plot</strong></a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sine-plot"><strong>Cosine &amp; Sine Plot</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit">The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-curve-plot"><strong>Simple curve plot</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sine-plot"><strong>Cosine &amp; Sine Plot</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit">The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-limits">Setting axes limits</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-ticks">Setting axes ticks</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-tick-labels">Setting axes tick labels</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding legends</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-subplots"><strong>Figure and Subplots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-limits">Setting axes limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-ticks">Setting axes ticks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-tick-labels">Setting axes tick labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding legends</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-subplots"><strong>Figure and Subplots</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-latex-fontsize-font-family"><strong>Formatting text: LaTeX, fontsize, font family</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#line-and-marker-styles"><strong>Line and marker styles</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-scale"><strong>Logarithmic scale</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plot"><strong>Histogram plot</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-plots"><strong>Common types of plots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-latex-fontsize-font-family"><strong>Formatting text: LaTeX, fontsize, font family</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-and-marker-styles"><strong>Line and marker styles</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-scale"><strong>Logarithmic scale</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plot"><strong>Histogram plot</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-plots"><strong>Common types of plots</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -631,7 +579,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a id="lecture-12-matplotlib"></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-12-matplotlib">
+<h1>Lecture 12 — Matplotlib<a class="headerlink" href="#lecture-12-matplotlib" title="Link to this heading">#</a></h1>
+<p><a id="lecture-12-matplotlib"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 12 of 18 — Progress: 67%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">🎨 Lecture 12 — Matplotlib</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
 <table style="margin: 0 auto; border-collapse: collapse;">
 <tr>
@@ -779,7 +729,7 @@ consistent with that.</p>
 <p>Let’s now see a simple plotting and understand the ingredients that goes into customizing our plot as per our will and wish.</p>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="simple-curve-plot"></a></p>
 <section id="simple-curve-plot">
-<h1><strong>Simple curve plot</strong><a class="headerlink" href="#simple-curve-plot" title="Link to this heading">#</a></h1>
+<h2><strong>Simple curve plot</strong><a class="headerlink" href="#simple-curve-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get 10 linearly spaced points in the interval [0, 5)</span>
@@ -824,7 +774,7 @@ consistent with that.</p>
 </div>
 <p><a id="cosine-sine-plot"></a></p>
 <section id="cosine-sine-plot">
-<h2><strong>Cosine &amp; Sine Plot</strong><a class="headerlink" href="#cosine-sine-plot" title="Link to this heading">#</a></h2>
+<h3><strong>Cosine &amp; Sine Plot</strong><a class="headerlink" href="#cosine-sine-plot" title="Link to this heading">#</a></h3>
 <p>Starting with default settings, we would like to draw a <code class="docutils literal notranslate"><span class="pre">cosine</span></code> and <code class="docutils literal notranslate"><span class="pre">sine</span></code> functions on the same plot. Then, we will make it look prettier by customizing the default settings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,7 +799,7 @@ consistent with that.</p>
 </div>
 </div>
 <section id="the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit">
-<h3>The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.<a class="headerlink" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit" title="Link to this heading">#</a></h3>
+<h4>The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.<a class="headerlink" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit" title="Link to this heading">#</a></h4>
 <p><em>Matplotlib</em> allows the aspect ratio, DPI and figure size to be specified when the Figure object is created, using the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> and <code class="docutils literal notranslate"><span class="pre">dpi</span></code> keyword arguments. <code class="docutils literal notranslate"><span class="pre">figsize</span></code> is a tuple of the <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> of the figure in inches, and <code class="docutils literal notranslate"><span class="pre">dpi</span></code> is the dots-per-inch (pixel per inch). To create an <span class="math notranslate nohighlight">\(800\times 600\)</span> pixel, <span class="math notranslate nohighlight">\(100\)</span> dots-per-inch figure, we can do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -890,12 +840,12 @@ consistent with that.</p>
 The default plot looks decent, but a good visualization requires <strong>fine control over axes</strong>. Let's customize.
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="setting-axes-limits"></a></p>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
-</section>
 <section id="setting-axes-limits">
-<h1>Setting axes limits<a class="headerlink" href="#setting-axes-limits" title="Link to this heading">#</a></h1>
+<h2>Setting axes limits<a class="headerlink" href="#setting-axes-limits" title="Link to this heading">#</a></h2>
 <p>Instead of hard-coding the <code class="docutils literal notranslate"><span class="pre">xlim</span></code> and <code class="docutils literal notranslate"><span class="pre">ylim</span></code> values, we can take these values from the array itself and then set the limits accordingly.
 We can also change the <code class="docutils literal notranslate"><span class="pre">linewidth</span></code> and <code class="docutils literal notranslate"><span class="pre">color</span></code> kwargs as per our wish.</p>
 <div class="cell docutils container">
@@ -931,7 +881,7 @@ We can also change the <code class="docutils literal notranslate"><span class="p
 <p><a id="setting-axes-ticks"></a></p>
 </section>
 <section id="setting-axes-ticks">
-<h1>Setting axes ticks<a class="headerlink" href="#setting-axes-ticks" title="Link to this heading">#</a></h1>
+<h2>Setting axes ticks<a class="headerlink" href="#setting-axes-ticks" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set figure size and dpi (dots per inch)</span>
@@ -969,7 +919,7 @@ We can also change the <code class="docutils literal notranslate"><span class="p
 <p><a id="setting-axes-tick-labels"></a></p>
 </section>
 <section id="setting-axes-tick-labels">
-<h1>Setting axes tick labels<a class="headerlink" href="#setting-axes-tick-labels" title="Link to this heading">#</a></h1>
+<h2>Setting axes tick labels<a class="headerlink" href="#setting-axes-tick-labels" title="Link to this heading">#</a></h2>
 <p>We fixed the aexs ticks but their label is not very explicit. We could guess that 3.142 is π but it would be better to make it explicit. When we set tick values, we can also provide a corresponding label in the second argument list. Note that we’ll use latex to allow for nice rendering of the label.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1013,7 +963,7 @@ When a plot has multiple lines, how does the reader know which is which? <strong
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="adding-legends"></a></p>
 </section>
 <section id="adding-legends">
-<h1>Adding legends<a class="headerlink" href="#adding-legends" title="Link to this heading">#</a></h1>
+<h2>Adding legends<a class="headerlink" href="#adding-legends" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set figure size and dpi (dots per inch)</span>
@@ -1060,7 +1010,7 @@ When a plot has multiple lines, how does the reader know which is which? <strong
 <p><a id="figure-and-subplots"></a></p>
 <hr class="docutils" />
 <section id="figure-and-subplots">
-<h2><strong>Figure and Subplots</strong><a class="headerlink" href="#figure-and-subplots" title="Link to this heading">#</a></h2>
+<h3><strong>Figure and Subplots</strong><a class="headerlink" href="#figure-and-subplots" title="Link to this heading">#</a></h3>
 <p><strong>Figure</strong></p>
 <p>A figure is the windows in the GUI that has “Figure #” as title. Figures are numbered starting from 1 as opposed to the normal Python way starting from 0. There are several parameters that determine how the figure looks like.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1143,7 +1093,7 @@ Scientific figures often need <strong>mathematical notation</strong>. Matplotlib
 </section>
 </section>
 <section id="formatting-text-latex-fontsize-font-family">
-<h1><strong>Formatting text: LaTeX, fontsize, font family</strong><a class="headerlink" href="#formatting-text-latex-fontsize-font-family" title="Link to this heading">#</a></h1>
+<h2><strong>Formatting text: LaTeX, fontsize, font family</strong><a class="headerlink" href="#formatting-text-latex-fontsize-font-family" title="Link to this heading">#</a></h2>
 <p>Matplotlib has great support for <span class="math notranslate nohighlight">\(LaTeX\)</span>. All we need to do is to use dollar signs encapsulate LaTeX in any text (legend, title, label, etc.). For example, <code class="docutils literal notranslate"><span class="pre">&quot;$y=x^3$&quot;</span></code>.</p>
 <p>But here we might run into a slightly subtle problem with <span class="math notranslate nohighlight">\(LaTeX\)</span> code and Python text strings. In <span class="math notranslate nohighlight">\(LaTeX\)</span>, we frequently use the backslash in commands, for example <code class="docutils literal notranslate"><span class="pre">\alpha</span></code> to produce the symbol α. But the backslash already has a meaning in Python strings (the escape code character). To avoid Python messing up our latex code, we need to use “raw” text strings. Raw text strings are prepended with an <code class="docutils literal notranslate"><span class="pre">'r'</span></code>, like <code class="docutils literal notranslate"><span class="pre">r&quot;\alpha&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">r'\alpha'</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&quot;\alpha&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'\alpha'</span></code>:</p>
 <div class="cell docutils container">
@@ -1169,7 +1119,7 @@ Scientific figures often need <strong>mathematical notation</strong>. Matplotlib
 <p><a id="line-and-marker-styles"></a></p>
 </section>
 <section id="line-and-marker-styles">
-<h1><strong>Line and marker styles</strong><a class="headerlink" href="#line-and-marker-styles" title="Link to this heading">#</a></h1>
+<h2><strong>Line and marker styles</strong><a class="headerlink" href="#line-and-marker-styles" title="Link to this heading">#</a></h2>
 <p>To change the line width, we can use the <code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code> keyword argument. The line style can be selected using the <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span></code> keyword arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1194,7 +1144,7 @@ Scientific figures often need <strong>mathematical notation</strong>. Matplotlib
 <p><a id="logarithmic-scale"></a></p>
 </section>
 <section id="logarithmic-scale">
-<h1><strong>Logarithmic scale</strong><a class="headerlink" href="#logarithmic-scale" title="Link to this heading">#</a></h1>
+<h2><strong>Logarithmic scale</strong><a class="headerlink" href="#logarithmic-scale" title="Link to this heading">#</a></h2>
 <p>It is also possible to set a logarithmic scale for one or both axes. This functionality is in fact only one application of a more general transformation system in Matplotlib. Each of the axes’ scales are set seperately using <code class="docutils literal notranslate"><span class="pre">set_xscale</span></code> and <code class="docutils literal notranslate"><span class="pre">set_yscale</span></code> methods which accept one parameter (with the value <code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code> in this case):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1227,7 +1177,7 @@ Scientific figures often need <strong>mathematical notation</strong>. Matplotlib
 <p><a id="histogram-plot"></a></p>
 </section>
 <section id="histogram-plot">
-<h1><strong>Histogram plot</strong><a class="headerlink" href="#histogram-plot" title="Link to this heading">#</a></h1>
+<h2><strong>Histogram plot</strong><a class="headerlink" href="#histogram-plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
@@ -1257,7 +1207,7 @@ Scientific figures often need <strong>mathematical notation</strong>. Matplotlib
 <p><a id="common-types-of-plots"></a></p>
 </section>
 <section id="common-types-of-plots">
-<h1><strong>Common types of plots</strong><a class="headerlink" href="#common-types-of-plots" title="Link to this heading">#</a></h1>
+<h2><strong>Common types of plots</strong><a class="headerlink" href="#common-types-of-plots" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Scatter plot</strong>
 A simple scatter plot of random values drawn from the standard Gaussian distribution.</p></li>
@@ -1497,6 +1447,7 @@ Represent a 3-dimensional surface.  To use 3D graphics in matplotlib, we first n
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 12 — Matplotlib</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 72%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 72% complete (13 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/11-numpy-2.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">📊 Lecture 11: NumPy — Part 2</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/13-oop.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">🏗️ Lecture 13: Object-Oriented Programming</span></a></td></tr></table></div>—</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1534,7 +1485,7 @@ Represent a 3-dimensional surface.  To use 3D graphics in matplotlib, we first n
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">🧩 What is NumPy and Why Use It?</p>
+        <p class="prev-next-title">Lecture 11 — NumPy, Part 2</p>
       </div>
     </a>
     <a class="right-next"
@@ -1542,7 +1493,7 @@ Represent a 3-dimensional surface.  To use 3D graphics in matplotlib, we first n
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2.1 Defining a Class</p>
+        <p class="prev-next-title">Lecture 13 — Object-Oriented Programming</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1564,27 +1515,26 @@ Represent a 3-dimensional surface.  To use 3D graphics in matplotlib, we first n
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Simple curve plot</strong></a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sine-plot"><strong>Cosine &amp; Sine Plot</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit">The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-curve-plot"><strong>Simple curve plot</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sine-plot"><strong>Cosine &amp; Sine Plot</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-above-plot-doesn-t-seem-too-appealing-so-let-s-customizing-the-default-settings-a-bit">The above plot doesn’t seem too appealing. So, let’s customizing the default settings a bit.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-limits">Setting axes limits</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-ticks">Setting axes ticks</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-tick-labels">Setting axes tick labels</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding legends</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-subplots"><strong>Figure and Subplots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-limits">Setting axes limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-ticks">Setting axes ticks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-axes-tick-labels">Setting axes tick labels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-legends">Adding legends</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-and-subplots"><strong>Figure and Subplots</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-latex-fontsize-font-family"><strong>Formatting text: LaTeX, fontsize, font family</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#line-and-marker-styles"><strong>Line and marker styles</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-scale"><strong>Logarithmic scale</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plot"><strong>Histogram plot</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-plots"><strong>Common types of plots</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-latex-fontsize-font-family"><strong>Formatting text: LaTeX, fontsize, font family</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-and-marker-styles"><strong>Line and marker styles</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logarithmic-scale"><strong>Logarithmic scale</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-plot"><strong>Histogram plot</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-plots"><strong>Common types of plots</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Why does debugging matter? &#8212; Python Programming</title>
+    <title>Lecture 9 — Errors and Debugging &#8212; Python Programming</title>
   
   
   
@@ -65,8 +65,8 @@
     <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/09-errors-debugging.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What is NumPy?" href="10-numpy-1.html" />
-    <link rel="prev" title="Recursive function" href="08-recursion-lambda.html" />
+    <link rel="next" title="Lecture 10 — NumPy, Part 1" href="10-numpy-1.html" />
+    <link rel="prev" title="Lecture 8 — Recursion and Lambda" href="08-recursion-lambda.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -223,77 +223,26 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00-shell.html">Lecture 0 — The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Lecture 1 — Introduction to Python</a></li>
 
 
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Why does debugging matter?</a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
-
-
-
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">Lecture 2 — Variables, Types, and Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-strings-files.html">Lecture 3 — Strings and Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">Lecture 4 — Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-containers.html">Lecture 5 — Iterable Objects and Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-flow-control.html">Lecture 6 — Flow Control and Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-functions.html">Lecture 7 — Functions, Modules, and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Lecture 8 — Recursion and Lambda</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 9 — Errors and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">Lecture 10 — NumPy, Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">Lecture 11 — NumPy, Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html">Lecture 12 — Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">Lecture 13 — Object-Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">Lecture 14 — List Comprehensions and Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-pandas.html">Lecture 15 — Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-decorators.html">Lecture 16 — Decorators and Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-data-apis.html">Lecture 17 — Data Formats and APIs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
 <ul class="nav bd-sidenav">
@@ -588,7 +537,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Why does debugging matter?</h1>
+    <h1>Lecture 9 — Errors and Debugging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -598,57 +547,56 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why does debugging matter?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#error-types">Error Types</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-python-exceptions">Common Python Exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-debugging-matter">Why does debugging matter?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-types">Error Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-python-exceptions">Common Python Exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging-techniques">Basic Debugging Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-exceptions-precisely">Use Exceptions Precisely</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-descriptive-variable-names">Use Descriptive Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-errors">Deal with Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging-techniques">Basic Debugging Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-exceptions-precisely">Use Exceptions Precisely</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-descriptive-variable-names">Use Descriptive Variable Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-errors">Deal with Errors</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-output">Verify Output</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-with-a-structured-approach">Code with a Structured Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-alternatives">Soft Alternatives</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising Exceptions</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-handling-with-try-except">Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-exceptions">Custom Exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-with-try-except-else-finally">Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-no-error-occurs">🧩 Case 1: No Error Occurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-division-by-zero">⚠️ Case 2: Division by Zero</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-another-type-of-error">💡 Case 3: Another Type of Error</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-multiple-except-blocks-with-else-and-finally">Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercise-exploring-exception-handling">🧠 Practice Exercise: Exploring Exception Handling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">💻 Starter Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-try-different-cases">🔍 <strong>Step 1: Try Different Cases</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-modify-the-code">🧩 <strong>Step 2: Modify the Code</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reflect">🧠 <strong>Step 3: Reflect</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-output">Verify Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-with-a-structured-approach">Code with a Structured Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-alternatives">Soft Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising Exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-handling-with-try-except">Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-exceptions">Custom Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-with-try-except-else-finally">Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-no-error-occurs">🧩 Case 1: No Error Occurs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-division-by-zero">⚠️ Case 2: Division by Zero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-another-type-of-error">💡 Case 3: Another Type of Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-multiple-except-blocks-with-else-and-finally">Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-raise-and-try-except-in-python">🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-used-to-trigger-raise-an-exception">🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-used-to-catch-handle-exceptions">🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-summary">⚖️ <strong>Comparison Summary</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-both-together">💡 <strong>Example Using Both Together</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercise-exploring-exception-handling">🧠 Practice Exercise: Exploring Exception Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">💻 Starter Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-try-different-cases">🔍 <strong>Step 1: Try Different Cases</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-modify-the-code">🧩 <strong>Step 2: Modify the Code</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reflect">🧠 <strong>Step 3: Reflect</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pass-statement">The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-exceptions-xmode">Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-when-reading-tracebacks-is-not-enough">Debugging: When Reading Tracebacks Is Not Enough</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-raise-and-try-except-in-python">🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-used-to-trigger-raise-an-exception">🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-used-to-catch-handle-exceptions">🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-summary">⚖️ <strong>Comparison Summary</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-both-together">💡 <strong>Example Using Both Together</strong></a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pass-statement">The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-exceptions-xmode">Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-when-reading-tracebacks-is-not-enough">Debugging: When Reading Tracebacks Is Not Enough</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -659,7 +607,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="transition-bridge" style="background: transparent; border-left: 3px solid #b0bec5; padding: 10px 18px; margin: 20px 0 10px; color: #546e7a; font-size: 0.95em; font-style: italic; font-family: 'Segoe UI', sans-serif;">
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-9-errors-and-debugging">
+<h1>Lecture 9 — Errors and Debugging<a class="headerlink" href="#lecture-9-errors-and-debugging" title="Link to this heading">#</a></h1>
+<div class="transition-bridge" style="background: transparent; border-left: 3px solid #b0bec5; padding: 10px 18px; margin: 20px 0 10px; color: #546e7a; font-size: 0.95em; font-style: italic; font-family: 'Segoe UI', sans-serif;">
 Now that we know what kinds of errors Python can throw, how do we <strong>find and fix</strong> them? Let's talk about debugging strategies.
 </div><p><a id="lecture-9-errors-and-debugging"></a></p>
 <div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.9); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 9 of 18 — Progress: 50%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">🐛 Lecture 9 — Errors and Debugging</h2></div><p style="color: #ffffff; font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
@@ -726,7 +676,7 @@ So far we've been catching errors. But sometimes <strong>you</strong> want to si
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="why-does-debugging-matter"></a></p>
 <section id="why-does-debugging-matter">
-<h1>Why does debugging matter?<a class="headerlink" href="#why-does-debugging-matter" title="Link to this heading">#</a></h1>
+<h2>Why does debugging matter?<a class="headerlink" href="#why-does-debugging-matter" title="Link to this heading">#</a></h2>
 <p>Unless you’re perfect, you are bound to make errors. Especially early on, expect to spend much more time debugging than actually coding. The process fits the Pareto principle - you’re going to spend ~20% of your time writing ~80% of your code, and the other ~80% of your time will be spent screaming obscenities at your computer (I think that’s what the Pareto principle says, anyway). Remember to keep calm, and LEARN from your mistakes.</p>
 <p><strong>Debugging</strong> is the process of detecting and correcting errors within a program.<br />
 In Python, errors generally fall into two main categories:</p>
@@ -737,12 +687,12 @@ In Python, errors generally fall into two main categories:</p>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="error-types"></a></p>
 </section>
 <section id="error-types">
-<h1>Error Types<a class="headerlink" href="#error-types" title="Link to this heading">#</a></h1>
+<h2>Error Types<a class="headerlink" href="#error-types" title="Link to this heading">#</a></h2>
 <p>To err is human and Python helps us to find our mistakes by providing <a class="reference external" href="https://docs.python.org/3/tutorial/errors.html">error type descriptions</a>.
 When your code encounters an error, <strong>Python stops execution</strong> and returns an <strong>exception</strong> that describes the issue.<br />
 There are roughly <a class="reference external" href="https://docs.python.org/3/library/exceptions.html"><strong>165 exceptions</strong></a> in the Python standard library — and you’ll encounter quite a few of them as you code.</p>
 <section id="common-python-exceptions">
-<h2>Common Python Exceptions<a class="headerlink" href="#common-python-exceptions" title="Link to this heading">#</a></h2>
+<h3>Common Python Exceptions<a class="headerlink" href="#common-python-exceptions" title="Link to this heading">#</a></h3>
 <p>When your code encounters an error, <strong>Python stops execution</strong> and raises an <strong>exception</strong> describing the issue.<br />
 Below is a list of <strong>common exceptions</strong>, their meanings, and short examples.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -807,13 +757,13 @@ Below is a list of <strong>common exceptions</strong>, their meanings, and short
 </section>
 </section>
 <section id="debugging">
-<h1>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h1>
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h2>
 <p>Once your code becomes more complex, you’ll often face the question: <em>Will it run?</em><br />
 Unfortunately, the answer is often <em>no</em> — but that’s where <strong>debugging</strong> comes in.<br />
 Debugging is the process of <strong>finding and fixing errors (bugs)</strong> in your code.<br />
 While debugging can seem daunting, the following principles can make it easier and more effective.</p>
 <section id="basic-debugging-techniques">
-<h2>Basic Debugging Techniques<a class="headerlink" href="#basic-debugging-techniques" title="Link to this heading">#</a></h2>
+<h3>Basic Debugging Techniques<a class="headerlink" href="#basic-debugging-techniques" title="Link to this heading">#</a></h3>
 <p>Some common techniques to debug Python code include:</p>
 <ul class="simple">
 <li><p>Print Statements: Using <code class="docutils literal notranslate"><span class="pre">print()</span></code> to display the values of variables at different points in the code.</p></li>
@@ -823,7 +773,7 @@ While debugging can seem daunting, the following principles can make it easier a
 </section>
 <hr class="docutils" />
 <section id="use-exceptions-precisely">
-<h2>Use Exceptions Precisely<a class="headerlink" href="#use-exceptions-precisely" title="Link to this heading">#</a></h2>
+<h3>Use Exceptions Precisely<a class="headerlink" href="#use-exceptions-precisely" title="Link to this heading">#</a></h3>
 <p>Handle critical parts of your code with well-defined <strong><code class="docutils literal notranslate"><span class="pre">try</span></code>–<code class="docutils literal notranslate"><span class="pre">except</span></code></strong> blocks to manage possible errors. This helps identify where issues arise and makes your program more resilient.</p>
 <blockquote>
 <div><p>🗒️ <strong>Tip:</strong> Write clear error messages inside your <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks and document them (e.g., in Markdown).<br />
@@ -832,7 +782,7 @@ Consider keeping a developer log or <em>wiki</em> that lists possible error sour
 </section>
 <hr class="docutils" />
 <section id="use-descriptive-variable-names">
-<h2>Use Descriptive Variable Names<a class="headerlink" href="#use-descriptive-variable-names" title="Link to this heading">#</a></h2>
+<h3>Use Descriptive Variable Names<a class="headerlink" href="#use-descriptive-variable-names" title="Link to this heading">#</a></h3>
 <p>Choose <strong>clear, meaningful names</strong> for variables, functions, and classes.<br />
 Avoid ambiguous abbreviations — only use acronyms if they’re widely understood.<br />
 For readability:</p>
@@ -843,7 +793,7 @@ For readability:</p>
 </section>
 <hr class="docutils" />
 <section id="deal-with-errors">
-<h2>Deal with Errors<a class="headerlink" href="#deal-with-errors" title="Link to this heading">#</a></h2>
+<h3>Deal with Errors<a class="headerlink" href="#deal-with-errors" title="Link to this heading">#</a></h3>
 <p>When an error occurs, <strong>read the error message carefully</strong> — often more than once.<br />
 This helps you <strong>understand the origin</strong> of the problem.<br />
 Error messages usually specify:</p>
@@ -856,24 +806,24 @@ Error messages usually specify:</p>
 </section>
 </section>
 <section id="verify-output">
-<h1>Verify Output<a class="headerlink" href="#verify-output" title="Link to this heading">#</a></h1>
+<h2>Verify Output<a class="headerlink" href="#verify-output" title="Link to this heading">#</a></h2>
 <p>Just because code runs successfully doesn’t necessarily mean that the <strong>result (output)</strong> is correct.<br />
 Always validate your output using known input–output pairs — for example, compare your program’s results to a manual calculation or a verified source.<br />
 Make sure the output produced by your code <strong>matches the expected (desired) output</strong>.</p>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="code-with-a-structured-approach">
-<h1>Code with a Structured Approach<a class="headerlink" href="#code-with-a-structured-approach" title="Link to this heading">#</a></h1>
+<h2>Code with a Structured Approach<a class="headerlink" href="#code-with-a-structured-approach" title="Link to this heading">#</a></h2>
 <p>Before jumping into writing code, take time to <strong>plan its structure</strong>.<br />
 Avoid immediately creating random blocks of code; instead, use structural and behavioral diagrams to organize your logic.<br />
 Concepts like <a class="reference external" href="https://en.wikipedia.org/wiki/Unified_Modeling_Language#Diagrams"><strong>UML diagrams</strong></a> (Unified Modeling Language) are helpful tools in software engineering for designing and visualizing your code.</p>
 <blockquote>
 <div><p>✏️ <strong>Tip:</strong> Take a sheet of paper and a pencil before you start coding. Sketch how your code should work and produce the desired output.</p>
 </div></blockquote>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="soft-alternatives">
-<h1>Soft Alternatives<a class="headerlink" href="#soft-alternatives" title="Link to this heading">#</a></h1>
+<h2>Soft Alternatives<a class="headerlink" href="#soft-alternatives" title="Link to this heading">#</a></h2>
 <p>When you’re stuck, try explaining your problem aloud — even to yourself.<br />
 Rephrasing or describing a problem to another person (real or imaginary) can often help you <strong>clarify your own thinking</strong>.</p>
 <p>If frustration builds, <strong>step away from the code</strong>.<br />
@@ -883,10 +833,10 @@ Your brain will keep processing the issue subconsciously — a phenomenon known 
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="raising-exceptions"></a></p>
 </section>
 <section id="raising-exceptions">
-<h1>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">#</a></h1>
+<h2>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">#</a></h2>
 <p>When code returns an exception, we say that the exception was <strong>thrown</strong> or <strong>raised</strong>. These exceptions may be <strong>handled</strong> or <strong>caught</strong> by the code.</p>
 <section id="exception-handling-with-try-except">
-<h2>Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code><a class="headerlink" href="#exception-handling-with-try-except" title="Link to this heading">#</a></h2>
+<h3>Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code><a class="headerlink" href="#exception-handling-with-try-except" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> keywords test a code block and if it crashes, an <code class="docutils literal notranslate"><span class="pre">exception</span></code> is raised, but the script itself will not crash (unless otherwise defined in the <code class="docutils literal notranslate"><span class="pre">except</span></code> statement). The basic structure is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">try</span><span class="p">:</span>
     <span class="c1"># code block</span>
@@ -1008,7 +958,7 @@ Your brain will keep processing the issue subconsciously — a phenomenon known 
 <p><a id="example-of-a-custom-exception"></a></p>
 </section>
 <section id="custom-exceptions">
-<h2>Custom Exceptions<a class="headerlink" href="#custom-exceptions" title="Link to this heading">#</a></h2>
+<h3>Custom Exceptions<a class="headerlink" href="#custom-exceptions" title="Link to this heading">#</a></h3>
 <p>You can define custom exceptions to represent specific error conditions in your code. Custom exceptions are created by defining a new class that inherits from the built-in <code class="docutils literal notranslate"><span class="pre">Exception</span></code> class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a Custom Exception</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">NegativeAgeError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -1027,7 +977,7 @@ Your brain will keep processing the issue subconsciously — a phenomenon known 
 </div>
 </section>
 <section id="error-handling-with-try-except-else-finally">
-<h2>Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#error-handling-with-try-except-else-finally" title="Link to this heading">#</a></h2>
+<h3>Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#error-handling-with-try-except-else-finally" title="Link to this heading">#</a></h3>
 <p>Python provides a structured way to handle exceptions using the <strong><code class="docutils literal notranslate"><span class="pre">try</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">except</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">else</span></code></strong>, and <strong><code class="docutils literal notranslate"><span class="pre">finally</span></code></strong> statements:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">try:</span></code></strong><br />
@@ -1069,7 +1019,7 @@ This block is always executed, whether or not an exception occurred.</p></li>
 </div>
 </div>
 <section id="case-1-no-error-occurs">
-<h3>🧩 Case 1: No Error Occurs<a class="headerlink" href="#case-1-no-error-occurs" title="Link to this heading">#</a></h3>
+<h4>🧩 Case 1: No Error Occurs<a class="headerlink" href="#case-1-no-error-occurs" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -1093,7 +1043,7 @@ Always executed!
 <p>Explanation: The division succeeds, so the <code class="docutils literal notranslate"><span class="pre">else</span></code> block runs, followed by the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block.</p>
 </section>
 <section id="case-2-division-by-zero">
-<h3>⚠️ Case 2: Division by Zero<a class="headerlink" href="#case-2-division-by-zero" title="Link to this heading">#</a></h3>
+<h4>⚠️ Case 2: Division by Zero<a class="headerlink" href="#case-2-division-by-zero" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -1117,7 +1067,7 @@ Always executed!
 The <code class="docutils literal notranslate"><span class="pre">else</span></code> block is skipped, but the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block still executes.</p>
 </section>
 <section id="case-3-another-type-of-error">
-<h3>💡 Case 3: Another Type of Error<a class="headerlink" href="#case-3-another-type-of-error" title="Link to this heading">#</a></h3>
+<h4>💡 Case 3: Another Type of Error<a class="headerlink" href="#case-3-another-type-of-error" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handle potential errors with try/except</span>
@@ -1143,7 +1093,7 @@ Always executed!
 so it’s not caught by the <code class="docutils literal notranslate"><span class="pre">except</span></code> block. The program shows an error message,
 but the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block still runs.</p>
 <section id="example-using-multiple-except-blocks-with-else-and-finally">
-<h4>Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#example-using-multiple-except-blocks-with-else-and-finally" title="Link to this heading">#</a></h4>
+<h5>Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#example-using-multiple-except-blocks-with-else-and-finally" title="Link to this heading">#</a></h5>
 <p>You can handle <strong>different types of errors separately</strong> using multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks.<br />
 This allows your program to respond appropriately depending on what kind of problem occurs.</p>
 <div class="cell docutils container">
@@ -1175,12 +1125,12 @@ This allows your program to respond appropriately depending on what kind of prob
 </section>
 </section>
 <section id="practice-exercise-exploring-exception-handling">
-<h2>🧠 Practice Exercise: Exploring Exception Handling<a class="headerlink" href="#practice-exercise-exploring-exception-handling" title="Link to this heading">#</a></h2>
+<h3>🧠 Practice Exercise: Exploring Exception Handling<a class="headerlink" href="#practice-exercise-exploring-exception-handling" title="Link to this heading">#</a></h3>
 <p>You’ve seen how Python uses <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, and <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks to manage errors.<br />
 Now it’s your turn to experiment!</p>
 <hr class="docutils" />
 <section id="starter-code">
-<h3>💻 Starter Code<a class="headerlink" href="#starter-code" title="Link to this heading">#</a></h3>
+<h4>💻 Starter Code<a class="headerlink" href="#starter-code" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
     <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
@@ -1199,7 +1149,7 @@ Now it’s your turn to experiment!</p>
 </section>
 <hr class="docutils" />
 <section id="step-1-try-different-cases">
-<h3>🔍 <strong>Step 1: Try Different Cases</strong><a class="headerlink" href="#step-1-try-different-cases" title="Link to this heading">#</a></h3>
+<h4>🔍 <strong>Step 1: Try Different Cases</strong><a class="headerlink" href="#step-1-try-different-cases" title="Link to this heading">#</a></h4>
 <p>Run the program several times and note what happens in each scenario:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1231,7 +1181,7 @@ Now it’s your turn to experiment!</p>
 </section>
 <hr class="docutils" />
 <section id="step-2-modify-the-code">
-<h3>🧩 <strong>Step 2: Modify the Code</strong><a class="headerlink" href="#step-2-modify-the-code" title="Link to this heading">#</a></h3>
+<h4>🧩 <strong>Step 2: Modify the Code</strong><a class="headerlink" href="#step-2-modify-the-code" title="Link to this heading">#</a></h4>
 <p>Now <strong>extend</strong> the code to handle additional error types:</p>
 <ol class="arabic simple">
 <li><p>Add an <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">TypeError:</span></code> block — try causing a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> by removing the <code class="docutils literal notranslate"><span class="pre">int()</span></code> conversion.</p></li>
@@ -1241,7 +1191,7 @@ Now it’s your turn to experiment!</p>
 </section>
 <hr class="docutils" />
 <section id="step-3-reflect">
-<h3>🧠 <strong>Step 3: Reflect</strong><a class="headerlink" href="#step-3-reflect" title="Link to this heading">#</a></h3>
+<h4>🧠 <strong>Step 3: Reflect</strong><a class="headerlink" href="#step-3-reflect" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Which types of errors did you observe most often?</p></li>
 <li><p>What happens when you remove the <code class="docutils literal notranslate"><span class="pre">except</span></code> blocks?</p></li>
@@ -1251,16 +1201,16 @@ Now it’s your turn to experiment!</p>
 <p>✨ <strong>Challenge:</strong>
 Can you write a version of the program that asks for input <strong>until a valid division</strong> is performed (using a <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code> loop with exception handling)?</p>
 <section id="id1">
-<h4><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<h5><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 </section>
 </section>
 </section>
 <section id="difference-between-raise-and-try-except-in-python">
-<h2>🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python<a class="headerlink" href="#difference-between-raise-and-try-except-in-python" title="Link to this heading">#</a></h2>
+<h3>🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python<a class="headerlink" href="#difference-between-raise-and-try-except-in-python" title="Link to this heading">#</a></h3>
 <p>Both <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> are used to deal with <strong>exceptions</strong> in Python, but they serve <strong>different purposes</strong> in how errors are <strong>created</strong> and <strong>handled</strong>.</p>
 <hr class="docutils" />
 <section id="raise-used-to-trigger-raise-an-exception">
-<h3>🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong><a class="headerlink" href="#raise-used-to-trigger-raise-an-exception" title="Link to this heading">#</a></h3>
+<h4>🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong><a class="headerlink" href="#raise-used-to-trigger-raise-an-exception" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement is used when <strong>you want to generate an error on purpose</strong> —  either to stop the program or to signal that something went wrong.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
@@ -1277,7 +1227,7 @@ Here, <code class="docutils literal notranslate"><span class="pre">raise</span><
 </section>
 <hr class="docutils" />
 <section id="try-except-used-to-catch-handle-exceptions">
-<h3>🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong><a class="headerlink" href="#try-except-used-to-catch-handle-exceptions" title="Link to this heading">#</a></h3>
+<h4>🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong><a class="headerlink" href="#try-except-used-to-catch-handle-exceptions" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">try...except</span></code> block is used to <strong>handle errors gracefully</strong> when they occur, so the program can continue running instead of crashing.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -1295,7 +1245,7 @@ Here, the division by zero causes an exception, but <code class="docutils litera
 </section>
 <hr class="docutils" />
 <section id="comparison-summary">
-<h3>⚖️ <strong>Comparison Summary</strong><a class="headerlink" href="#comparison-summary" title="Link to this heading">#</a></h3>
+<h4>⚖️ <strong>Comparison Summary</strong><a class="headerlink" href="#comparison-summary" title="Link to this heading">#</a></h4>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Feature</strong></p></th>
@@ -1326,7 +1276,7 @@ Here, the division by zero causes an exception, but <code class="docutils litera
 </section>
 <hr class="docutils" />
 <section id="example-using-both-together">
-<h3>💡 <strong>Example Using Both Together</strong><a class="headerlink" href="#example-using-both-together" title="Link to this heading">#</a></h3>
+<h4>💡 <strong>Example Using Both Together</strong><a class="headerlink" href="#example-using-both-together" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;Cannot divide by zero!&quot;</span><span class="p">)</span>  <span class="c1"># Raising the error</span>
@@ -1356,7 +1306,7 @@ Here, the division by zero causes an exception, but <code class="docutils litera
 </section>
 </section>
 <section id="the-pass-statement">
-<h1>The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement<a class="headerlink" href="#the-pass-statement" title="Link to this heading">#</a></h1>
+<h2>The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement<a class="headerlink" href="#the-pass-statement" title="Link to this heading">#</a></h2>
 <p>When developing a program, we often deal with complex problems that cannot be solved all at once.<br />
 In such cases, Python provides the <strong><code class="docutils literal notranslate"><span class="pre">pass</span></code></strong> statement — a placeholder that allows you to create <strong>empty code blocks</strong> and <strong>build your program incrementally</strong> while debugging step by step.</p>
 <p>Moreover, understanding different <strong>error types</strong> helps identify and fix issues in existing code.<br />
@@ -1372,7 +1322,7 @@ For example, if you plan to handle a <code class="docutils literal notranslate">
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="controlling-exceptions-xmode"></a></p>
 </section>
 <section id="controlling-exceptions-xmode">
-<h1>Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code><a class="headerlink" href="#controlling-exceptions-xmode" title="Link to this heading">#</a></h1>
+<h2>Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code><a class="headerlink" href="#controlling-exceptions-xmode" title="Link to this heading">#</a></h2>
 <p>Most Python scripts that fail do so by raising an <strong>Exception</strong>.<br />
 When this happens, Python provides detailed information about the cause of the error in a <strong>traceback</strong>, which can be viewed directly within the interpreter.</p>
 <p>In <strong>IPython</strong>, you can customize how much information is displayed when an exception occurs by using the <strong><code class="docutils literal notranslate"><span class="pre">%xmode</span></code></strong> magic command.<br />
@@ -1514,7 +1464,7 @@ In many cases, the shorter and cleaner output of the <strong>default Context mod
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="debugging-when-reading-tracebacks-is-not-enough"></a></p>
 </section>
 <section id="debugging-when-reading-tracebacks-is-not-enough">
-<h1>Debugging: When Reading Tracebacks Is Not Enough<a class="headerlink" href="#debugging-when-reading-tracebacks-is-not-enough" title="Link to this heading">#</a></h1>
+<h2>Debugging: When Reading Tracebacks Is Not Enough<a class="headerlink" href="#debugging-when-reading-tracebacks-is-not-enough" title="Link to this heading">#</a></h2>
 <p>The primary tool for interactive debugging in Python is <strong><code class="docutils literal notranslate"><span class="pre">pdb</span></code></strong> (the Python debugger).<br />
 It allows you to <strong>step through code line by line</strong>, making it easier to identify the source of complex errors.<br />
 An improved version, <strong><code class="docutils literal notranslate"><span class="pre">ipdb</span></code></strong>, is integrated with IPython and offers a more user-friendly experience.</p>
@@ -1665,6 +1615,7 @@ or consult the official <a class="reference external" href="https://github.com/g
 </div>
 <div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 9 — Errors and Debugging</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 56%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 56% complete (10 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/08-recursion-lambda.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🔄 Lecture 8: Recursion and Lambda</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/10-numpy-1.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">📊 Lecture 10: NumPy — Part 1</span></a></td></tr></table></div>—</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1702,7 +1653,7 @@ or consult the official <a class="reference external" href="https://github.com/g
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Recursive function</p>
+        <p class="prev-next-title">Lecture 8 — Recursion and Lambda</p>
       </div>
     </a>
     <a class="right-next"
@@ -1710,7 +1661,7 @@ or consult the official <a class="reference external" href="https://github.com/g
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What is NumPy?</p>
+        <p class="prev-next-title">Lecture 10 — NumPy, Part 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1732,57 +1683,56 @@ or consult the official <a class="reference external" href="https://github.com/g
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Why does debugging matter?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#error-types">Error Types</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-python-exceptions">Common Python Exceptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-debugging-matter">Why does debugging matter?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-types">Error Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-python-exceptions">Common Python Exceptions</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging-techniques">Basic Debugging Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-exceptions-precisely">Use Exceptions Precisely</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-descriptive-variable-names">Use Descriptive Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-errors">Deal with Errors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-debugging-techniques">Basic Debugging Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-exceptions-precisely">Use Exceptions Precisely</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-descriptive-variable-names">Use Descriptive Variable Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-errors">Deal with Errors</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-output">Verify Output</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#code-with-a-structured-approach">Code with a Structured Approach</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-alternatives">Soft Alternatives</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising Exceptions</a><ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-handling-with-try-except">Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-exceptions">Custom Exceptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-with-try-except-else-finally">Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-no-error-occurs">🧩 Case 1: No Error Occurs</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-division-by-zero">⚠️ Case 2: Division by Zero</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-another-type-of-error">💡 Case 3: Another Type of Error</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-multiple-except-blocks-with-else-and-finally">Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercise-exploring-exception-handling">🧠 Practice Exercise: Exploring Exception Handling</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">💻 Starter Code</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-try-different-cases">🔍 <strong>Step 1: Try Different Cases</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-modify-the-code">🧩 <strong>Step 2: Modify the Code</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reflect">🧠 <strong>Step 3: Reflect</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-output">Verify Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-with-a-structured-approach">Code with a Structured Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-alternatives">Soft Alternatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raising-exceptions">Raising Exceptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exception-handling-with-try-except">Exception Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-exceptions">Custom Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-handling-with-try-except-else-finally">Error Handling with <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-no-error-occurs">🧩 Case 1: No Error Occurs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-division-by-zero">⚠️ Case 2: Division by Zero</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-another-type-of-error">💡 Case 3: Another Type of Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-multiple-except-blocks-with-else-and-finally">Example: Using Multiple <code class="docutils literal notranslate"><span class="pre">except</span></code> Blocks with <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-raise-and-try-except-in-python">🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-used-to-trigger-raise-an-exception">🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-used-to-catch-handle-exceptions">🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-summary">⚖️ <strong>Comparison Summary</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-both-together">💡 <strong>Example Using Both Together</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-exercise-exploring-exception-handling">🧠 Practice Exercise: Exploring Exception Handling</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#starter-code">💻 Starter Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-try-different-cases">🔍 <strong>Step 1: Try Different Cases</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-modify-the-code">🧩 <strong>Step 2: Modify the Code</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-reflect">🧠 <strong>Step 3: Reflect</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">=====================================================================================</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pass-statement">The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-exceptions-xmode">Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-when-reading-tracebacks-is-not-enough">Debugging: When Reading Tracebacks Is Not Enough</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-between-raise-and-try-except-in-python">🧩 Difference Between <code class="docutils literal notranslate"><span class="pre">raise</span></code> and <code class="docutils literal notranslate"><span class="pre">try...except</span></code> in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#raise-used-to-trigger-raise-an-exception">🔹 <code class="docutils literal notranslate"><span class="pre">raise</span></code> — <strong>Used to Trigger (Raise) an Exception</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-used-to-catch-handle-exceptions">🔹 <code class="docutils literal notranslate"><span class="pre">try...except</span></code> — <strong>Used to Catch (Handle) Exceptions</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-summary">⚖️ <strong>Comparison Summary</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-both-together">💡 <strong>Example Using Both Together</strong></a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pass-statement">The <code class="docutils literal notranslate"><span class="pre">pass</span></code> Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-exceptions-xmode">Controlling Exceptions <code class="docutils literal notranslate"> <span class="pre">%xmode</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-when-reading-tracebacks-is-not-enough">Debugging: When Reading Tracebacks Is Not Enough</a></li>
+</ul>
   </nav></div>
 
 </div></div>
