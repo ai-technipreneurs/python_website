@@ -53,3 +53,5 @@ sphinx:
     # resolve. Cannot point at notebooks/ directly — Sphinx would then
     # treat the whole tree as excluded from the docs build.
     html_extra_path: ["notebook-assets"]
+    # Site-wide overrides (see _static/custom.css).
+    html_css_files: ["custom.css"]
