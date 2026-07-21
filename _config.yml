@@ -45,3 +45,11 @@ launch_buttons:
 sphinx:
   extra_extensions:
     - sphinx_design    # cards, grids, tabs
+  config:
+    # `notebook-assets/` mirrors notebooks/*.{png,jpeg,...}. Sphinx copies
+    # its contents verbatim to output root, preserving structure — so the
+    # mirror's `notebooks/foo.jpeg` becomes `_build/html/notebooks/foo.jpeg`
+    # and the raw <img src="foo.jpeg"> tags inside the built notebook pages
+    # resolve. Cannot point at notebooks/ directly — Sphinx would then
+    # treat the whole tree as excluded from the docs build.
+    html_extra_path: ["notebook-assets"]
