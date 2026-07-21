@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Recursive function &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08-recursion-lambda';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/08-recursion-lambda.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Why does debugging matter?" href="09-errors-debugging.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="07-functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/08-recursion-lambda.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/08-recursion-lambda.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/08-recursion-lambda.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/08-recursion-lambda.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Recursive function</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Recursive function</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-sequence">1) Fibonacci sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-sequence">2) Geometric sequence</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> function</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions-why-they-matter">Recursive functions (why they matter)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions-why-they-matter"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions (why they matter)</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-8-recursion-and-lambda"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 8 of 18 — Progress: 44%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">🔄 Lecture 8 — Recursion and Lambda</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">40 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #FF9800; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Intermediate</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <a href="https://airina-labs.github.io/AIRINA-Labs/" target="_blank" style="color:#000; text-decoration: none;"><strong>AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong></a>, AI.Technipreneurs, Bénin<br>&amp; <a href="https://acas-yde.org/" target="_blank" style="color:#000; text-decoration: none;"><strong>African Center for Advanced Studies (ACAS)</strong></a>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a>   |   🌐 <a href="https://gabayae.github.io/" target="_blank" style="color: #667eea; text-decoration: none;">Website</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  border-left: 5px solid #4CAF50;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 25px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">
+🎯 Learning Objectives
+</h3>
+<p style="color: #555; font-size: 0.95em; margin-bottom: 10px;">
+By the end of this lecture, you will be able to:
+</p>
+<ul style="list-style-type: none; padding-left: 5px; font-size: 0.95em;">
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Understand recursion and identify base cases vs. recursive cases</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Implement classic recursive algorithms (Fibonacci, factorial)</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Write concise anonymous functions with <code>lambda</code></li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Use <code>map()</code>, <code>filter()</code>, and <code>sorted()</code> with lambdas</li>
+    <li style="margin: 8px 0; color: #424242; line-height: 1.5;">✅ Know when to prefer recursion vs. iteration</li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-left: 5px solid #e91e63; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #880E4F; margin-top: 0; font-size: 1.2em;">📝 Practice Exercises</h3>
+<ol style="color: #424242; font-size: 0.95em; line-height: 1.7;">
+<li><strong>Factorial:</strong> Write a recursive function <code>factorial(n)</code> that returns <code>n!</code>. Test it with <code>factorial(5)</code> (expected: 120).</li>
+<li><strong>Sum of digits:</strong> Write a recursive function <code>digit_sum(n)</code> that returns the sum of digits of a positive integer. Example: <code>digit_sum(1234)</code> → 10.</li>
+<li><strong>Power function:</strong> Write a recursive function <code>power(base, exp)</code> that computes <code>base<sup>exp</sup></code> without using <code>**</code>. Example: <code>power(2, 10)</code> → 1024.</li>
+<li><strong>Lambda sorting:</strong> Given <code>words = ["banana", "pie", "Washington", "book"]</code>, use <code>sorted()</code> with a <code>lambda</code> to sort by word length.</li>
+<li><strong>Lambda filter:</strong> Given <code>numbers = [1, 4, 9, 16, 25, 36, 49]</code>, use <code>filter()</code> with a <code>lambda</code> to keep only values greater than 20.</li>
+<li><strong>Challenge — Flatten a nested list:</strong> Write a recursive function <code>flatten(lst)</code> that takes a nested list like <code>[1, [2, [3, 4], 5], 6]</code> and returns <code>[1, 2, 3, 4, 5, 6]</code>.</li>
+</ol>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: Factorial</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># Your code here</span>
+
+<span class="c1"># Exercise 2: Sum of digits</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">digit_sum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># Your code here</span>
+
+<span class="c1"># Exercise 3: Power function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># Your code here</span>
+
+<span class="c1"># Exercise 4: Sort by length</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span> <span class="s2">&quot;Washington&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">]</span>
+<span class="c1"># sorted_words = sorted(words, key=...)</span>
+
+<span class="c1"># Exercise 5: Filter values &gt; 20</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
+<span class="c1"># result = list(filter(...))</span>
+
+<span class="c1"># Exercise 6 (Challenge): Flatten nested list</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">flatten</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: Factorial</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;factorial(5) = </span><span class="si">{</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 120</span>
+
+
+<span class="c1"># Exercise 2: Sum of digits</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">digit_sum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">digit_sum</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;digit_sum(1234) = </span><span class="si">{</span><span class="n">digit_sum</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 10</span>
+
+
+<span class="c1"># Exercise 3: Power function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">exp</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;power(2, 10) = </span><span class="si">{</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 1024</span>
+
+
+<span class="c1"># Exercise 4: Sort by length</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;pie&quot;</span><span class="p">,</span> <span class="s2">&quot;Washington&quot;</span><span class="p">,</span> <span class="s2">&quot;book&quot;</span><span class="p">]</span>
+<span class="n">sorted_words</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sorted by length: </span><span class="si">{</span><span class="n">sorted_words</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 5: Filter values &gt; 20</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Values &gt; 20: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Exercise 6 (Challenge): Flatten nested list</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">flatten</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">6</span><span class="p">]))</span>  <span class="c1"># [1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+</div>
+</details><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-8-recursion-and-lambda" style="color: #424242; text-decoration: none;">● 🔄 Lecture 8 — Recursion and Lambda</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#recursive-function" style="color: #424242; text-decoration: none;">1. ● Recursive function</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#1-fibonacci-sequence" style="color: #424242; text-decoration: none;">2. ▸ 1) Fibonacci sequence</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#2-geometric-sequence" style="color: #424242; text-decoration: none;">3. ▸ 2) Geometric sequence</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lambda-function" style="color: #424242; text-decoration: none;">4. ● `lambda` function</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#recursive-functions-why-they-matter" style="color: #424242; text-decoration: none;">5. ▸ Recursive functions (why they matter)</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#lambda-functions-why-they-matter" style="color: #424242; text-decoration: none;">6. ▸ `lambda` functions (why they matter)</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">7. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #ede7f6 0%, #e8eaf6 100%); border-left: 5px solid #7E57C2; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #4527A0; margin-top: 0; font-size: 1.1em;">🔗 Building on What You Know</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin: 0;">In Lecture 7, you learned to define functions with <code>def</code>. Now we'll explore two special patterns: <strong>recursion</strong> (functions that call themselves) and <strong>lambda</strong> (tiny anonymous functions). Both are tools that, once understood, unlock elegant solutions to problems that would otherwise require complex loops.</p>
+</div><div style="background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%); border-left: 5px solid #FF9800; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #E65100; margin-top: 0; font-size: 1.1em;">🌍 Real-World Scenario</h3>
+<p style="color: #424242; font-size: 0.95em; line-height: 1.6; margin-bottom: 10px;">You are exploring a folder structure on your computer: each folder can contain files and <em>more folders</em>, which themselves contain files and more folders, and so on. To list every file, you need a function that opens a folder, processes its files, and then <strong>calls itself</strong> on each subfolder. This is <strong>recursion</strong> — a function that solves a problem by solving smaller versions of the same problem.</p><p style="color: #424242; font-size: 0.95em; line-height: 1.6;">Meanwhile, when sorting a list, you might need a tiny throwaway function just to define the sorting key. Writing a full <code>def</code> for one line of logic feels heavy — that's where <strong>lambda</strong> functions shine.</p>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="recursive-function"></a></p>
+<section id="recursive-function">
+<h1>Recursive function<a class="headerlink" href="#recursive-function" title="Link to this heading">#</a></h1>
+<p>A function that <strong>calls itself</strong> to solve a problem by breaking it into smaller subproblems. It must have a <strong>base case</strong> to stop recursion.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>           <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># recursive step</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>           <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># recursive step</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fact</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fibo</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="2-geometric-sequence"></a></p>
+<p><a id="1-fibonacci-sequence"></a></p>
+<p>Here are two clean recursive sequence examples:</p>
+<section id="fibonacci-sequence">
+<h2>1) Fibonacci sequence<a class="headerlink" href="#fibonacci-sequence" title="Link to this heading">#</a></h2>
+<p>Defined by<br />
+$<span class="math notranslate nohighlight">\(F(0)=0,\; F(1)=1,\; F(n)=F(n-1)+F(n-2) for \quad  n\ge2\)</span>$.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># first 10 terms</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>  <span class="c1"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</pre></div>
+</div>
+</section>
+<section id="geometric-sequence">
+<h2>2) Geometric sequence<a class="headerlink" href="#geometric-sequence" title="Link to this heading">#</a></h2>
+<p>Defined by<br />
+$<span class="math notranslate nohighlight">\( a_0 = a0,\; a_n = r \cdot a_{n-1}.\)</span>$</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">geom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a0</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">a0</span>
+    <span class="k">return</span> <span class="n">r</span> <span class="o">*</span> <span class="n">geom</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="c1"># first 6 terms with a0=3, r=2: 3, 6, 12, 24, 48, 96</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">geom</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">a0</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)])</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Notes: Always include a base case (<code class="docutils literal notranslate"><span class="pre">n==0</span></code> or <code class="docutils literal notranslate"><span class="pre">n&lt;=1</span></code>). In Python, deep recursion can hit the recursion limit; for large <code class="docutils literal notranslate"><span class="pre">n</span></code>, prefer iterative versions.</p>
+</div></blockquote>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="lambda-function"></a></p>
+</section>
+</section>
+<section id="lambda-function">
+<h1><code class="docutils literal notranslate"><span class="pre">lambda</span></code> function<a class="headerlink" href="#lambda-function" title="Link to this heading">#</a></h1>
+<p>A small, <strong>anonymous, single-expression</strong> function—handy when you need a quick function inline.</p>
+<p>Notes: <code class="docutils literal notranslate"><span class="pre">lambda</span></code> can’t contain statements (only an expression). Great for short “throwaway” functions (e.g., sort keys, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>); for anything nontrivial, prefer <code class="docutils literal notranslate"><span class="pre">def</span></code> for clarity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>That <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">x</span> <span class="pre">*</span> <span class="pre">2</span></code> is just a tiny anonymous function that doubles its input.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 25</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ada&quot;</span><span class="p">,</span> <span class="s2">&quot;grace&quot;</span><span class="p">,</span> <span class="s2">&quot;turing&quot;</span><span class="p">]</span>
+<span class="n">sorted_names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ada&#39;, &#39;grace&#39;, &#39;turing&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">double</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>          <span class="c1"># 10  ← this is the lambda’s return value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="n">n</span>   <span class="c1"># returns a function</span>
+
+<span class="n">square</span> <span class="o">=</span> <span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">cube</span>   <span class="o">=</span> <span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 16</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>    <span class="c1"># 8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick the student with the highest average quiz score</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;quiz&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>   <span class="s2">&quot;quiz&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Cara&quot;</span><span class="p">,</span>  <span class="s2">&quot;quiz&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]},</span>
+<span class="p">]</span>
+
+<span class="n">top_student</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;quiz&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;quiz&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top_student</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>  <span class="c1"># Cara</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cara
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">d:</span> <span class="pre">...</span></code> creates a tiny “on-the-fly” function that computes each student’s average; <code class="docutils literal notranslate"><span class="pre">max(...,</span> <span class="pre">key=...)</span></code> uses that to decide who’s best.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="lambda-functions-why-they-matter"></a></p>
+<p><a id="recursive-functions-why-they-matter"></a></p>
+<section id="recursive-functions-why-they-matter">
+<h2>Recursive functions (why they matter)<a class="headerlink" href="#recursive-functions-why-they-matter" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Natural fit for self-similar problems</strong>: trees/graphs, nested folders, divide-and-conquer (binary search, mergesort, quicksort).</p></li>
+<li><p><strong>Clear, math-like reasoning</strong>: mirrors inductive definitions; base case + recursive step make correctness easier to argue.</p></li>
+<li><p><strong>Compact code</strong> for backtracking/combinatorics (paths, permutations, subsets).</p></li>
+<li><p><strong>Trade-offs</strong>: extra call overhead, possible stack overflows; Python has <strong>no tail-call optimization</strong>, so prefer iterative versions for deep recursions or performance-critical paths.</p></li>
+</ul>
+</section>
+<section id="lambda-functions-why-they-matter">
+<h2><code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions (why they matter)<a class="headerlink" href="#lambda-functions-why-they-matter" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Pass behavior as data</strong>: tiny anonymous functions make higher-order patterns ergonomic (<code class="docutils literal notranslate"><span class="pre">sorted(key=...)</span></code>, <code class="docutils literal notranslate"><span class="pre">min/max(key=...)</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, callbacks).</p></li>
+<li><p><strong>Concise, one-off logic</strong> without polluting the namespace with throwaway function names.</p></li>
+<li><p><strong>Closures</strong>: can capture surrounding variables to parameterize behavior on the fly.</p></li>
+<li><p><strong>Trade-offs</strong>: single-expression only; overuse can hurt readability—use <code class="docutils literal notranslate"><span class="pre">def</span></code> when logic grows or needs documentation/tests.</p></li>
+</ul>
+<p><strong>Rule of thumb:</strong> use recursion when the problem is naturally recursive and depth is bounded; use <code class="docutils literal notranslate"><span class="pre">lambda</span></code> for short, local transformations—otherwise write a named <code class="docutils literal notranslate"><span class="pre">def</span></code> for clarity.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Recursive functions call themselves with a simpler input until reaching a base case.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Every recursion must have a <strong>base case</strong> to prevent infinite loops.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Classic examples: Fibonacci sequence, factorial, geometric sequences.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>lambda</code> functions are anonymous one-line functions: <code>lambda x: x**2</code>.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Use <code>lambda</code> with <code>map()</code>, <code>filter()</code>, and <code>sorted()</code> for concise data transformations.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 8 — Recursion and Lambda</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 50%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 50% complete (9 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/07-functions.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">⚙️ Lecture 7: Functions, Modules, and Packages</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/09-errors-debugging.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">🐛 Lecture 9: Errors and Debugging</span></a></td></tr></table></div>—</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07-functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="09-errors-debugging.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Why does debugging matter?</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Recursive function</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-sequence">1) Fibonacci sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-sequence">2) Geometric sequence</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-function"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> function</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursive-functions-why-they-matter">Recursive functions (why they matter)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions-why-they-matter"><code class="docutils literal notranslate"><span class="pre">lambda</span></code> functions (why they matter)</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

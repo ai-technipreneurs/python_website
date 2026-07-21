@@ -1,0 +1,1077 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/17-data-apis';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/17-data-apis.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Practical_1: Variables and Assignments" href="../practicals/Practical_1.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="16-decorators.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/17-data-apis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/17-data-apis.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/17-data-apis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/17-data-apis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-17-data-formats-apis"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 17 of 18 — Progress: 94%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">📂 Lecture 17 — Data Formats & APIs</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">50 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #f44336; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Advanced</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <a href="https://airina-labs.github.io/AIRINA-Labs/" target="_blank" style="color:#000; text-decoration: none;"><strong>AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong></a>, AI.Technipreneurs, Bénin<br>&amp; <a href="https://acas-yde.org/" target="_blank" style="color:#000; text-decoration: none;"><strong>African Center for Advanced Studies (ACAS)</strong></a>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a>   |   🌐 <a href="https://gabayae.github.io/" target="_blank" style="color: #667eea; text-decoration: none;">Website</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);  border-left: 5px solid #4CAF50;  border-radius: 0 12px 12px 0;  padding: 20px 25px;  margin: 15px 0 20px;"><h3 style="margin: 0 0 10px; color: #2E7D32; font-family: 'Segoe UI', sans-serif;">🎯 Learning Objectives</h3><ul style="list-style: none; padding-left: 5px;"><li style="margin: 8px 0; color: #333;">✅ Read and write <strong>JSON</strong> data — the universal data exchange format</li><li style="margin: 8px 0; color: #333;">✅ Work with <strong>CSV</strong> files using Python's built-in <code>csv</code> module</li><li style="margin: 8px 0; color: #333;">✅ Understand <strong>YAML</strong> and <strong>TOML</strong> configuration formats</li><li style="margin: 8px 0; color: #333;">✅ Fetch data from <strong>web APIs</strong> using the <code>requests</code> library</li><li style="margin: 8px 0; color: #333;">✅ Parse and process real-world API responses for data analysis</li></ul></div><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-17-data-formats-apis" style="color: #424242; text-decoration: none;">● 📂 Lecture 17 — Data Formats & APIs</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#1-json-javascript-object-notation" style="color: #424242; text-decoration: none;">1. ● 1. JSON — JavaScript Object Notation</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#2-csv-comma-separated-values" style="color: #424242; text-decoration: none;">2. ● 2. CSV — Comma-Separated Values</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#3-configuration-formats-yaml-toml" style="color: #424242; text-decoration: none;">3. ● 3. Configuration Formats: YAML & TOML</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#4-fetching-data-from-web-apis" style="color: #424242; text-decoration: none;">4. ● 4. Fetching Data from Web APIs</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#5-from-api-to-analysis-the-data-pipeline" style="color: #424242; text-decoration: none;">5. ● 5. From API to Analysis: The Data Pipeline</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#6-practice-exercises" style="color: #424242; text-decoration: none;">6. ● 6. Practice Exercises</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">7. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #fff8e1, #fff3e0); border-left: 4px solid #FF9800; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #E65100;">🌉 Building on what you know:</strong> <span style="color: #333;">In <a href="https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html" style="color: #1565C0;">Lecture 3</a> you learned to read and write text files. In <a href="https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html" style="color: #1565C0;">Lecture 15</a> you used <code>pd.read_csv()</code> to load tabular data. Now we'll go deeper: understanding the data formats themselves and connecting to live web APIs to fetch real data programmatically.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="1-json-javascript-object-notation"></a></p>
+<div style="  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);  border-left: 5px solid #2E7D32;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #2E7D32; font-family: 'Segoe UI', sans-serif;">1. JSON — JavaScript Object Notation</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">JSON is the lingua franca of data exchange on the web. Every API you'll ever use speaks JSON. It maps directly to Python's dictionaries and lists, making it intuitive to work with.</p></div><p><strong>JSON ↔ Python type mapping:</strong>| JSON | Python ||——|——–|| <code class="docutils literal notranslate"><span class="pre">{}</span></code> object | <code class="docutils literal notranslate"><span class="pre">dict</span></code> || <code class="docutils literal notranslate"><span class="pre">[]</span></code> array | <code class="docutils literal notranslate"><span class="pre">list</span></code> || <code class="docutils literal notranslate"><span class="pre">&quot;string&quot;</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code> || <code class="docutils literal notranslate"><span class="pre">123</span></code> / <code class="docutils literal notranslate"><span class="pre">3.14</span></code> | <code class="docutils literal notranslate"><span class="pre">int</span></code> / <code class="docutils literal notranslate"><span class="pre">float</span></code> || <code class="docutils literal notranslate"><span class="pre">true</span></code> / <code class="docutils literal notranslate"><span class="pre">false</span></code> | <code class="docutils literal notranslate"><span class="pre">True</span></code> / <code class="docutils literal notranslate"><span class="pre">False</span></code> || <code class="docutils literal notranslate"><span class="pre">null</span></code> | <code class="docutils literal notranslate"><span class="pre">None</span></code> |</p>
+<p>The mapping is almost one-to-one, which is why JSON feels so natural in Python. The <code class="docutils literal notranslate"><span class="pre">json</span></code> module in Python’s standard library handles all the conversion automatically. Let’s start with the two most common operations: <strong>serialization</strong> (Python → JSON string) and <strong>deserialization</strong> (JSON string → Python):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="c1"># Python dict → JSON stringdata = {    &quot;name&quot;: &quot;Alice&quot;,    &quot;age&quot;: 28,    &quot;languages&quot;: [&quot;Python&quot;, &quot;R&quot;, &quot;Julia&quot;],    &quot;is_student&quot;: False,    &quot;address&quot;: {        &quot;city&quot;: &quot;Dakar&quot;,        &quot;country&quot;: &quot;Senegal&quot;    }}json_string = json.dumps(data, indent=2)print(json_string)print(f&quot;\nType: {type(json_string)}&quot;)  # str</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> converted our Python dictionary into a formatted JSON string. Notice how Python’s <code class="docutils literal notranslate"><span class="pre">False</span></code> became JSON’s <code class="docutils literal notranslate"><span class="pre">false</span></code>, and nested structures (the address dict, the languages list) are preserved perfectly. The <code class="docutils literal notranslate"><span class="pre">indent=2</span></code> parameter makes the output human-readable — without it, everything would be on one line.Now let’s go the other direction — parsing a JSON string back into Python objects:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># JSON string → Python dictparsed = json.loads(json_string)print(f&quot;Name: {parsed[&#39;name&#39;]}&quot;)print(f&quot;First language: {parsed[&#39;languages&#39;][0]}&quot;)print(f&quot;City: {parsed[&#39;address&#39;][&#39;city&#39;]}&quot;)print(f&quot;Type: {type(parsed)}&quot;)  # dict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once parsed, the JSON data becomes regular Python objects — you navigate it with standard dictionary indexing and list slicing. This is the core workflow for working with API data: receive JSON, parse it, extract what you <a class="reference external" href="http://need.In">need.In</a> practice, you’ll often read JSON from files rather than strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading and writing JSON filesimport os# Write to filewith open(&quot;sample_data.json&quot;, &quot;w&quot;) as f:    json.dump(data, f, indent=2)print(&quot;Written: sample_data.json&quot;)# Read from filewith open(&quot;sample_data.json&quot;, &quot;r&quot;) as f:    loaded = json.load(f)print(f&quot;Loaded: {loaded[&#39;name&#39;]} from {loaded[&#39;address&#39;][&#39;city&#39;]}&quot;)# Clean upos.remove(&quot;sample_data.json&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #fff3e0; border-left: 4px solid #E65100; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #E65100;">💡 Note:</strong> <span style="color: #333;"><code>json.dumps()</code> / <code>json.loads()</code> work with <strong>strings</strong> (the 's' stands for 'string'). <code>json.dump()</code> / <code>json.load()</code> (without 's') work with <strong>files</strong>. A common source of confusion!</span></div><p>What happens when your Python data contains types that JSON doesn’t support — like <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects, <code class="docutils literal notranslate"><span class="pre">set</span></code>s, or custom classes? By default, <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. You can solve this with a custom encoder:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Handling special cases: dates, sets, custom objectsfrom datetime import datetimeclass DateEncoder(json.JSONEncoder):    &quot;&quot;&quot;Custom encoder that handles datetime objects.&quot;&quot;&quot;    def default(self, obj):        if isinstance(obj, datetime):            return obj.isoformat()        return super().default(obj)event = {    &quot;name&quot;: &quot;Python Workshop&quot;,    &quot;date&quot;: datetime(2025, 11, 15, 14, 30),    &quot;tags&quot;: [&quot;python&quot;, &quot;data-science&quot;]}print(json.dumps(event, cls=DateEncoder, indent=2))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">🔬 In scientific computing:</strong> <span style="color: #333;">JSON is the backbone of modern data science workflows. Jupyter notebooks store their content as JSON (try opening a <code>.ipynb</code> file in a text editor!). Machine learning experiment trackers like MLflow and Weights & Biases log metrics as JSON. And virtually every web API — from weather data to genomic databases — returns JSON responses.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-csv-comma-separated-values"></a></p>
+<div style="  background: linear-gradient(135deg, #fff3e0, #fbe9e7);  border-left: 5px solid #E65100;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #E65100; font-family: 'Segoe UI', sans-serif;">2. CSV — Comma-Separated Values</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">CSV is the simplest tabular data format — just rows of values separated by commas (or other delimiters). While <a href='https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html' style='color: #1565C0;'>Pandas</a> is the best tool for heavy CSV work, Python's built-in <code>csv</code> module is lightweight, dependency-free, and perfect for quick tasks.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="c1"># Writing CSVstudents = [    {&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 22, &quot;grade&quot;: &quot;A&quot;},    {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 24, &quot;grade&quot;: &quot;B+&quot;},    {&quot;name&quot;: &quot;Charlie&quot;, &quot;age&quot;: 21, &quot;grade&quot;: &quot;A-&quot;},    {&quot;name&quot;: &quot;Diana&quot;, &quot;age&quot;: 23, &quot;grade&quot;: &quot;B&quot;},]with open(&quot;students.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as f:    writer = csv.DictWriter(f, fieldnames=[&quot;name&quot;, &quot;age&quot;, &quot;grade&quot;])    writer.writeheader()    writer.writerows(students)print(&quot;Written: students.csv&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">DictWriter</span></code> is especially convenient because you work with dictionaries — each row is a <code class="docutils literal notranslate"><span class="pre">{column:</span> <span class="pre">value}</span></code> mapping, so your code reads naturally. The <code class="docutils literal notranslate"><span class="pre">fieldnames</span></code> parameter controls the column order.Now let’s read the data back using the mirror class, <code class="docutils literal notranslate"><span class="pre">DictReader</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading CSVwith open(&quot;students.csv&quot;, &quot;r&quot;) as f:    reader = csv.DictReader(f)    for row in reader:        print(f&quot;{row[&#39;name&#39;]:&gt;10} | Age {row[&#39;age&#39;]} | Grade: {row[&#39;grade&#39;]}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">DictReader</span></code> automatically uses the first row as column headers and returns each subsequent row as a dictionary. This is the recommended approach for most CSV work.For simpler needs (or when you want raw list access), the basic <code class="docutils literal notranslate"><span class="pre">csv.reader</span></code> returns each row as a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading with the basic csv.reader (returns lists)with open(&quot;students.csv&quot;, &quot;r&quot;) as f:    reader = csv.reader(f)    header = next(reader)  # Skip header row    print(f&quot;Columns: {header}&quot;)    for row in reader:        print(row)os.remove(&quot;students.csv&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">💡 Note:</strong> <span style="color: #333;">Always use <code>newline=''</code> when opening CSV files for writing on Windows, otherwise you'll get blank lines between rows. The <code>csv</code> module handles line endings internally.</span></div><div style="background: #fff3e0; border-left: 4px solid #E65100; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #E65100;">⚠️ Common pitfall:</strong> <span style="color: #333;">The <code>csv</code> module reads everything as strings. If you need <code>age</code> as an integer, you must convert it yourself: <code>int(row['age'])</code>. This is one reason why Pandas' <code>read_csv()</code> is preferred for analysis — it automatically infers data types.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="3-configuration-formats-yaml-toml"></a></p>
+<div style="  background: linear-gradient(135deg, #f3e5f5, #ede7f6);  border-left: 5px solid #7B1FA2;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #7B1FA2; font-family: 'Segoe UI', sans-serif;">3. Configuration Formats: YAML & TOML</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">While JSON is great for data exchange, it's not ideal for human-written configuration files (no comments, strict syntax). YAML and TOML are designed for exactly this use case.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># YAML example (requires: pip install pyyaml)import yamlconfig_yaml = &quot;&quot;&quot;# Database settingsdatabase:  host: localhost  port: 5432  name: myapp_db# Feature flagsfeatures:  dark_mode: true  beta_users:    - alice    - bob&quot;&quot;&quot;config = yaml.safe_load(config_yaml)print(f&quot;DB Host: {config[&#39;database&#39;][&#39;host&#39;]}&quot;)print(f&quot;Beta users: {config[&#39;features&#39;][&#39;beta_users&#39;]}&quot;)print(f&quot;Type: {type(config)}&quot;)  # dict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>YAML’s strength is readability — it uses indentation (like Python!) to represent structure, supports comments with <code class="docutils literal notranslate"><span class="pre">#</span></code>, and avoids the noise of curly braces and quotes. It’s the standard format for Docker Compose files, GitHub Actions workflows, and Kubernetes configurations.TOML is a newer alternative that’s become Python’s standard for project configuration:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TOML — Python 3.11+ has it built in!# For older Python: pip install tomlitry:    import tomllib  # Python 3.11+except ModuleNotFoundError:    import tomli as tomllib  # pip install tomli# TOML is great for project configs (like pyproject.toml)toml_string = &quot;&quot;&quot;[project]name = &quot;my-app&quot;version = &quot;1.0.0&quot;description = &quot;A cool Python app&quot;[project.dependencies]numpy = &quot;&gt;=1.24&quot;pandas = &quot;&gt;=2.0&quot;[tool.pytest]testpaths = [&quot;tests&quot;]&quot;&quot;&quot;# Parse TOML stringimport ioconfig = tomllib.load(io.BytesIO(toml_string.encode()))print(f&quot;Project: {config[&#39;project&#39;][&#39;name&#39;]} v{config[&#39;project&#39;][&#39;version&#39;]}&quot;)print(f&quot;Dependencies: {config[&#39;project&#39;][&#39;dependencies&#39;]}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Every Python project you’ll encounter has a <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file — it’s where dependencies, build settings, and tool configurations live. Understanding TOML means you can confidently edit project settings and create your own Python packages.Here’s a practical guide for choosing the right format:</p>
+<p><strong>When to use which format:</strong>| Format | Best For | Comments? | Human-Friendly? ||——–|———-|———–|—————–|| <strong>JSON</strong> | API data, data exchange | No | Medium || <strong>CSV</strong> | Tabular data, spreadsheets | No | Yes || <strong>YAML</strong> | Config files, CI/CD | Yes | Very || <strong>TOML</strong> | Python project config | Yes | Very |</p>
+<p>Now that you know how to read and write structured data in multiple formats, let’s tackle the most exciting part of this lecture: fetching data from the internet programmatically. In the real world, data doesn’t just sit in files on your computer — it lives on web servers, and you access it through <strong>APIs</strong>.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="4-fetching-data-from-web-apis"></a></p>
+<div style="  background: linear-gradient(135deg, #ffebee, #fce4ec);  border-left: 5px solid #C62828;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #C62828; font-family: 'Segoe UI', sans-serif;">4. Fetching Data from Web APIs</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">An API (Application Programming Interface) lets your Python code talk to web services and retrieve data programmatically. Most modern APIs return JSON. The <code>requests</code> library makes HTTP calls simple and intuitive.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install if needed: pip install requestsimport requests# GET request — fetch data from a free public APIresponse = requests.get(&quot;https://jsonplaceholder.typicode.com/users/1&quot;)print(f&quot;Status code: {response.status_code}&quot;)  # 200 = successprint(f&quot;Content type: {response.headers[&#39;content-type&#39;]}&quot;)# Parse the JSON responseuser = response.json()  # Automatically converts JSON → dictprint(f&quot;\nUser: {user[&#39;name&#39;]}&quot;)print(f&quot;Email: {user[&#39;email&#39;]}&quot;)print(f&quot;City: {user[&#39;address&#39;][&#39;city&#39;]}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break down what happened:1. <code class="docutils literal notranslate"><span class="pre">requests.get(url)</span></code> sent an HTTP GET request to the server (like typing the URL in a browser)2. The server responded with a <strong>status code</strong> (200 = success) and <strong>JSON data</strong>3. <code class="docutils literal notranslate"><span class="pre">response.json()</span></code> parsed the JSON into a Python dictionary — the same <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> we learned earlier, but built into the response objectThe <code class="docutils literal notranslate"><span class="pre">params</span></code> argument lets you add query parameters (like filters) to your request:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetching a list of itemsresponse = requests.get(&quot;https://jsonplaceholder.typicode.com/posts&quot;, params={&quot;userId&quot;: 1})posts = response.json()print(f&quot;User 1 has {len(posts)} posts:\n&quot;)for post in posts[:3]:    print(f&quot;  [{post[&#39;id&#39;]}] {post[&#39;title&#39;][:50]}...&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid #1565C0; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #1565C0;">💡 Note:</strong> <span style="color: #333;"><strong>HTTP status codes:</strong> <code>200</code> = success, <code>404</code> = not found, <code>401</code> = unauthorized, <code>500</code> = server error. Always check <code>response.status_code</code> before parsing the response.</span></div><p>In production code, you should <em>always</em> handle potential errors — the server might be down, the network might be slow, or the URL might be wrong. Here’s a robust pattern using the techniques from <a href="https://ai-technipreneurs.github.io/python_website/notebooks/09-errors-debugging.html" style="color: #1565C0;">Lecture 9 (Error Handling)</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Robust API calls with error handlingdef fetch_json(url, params=None):    &quot;&quot;&quot;Fetch JSON from a URL with error handling.&quot;&quot;&quot;    try:        response = requests.get(url, params=params, timeout=10)        response.raise_for_status()  # Raises HTTPError for 4xx/5xx        return response.json()    except requests.exceptions.Timeout:        print(&quot;Request timed out!&quot;)    except requests.exceptions.HTTPError as e:        print(f&quot;HTTP error: {e}&quot;)    except requests.exceptions.RequestException as e:        print(f&quot;Request failed: {e}&quot;)    return None# Test with valid and invalid URLsdata = fetch_json(&quot;https://jsonplaceholder.typicode.com/todos/1&quot;)if data:    print(f&quot;Todo: {data[&#39;title&#39;]} (completed: {data[&#39;completed&#39;]})&quot;)fetch_json(&quot;https://jsonplaceholder.typicode.com/invalid_endpoint&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">fetch_json()</span></code> helper function encapsulates all the boilerplate: timeouts, status checking, JSON parsing, and error handling. You’ll reuse this pattern in every project that talks to APIs. Notice how it returns <code class="docutils literal notranslate"><span class="pre">None</span></code> on failure — callers can check <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">data:</span></code> before proceeding.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="5-from-api-to-analysis-the-data-pipeline"></a></p>
+<div style="  background: linear-gradient(135deg, #e0f7fa, #e0f2f1);  border-left: 5px solid #00838F;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #00838F; font-family: 'Segoe UI', sans-serif;">5. From API to Analysis: The Data Pipeline</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">The real power comes from combining APIs with the tools you've learned. Let's fetch data from an API and analyze it with <a href='https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html' style='color: #1565C0;'>Pandas</a>.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="c1"># Fetch all todos from the APItodos = fetch_json(&quot;https://jsonplaceholder.typicode.com/todos&quot;)if todos:    # Convert to DataFrame    df = pd.DataFrame(todos)    print(f&quot;Shape: {df.shape}&quot;)    print(f&quot;\nFirst 5 rows:&quot;)    print(df.head())    print(f&quot;\n--- Completion rate by user ---&quot;)    summary = df.groupby(&quot;userId&quot;)[&quot;completed&quot;].agg([&quot;sum&quot;, &quot;count&quot;])    summary[&quot;completion_rate&quot;] = (summary[&quot;sum&quot;] / summary[&quot;count&quot;] * 100).round(1)    summary.columns = [&quot;Completed&quot;, &quot;Total&quot;, &quot;Rate (%)&quot;]    print(summary)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In just a few lines, we went from a URL to a fully analyzed DataFrame with summary statistics. This is the <strong>data pipeline</strong> pattern you’ll use constantly:<strong>API → JSON → DataFrame → Analysis → Insights</strong>Real-world APIs often return data in pages. Here’s how to fetch and combine multiple pages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetching multiple pages of dataall_comments = []for post_id in range(1, 6):  # First 5 posts    comments = fetch_json(        &quot;https://jsonplaceholder.typicode.com/comments&quot;,        params={&quot;postId&quot;: post_id}    )    if comments:        all_comments.extend(comments)df_comments = pd.DataFrame(all_comments)print(f&quot;Fetched {len(df_comments)} comments across 5 posts&quot;)print(f&quot;\nAverage comments per post: {len(df_comments) / 5:.0f}&quot;)print(f&quot;\nSample email domains:&quot;)df_comments[&quot;domain&quot;] = df_comments[&quot;email&quot;].str.split(&quot;@&quot;).str[1]print(df_comments[&quot;domain&quot;].value_counts().head())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">🔬 In scientific computing:</strong> <span style="color: #333;">This API → DataFrame pipeline is how real data science projects begin. Public APIs like NASA's Earth data, NOAA weather, WHO health statistics, and the World Bank's development indicators all follow this same pattern. You can also access scientific databases like PubChem (chemistry), UniProt (proteins), and the Sloan Digital Sky Survey (astronomy) — all returning JSON that you can pipe directly into Pandas for analysis.</span></div><div style="background: #f3e5f5; border-left: 4px solid #7B1FA2; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #7B1FA2;">🔗 Related lectures:</strong><br><a href="https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">📝 Lecture 3: File I/O</a> &nbsp;|&nbsp; <a href="https://ai-technipreneurs.github.io/python_website/notebooks/09-errors-debugging.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">🐛 Lecture 9: Error Handling</a> &nbsp;|&nbsp; <a href="https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">🐼 Lecture 15: Pandas</a></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="6-practice-exercises"></a></p>
+<div style="  background: linear-gradient(135deg, #ede7f6, #e8eaf6);  border-left: 5px solid #4527A0;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #4527A0; font-family: 'Segoe UI', sans-serif;">6. Practice Exercises</h2></div><p><strong>Exercise 1 (JSON):</strong> Create a nested Python dictionary representing a library catalog with at least 3 books (each having title, author, year, and genres). Save it to <code class="docutils literal notranslate"><span class="pre">library.json</span></code>, read it back, and print all books published after 2000.<em>Hint:</em> Use <code class="docutils literal notranslate"><span class="pre">json.dump()</span></code> to write and <code class="docutils literal notranslate"><span class="pre">json.load()</span></code> to read. Filter with a list comprehension: <code class="docutils literal notranslate"><span class="pre">[b</span> <span class="pre">for</span> <span class="pre">b</span> <span class="pre">in</span> <span class="pre">books</span> <span class="pre">if</span> <span class="pre">b[&quot;year&quot;]</span> <span class="pre">&gt;</span> <span class="pre">2000]</span></code>.<strong>Exercise 2 (CSV):</strong> Write a list of 5 product dictionaries (with name, price, quantity) to <code class="docutils literal notranslate"><span class="pre">products.csv</span></code> using <code class="docutils literal notranslate"><span class="pre">csv.DictWriter</span></code>. Read the file back and calculate the total inventory value (sum of price × quantity for each product).<em>Hint:</em> Remember that <code class="docutils literal notranslate"><span class="pre">csv</span></code> reads everything as strings — you’ll need <code class="docutils literal notranslate"><span class="pre">float(row[&quot;price&quot;])</span></code> and <code class="docutils literal notranslate"><span class="pre">int(row[&quot;quantity&quot;])</span></code>.<strong>Exercise 3 (API → Pandas):</strong> Fetch the first 10 users from <code class="docutils literal notranslate"><span class="pre">https://jsonplaceholder.typicode.com/users.</span> <span class="pre">Create</span> <span class="pre">a</span> <span class="pre">Pandas</span> <span class="pre">DataFrame</span> <span class="pre">and</span> <span class="pre">find:</span> <span class="pre">(a)</span> <span class="pre">all</span> <span class="pre">users</span> <span class="pre">whose</span> <span class="pre">company</span> <span class="pre">website</span> <span class="pre">ends</span> <span class="pre">in</span> <span class="pre">&quot;.org&quot;,</span> <span class="pre">and</span> <span class="pre">(b)</span> <span class="pre">the</span> <span class="pre">most</span> <span class="pre">common</span> <span class="pre">city.*Hint:*</span> <span class="pre">Use</span> </code>response.json()[:10]<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">then</span> <span class="pre">filter</span> <span class="pre">with</span> </code>df[df[“website”].str.endswith(“.org”)]<code class="docutils literal notranslate"><span class="pre">.**Exercise</span> <span class="pre">4</span> <span class="pre">(Challenge):**</span> <span class="pre">Build</span> <span class="pre">a</span> <span class="pre">function</span> </code>download_dataset(url, filename)<code class="docutils literal notranslate"><span class="pre">that</span> <span class="pre">fetches</span> <span class="pre">JSON</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">URL,</span> <span class="pre">converts</span> <span class="pre">it</span> <span class="pre">to</span> <span class="pre">a</span> <span class="pre">DataFrame,</span> <span class="pre">saves</span> <span class="pre">it</span> <span class="pre">as</span> <span class="pre">both</span> <span class="pre">CSV</span> <span class="pre">and</span> <span class="pre">JSON</span> <span class="pre">files,</span> <span class="pre">and</span> <span class="pre">prints</span> <span class="pre">a</span> <span class="pre">summary</span> <span class="pre">(shape,</span> <span class="pre">columns,</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">rows).</span> <span class="pre">Include</span> <span class="pre">proper</span> <span class="pre">error</span> <span class="pre">handling</span> <span class="pre">for</span> <span class="pre">network</span> <span class="pre">and</span> <span class="pre">parsing</span> <span class="pre">failures.*Hint:*</span> <span class="pre">Combine</span></code>fetch_json()<code class="docutils literal notranslate"><span class="pre">,</span> </code>pd.DataFrame()<code class="docutils literal notranslate"><span class="pre">,</span> </code>df.to_csv()<code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">and</span> </code>df.to_json()` in sequence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: JSON library catalog</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">catalog</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;library&quot;</span><span class="p">:</span> <span class="s2">&quot;City Central Library&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;books&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Python Crash Course&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Eric Matthes&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span>
+            <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Programming&quot;</span><span class="p">,</span> <span class="s2">&quot;Education&quot;</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Clean Code&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Robert C. Martin&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2008</span><span class="p">,</span>
+            <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Software Engineering&quot;</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Pragmatic Programmer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;David Thomas&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1999</span><span class="p">,</span>
+            <span class="s2">&quot;genres&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Software Engineering&quot;</span><span class="p">,</span> <span class="s2">&quot;Career&quot;</span><span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+
+<span class="c1"># Save to JSON</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;library.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Read it back</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;library.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Books published after 2000</span>
+<span class="n">recent</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;books&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">b</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">recent</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) by </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2: CSV product inventory</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+
+<span class="n">products</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Laptop&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">999.99</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">29.99</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Keyboard&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">59.99</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Monitor&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">349.99</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Headset&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mf">79.99</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="c1"># Write to CSV</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;products.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;quantity&quot;</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">products</span><span class="p">)</span>
+
+<span class="c1"># Read back and calculate total inventory value</span>
+<span class="n">total_value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;products.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;quantity&quot;</span><span class="p">])</span>
+        <span class="n">total_value</span> <span class="o">+=</span> <span class="n">value</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: $</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total inventory value: $</span><span class="si">{</span><span class="n">total_value</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 3: API → Pandas analysis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span><span class="p">)</span>
+<span class="n">users</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
+
+<span class="c1"># (a) Users whose website ends in &quot;.org&quot;</span>
+<span class="n">org_users</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;website&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.org&quot;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Users with .org websites:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">org_users</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;website&quot;</span><span class="p">]])</span>
+
+<span class="c1"># (b) Most common city</span>
+<span class="c1"># The &#39;address&#39; column contains dicts; extract city</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;address&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">])</span>
+<span class="n">most_common</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Most common city: </span><span class="si">{</span><span class="n">most_common</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 4: download_dataset function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">download_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch JSON from URL, convert to DataFrame, save as CSV and JSON.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Network error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;JSON parsing error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;records&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columns: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">First 3 rows:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+
+<span class="c1"># Test with JSONPlaceholder posts</span>
+<span class="n">download_dataset</span><span class="p">(</span>
+    <span class="s2">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;posts_dataset&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><strong>JSON</strong> is the standard format for web APIs: <code>json.loads()</code> / <code>json.dumps()</code>.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><strong>CSV</strong> is the most common tabular format: use <code>pandas.read_csv()</code> for easy loading.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><strong>YAML</strong> and <strong>TOML</strong> are human-friendly configuration formats.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">The <code>requests</code> library fetches data from web APIs: <code>requests.get(url).json()</code>.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">A data pipeline flows: fetch from API → parse response → clean → analyze → visualize.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 17 — Data Formats &amp; APIs</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 100%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 100% complete (18 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/16-decorators.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🎀 Lecture 16: Decorators &amp; Context Managers</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><span style="color: #888; font-size: 0.8em;">🎉</span><br><span style="color: #4CAF50; font-weight: 600;">Course Complete!</span></td></tr></table></div>—</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="16-decorators.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../practicals/Practical_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practical_1: Variables and Assignments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

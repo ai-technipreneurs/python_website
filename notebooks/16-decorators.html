@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Python Programming</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/16-decorators';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://ai-technipreneurs.github.io/python_website/notebooks/16-decorators.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="17-data-apis.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="15-pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banner.jpeg" class="logo__image only-light" alt="Python Programming - Home"/>
+    <img src="../_static/banner.jpeg" class="logo__image only-dark pst-js-only" alt="Python Programming - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Python Programming for Scientific Computing and Data Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to PyPro-SCiDaS</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="01-intro-python.html">Creating a sublist from index 0 to 2 (not including 2)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="02-variables.html">2.0. None (nothing)</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="04-git.html">What is Version Control ?</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="08-recursion-lambda.html">Recursive function</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="09-errors-debugging.html">Why does debugging matter?</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="10-numpy-1.html">What is NumPy?</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="11-numpy-2.html">🧩 What is NumPy and Why Use It?</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="12-matplotlib.html"><strong>Simple curve plot</strong></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="13-oop.html">2.1 Defining a Class</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="14-comprehensions.html">1.1 Basic Syntax</a></li>
+
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Light practicals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_1.html">Practical_1: Variables and Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_2.html">Practical_2: String and files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_3.html">Practical_3: Iterable objects or Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_4.html">Practical_4: Flow control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_5.html">Practical_5: Functions, Modules and Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_6.html">Practical_6: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../practicals/Practical_7.html">Practical_7: Matplotlib</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Challenges</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-1.html">PyPro: challenge 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-2.html">PyPro: Challenge 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../challenges/PyPro_challenge-3.html">PyPro: Challenge 3</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs and individual projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.html">Practial 0: Taking control of a jupyter notebook</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_local.html">Practical 1: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">local</span></code></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/version_control_remote.html">Practical 2: Version Control with Git: <code class="docutils literal notranslate"><span class="pre">remote</span></code></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../VC/presentations.html">Individual presentations topics:</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Going deeper</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../VC/advanced-python-projects.html">Advanced Python Proficiency Projects with Real-Life Problems</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Local development setup</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/Lab_Prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/git-and-vscode.html">Integrating Git with Visual Studio Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/codespaces.html">Integrating Git with GitHub Codespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VC/copilot.html">Integrating Git with GitHub Copilot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ai-technipreneurs/python_website/blob/main/notebooks/16-decorators.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/edit/main/notebooks/16-decorators.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ai-technipreneurs/python_website/issues/new?title=Issue%20on%20page%20%2Fnotebooks/16-decorators.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/16-decorators.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a id="lecture-16-decorators-context-managers"></a></p>
+<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 30px 25px 20px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);  margin-bottom: 20px;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);  pointer-events: none;"></div><div style="position: relative; z-index: 1;"><p style="color: rgba(255,255,255,0.7); font-size: 0.85em; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; font-family: 'Segoe UI', sans-serif;">Lecture 16 of 18 — Progress: 89%</p><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4CAF50;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#FFD700;margin:0 3px;"></span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.25);margin:0 3px;"></span><h1 style="color: #ffffff; font-size: 2.2em; margin: 15px 0 5px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); font-family: 'Segoe UI', sans-serif;">PyPro-SCiDaS</h1><p style="color: rgba(255,255,255,0.85); font-size: 1.05em; margin: 5px 0 15px; font-family: 'Segoe UI', sans-serif;">An Initiation to Programming using Python (Init2Py)</p><div style="  background: rgba(255,255,255,0.12);  backdrop-filter: blur(10px);  border: 1px solid rgba(255,255,255,0.2);  border-radius: 12px;  padding: 15px 20px;  display: inline-block;  margin: 10px 0;"><h2 style="color: #ffffff; font-size: 1.4em; margin: 0; text-shadow: 1px 1px 4px rgba(0,0,0,0.2); font-family: 'Segoe UI', sans-serif;">🎀 Lecture 16 — Decorators & Context Managers</h2></div><p style="color: rgba(255,255,255,0.6); font-size: 0.8em; margin: 15px 0 0; font-family: 'Segoe UI', sans-serif;">Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 12px 20px; margin: 15px auto 5px; display: inline-block; text-align: center;">
+<table style="margin: 0 auto; border-collapse: collapse;">
+<tr>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🧑‍🏫 Instructor: <strong style="color:#000;">Yaé Gaba</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📘 Course: <strong style="color:#000;">Init2Py</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">📅 Date: <strong style="color:#000;">October 2025</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">🎓 Semester: <strong style="color:#000;">Semester 1, 2025–2026</strong></td>
+<td style="padding: 5px 15px; color: rgba(0,0,0,0.65); font-size: 0.9em; border-right: 1px solid rgba(0,0,0,0.15);">⏱️ Estimated: <strong style="color:#000;">50 min</strong></td>
+<td style="padding: 5px 15px; font-size: 0.9em;"><span style="background: #f44336; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600;">Advanced</span></td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 8px 15px 3px; color: rgba(0,0,0,0.6); font-size: 0.85em; text-align: center; border-top: 1px solid rgba(0,0,0,0.1);">🏛️ <a href="https://airina-labs.github.io/AIRINA-Labs/" target="_blank" style="color:#000; text-decoration: none;"><strong>AI Research and Innovation Nexus for Africa (AIRINA Labs)</strong></a>, AI.Technipreneurs, Bénin<br>&amp; <a href="https://acas-yde.org/" target="_blank" style="color:#000; text-decoration: none;"><strong>African Center for Advanced Studies (ACAS)</strong></a>, Cameroon</td>
+</tr>
+<tr>
+<td colspan="4" style="padding: 3px 15px 2px; color: rgba(0,0,0,0.55); font-size: 0.8em; text-align: center;">✉️ <a href="mailto:yaeulrich.gaba@gmail.com" style="color: #1a237e; text-decoration: none;">yaeulrich.gaba@gmail.com</a>   |   🔗 <a href="https://www.linkedin.com/in/gabayae/" target="_blank" style="color: #0077B5; text-decoration: none;">LinkedIn</a>   |   🌐 <a href="https://gabayae.github.io/" target="_blank" style="color: #667eea; text-decoration: none;">Website</a></td>
+</tr>
+</table>
+</div></div></div><div style="text-align: right; margin: -10px 0 10px;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="  color: #667eea;  text-decoration: none;  font-size: 0.85em;  font-family: 'Segoe UI', sans-serif;  padding: 4px 12px;  border: 1px solid #667eea;  border-radius: 20px;">📚 Course Index</a></div><div style="  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);  border-left: 5px solid #4CAF50;  border-radius: 0 12px 12px 0;  padding: 20px 25px;  margin: 15px 0 20px;"><h3 style="margin: 0 0 10px; color: #2E7D32; font-family: 'Segoe UI', sans-serif;">🎯 Learning Objectives</h3><ul style="list-style: none; padding-left: 5px;"><li style="margin: 8px 0; color: #333;">✅ Understand what decorators are and how they modify function behavior</li><li style="margin: 8px 0; color: #333;">✅ Write your own decorators using closures and <code>functools.wraps</code></li><li style="margin: 8px 0; color: #333;">✅ Use built-in decorators: <code>@property</code>, <code>@staticmethod</code>, <code>@classmethod</code></li><li style="margin: 8px 0; color: #333;">✅ Understand context managers and the <code>with</code> statement</li><li style="margin: 8px 0; color: #333;">✅ Build custom context managers using classes and <code>contextlib</code></li></ul></div><p><a id="table-of-contents"></a></p>
+<div style="background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%); border-left: 5px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: Segoe UI, sans-serif;">
+<h3 style="color: #1a237e; margin-top: 0; font-size: 1.1em;">📑 Table of Contents</h3>
+<ul style="list-style-type: none; padding-left: 5px; margin: 0;">
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#lecture-16-decorators-context-managers" style="color: #424242; text-decoration: none;">● 🎀 Lecture 16 — Decorators & Context Managers</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#1-functions-are-objects" style="color: #424242; text-decoration: none;">1. ● 1. Functions Are Objects</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#2-what-is-a-decorator" style="color: #424242; text-decoration: none;">2. ● 2. What Is a Decorator?</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#3-preserving-function-identity-with-functools-wraps" style="color: #424242; text-decoration: none;">3. ● 3. Preserving Function Identity with functools.wraps</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#4-practical-decorator-patterns" style="color: #424242; text-decoration: none;">4. ● 4. Practical Decorator Patterns</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#5-the-property-decorator" style="color: #424242; text-decoration: none;">5. ● 5. The @property Decorator</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#6-context-managers-and-the-with-statement" style="color: #424242; text-decoration: none;">6. ● 6. Context Managers and the with Statement</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#7-the-contextlib-shortcut" style="color: #424242; text-decoration: none;">7. ● 7. The contextlib Shortcut</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#8-stacking-decorators-real-world-patterns" style="color: #424242; text-decoration: none;">8. ● 8. Stacking Decorators & Real-World Patterns</a></li>
+<li style="margin: 4px 0; padding-left: 0px; color: #424242; font-size: 0.9em;"><a href="#9-practice-exercises" style="color: #424242; text-decoration: none;">9. ● 9. Practice Exercises</a></li>
+<li style="margin: 4px 0; padding-left: 15px; color: #424242; font-size: 0.9em;"><a href="#key-takeaways" style="color: #424242; text-decoration: none;">10. ▸ 🎯 Key Takeaways</a></li>
+</ul>
+</div><div style="background: linear-gradient(135deg, #fff8e1, #fff3e0); border-left: 4px solid #FF9800; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #E65100;">🌉 Building on what you know:</strong> <span style="color: #333;">In <a href="https://ai-technipreneurs.github.io/python_website/notebooks/07-functions.html" style="color: #1565C0;">Lecture 7</a> you learned that functions are first-class objects — they can be passed as arguments and returned from other functions. In <a href="https://ai-technipreneurs.github.io/python_website/notebooks/13-oop.html" style="color: #1565C0;">Lecture 13</a> you saw <code>@staticmethod</code> and <code>@classmethod</code>. Now we'll unpack what the <code>@</code> symbol actually does and how to build your own decorators.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="1-functions-are-objects"></a></p>
+<div style="  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);  border-left: 5px solid #2E7D32;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #2E7D32; font-family: 'Segoe UI', sans-serif;">1. Functions Are Objects</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">Before we can understand decorators, we need to appreciate a powerful fact about Python: functions are objects, just like integers or strings. You can store them in variables, pass them to other functions, and return them from other functions.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions can be assigned to variablesdef greet(name):    return f&quot;Hello, {name}!&quot;say_hello = greet  # No parentheses — we&#39;re storing the function itselfprint(say_hello(&quot;Alice&quot;))print(type(say_hello))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we didn’t call <code class="docutils literal notranslate"><span class="pre">greet()</span></code> — we assigned the function <em>itself</em> (without parentheses) to a new variable. Both <code class="docutils literal notranslate"><span class="pre">greet</span></code> and <code class="docutils literal notranslate"><span class="pre">say_hello</span></code> now point to the same function object in memory. This is what “first-class” means: functions are values, just like numbers or strings.Now, if functions are values, we should be able to pass them as arguments to other functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions can be passed as argumentsdef apply_twice(func, value):    &quot;&quot;&quot;Apply a function twice to a value.&quot;&quot;&quot;    return func(func(value))def add_exclamation(text):    return text + &quot;!&quot;print(apply_twice(add_exclamation, &quot;Hello&quot;))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This ability to pass functions around is powerful — it’s the foundation of Python’s <code class="docutils literal notranslate"><span class="pre">map()</span></code>, <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, and <code class="docutils literal notranslate"><span class="pre">sorted(key=...)</span></code> that you’ve seen in earlier lectures. But what if we want to <em>create</em> new functions on the fly? That’s where <strong>closures</strong> come in:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions can return other functions (closures)def make_multiplier(n):    &quot;&quot;&quot;Return a function that multiplies by n.&quot;&quot;&quot;    def multiplier(x):        return x * n    return multiplierdouble = make_multiplier(2)triple = make_multiplier(3)print(double(5))   # 10print(triple(5))   # 15print(double(triple(4)))  # 24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid #1565C0; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #1565C0;">💡 Note:</strong> <span style="color: #333;">A <strong>closure</strong> is a function that remembers values from its enclosing scope even after that scope has finished executing. The <code>multiplier</code> function above "closes over" the variable <code>n</code>. Closures are the foundation of decorators.</span></div><div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">🔬 In scientific computing:</strong> <span style="color: #333;">Closures are widely used in scientific libraries. NumPy's <code>np.vectorize()</code>, SciPy's <code>minimize()</code> with callback functions, and Matplotlib's event handlers all rely on functions that remember their enclosing state. Understanding closures will help you write more effective numerical code.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="2-what-is-a-decorator"></a></p>
+<div style="  background: linear-gradient(135deg, #fff3e0, #fbe9e7);  border-left: 5px solid #E65100;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #E65100; font-family: 'Segoe UI', sans-serif;">2. What Is a Decorator?</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">A decorator is a function that takes another function, extends or modifies its behavior, and returns the modified version — all without changing the original function's source code. Think of it like wrapping a gift: the gift (your function) stays the same, but the wrapping (the decorator) adds something extra.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="c1"># A decorator that measures execution timedef timer(func):    &quot;&quot;&quot;Decorator that prints how long a function takes to run.&quot;&quot;&quot;    def wrapper(*args, **kwargs):        start = time.time()        result = func(*args, **kwargs)        elapsed = time.time() - start        print(f&quot;{func.__name__} took {elapsed:.4f} seconds&quot;)        return result    return wrapper# Manual decorationdef slow_sum(n):    return sum(range(n))slow_sum = timer(slow_sum)  # Wrap the functionslow_sum(1_000_000)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s unpack what just happened step by step:1. We defined <code class="docutils literal notranslate"><span class="pre">timer(func)</span></code> — a function that accepts a function and returns a <em>new</em> function (<code class="docutils literal notranslate"><span class="pre">wrapper</span></code>)2. <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> adds timing logic <em>around</em> the original function call3. We replaced <code class="docutils literal notranslate"><span class="pre">slow_sum</span></code> with the wrapped version: <code class="docutils literal notranslate"><span class="pre">slow_sum</span> <span class="pre">=</span> <span class="pre">timer(slow_sum)</span></code>Now every call to <code class="docutils literal notranslate"><span class="pre">slow_sum()</span></code> automatically gets timed, and we never touched the original function’s code. This pattern — <code class="docutils literal notranslate"><span class="pre">func</span> <span class="pre">=</span> <span class="pre">decorator(func)</span></code> — is so common that Python provides the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> syntax as shorthand:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@timerdef</span> <span class="n">slow_sum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="s2">&quot;&quot;&quot;Sum numbers from 0 to n-1.&quot;&quot;&quot;</span>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="c1"># This is IDENTICAL to writing: slow_sum = timer(slow_sum)result = slow_sum(1_000_000)print(f&quot;Result: {result}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;decorator</span></code> syntax is purely syntactic sugar — it does exactly the same thing as the manual approach. But it’s cleaner, more readable, and makes it immediately obvious that the function is being modified. You’ll see <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> decorators everywhere in professional Python code.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="3-preserving-function-identity-with-functools-wraps"></a></p>
+<div style="  background: linear-gradient(135deg, #f3e5f5, #ede7f6);  border-left: 5px solid #7B1FA2;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #7B1FA2; font-family: 'Segoe UI', sans-serif;">3. Preserving Function Identity with <code>functools.wraps</code></h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">There's a subtle problem with our decorator: the wrapped function loses its original name and docstring. The <code>functools.wraps</code> decorator fixes this by copying metadata from the original function to the wrapper.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrapsdef</span> <span class="n">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>  <span class="c1"># Preserves func.__name__, func.__doc__, etc.    def wrapper(*args, **kwargs):        start = time.time()        result = func(*args, **kwargs)        elapsed = time.time() - start        print(f&quot;{func.__name__} took {elapsed:.4f}s&quot;)        return result    return wrapper@timerdef slow_sum(n):    &quot;&quot;&quot;Sum numbers from 0 to n-1.&quot;&quot;&quot;    return sum(range(n))print(slow_sum.__name__)  # slow_sum (not &quot;wrapper&quot;)print(slow_sum.__doc__)   # Sum numbers from 0 to n-1.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #fff3e0; border-left: 4px solid #E65100; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #E65100;">💡 Note:</strong> <span style="color: #333;"><strong>Best practice:</strong> Always use <code>@functools.wraps(func)</code> in your decorators. Without it, debugging becomes harder because tracebacks show <code>wrapper</code> instead of the real function name.</span></div><p>With <code class="docutils literal notranslate"><span class="pre">&#64;wraps</span></code> in our toolbox, we now have the complete decorator recipe:<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">functools</span> <span class="pre">import</span> <span class="pre">wrapsdef</span> <span class="pre">my_decorator(func):</span>&#160;&#160;&#160; <span class="pre">&#64;wraps(func)</span>&#160;&#160;&#160; <span class="pre">def</span> <span class="pre">wrapper(*args,</span> <span class="pre">**kwargs):</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">...</span> <span class="pre">do</span> <span class="pre">something</span> <span class="pre">before</span> <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">result</span> <span class="pre">=</span> <span class="pre">func(*args,</span> <span class="pre">**kwargs)</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">#</span> <span class="pre">...</span> <span class="pre">do</span> <span class="pre">something</span> <span class="pre">after</span> <span class="pre">...</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">return</span> <span class="pre">result</span>&#160;&#160;&#160; <span class="pre">return</span> <span class="pre">wrapper</span></code>This three-part structure — outer function, <code class="docutils literal notranslate"><span class="pre">&#64;wraps</span></code>, inner wrapper — is the template you’ll use for virtually every decorator you write. Let’s put it to work with some real-world patterns:</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="4-practical-decorator-patterns"></a></p>
+<div style="  background: linear-gradient(135deg, #ffebee, #fce4ec);  border-left: 5px solid #C62828;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #C62828; font-family: 'Segoe UI', sans-serif;">4. Practical Decorator Patterns</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">Decorators are used everywhere in Python — from web frameworks (Flask's <code>@app.route</code>) to testing (<code>@pytest.mark.parametrize</code>) to caching (<code>@lru_cache</code>). Let's build some useful ones.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wraps</span><span class="c1"># 1. A logging decoratordef log_calls(func):    @wraps(func)    def wrapper(*args, **kwargs):        print(f&quot;Calling {func.__name__}({args}, {kwargs})&quot;)        result = func(*args, **kwargs)        print(f&quot;  → returned {result}&quot;)        return result    return wrapper@log_callsdef add(a, b):    return a + badd(3, 5)add(10, b=20)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&#64;log_calls</span></code> decorator is invaluable during debugging — you can temporarily add it to any function to see exactly what’s being called with what arguments, without modifying the function’s code.Next, let’s tackle a more advanced pattern: <strong>decorator factories</strong>. What if your decorator needs to accept its own parameters (like “retry up to 3 times”)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. A retry decorator (useful for network calls)import randomdef retry(max_attempts=3):    &quot;&quot;&quot;Decorator factory — takes parameters and returns a decorator.&quot;&quot;&quot;    def decorator(func):        @wraps(func)        def wrapper(*args, **kwargs):            for attempt in range(1, max_attempts + 1):                try:                    return func(*args, **kwargs)                except Exception as e:                    print(f&quot;  Attempt {attempt} failed: {e}&quot;)                    if attempt == max_attempts:                        raise        return wrapper    return decorator@retry(max_attempts=3)def unreliable_api():    &quot;&quot;&quot;Simulates a flaky API call.&quot;&quot;&quot;    if random.random() &lt; 0.7:        raise ConnectionError(&quot;Server unreachable&quot;)    return {&quot;status&quot;: &quot;ok&quot;}try:    result = unreliable_api()    print(f&quot;Success: {result}&quot;)except ConnectionError:    print(&quot;All attempts failed.&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the three nested layers here: <code class="docutils literal notranslate"><span class="pre">retry(max_attempts=3)</span></code> returns <code class="docutils literal notranslate"><span class="pre">decorator</span></code>, which wraps <code class="docutils literal notranslate"><span class="pre">func</span></code> into <code class="docutils literal notranslate"><span class="pre">wrapper</span></code>. The call <code class="docutils literal notranslate"><span class="pre">&#64;retry(max_attempts=3)</span></code> first evaluates <code class="docutils literal notranslate"><span class="pre">retry(max_attempts=3)</span></code> to get the actual decorator, then applies it to the function. This “decorator factory” pattern is how <code class="docutils literal notranslate"><span class="pre">&#64;lru_cache(maxsize=128)</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;pytest.mark.parametrize(...)</span></code> work under the hood.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Built-in: functools.lru_cache for memoizationfrom functools import lru_cache@lru_cache(maxsize=128)def fibonacci(n):    &quot;&quot;&quot;Compute the nth Fibonacci number (with caching).&quot;&quot;&quot;    if n &lt; 2:        return n    return fibonacci(n - 1) + fibonacci(n - 2)# Without caching this would be extremely slow for large nprint([fibonacci(i) for i in range(20)])print(f&quot;Cache info: {fibonacci.cache_info()}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">🔬 In scientific computing:</strong> <span style="color: #333;"><code>@lru_cache</code> is a game-changer for scientific computing. If you have a function that's called repeatedly with the same inputs (e.g., computing basis functions, evaluating polynomials at grid points, or recursive dynamic programming), caching can turn O(2<sup>n</sup>) algorithms into O(n) with a single line. The Fibonacci example above would take minutes for <code>fibonacci(40)</code> without caching — with it, the result is instant.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="5-the-property-decorator"></a></p>
+<div style="  background: linear-gradient(135deg, #e0f7fa, #e0f2f1);  border-left: 5px solid #00838F;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #00838F; font-family: 'Segoe UI', sans-serif;">5. The <code>@property</code> Decorator</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">In <a href='https://ai-technipreneurs.github.io/python_website/notebooks/13-oop.html' style='color: #1565C0;'>Lecture 13</a> we used getter methods like <code>get_balance()</code>. Python's <code>@property</code> decorator provides a much cleaner approach — it lets you access a method as if it were a simple attribute.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Temperature</span><span class="p">:</span>    <span class="s2">&quot;&quot;&quot;Temperature with automatic Celsius ↔ Fahrenheit conversion.&quot;&quot;&quot;</span>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">celsius</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">celsius</span>    <span class="nd">@property</span>    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="s2">&quot;&quot;&quot;Get the temperature in Celsius.&quot;&quot;&quot;</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span>    <span class="nd">@celsius</span><span class="o">.</span><span class="n">setter</span>    <span class="k">def</span><span class="w"> </span><span class="nf">celsius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperature below absolute zero!&quot;</span><span class="p">)</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">=</span> <span class="n">value</span>    <span class="nd">@property</span>    <span class="k">def</span><span class="w"> </span><span class="nf">fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="s2">&quot;&quot;&quot;Get the temperature in Fahrenheit (read-only).&quot;&quot;&quot;</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_celsius</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span><span class="n">temp</span> <span class="o">=</span> <span class="n">Temperature</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">celsius</span><span class="si">}</span><span class="s2">°C = </span><span class="si">{</span><span class="n">temp</span><span class="o">.</span><span class="n">fahrenheit</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span><span class="n">temp</span><span class="o">.</span><span class="n">celsius</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Uses the setterprint(f&quot;{temp.celsius}°C = {temp.fahrenheit}°F&quot;)try:    temp.celsius = -300  # Below absolute zero!except ValueError as e:    print(f&quot;Error: {e}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">💡 Note:</strong> <span style="color: #333;"><code>@property</code> is the Pythonic way to control attribute access. Use it instead of Java-style <code>get_x()</code> / <code>set_x()</code> methods. Your class users write <code>obj.x</code> — they never need to know that validation is happening behind the scenes.</span></div><p>The beauty of <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code> is that you can start with a simple attribute (<code class="docutils literal notranslate"><span class="pre">self.celsius</span> <span class="pre">=</span> <span class="pre">value</span></code>) and later add validation or computed behavior <em>without changing the public interface</em>. Code that uses <code class="docutils literal notranslate"><span class="pre">temp.celsius</span></code> keeps working unchanged. This is why Python doesn’t need Java’s convention of writing getters and setters for every attribute from the start — you can add them later when needed.</p>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="6-context-managers-and-the-with-statement"></a></p>
+<div style="  background: linear-gradient(135deg, #ede7f6, #e8eaf6);  border-left: 5px solid #4527A0;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #4527A0; font-family: 'Segoe UI', sans-serif;">6. Context Managers and the <code>with</code> Statement</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">You've been using context managers since <a href='https://ai-technipreneurs.github.io/python_website/notebooks/03-strings-files.html' style='color: #1565C0;'>Lecture 3</a>: <code>with open('file.txt') as f:</code>. A context manager is any object that defines setup and teardown actions — it guarantees that cleanup happens, even if an error occurs. Think of it like a try/finally block wrapped in a clean interface.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># You already know this pattern:# with open(&quot;data.txt&quot;, &quot;w&quot;) as f:#     f.write(&quot;hello&quot;)# File is automatically closed, even if an error occurs# What&#39;s actually happening behind the scenes?# 1. f = open(&quot;data.txt&quot;).__enter__()  ← setup# 2. ... your code runs ...# 3. f.__exit__()                       ← cleanup (always runs)# Let&#39;s see it explicitly:f = open(&quot;testfile.txt&quot;, &quot;w&quot;)print(f&quot;File closed? {f.closed}&quot;)f.write(&quot;test data&quot;)f.close()print(f&quot;File closed? {f.closed}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The problem with manual <code class="docutils literal notranslate"><span class="pre">open()</span></code>/<code class="docutils literal notranslate"><span class="pre">close()</span></code> is obvious: if an error occurs between <code class="docutils literal notranslate"><span class="pre">open()</span></code> and <code class="docutils literal notranslate"><span class="pre">close()</span></code>, the file stays open — leaking resources. You could wrap it in <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">finally</span></code>, but that’s verbose. Context managers solve this elegantly: the <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> method is <em>guaranteed</em> to run, whether the block succeeds, raises an exception, or even uses <code class="docutils literal notranslate"><span class="pre">return</span></code> or <code class="docutils literal notranslate"><span class="pre">break</span></code>.Let’s build our own context manager to see the protocol in action:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Building a context manager as a classclass Timer:    &quot;&quot;&quot;Context manager that measures execution time of a block.&quot;&quot;&quot;    def __enter__(self):        self.start = time.time()        print(&quot;⏱️ Timer started...&quot;)        return self  # The value bound to &#39;as&#39; variable    def __exit__(self, exc_type, exc_val, exc_tb):        self.elapsed = time.time() - self.start        print(f&quot;⏱️ Elapsed: {self.elapsed:.4f} seconds&quot;)        return False  # Don&#39;t suppress exceptions# Usagewith Timer() as t:    total = sum(range(1_000_000))    print(f&quot;Sum: {total}&quot;)print(f&quot;Stored elapsed time: {t.elapsed:.4f}s&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Key points about the context manager protocol:- <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> runs when entering the <code class="docutils literal notranslate"><span class="pre">with</span></code> block. Its return value is bound to the <code class="docutils literal notranslate"><span class="pre">as</span></code> variable.- <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> runs when leaving the <code class="docutils literal notranslate"><span class="pre">with</span></code> block — <em>always</em>, even if an exception occurred.- <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> receives exception info (<code class="docutils literal notranslate"><span class="pre">exc_type</span></code>, <code class="docutils literal notranslate"><span class="pre">exc_val</span></code>, <code class="docutils literal notranslate"><span class="pre">exc_tb</span></code>). Return <code class="docutils literal notranslate"><span class="pre">True</span></code> to suppress the exception, <code class="docutils literal notranslate"><span class="pre">False</span></code> to propagate it.Context managers aren’t just for files — any resource that needs setup and cleanup is a candidate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Another example: managing a temporary directoryimport tempfile, osclass TempDirectory:    &quot;&quot;&quot;Context manager that creates and cleans up a temp directory.&quot;&quot;&quot;    def __enter__(self):        self.path = tempfile.mkdtemp()        print(f&quot;Created temp dir: {self.path}&quot;)        return self.path    def __exit__(self, exc_type, exc_val, exc_tb):        import shutil        shutil.rmtree(self.path)        print(f&quot;Cleaned up temp dir: {self.path}&quot;)        return Falsewith TempDirectory() as tmp:    filepath = os.path.join(tmp, &quot;test.txt&quot;)    with open(filepath, &quot;w&quot;) as f:        f.write(&quot;temporary data&quot;)    print(f&quot;File exists: {os.path.exists(filepath)}&quot;)# After the with block, the directory is gone# print(f&quot;Dir exists: {os.path.exists(tmp)}&quot;)  # Would be False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div style="background: #e8f5e9; border-left: 4px solid #2E7D32; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #2E7D32;">🔬 In scientific computing:</strong> <span style="color: #333;">Context managers are everywhere in scientific Python: <code>h5py.File()</code> for HDF5 data, <code>torch.no_grad()</code> in PyTorch for disabling gradient tracking during inference, <code>np.errstate()</code> for controlling NumPy's floating-point error behavior, and database connections in SQLAlchemy. The pattern is always the same: <em>acquire resource → use → release</em>.</span></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="7-the-contextlib-shortcut"></a></p>
+<div style="  background: linear-gradient(135deg, #fce4ec, #f3e5f5);  border-left: 5px solid #AD1457;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #AD1457; font-family: 'Segoe UI', sans-serif;">7. The <code>contextlib</code> Shortcut</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">Writing a whole class with <code>__enter__</code> and <code>__exit__</code> for simple cases is verbose. Python's <code>contextlib.contextmanager</code> decorator lets you write context managers as generator functions — everything before <code>yield</code> is setup, everything after is teardown.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span><span class="nd">@contextmanagerdef</span> <span class="n">timer</span><span class="p">():</span>    <span class="s2">&quot;&quot;&quot;Measure execution time of a code block.&quot;&quot;&quot;</span>    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⏱️ Timer started...&quot;</span><span class="p">)</span>    <span class="k">yield</span>  <span class="c1"># Control passes to the &#39;with&#39; block here    elapsed = time.time() - start    print(f&quot;⏱️ Elapsed: {elapsed:.4f} seconds&quot;)with timer():    total = sum(range(2_000_000))    print(f&quot;Sum: {total}&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the structure: everything <em>before</em> <code class="docutils literal notranslate"><span class="pre">yield</span></code> is the setup (<code class="docutils literal notranslate"><span class="pre">__enter__</span></code>), and everything <em>after</em> <code class="docutils literal notranslate"><span class="pre">yield</span></code> is the teardown (<code class="docutils literal notranslate"><span class="pre">__exit__</span></code>). The <code class="docutils literal notranslate"><span class="pre">yield</span></code> statement is where your <code class="docutils literal notranslate"><span class="pre">with</span></code> block’s code runs. If you need to pass a value to the <code class="docutils literal notranslate"><span class="pre">as</span></code> variable, use <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">value</span></code>.Here’s another practical example — a context manager that suppresses specific exceptions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@contextmanagerdef</span> <span class="n">suppress_errors</span><span class="p">(</span><span class="o">*</span><span class="n">exception_types</span><span class="p">):</span>    <span class="s2">&quot;&quot;&quot;Silently ignore specified exceptions.&quot;&quot;&quot;</span>    <span class="k">try</span><span class="p">:</span>        <span class="k">yield</span>    <span class="k">except</span> <span class="n">exception_types</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(Suppressed: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span><span class="k">with</span> <span class="n">suppress_errors</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This line won&#39;t run&quot;</span><span class="p">)</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;But execution continues here!&quot;</span><span class="p">)</span><span class="c1"># Python provides this built-in as contextlib.suppress:from contextlib import suppresswith suppress(FileNotFoundError):    os.remove(&quot;nonexistent_file.txt&quot;)print(&quot;No crash!&quot;)</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;text-align: right; margin-top: 12px; font-size: 0.85em;&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#table-of-contents&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;color: #667eea; text-decoration: none;&quot;</span><span class="o">&gt;</span><span class="err">↑</span> <span class="n">Back</span> <span class="n">to</span> <span class="n">TOC</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a id="8-stacking-decorators-real-world-patterns"></a></p>
+<div style="  background: linear-gradient(135deg, #e3f2fd, #e8eaf6);  border-left: 5px solid #1565C0;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #1565C0; font-family: 'Segoe UI', sans-serif;">8. Stacking Decorators & Real-World Patterns</h2><p style="color: #555; margin: 10px 0 0; font-size: 0.95em;">You can apply multiple decorators to a single function. They are applied bottom-up (closest to the function first) but execute top-down when the function is called.</p></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrapsdef</span> <span class="n">bold</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/b&gt;&quot;</span>    <span class="k">return</span> <span class="n">wrapperdef</span> <span class="n">italic</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;i&gt;</span><span class="si">{</span><span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/i&gt;&quot;</span>    <span class="k">return</span> <span class="n">wrapper</span><span class="nd">@bold</span>       <span class="c1"># Applied second (outer layer)@italic     # Applied first (inner layer)def greet(name):    return f&quot;Hello, {name}!&quot;# Equivalent to: greet = bold(italic(greet))print(greet(&quot;Alice&quot;))  # &lt;b&gt;&lt;i&gt;Hello, Alice!&lt;/i&gt;&lt;/b&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Reading stacked decorators:</strong> Read them from <em>bottom to top</em> to understand the wrapping order, but from <em>top to bottom</em> to understand the execution order. In the example above:1. <code class="docutils literal notranslate"><span class="pre">italic</span></code> wraps <code class="docutils literal notranslate"><span class="pre">greet</span></code> first (bottom decorator, inner layer)2. <code class="docutils literal notranslate"><span class="pre">bold</span></code> wraps the italic-wrapped function (top decorator, outer layer)3. When called: <code class="docutils literal notranslate"><span class="pre">bold</span></code> runs first → calls <code class="docutils literal notranslate"><span class="pre">italic</span></code> → calls original <code class="docutils literal notranslate"><span class="pre">greet</span></code></p>
+<div style="background: #f3e5f5; border-left: 4px solid #7B1FA2; border-radius: 0 8px 8px 0; padding: 12px 18px; margin: 15px 0; font-family: 'Segoe UI', sans-serif;"><strong style="color: #7B1FA2;">🔗 Related lectures:</strong><br><a href="https://ai-technipreneurs.github.io/python_website/notebooks/07-functions.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">⚙️ Lecture 7: Functions</a> &nbsp;|&nbsp; <a href="https://ai-technipreneurs.github.io/python_website/notebooks/08-recursion-lambda.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">🔄 Lecture 8: Closures & Lambda</a> &nbsp;|&nbsp; <a href="https://ai-technipreneurs.github.io/python_website/notebooks/13-oop.html" style="color: #1565C0; text-decoration: none; font-weight: 500;">🏗️ Lecture 13: OOP</a></div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="9-practice-exercises"></a></p>
+<div style="  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);  border-left: 5px solid #2E7D32;  border-radius: 0 12px 12px 0;  padding: 15px 20px;  margin: 30px 0 15px;"><h2 style="margin: 0; color: #2E7D32; font-family: 'Segoe UI', sans-serif;">9. Practice Exercises</h2></div><p><strong>Exercise 1 (Beginner):</strong> Write a <code class="docutils literal notranslate"><span class="pre">&#64;count_calls</span></code> decorator that tracks how many times a function has been called. Store the count as an attribute of the wrapper function (<code class="docutils literal notranslate"><span class="pre">wrapper.call_count</span></code>).<em>Hint:</em> Initialize <code class="docutils literal notranslate"><span class="pre">wrapper.call_count</span> <span class="pre">=</span> <span class="pre">0</span></code> after defining <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> but before returning it. Increment it inside <code class="docutils literal notranslate"><span class="pre">wrapper</span></code> on each call.<strong>Exercise 2 (Intermediate):</strong> Write a <code class="docutils literal notranslate"><span class="pre">&#64;validate_positive</span></code> decorator that raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> if any positional argument is negative. It should work with any function that takes numeric arguments.<em>Hint:</em> Loop through <code class="docutils literal notranslate"><span class="pre">args</span></code> inside the wrapper and check <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">arg</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>. Use <code class="docutils literal notranslate"><span class="pre">func.__name__</span></code> in the error message.<strong>Exercise 3 (Intermediate):</strong> Create a <code class="docutils literal notranslate"><span class="pre">DatabaseConnection</span></code> context manager class that:- Prints “Connecting to database…” on enter- Prints “Connection closed.” on exit- If an exception occurs, prints “Rolling back transaction…” before closing<em>Hint:</em> Check if <code class="docutils literal notranslate"><span class="pre">exc_type</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code> in <code class="docutils literal notranslate"><span class="pre">__exit__</span></code> to detect exceptions.<strong>Exercise 4 (Advanced):</strong> Rewrite your <code class="docutils literal notranslate"><span class="pre">DatabaseConnection</span></code> from Exercise 3 using <code class="docutils literal notranslate"><span class="pre">&#64;contextmanager</span></code>. Use a <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">finally</span></code> block around the <code class="docutils literal notranslate"><span class="pre">yield</span></code> to ensure cleanup always runs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1: count_calls decorator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">count_calls</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">wrapper</span><span class="o">.</span><span class="n">call_count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">wrapper</span><span class="o">.</span><span class="n">call_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@count_calls</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+<span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Charlie&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;greet was called </span><span class="si">{</span><span class="n">greet</span><span class="o">.</span><span class="n">call_count</span><span class="si">}</span><span class="s2"> times&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2: validate_positive decorator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">functools</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_positive</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">and</span> <span class="n">arg</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">() received negative argument: </span><span class="si">{</span><span class="n">arg</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@validate_positive</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_area</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">compute_area</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>   <span class="c1"># 50</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">compute_area</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 3: DatabaseConnection context manager (class)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DatabaseConnection</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connecting to database...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">exc_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rolling back transaction... (</span><span class="si">{</span><span class="n">exc_val</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection closed.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># Do not suppress exceptions</span>
+
+
+<span class="c1"># Normal usage</span>
+<span class="k">with</span> <span class="n">DatabaseConnection</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running queries...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Usage with an exception</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">DatabaseConnection</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running queries...&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Query failed!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Handled the error outside the context manager.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 4: DatabaseConnection using @contextmanager</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details>
+<summary style="cursor: pointer; color: #667eea; font-weight: 600; padding: 8px 0;">
+Click to show solution
+</summary>
+<div style="background: #f8f9fa; border-left: 3px solid #667eea; padding: 12px 16px; margin-top: 8px; border-radius: 4px;">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+
+<span class="nd">@contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">database_connection</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connecting to database...&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="s2">&quot;db_connection&quot;</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rolling back transaction... (</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection closed.&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Normal usage</span>
+<span class="k">with</span> <span class="n">database_connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running queries on </span><span class="si">{</span><span class="n">db</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Usage with an exception</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">database_connection</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running queries on </span><span class="si">{</span><span class="n">db</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Query failed!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Handled the error outside the context manager.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p><a id="key-takeaways"></a></p>
+<div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left: 5px solid #4CAF50; border-radius: 0 12px 12px 0; padding: 20px 25px; margin: 25px 0 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); font-family: 'Segoe UI', sans-serif;">
+<h3 style="color: #2E7D32; margin-top: 0; font-size: 1.2em;">🎯 Key Takeaways</h3>
+<ul style="list-style-type: none; padding-left: 5px;">
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">In Python, functions are first-class objects — they can be passed around and returned.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">A <strong>decorator</strong> wraps a function to add behavior: <code>@decorator</code> syntax.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">Use <code>@functools.wraps</code> to preserve the original function's name and docstring.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;">The <code>with</code> statement and context managers handle resource setup/teardown automatically.</li>
+<li style="margin: 8px 0; color: #424242; font-size: 0.95em; line-height: 1.5;"><code>@property</code> lets you define computed attributes that look like regular attributes.</li>
+</ul>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 0.85em;"><a href="#table-of-contents" style="color: #667eea; text-decoration: none;">↑ Back to TOC</a></div><p>—<div align="center" style="  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  border-radius: 16px;  padding: 25px;  margin-top: 30px;  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);  font-family: 'Segoe UI', sans-serif;  position: relative;  overflow: hidden;"><div style="  position: absolute; top: 0; left: 0; right: 0; bottom: 0;  background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);  pointer-events: none;"></div><div style="position: relative; z-index: 1; background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 15px 20px; margin: 0 auto; display: inline-block;"><h2 style="color: #000; margin: 0 0 5px; font-size: 1.4em; text-shadow: none;">🏁 End of Lecture 16 — Decorators &amp; Context Managers</h2><p style="color: rgba(0,0,0,0.6); font-size: 0.9em; margin: 5px 0 15px;">PyPro-SCiDaS • Python Proficiency for Scientific Computing and Data Science</p><div style="background: rgba(255,255,255,0.2); border-radius: 10px; height: 12px; width: 80%; margin: 10px auto; overflow: hidden;"><div style="background: linear-gradient(90deg, #4CAF50, #8BC34A); height: 100%; width: 94%; border-radius: 10px;"></div></div><p style="color: rgba(0,0,0,0.55); font-size: 0.75em; margin: 3px 0 15px;">Course progress: 94% complete (17 of 18 lectures)</p><p style="color: rgba(0,0,0,0.5); font-size: 0.7em; margin: 10px 0 0;">© 2025 Yaé Gaba — <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: rgba(0,0,0,0.6); text-decoration: underline;">CC BY-NC 4.0</a></p></div></div><div style="  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  border-radius: 0 0 16px 16px;  padding: 15px 20px;  margin-top: -5px;  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  font-family: 'Segoe UI', sans-serif;"><table style="width: 100%; border-collapse: collapse;"><tr><td style="padding: 10px; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/15-pandas.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">← Previous</span><br><span style="color: #1565C0; font-weight: 600;">🐼 Lecture 15: Pandas for Data Analysis</span></a></td><td style="text-align: center; width: 10%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/index.html" style="text-decoration: none; font-size: 1.5em; color: #667eea;" title="Course Index">📚</a></td><td style="padding: 10px; text-align: right; width: 45%;"><a href="https://ai-technipreneurs.github.io/python_website/notebooks/17-data-apis.html" style="text-decoration: none;"><span style="color: #888; font-size: 0.8em;">Next →</span><br><span style="color: #1565C0; font-weight: 600;">📂 Lecture 17: Data Formats &amp; APIs</span></a></td></tr></table></div>—</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="15-pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="17-data-apis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="simple pst-show_toc_level nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yaé U. Gaba
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024–2025. CC0 Licensed — use as you like. Appropriate credit is very welcome..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
